@@ -1,74 +1,24 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Verificación de documento</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/estilo.css">
-</head>
-<body>
-<header class="cabecera"><div class="contenedor"><a class="logo" href="index.html" id="logo-empresa">—</a>
-  <div class="selector-idioma" id="selector-idioma" role="group" aria-label="Idioma / Language / 语言">
-    <button type="button" data-idioma="es">ES</button><button type="button" data-idioma="en">EN</button><button type="button" data-idioma="zh">中文</button>
-  </div>
-</div></header>
-<main>
-  <section>
-    <div class="contenedor" style="max-width:640px">
-      <div class="seccion-encabezado"><h2 id="titulo-verificacion"></h2>
-        <p id="intro-verificacion"></p>
-      </div>
-      <div id="resultado" class="cargando"></div>
-    </div>
-  </section>
-</main>
-<footer class="pie"><div class="contenedor"><small id="pie-empresa"></small></div></footer>
-
-<script src="js/i18n.js"></script>
-<script src="js/config.js"></script>
-<script>
-(async function () {
-  function pintarTextosFijos_() {
-    document.getElementById('titulo-verificacion').textContent = I18n.t('verificacion_titulo');
-    document.getElementById('intro-verificacion').textContent = I18n.t('verificacion_intro');
-    document.getElementById('resultado').textContent = I18n.t('verificando_documento');
-    document.querySelectorAll('#selector-idioma button').forEach(function (b) { b.classList.toggle('activo', b.getAttribute('data-idioma') === I18n.idioma()); });
-  }
-  document.getElementById('selector-idioma').addEventListener('click', function (ev) {
-    var btn = ev.target.closest('[data-idioma]'); if (!btn) { return; }
-    I18n.setIdioma(btn.getAttribute('data-idioma')); pintarTextosFijos_(); verificar_();
-  });
-  pintarTextosFijos_();
-
-  await window.Sitio.iniciar();
-  document.getElementById('logo-empresa').textContent = window.Sitio.estado.config.empresa_nombre || '';
-  document.getElementById('pie-empresa').textContent = '© ' + new Date().getFullYear() + ' ' + (window.Sitio.estado.config.empresa_nombre || '');
-
-  var params = new URLSearchParams(location.search);
-  var hash = params.get('hash');
-  var resultado = document.getElementById('resultado');
-  if (!hash) { resultado.innerHTML = '<p class="mensaje-estado error">' + I18n.t('falta_codigo_documento') + '</p>'; return; }
-
-  async function verificar_() {
-    try {
-      var datos = await window.Sitio.llamarApi('firma.verificar', { hash: hash });
-      if (datos.valido) {
-        resultado.innerHTML =
-          '<p class="mensaje-estado ok">' + I18n.t('documento_valido_sin_alterar') + '</p>' +
-          '<p><strong>' + I18n.t('tipo_documento') + ':</strong> ' + datos.tipo_documento + '<br>' +
-          '<strong>' + I18n.t('numero_documento') + ':</strong> ' + datos.id_documento + '<br>' +
-          '<strong>' + I18n.t('fecha_documento') + ':</strong> ' + new Date(datos.fecha).toLocaleDateString('es-CL') + '</p>' +
-          '<p style="color:var(--color-texto-suave); font-size:.85rem">' + I18n.t('nota_firma') + '</p>';
-      } else {
-        resultado.innerHTML = '<p class="mensaje-estado error">' + I18n.t('documento_invalido_revocado') + '</p>';
-      }
-    } catch (e) {
-      resultado.innerHTML = '<p class="mensaje-estado error">' + I18n.t('no_se_pudo_verificar', { error: e.message }) + '</p>';
-    }
-  }
-  await verificar_();
-})();
-</script>
-</body>
-</html>
+PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVzIj4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9IlVURi04Ij4KPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xLjAiPgo8dGl0bGU+VmVyaWZpY2Fj
+acOzbiBkZSBkb2N1bWVudG88L3RpdGxlPgo8bGluayBocmVmPSJodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2NzczI/ZmFtaWx5PUludGVyOndnaHRANDAwOzUwMDs2MDA7NzAwJmRpc3BsYXk9c3dhcCIgcmVsPSJzdHlsZXNoZWV0Ij4KPGxpbmsgcmVsPSJz
+dHlsZXNoZWV0IiBocmVmPSJjc3MvZXN0aWxvLmNzcyI+CjwvaGVhZD4KPGJvZHk+CjxoZWFkZXIgY2xhc3M9ImNhYmVjZXJhIj48ZGl2IGNsYXNzPSJjb250ZW5lZG9yIj48YSBjbGFzcz0ibG9nbyIgaHJlZj0iaW5kZXguaHRtbCIgaWQ9ImxvZ28tZW1wcmVzYSI+
+4oCUPC9hPgogIDxkaXYgY2xhc3M9InNlbGVjdG9yLWlkaW9tYSIgaWQ9InNlbGVjdG9yLWlkaW9tYSIgcm9sZT0iZ3JvdXAiIGFyaWEtbGFiZWw9IklkaW9tYSAvIExhbmd1YWdlIC8g6K+t6KiAIj4KICAgIDxidXR0b24gdHlwZT0iYnV0dG9uIiBkYXRhLWlkaW9t
+YT0iZXMiPkVTPC9idXR0b24+PGJ1dHRvbiB0eXBlPSJidXR0b24iIGRhdGEtaWRpb21hPSJlbiI+RU48L2J1dHRvbj48YnV0dG9uIHR5cGU9ImJ1dHRvbiIgZGF0YS1pZGlvbWE9InpoIj7kuK3mloc8L2J1dHRvbj4KICA8L2Rpdj4KPC9kaXY+PC9oZWFkZXI+Cjxt
+YWluPgogIDxzZWN0aW9uPgogICAgPGRpdiBjbGFzcz0iY29udGVuZWRvciIgc3R5bGU9Im1heC13aWR0aDo2NDBweCI+CiAgICAgIDxkaXYgY2xhc3M9InNlY2Npb24tZW5jYWJlemFkbyI+PGgyIGlkPSJ0aXR1bG8tdmVyaWZpY2FjaW9uIj48L2gyPgogICAgICAg
+IDxwIGlkPSJpbnRyby12ZXJpZmljYWNpb24iPjwvcD4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgaWQ9InJlc3VsdGFkbyIgY2xhc3M9ImNhcmdhbmRvIj48L2Rpdj4KICAgIDwvZGl2PgogIDwvc2VjdGlvbj4KPC9tYWluPgo8Zm9vdGVyIGNsYXNzPSJwaWUiPjxk
+aXYgY2xhc3M9ImNvbnRlbmVkb3IiPjxzbWFsbCBpZD0icGllLWVtcHJlc2EiPjwvc21hbGw+PC9kaXY+PC9mb290ZXI+Cgo8c2NyaXB0IHNyYz0ianMvaTE4bi5qcyI+PC9zY3JpcHQ+CjxzY3JpcHQgc3JjPSJqcy9jb25maWcuanMiPjwvc2NyaXB0Pgo8c2NyaXB0
+PgooYXN5bmMgZnVuY3Rpb24gKCkgewogIGZ1bmN0aW9uIHBpbnRhclRleHRvc0Zpam9zXygpIHsKICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0aXR1bG8tdmVyaWZpY2FjaW9uJykudGV4dENvbnRlbnQgPSBJMThuLnQoJ3ZlcmlmaWNhY2lvbl90aXR1bG8n
+KTsKICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdpbnRyby12ZXJpZmljYWNpb24nKS50ZXh0Q29udGVudCA9IEkxOG4udCgndmVyaWZpY2FjaW9uX2ludHJvJyk7CiAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncmVzdWx0YWRvJykudGV4dENvbnRlbnQg
+PSBJMThuLnQoJ3ZlcmlmaWNhbmRvX2RvY3VtZW50bycpOwogICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgnI3NlbGVjdG9yLWlkaW9tYSBidXR0b24nKS5mb3JFYWNoKGZ1bmN0aW9uIChiKSB7IGIuY2xhc3NMaXN0LnRvZ2dsZSgnYWN0aXZvJywgYi5nZXRB
+dHRyaWJ1dGUoJ2RhdGEtaWRpb21hJykgPT09IEkxOG4uaWRpb21hKCkpOyB9KTsKICB9CiAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3NlbGVjdG9yLWlkaW9tYScpLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJywgZnVuY3Rpb24gKGV2KSB7CiAgICB2YXIgYnRu
+ID0gZXYudGFyZ2V0LmNsb3Nlc3QoJ1tkYXRhLWlkaW9tYV0nKTsgaWYgKCFidG4pIHsgcmV0dXJuOyB9CiAgICBJMThuLnNldElkaW9tYShidG4uZ2V0QXR0cmlidXRlKCdkYXRhLWlkaW9tYScpKTsgcGludGFyVGV4dG9zRmlqb3NfKCk7IHZlcmlmaWNhcl8oKTsK
+ICB9KTsKICBwaW50YXJUZXh0b3NGaWpvc18oKTsKCiAgYXdhaXQgd2luZG93LlNpdGlvLmluaWNpYXIoKTsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnbG9nby1lbXByZXNhJykudGV4dENvbnRlbnQgPSB3aW5kb3cuU2l0aW8uZXN0YWRvLmNvbmZpZy5lbXBy
+ZXNhX25vbWJyZSB8fCAnJzsKICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncGllLWVtcHJlc2EnKS50ZXh0Q29udGVudCA9ICfCqSAnICsgbmV3IERhdGUoKS5nZXRGdWxsWWVhcigpICsgJyAnICsgKHdpbmRvdy5TaXRpby5lc3RhZG8uY29uZmlnLmVtcHJlc2Ff
+bm9tYnJlIHx8ICcnKTsKCiAgdmFyIHBhcmFtcyA9IG5ldyBVUkxTZWFyY2hQYXJhbXMobG9jYXRpb24uc2VhcmNoKTsKICB2YXIgaGFzaCA9IHBhcmFtcy5nZXQoJ2hhc2gnKTsKICB2YXIgcmVzdWx0YWRvID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3Jlc3Vs
+dGFkbycpOwogIGlmICghaGFzaCkgeyByZXN1bHRhZG8uaW5uZXJIVE1MID0gJzxwIGNsYXNzPSJtZW5zYWplLWVzdGFkbyBlcnJvciI+JyArIEkxOG4udCgnZmFsdGFfY29kaWdvX2RvY3VtZW50bycpICsgJzwvcD4nOyByZXR1cm47IH0KCiAgYXN5bmMgZnVuY3Rp
+b24gdmVyaWZpY2FyXygpIHsKICAgIHRyeSB7CiAgICAgIHZhciBkYXRvcyA9IGF3YWl0IHdpbmRvdy5TaXRpby5sbGFtYXJBcGkoJ2Zpcm1hLnZlcmlmaWNhcicsIHsgaGFzaDogaGFzaCB9KTsKICAgICAgaWYgKGRhdG9zLnZhbGlkbykgewogICAgICAgIHJlc3Vs
+dGFkby5pbm5lckhUTUwgPQogICAgICAgICAgJzxwIGNsYXNzPSJtZW5zYWplLWVzdGFkbyBvayI+JyArIEkxOG4udCgnZG9jdW1lbnRvX3ZhbGlkb19zaW5fYWx0ZXJhcicpICsgJzwvcD4nICsKICAgICAgICAgICc8cD48c3Ryb25nPicgKyBJMThuLnQoJ3RpcG9f
+ZG9jdW1lbnRvJykgKyAnOjwvc3Ryb25nPiAnICsgZGF0b3MudGlwb19kb2N1bWVudG8gKyAnPGJyPicgKwogICAgICAgICAgJzxzdHJvbmc+JyArIEkxOG4udCgnbnVtZXJvX2RvY3VtZW50bycpICsgJzo8L3N0cm9uZz4gJyArIGRhdG9zLmlkX2RvY3VtZW50byAr
+ICc8YnI+JyArCiAgICAgICAgICAnPHN0cm9uZz4nICsgSTE4bi50KCdmZWNoYV9kb2N1bWVudG8nKSArICc6PC9zdHJvbmc+ICcgKyBuZXcgRGF0ZShkYXRvcy5mZWNoYSkudG9Mb2NhbGVEYXRlU3RyaW5nKCdlcy1DTCcpICsgJzwvcD4nICsKICAgICAgICAgICc8
+cCBzdHlsZT0iY29sb3I6dmFyKC0tY29sb3ItdGV4dG8tc3VhdmUpOyBmb250LXNpemU6Ljg1cmVtIj4nICsgSTE4bi50KCdub3RhX2Zpcm1hJykgKyAnPC9wPic7CiAgICAgIH0gZWxzZSB7CiAgICAgICAgcmVzdWx0YWRvLmlubmVySFRNTCA9ICc8cCBjbGFzcz0i
+bWVuc2FqZS1lc3RhZG8gZXJyb3IiPicgKyBJMThuLnQoJ2RvY3VtZW50b19pbnZhbGlkb19yZXZvY2FkbycpICsgJzwvcD4nOwogICAgICB9CiAgICB9IGNhdGNoIChlKSB7CiAgICAgIHJlc3VsdGFkby5pbm5lckhUTUwgPSAnPHAgY2xhc3M9Im1lbnNhamUtZXN0
+YWRvIGVycm9yIj4nICsgSTE4bi50KCdub19zZV9wdWRvX3ZlcmlmaWNhcicsIHsgZXJyb3I6IGUubWVzc2FnZSB9KSArICc8L3A+JzsKICAgIH0KICB9CiAgYXdhaXQgdmVyaWZpY2FyXygpOwp9KSgpOwo8L3NjcmlwdD4KPC9ib2R5Pgo8L2h0bWw+Cg==
