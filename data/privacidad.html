@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de privacidad</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+<header class="cabecera"><div class="contenedor"><a class="logo" href="index.html" id="logo-empresa">—</a>
+  <div class="selector-idioma" id="selector-idioma" role="group" aria-label="Idioma / Language / 语言">
+    <button type="button" data-idioma="es">ES</button><button type="button" data-idioma="en">EN</button><button type="button" data-idioma="zh">中文</button>
+  </div>
+</div></header>
+<main>
+  <section>
+    <div class="contenedor" style="max-width:760px">
+      <div class="seccion-encabezado"><h2 id="titulo-politica"></h2></div>
+      <p id="aviso-corto" style="text-align:center; color:var(--color-texto-suave)"></p>
+
+      <div id="cuerpo-politica"></div>
+
+      <form class="formulario" id="form-arco">
+        <div class="campo"><label id="lbl-nombre">Nombre</label><input name="nombre" type="text"></div>
+        <div class="campo"><label id="lbl-contacto">Correo o RUT (para poder responderte)</label><input required name="contacto" type="text"></div>
+        <div class="campo"><label id="lbl-tipo">Tipo de solicitud</label>
+          <select name="tipo" required id="select-tipo">
+            <option value="acceso">Acceso a mis datos</option>
+            <option value="rectificacion">Rectificación de datos inexactos</option>
+            <option value="supresion">Supresión de mis datos</option>
+            <option value="oposicion">Oposición a un tratamiento</option>
+            <option value="portabilidad">Portabilidad a otro responsable</option>
+            <option value="limitacion">Limitación del tratamiento</option>
+          </select>
+        </div>
+        <div class="campo"><label id="lbl-detalle">Detalle (opcional)</label><textarea name="detalle" rows="3"></textarea></div>
+        <button class="btn btn-primario" type="submit" id="btn-enviar-arco">Enviar solicitud</button>
+        <div id="estado-arco"></div>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="pie"><div class="contenedor"><small id="pie-empresa"></small></div></footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/config.js"></script>
+<script>
+(async function () {
+  function esc(s) { var d = document.createElement('div'); d.textContent = s === undefined || s === null ? '' : String(s); return d.innerHTML; }
+
+  // ---- Textos legales completos por idioma. Los valores entre {} se completan con datos
+  // reales de Config (nombre de la empresa, correo del encargado, terceros configurados) — así
+  // el texto siempre refleja lo que hay cargado en la hoja, sin quedar desactualizado. ----
+  var TEXTOS = {
+    es: {
+      titulo: 'Política de privacidad', enviando: 'Enviando…', enviar: 'Enviar solicitud',
+      lblNombre: 'Nombre', lblContacto: 'Correo o RUT (para poder responderte)', lblTipo: 'Tipo de solicitud', lblDetalle: 'Detalle (opcional)',
+      tipos: { acceso: 'Acceso a mis datos', rectificacion: 'Rectificación de datos inexactos', supresion: 'Supresión de mis datos', oposicion: 'Oposición a un tratamiento', portabilidad: 'Portabilidad a otro responsable', limitacion: 'Limitación del tratamiento' },
+      ok: function (id, fecha) { return 'Solicitud ' + id + ' recibida. Te responderemos antes del ' + fecha + '.'; },
+      cuerpo: function (v) {
+        return (
+          '<p>Esta política aplica al sitio de <strong>' + v.empresa + '</strong> y describe, en términos claros, qué datos recopilamos, para qué los usamos, ' +
+          'con quién los compartimos y qué derechos tienes. Cumplimos la Ley N° 21.719 sobre Protección de Datos Personales de Chile, y seguimos además ' +
+          'los principios de estándares internacionales de referencia (como el RGPD europeo): minimización de datos, transparencia, límite de finalidad y plazos de conservación definidos.</p>' +
+          '<h3>Qué datos recopilamos</h3><ul>' +
+          '<li><strong>Datos de contacto:</strong> nombre, correo, teléfono — cuando escribes el formulario de contacto, pides una cotización o agendas una reunión.</li>' +
+          '<li><strong>Datos de identificación tributaria:</strong> RUT — necesario para emitir cotizaciones, contratos y documentos tributarios.</li>' +
+          '<li><strong>Datos de la relación comercial:</strong> historial de cotizaciones, contratos, pagos y servicios contratados.</li>' +
+          '<li><strong>Datos técnicos básicos de navegación</strong> (si la analítica está activada en Config): páginas visitadas, dispositivo, origen de la visita — nunca contenido de tus mensajes.</li>' +
+          '</ul>' +
+          '<h3>Para qué los usamos</h3><p>Únicamente para responder tu consulta, preparar y gestionar cotizaciones/contratos, prestar el servicio contratado, cumplir obligaciones legales y tributarias, y — si corresponde — mejorar el sitio con estadísticas agregadas de uso. No vendemos tus datos a terceros.</p>' +
+          '<h3>Uso de inteligencia artificial</h3>' +
+          (v.iaFrontend ? '<p><strong>En el sitio (frontend):</strong> usamos asistencia de inteligencia artificial para ayudarte con consultas generales, información de servicios, precios y disponibilidad de stock, buscando darte una mejor experiencia de autoservicio. No se usa para tomar decisiones que te afecten legalmente sin intervención humana.</p>' : '') +
+          (v.iaBackend ? '<p><strong>Internamente (backend):</strong> podemos usar inteligencia artificial como apoyo para generar informes financieros, recomendaciones y tareas administrativas internas. Esto no implica que un tercero externo acceda a tus datos personales fuera de los proveedores de IA listados abajo, bajo las mismas condiciones de confidencialidad.</p>' : '') +
+          '<h3>Con quién compartimos datos (terceros)</h3><p>' + esc(v.terceros) + '</p>' +
+          '<h3>Transferencia internacional de datos</h3><p>Parte de la infraestructura que usamos (Google, Cloudflare, GitHub) procesa datos en servidores fuera de Chile. Estos proveedores cuentan con estándares de seguridad y cumplimiento reconocidos internacionalmente (equivalentes a los exigidos por el RGPD europeo), y solo acceden a los datos estrictamente necesarios para operar el servicio.</p>' +
+          '<h3>Cuánto tiempo conservamos tus datos</h3><p>Mientras dure la relación comercial y, después, por el plazo que exige la normativa tributaria y comercial chilena. Puedes solicitar la supresión anticipada cuando no exista una obligación legal que lo impida.</p>' +
+          '<h3>Tus derechos</h3><p>De acuerdo a la ley, en cualquier momento puedes pedir <strong>acceso, rectificación, supresión, oposición, portabilidad o limitación</strong> de tus datos. Puedes escribir directamente a <a href="mailto:' + esc(v.email) + '">' + esc(v.email) + '</a>, o completar este formulario — respondemos dentro del plazo indicado más abajo:</p>'
+        );
+      }
+    },
+    en: {
+      titulo: 'Privacy policy', enviando: 'Sending…', enviar: 'Send request',
+      lblNombre: 'Name', lblContacto: 'Email or tax ID (so we can reply)', lblTipo: 'Request type', lblDetalle: 'Details (optional)',
+      tipos: { acceso: 'Access my data', rectificacion: 'Correct inaccurate data', supresion: 'Delete my data', oposicion: 'Object to processing', portabilidad: 'Port data to another controller', limitacion: 'Restrict processing' },
+      ok: function (id, fecha) { return 'Request ' + id + ' received. We will respond by ' + fecha + '.'; },
+      cuerpo: function (v) {
+        return (
+          '<p>This policy applies to the <strong>' + v.empresa + '</strong> website and explains, in plain terms, what data we collect, what we use it for, ' +
+          'who we share it with, and what rights you have. We comply with Chilean Law No. 21.719 on Personal Data Protection, and we also follow the ' +
+          'principles of internationally recognized standards (such as the EU GDPR): data minimization, transparency, purpose limitation, and defined retention periods.</p>' +
+          '<h3>What data we collect</h3><ul>' +
+          '<li><strong>Contact details:</strong> name, email, phone — when you use the contact form, request a quote, or book a meeting.</li>' +
+          '<li><strong>Tax identification:</strong> tax ID — needed to issue quotes, contracts and tax documents.</li>' +
+          '<li><strong>Business relationship data:</strong> history of quotes, contracts, payments and contracted services.</li>' +
+          '<li><strong>Basic technical browsing data</strong> (if analytics is enabled in Config): pages visited, device, referral source — never the content of your messages.</li>' +
+          '</ul>' +
+          '<h3>What we use it for</h3><p>Only to answer your inquiry, prepare and manage quotes/contracts, deliver the contracted service, meet legal and tax obligations, and — where applicable — improve the site using aggregated usage statistics. We do not sell your data to third parties.</p>' +
+          '<h3>Use of artificial intelligence</h3>' +
+          (v.iaFrontend ? '<p><strong>On the site (frontend):</strong> we use AI assistance to help with general inquiries, service information, pricing and stock availability, aiming for a better self-service experience. It is not used to make legally significant decisions about you without human involvement.</p>' : '') +
+          (v.iaBackend ? '<p><strong>Internally (backend):</strong> we may use AI to help generate financial reports, recommendations, and internal administrative tasks. This does not mean an outside party accesses your personal data beyond the AI providers listed below, under the same confidentiality terms.</p>' : '') +
+          '<h3>Who we share data with (third parties)</h3><p>' + esc(v.terceros) + '</p>' +
+          '<h3>International data transfers</h3><p>Part of the infrastructure we use (Google, Cloudflare, GitHub) processes data on servers outside Chile. These providers maintain internationally recognized security and compliance standards (equivalent to those required under the EU GDPR), and only access the data strictly necessary to operate the service.</p>' +
+          '<h3>How long we keep your data</h3><p>For as long as the business relationship lasts, and afterward for the period required by Chilean tax and commercial regulations. You may request early deletion where no legal obligation prevents it.</p>' +
+          '<h3>Your rights</h3><p>Under the law, you may at any time request <strong>access, correction, deletion, objection, portability, or restriction</strong> of your data. You can write directly to <a href="mailto:' + esc(v.email) + '">' + esc(v.email) + '</a>, or fill out this form — we respond within the deadline shown below:</p>'
+        );
+      }
+    },
+    zh: {
+      titulo: '隐私政策', enviando: '正在发送…', enviar: '提交申请',
+      lblNombre: '姓名', lblContacto: '邮箱或税号（以便我们回复您）', lblTipo: '申请类型', lblDetalle: '详情（可选）',
+      tipos: { acceso: '访问我的数据', rectificacion: '更正不准确的数据', supresion: '删除我的数据', oposicion: '反对处理', portabilidad: '将数据转移至其他责任方', limitacion: '限制处理' },
+      ok: function (id, fecha) { return '申请 ' + id + ' 已收到，我们将在 ' + fecha + ' 前回复您。'; },
+      cuerpo: function (v) {
+        return (
+          '<p>本政策适用于 <strong>' + v.empresa + '</strong> 网站，明确说明我们收集哪些数据、用途、共享对象以及您享有的权利。我们遵守智利第21.719号《个人数据保护法》，' +
+          '并遵循国际公认标准（如欧盟GDPR）的原则：数据最小化、透明度、目的限制以及明确的保留期限。</p>' +
+          '<h3>我们收集哪些数据</h3><ul>' +
+          '<li><strong>联系信息：</strong>姓名、邮箱、电话——当您使用联系表单、申请报价或预约会议时。</li>' +
+          '<li><strong>税务识别信息：</strong>税号——用于开具报价单、合同和税务文件。</li>' +
+          '<li><strong>业务往来数据：</strong>报价单、合同、付款及已签约服务的历史记录。</li>' +
+          '<li><strong>基础浏览技术数据</strong>（如Config中启用了统计分析）：访问页面、设备信息、来源渠道——绝不包括您的留言内容。</li>' +
+          '</ul>' +
+          '<h3>用途</h3><p>仅用于回复您的咨询、准备和管理报价/合同、提供已签约服务、履行法律和税务义务，以及（如适用）通过汇总使用统计改进网站。我们不会将您的数据出售给第三方。</p>' +
+          '<h3>人工智能的使用</h3>' +
+          (v.iaFrontend ? '<p><strong>网站端（前端）：</strong>我们使用人工智能协助解答一般咨询、提供服务信息、价格及库存情况，以提升自助服务体验。人工智能不会在无人工介入的情况下对您作出具有法律意义的决定。</p>' : '') +
+          (v.iaBackend ? '<p><strong>内部（后端）：</strong>我们可能使用人工智能协助生成财务报告、建议及内部行政事务。这并不意味着下方列出的AI服务提供商之外的第三方能访问您的个人数据，且均在同等保密条款下进行。</p>' : '') +
+          '<h3>数据共享对象（第三方）</h3><p>' + esc(v.terceros) + '</p>' +
+          '<h3>数据跨境传输</h3><p>我们使用的部分基础设施（Google、Cloudflare、GitHub）在智利境外的服务器上处理数据。这些服务商均具备国际公认的安全与合规标准（相当于欧盟GDPR的要求），且仅访问运营服务所必需的数据。</p>' +
+          '<h3>数据保留期限</h3><p>在业务关系存续期间，以及此后按智利税务和商业法规要求的期限保留。在无法律义务限制的情况下，您可以申请提前删除。</p>' +
+          '<h3>您的权利</h3><p>根据法律规定，您可以随时申请<strong>访问、更正、删除、反对处理、数据可携带或限制处理</strong>您的数据。您可以直接致信 <a href="mailto:' + esc(v.email) + '">' + esc(v.email) + '</a>，或填写以下表单——我们将在下方注明的期限内回复：</p>'
+        );
+      }
+    }
+  };
+
+  await window.Sitio.iniciar();
+  var c = window.Sitio.estado.config;
+  document.getElementById('logo-empresa').textContent = c.empresa_nombre || '';
+  document.getElementById('pie-empresa').textContent = '© ' + new Date().getFullYear() + ' ' + (c.empresa_nombre || '');
+
+  var valores = {
+    empresa: c.empresa_nombre || '', email: c.privacidad_encargado_email || c.empresa_correo || '',
+    terceros: c.privacidad_terceros || '', iaFrontend: c.privacidad_usa_ia_frontend !== false && c.privacidad_usa_ia_frontend !== 'FALSE',
+    iaBackend: c.privacidad_usa_ia_backend !== false && c.privacidad_usa_ia_backend !== 'FALSE'
+  };
+
+  function pintar_() {
+    var t = TEXTOS[I18n.idioma()] || TEXTOS.es;
+    document.documentElement.setAttribute('lang', I18n.idioma());
+    document.getElementById('titulo-politica').textContent = t.titulo;
+    document.getElementById('aviso-corto').textContent = c.privacidad_aviso_corto || '';
+    document.getElementById('cuerpo-politica').innerHTML = t.cuerpo(valores);
+    document.getElementById('lbl-nombre').textContent = t.lblNombre;
+    document.getElementById('lbl-contacto').textContent = t.lblContacto;
+    document.getElementById('lbl-tipo').textContent = t.lblTipo;
+    document.getElementById('lbl-detalle').textContent = t.lblDetalle;
+    document.getElementById('btn-enviar-arco').textContent = t.enviar;
+    var select = document.getElementById('select-tipo');
+    Array.prototype.forEach.call(select.options, function (opt) { opt.textContent = t.tipos[opt.value] || opt.value; });
+    document.querySelectorAll('#selector-idioma button').forEach(function (b) { b.classList.toggle('activo', b.getAttribute('data-idioma') === I18n.idioma()); });
+  }
+  document.getElementById('selector-idioma').addEventListener('click', function (ev) {
+    var btn = ev.target.closest('[data-idioma]'); if (!btn) { return; }
+    I18n.setIdioma(btn.getAttribute('data-idioma')); pintar_();
+  });
+  pintar_();
+
+  document.getElementById('form-arco').addEventListener('submit', async function (ev) {
+    ev.preventDefault();
+    var t = TEXTOS[I18n.idioma()] || TEXTOS.es;
+    var fd = new FormData(ev.target);
+    var contacto = fd.get('contacto').trim();
+    var esRut = /^\d{7,8}-[\dkK]$/.test(contacto);
+    var estadoDiv = document.getElementById('estado-arco');
+    estadoDiv.innerHTML = '<p class="mensaje-estado">' + t.enviando + '</p>';
+    try {
+      var datos = await window.Sitio.llamarApi('privacidad.solicitar', {
+        nombre: fd.get('nombre'), email: esRut ? '' : contacto, id_cliente: esRut ? contacto : '',
+        tipo: fd.get('tipo'), detalle: fd.get('detalle')
+      });
+      estadoDiv.innerHTML = '<p class="mensaje-estado ok">' + esc(t.ok(datos.id_solicitud, new Date(datos.plazo).toLocaleDateString(I18n.idioma() === 'zh' ? 'zh-CN' : (I18n.idioma() === 'en' ? 'en-US' : 'es-CL')))) + '</p>';
+      ev.target.reset();
+    } catch (e) { estadoDiv.innerHTML = '<p class="mensaje-estado error">' + esc(e.message) + '</p>'; }
+  });
+})();
+</script>
+</body>
+</html>
