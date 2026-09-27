@@ -13,9 +13,9 @@
       "unidad_precio": "UF",
       "impuesto": 0.19,
       "estado": "activo",
-      "creado_en": "2026-09-27T04:11:33.108Z",
+      "creado_en": "2026-09-26T23:58:43.447Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-27T04:11:33.108Z",
+      "actualizado_en": "2026-09-26T23:58:43.447Z",
       "actualizado_por": "instalador",
       "activo": true
     }
@@ -27,9 +27,9 @@
       "sku": "EBK-DTE-01-PDF",
       "atributos": "{\"formato\":\"PDF\"}",
       "precio": 0.5,
-      "creado_en": "2026-09-27T04:11:33.108Z",
+      "creado_en": "2026-09-26T23:58:43.447Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-27T04:11:33.108Z",
+      "actualizado_en": "2026-09-26T23:58:43.447Z",
       "actualizado_por": "instalador",
       "activo": true
     }
@@ -41,9 +41,9 @@
       "nombre": "Consultoría tributaria",
       "slug": "consultoria-tributaria",
       "orden": 1,
-      "creado_en": "2026-09-27T04:11:33.108Z",
+      "creado_en": "2026-09-26T23:58:43.447Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-27T04:11:33.108Z",
+      "actualizado_en": "2026-09-26T23:58:43.447Z",
       "actualizado_por": "instalador",
       "activo": true
     },
@@ -53,9 +53,9 @@
       "nombre": "Plantillas y ebooks",
       "slug": "plantillas-ebooks",
       "orden": 2,
-      "creado_en": "2026-09-27T04:11:33.108Z",
+      "creado_en": "2026-09-26T23:58:43.447Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-27T04:11:33.108Z",
+      "actualizado_en": "2026-09-26T23:58:43.447Z",
       "actualizado_por": "instalador",
       "activo": true
     }
@@ -68,9 +68,9 @@
       "nombre": "Incluye",
       "valor": "Informe ejecutivo en PDF",
       "orden": 1,
-      "creado_en": "2026-09-27T04:11:33.108Z",
+      "creado_en": "2026-09-26T23:58:43.447Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-27T04:11:33.108Z",
+      "actualizado_en": "2026-09-26T23:58:43.447Z",
       "actualizado_por": "instalador",
       "activo": true
     },
@@ -81,9 +81,9 @@
       "nombre": "Reunión de cierre",
       "valor": "1 hora por videollamada",
       "orden": 2,
-      "creado_en": "2026-09-27T04:11:33.108Z",
+      "creado_en": "2026-09-26T23:58:43.447Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-27T04:11:33.108Z",
+      "actualizado_en": "2026-09-26T23:58:43.447Z",
       "actualizado_por": "instalador",
       "activo": true
     }
@@ -94,13 +94,13 @@
       "id_item": "PLN-000002",
       "tipo": "porcentaje",
       "valor": 10,
-      "vigencia_desde": "2026-09-26T03:00:00.000Z",
+      "vigencia_desde": "2026-09-25T03:00:00.000Z",
       "vigencia_hasta": "",
       "codigo": "LANZAMIENTO10",
       "condiciones": "Solo primera compra",
-      "creado_en": "2026-09-27T04:11:33.108Z",
+      "creado_en": "2026-09-26T23:58:43.447Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-27T04:11:33.108Z",
+      "actualizado_en": "2026-09-26T23:58:43.447Z",
       "actualizado_por": "instalador",
       "activo": true
     }
