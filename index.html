@@ -207,20 +207,6 @@
     boton.setAttribute('aria-expanded', abierta ? 'true' : 'false');
   });
 
-  // Abre (si hace falta) y hace scroll hasta una categoría de "Planes" enlazada como
-  // "#planes/<categoria>" (ver Menu — cada hijo de "Planes" enlaza así). Si el ancla no
-  // corresponde a ninguna categoría (o la página no es "Planes"), no hace nada.
-  function abrirYDesplazarCategoria_(main, anclaSlug) {
-    var nodo = main.querySelector('#categoria-' + anclaSlug);
-    if (!nodo) { return; }
-    if (nodo.classList.contains('categoria-planes') && !nodo.classList.contains('abierta')) {
-      nodo.classList.add('abierta');
-      var boton = nodo.querySelector('.categoria-planes-cabecera');
-      if (boton) { boton.setAttribute('aria-expanded', 'true'); }
-    }
-    nodo.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
   // Reubica la barra de indicadores DENTRO del contenido recién pintado: debajo del banner
   // (".seccion-hero") si la página tiene uno — antes del primer título de la siguiente
   // sección, como pidió el negocio — o al comienzo del contenido si la página no tiene hero.
@@ -288,20 +274,17 @@
       return;
     }
 
-    // Soporta "slug/ancla" (ej. "planes/contabilidad-digital", ver Menu → hijos de "Planes")
-    // sin tocar el resto del router: se busca la página por su slug (antes de la "/") y, una
-    // vez pintada, se despliega/hace scroll hasta esa categoría — ver abrirYDesplazarCategoria_.
-    var partesRuta = ruta.split('/');
-    var slugPagina = partesRuta[0], ancla = partesRuta[1];
-    var pagina = window.Sitio.paginaPorSlug(slugPagina);
+    // Las páginas de servicio usan un slug de varias partes (ej. "servicios/contabilidad-digital"
+    // o "servicios/contabilidad-digital/planes-emprendedores") — Paginas.slug guarda el path
+    // completo como un solo string, así que se compara tal cual, sin partirlo por "/".
+    var pagina = window.Sitio.paginaPorSlug(ruta);
     document.title = (pagina ? Render.campo(pagina, 'titulo', idioma) + ' — ' : '') + (estado.config.empresa_nombre || '');
     main.innerHTML = Render.renderPagina(pagina, estado.config, idioma);
-    if (slugPagina === 'contacto' || (pagina && pagina.slug === 'contacto')) { Formulario.montar(document.getElementById('contenido-pagina')); }
+    if (ruta === 'contacto' || (pagina && pagina.slug === 'contacto')) { Formulario.montar(document.getElementById('contenido-pagina')); }
     if (window.Herramientas) { Herramientas.montar(main); }
     if (window.Diagnostico) { Diagnostico.montar(main); }
     Render.activarReveal(main);
     reubicarBarraIndicadores_();
-    if (ancla) { abrirYDesplazarCategoria_(main, ancla); }
   }
 
   function renderTienda_(idioma) {
