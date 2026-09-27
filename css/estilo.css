@@ -72,6 +72,25 @@ p { margin: 0 0 1em; color: var(--color-texto-suave); }
 :root[data-theme="dark"] .cabecera { background: rgba(11,18,32,.78); }
 @media (prefers-color-scheme: dark) { :root[data-theme="auto"] .cabecera { background: rgba(11,18,32,.78); } }
 .cabecera.con-sombra { box-shadow: 0 6px 24px rgba(15,23,42,.08); border-bottom-color: var(--color-borde); }
+
+/* ---- Barra de indicadores financieros (mostrar/ocultar: Config.mostrar_barra_indicadores) ---- */
+.barra-indicadores {
+  overflow: hidden; white-space: nowrap; background: var(--color-secundario); border-bottom: 1px solid var(--color-borde);
+}
+.barra-indicadores .pista-indicadores {
+  display: inline-block; padding-left: 100%; animation: deslizar-indicadores 55s linear infinite;
+}
+.barra-indicadores:hover .pista-indicadores { animation-play-state: paused; }
+.item-indicador {
+  display: inline-block; padding: 8px 22px; font-size: .82rem; color: #e2e8f0; font-variant-numeric: tabular-nums;
+}
+.item-indicador strong { color: #fff; margin-right: 6px; }
+.item-indicador .sube { color: #4ade80; margin-left: 6px; }
+.item-indicador .baja { color: #f87171; margin-left: 6px; }
+@keyframes deslizar-indicadores { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .barra-indicadores .pista-indicadores { animation: none; padding-left: 0; white-space: normal; }
+}
 .cabecera .contenedor { display: flex; align-items: center; justify-content: space-between; height: 72px; }
 .cabecera .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; color: var(--color-texto-cabecera); letter-spacing: -.01em; }
 .cabecera .logo img { height: 36px; width: auto; border-radius: 8px; }
