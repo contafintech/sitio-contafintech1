@@ -196,7 +196,11 @@ window.Render = (function () {
     var d = e ? datosIdioma_(e, idioma) : { columnas: [], filas: [] };
     var thead = '<tr>' + (d.columnas || []).map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>';
     var tbody = (d.filas || []).map(function (f) { return '<tr>' + f.map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>'; }).join('');
-    return seccionConEncabezado_(s, '<table class="comparativa"><thead>' + thead + '</thead><tbody>' + tbody + '</tbody></table>', idioma);
+    // Envuelta en su propio contenedor con scroll horizontal (mismo patrón que la barra de
+    // indicadores y las migas de pan): en móvil, 4 columnas de texto no caben en el ancho de
+    // pantalla, y sin este contenedor la tabla forzaba el ancho de TODA la página en vez de
+    // desplazarse solo ella — bug real encontrado al probar responsive, no solo teórico.
+    return seccionConEncabezado_(s, '<div class="tabla-comparativa-scroll"><table class="comparativa"><thead>' + thead + '</thead><tbody>' + tbody + '</tbody></table></div>', idioma);
   }
 
   function seccionConEncabezado_(s, cuerpo, idioma) {
