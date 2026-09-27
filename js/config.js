@@ -10,7 +10,7 @@ window.Sitio = (function () {
   // quiere cambiar sin tocar este archivo.
   var URL_API_POR_DEFECTO = 'https://script.google.com/macros/s/REEMPLAZAR_CON_EL_ID_DEL_DEPLOY/exec';
 
-  var estado = { config: {}, paginas: [], catalogo: {}, servicios: {}, blog: [], indicadores: [] };
+  var estado = { config: {}, paginas: [], catalogo: {}, servicios: {}, blog: [], indicadores: [], mercado: { usa: [], chile: [], cripto: [], yen: null } };
 
   function rutaDatos_(nombre) { return 'data/' + nombre + '.json?_=' + Date.now(); }
 
@@ -91,9 +91,10 @@ window.Sitio = (function () {
   async function cargarTodo_() {
     var resultados = await Promise.all([
       cargarJson_('config', {}), cargarJson_('paginas', []), cargarJson_('catalogo', { productos: [], variantes: [], categorias: [], caracteristicas: [], descuentos: [] }),
-      cargarJson_('servicios', { servicios: [], planes: [], packs: [], pack_items: [] }), cargarJson_('blog', []), cargarJson_('indicadores', [])
+      cargarJson_('servicios', { servicios: [], planes: [], packs: [], pack_items: [] }), cargarJson_('blog', []), cargarJson_('indicadores', []),
+      cargarJson_('mercado', { usa: [], chile: [], cripto: [], yen: null })
     ]);
-    return { config: resultados[0], paginas: resultados[1], catalogo: resultados[2], servicios: resultados[3], blog: resultados[4], indicadores: resultados[5] };
+    return { config: resultados[0], paginas: resultados[1], catalogo: resultados[2], servicios: resultados[3], blog: resultados[4], indicadores: resultados[5], mercado: resultados[6] };
   }
 
   async function iniciar() {
@@ -128,7 +129,7 @@ window.Sitio = (function () {
   // (document.hidden) y retoma al volver, para no gastar cuota de lectura sin necesidad.
   function activarActualizacionAutomatica(segundos) {
     if (intervaloActualizacion_) { clearInterval(intervaloActualizacion_); }
-    ultimoJson_ = JSON.stringify({ config: estado.config, paginas: estado.paginas, catalogo: estado.catalogo, servicios: estado.servicios, blog: estado.blog, indicadores: estado.indicadores });
+    ultimoJson_ = JSON.stringify({ config: estado.config, paginas: estado.paginas, catalogo: estado.catalogo, servicios: estado.servicios, blog: estado.blog, indicadores: estado.indicadores, mercado: estado.mercado });
     intervaloActualizacion_ = setInterval(function () {
       if (document.hidden) { return; }
       recargar().catch(function (e) { console.warn('No se pudo revisar actualizaciones del sitio:', e.message); });
