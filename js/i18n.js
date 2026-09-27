@@ -56,6 +56,11 @@ window.I18n = (function () {
     volvemos_pronto_titulo: { es: 'Volvemos pronto', en: 'Back soon', zh: '即将回归' },
     volvemos_pronto_texto: { es: 'Estamos actualizando el sitio. Gracias por tu paciencia.', en: 'We are updating the site. Thanks for your patience.', zh: '网站正在更新中，感谢您的耐心等待。' },
     politica_privacidad: { es: 'Política de privacidad', en: 'Privacy policy', zh: '隐私政策' },
+    // ---- Pie de página (3 columnas, ver pintarPie_ en index.html) ----
+    pie_titulo_ayuda: { es: 'Ayuda', en: 'Help', zh: '帮助' },
+    pie_titulo_menu: { es: 'Menú principal', en: 'Main menu', zh: '主菜单' },
+    pie_titulo_contacto: { es: 'Contáctanos', en: 'Contact us', zh: '联系我们' },
+    pie_canal_youtube: { es: 'Canal de YouTube', en: 'YouTube channel', zh: 'YouTube 频道' },
     pie_generado: { es: 'Sitio generado y administrado 100% desde Google Sheets.', en: 'Site generated and managed 100% from Google Sheets.', zh: '网站100%通过 Google Sheets 生成与管理。' },
     menu_tienda: { es: 'Tienda', en: 'Shop', zh: '商店' },
     menu_blog: { es: 'Blog', en: 'Blog', zh: '博客' },
