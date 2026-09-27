@@ -300,6 +300,81 @@ window.Render = (function () {
     return seccionConEncabezado_(s, '<div class="grid-pasos-proceso">' + pasos + '</div>', idioma);
   }
 
+  // ---- Planes reales del catálogo (estilo Google Workspace) --------------------------------
+  // Elemento tipo='plan_ref': datos = { id_plan, accion: 'cotizar'|'contratar'|'suscribir' };
+  // enlace (opcional) = link "Ver el detalle completo" hacia la landing propia del plan.
+  // A propósito, la tarjeta NO trae nombre/precio/características escritas en el Elemento: se
+  // resuelven en vivo contra el catálogo real (data/servicios.json → estado.servicios.planes,
+  // data/catalogo.json → estado.catalogo.caracteristicas), el mismo que usa el backend
+  // (Catalogo.item/precio/caracteristicas en 11_Catalogo.gs) para armar una Cotización. Así lo
+  // que el cliente ve, cotiza y — al aceptar la cotización — termina en su Contrato es siempre
+  // exactamente el mismo dato: nunca un texto suelto que se pueda desincronizar del precio real.
+  function planDe_(idPlan) {
+    var estado = window.Sitio.estado;
+    return (estado.servicios.planes || []).filter(function (p) { return p.id_plan === idPlan; })[0] || null;
+  }
+  function caracteristicasDePlan_(idPlan) {
+    var estado = window.Sitio.estado;
+    return (estado.catalogo.caracteristicas || []).filter(function (c) { return c.id_item === idPlan; })
+      .sort(function (a, b) { return Number(a.orden || 0) - Number(b.orden || 0); });
+  }
+  function formatoPrecioPlan_(monto, unidad) {
+    monto = Number(monto || 0);
+    if (unidad === 'UF') { return monto.toLocaleString('es-CL', { minimumFractionDigits: monto % 1 ? 1 : 0, maximumFractionDigits: 2 }) + ' UF'; }
+    if (unidad === 'USD') { return 'US$' + monto.toLocaleString('en-US'); }
+    if (unidad === 'EUR') { return '€' + monto.toLocaleString('es-CL'); }
+    return '$' + Math.round(monto).toLocaleString('es-CL');
+  }
+  function sufijoPeriodoPlan_(periodicidad) {
+    if (periodicidad === 'mensual') { return I18n.t('plan_por_mes'); }
+    if (periodicidad === 'anual') { return I18n.t('plan_por_anio'); }
+    return '';
+  }
+  function etiquetaAccionPlan_(accion, periodicidad) {
+    if (accion === 'contratar') { return periodicidad === 'mensual' || periodicidad === 'anual' ? I18n.t('suscribir_plan') : I18n.t('contratar_plan'); }
+    if (accion === 'suscribir') { return I18n.t('suscribir_plan'); }
+    return I18n.t('cotizar_plan');
+  }
+  // El selector "¿Qué quieres hacer?" es un filtro puramente de interfaz (ver index.html, evento
+  // delegado en #contenido-pagina): cambia en vivo la etiqueta y la acción de cada botón de plan
+  // visible en la sección, sin recargar la página — el clic real siempre agrega el id_plan real
+  // al carrito y abre el panel, así el camino hacia cotizar/contratar es siempre el mismo, agible.
+  function selectorIntencionPlanes_() {
+    return (
+      '<div class="selector-intencion-planes" role="group" aria-label="' + esc(I18n.t('elige_que_quieres_hacer')) + '">' +
+      '<button type="button" class="selector-intencion-opcion activa" data-intencion-plan="cotizar">' + esc(I18n.t('solo_cotizar')) + '</button>' +
+      '<button type="button" class="selector-intencion-opcion" data-intencion-plan="contratar">' + esc(I18n.t('quiero_contratar')) + '</button>' +
+      '</div>'
+    );
+  }
+  function planesServicio_(s, i, cfg, idioma) {
+    var refs = porTipo_(s, 'plan_ref');
+    var tarjetas = refs.map(function (ref) {
+      var d = datosIdioma_(ref, idioma);
+      var plan = planDe_(d.id_plan);
+      if (!plan) { console.warn('planesServicio_: no existe el plan', d.id_plan, '(revisa la hoja Planes)'); return ''; }
+      var caract = caracteristicasDePlan_(d.id_plan);
+      var listaHtml = caract.map(function (c) { return '<li>' + esc(c.nombre + (c.valor ? ': ' + c.valor : '')) + '</li>'; }).join('');
+      var accion = d.accion || 'cotizar';
+      var destacado = plan.destacado === true || plan.destacado === 'true';
+      var precioTxt = formatoPrecioPlan_(plan.precio, plan.unidad_precio);
+      var sufijo = sufijoPeriodoPlan_(plan.periodicidad);
+      return (
+        '<div class="tarjeta-plan' + (destacado ? ' destacado' : '') + '" id="plan-' + esc(slugificar_(plan.nombre)) + '">' +
+        (destacado ? '<span class="tarjeta-plan-badge">' + esc(I18n.t('plan_mas_elegido')) + '</span>' : '') +
+        '<h3>' + esc(plan.nombre) + '</h3>' +
+        '<div class="tarjeta-plan-precio">' + esc(precioTxt) + (sufijo ? ' <small>' + esc(sufijo) + '</small>' : '') + '</div>' +
+        '<ul class="tarjeta-plan-caracteristicas">' + listaHtml + '</ul>' +
+        '<button type="button" class="btn btn-primario btn-bloque" data-agregar-plan="' + esc(d.id_plan) + '" data-accion-plan="' + esc(accion) + '" data-periodicidad-plan="' + esc(plan.periodicidad || '') + '">' +
+        esc(etiquetaAccionPlan_(accion, plan.periodicidad)) + '</button>' +
+        (ref.enlace ? '<a class="tarjeta-plan-detalle" href="' + esc(ref.enlace) + '">' + esc(I18n.t('ver_detalle_plan')) + '</a>' : '') +
+        '</div>'
+      );
+    }).join('');
+    var selector = refs.length > 1 ? selectorIntencionPlanes_() : '';
+    return seccionConEncabezado_(s, selector + '<div class="grid-planes-servicio">' + tarjetas + '</div>', idioma);
+  }
+
   // Elemento tipo='diagnostico' (uno solo, o ninguno): el formulario real (con carga de archivo
   // y antispam) lo arma js/diagnostico.js dentro de este contenedor — acá solo se deja el marco
   // con encabezado editable, igual que el resto de las secciones.
@@ -310,7 +385,8 @@ window.Render = (function () {
   var RENDERIZADORES_ = {
     hero: hero_, texto_imagen: textoImagen_, tarjetas: tarjetas_, categoria_planes: categoriaPlanes_, testimonios: testimonios_,
     llamado_accion: llamadoAccion_, preguntas_frecuentes: preguntasFrecuentes_, tabla_comparativa: tablaComparativa_,
-    calculadoras: calculadoras_, diagnostico: diagnostico_, franja_confianza: franjaConfianza_, pasos_proceso: pasosProceso_
+    calculadoras: calculadoras_, diagnostico: diagnostico_, franja_confianza: franjaConfianza_, pasos_proceso: pasosProceso_,
+    planes_servicio: planesServicio_
   };
 
   // cfg = estado.config (data/config.json) — permite que un tipo de sección (hoy solo el
@@ -410,6 +486,10 @@ window.Render = (function () {
 
   return {
     renderPagina: renderPagina, renderMenu: renderMenu, renderBlog: renderBlog, renderPostBlog: renderPostBlog,
-    activarReveal: activarReveal, esc: esc, campo: campo_
+    activarReveal: activarReveal, esc: esc, campo: campo_,
+    // Expuestas para que carrito.js pueda mostrar un precio de referencia por línea con el
+    // mismo formato exacto que ya ven en las tarjetas de plan/producto — nunca un segundo
+    // formateador que pueda mostrar un número distinto para el mismo dato.
+    formatoPrecio: formatoPrecioPlan_, planDe: planDe_
   };
 })();
