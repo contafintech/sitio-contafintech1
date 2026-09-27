@@ -38,10 +38,9 @@
   </div>
 </header>
 
-<!-- Vive fuera de #contenido-pagina para no perderse cada vez que una ruta reescribe su
-     innerHTML: render() la reubica ella misma después de pintar cada página (ver
-     reubicarBarraIndicadores_ más abajo) — debajo del hero/banner si la página tiene uno,
-     o al principio del contenido si no, nunca amontonada junto a la cabecera. -->
+<!-- Solo debe verse en Inicio/Home. render() la saca de #contenido-pagina ANTES de reescribir su
+     innerHTML en cada cambio de ruta (para no ser destruida junto con el contenido anterior) y
+     reubicarBarraIndicadores_() la reinserta debajo del hero solo cuando la ruta es "inicio". -->
 <div class="barra-indicadores oculto" id="barra-indicadores" aria-hidden="true"></div>
 
 <main id="contenido-pagina">
@@ -312,18 +311,24 @@
     setTimeout(function () { boton.disabled = false; boton.textContent = textoOriginal; }, 1400);
   });
 
-  // Reubica la barra de indicadores DENTRO del contenido recién pintado: debajo del banner
-  // (".seccion-hero") si la página tiene uno — antes del primer título de la siguiente
-  // sección, como pidió el negocio — o al comienzo del contenido si la página no tiene hero.
-  // Es el mismo nodo del DOM (no una copia): sobrevive a que #contenido-pagina reescriba su
-  // innerHTML en cada cambio de ruta porque se reinserta después, al final de render().
-  function reubicarBarraIndicadores_() {
+  // La barra de indicadores solo debe verse en Inicio/Home (pedido explícito) — en cualquier
+  // otra ruta se saca del flujo y se oculta con su propia clase ("oculto-ruta"), sin tocar la
+  // clase "oculto" que ya usa pintarBarraIndicadores_() para el caso "sin datos/deshabilitada
+  // desde Config", así ninguna de las dos funciones pisa la decisión de la otra. Dentro de
+  // Inicio, se reubica DENTRO del contenido recién pintado, debajo del banner (".seccion-hero")
+  // — antes del primer título de la siguiente sección, como pidió el negocio. render() ya se
+  // encarga de sacarla de #contenido-pagina ANTES de reescribir su innerHTML en cada cambio de
+  // ruta, así que reinsertarla acá nunca la destruye.
+  function reubicarBarraIndicadores_(ruta) {
     var barra = document.getElementById('barra-indicadores');
     var main = document.getElementById('contenido-pagina');
+    if (ruta !== 'inicio') {
+      barra.classList.add('oculto-ruta');
+      return;
+    }
+    barra.classList.remove('oculto-ruta');
     var hero = main.querySelector('.seccion-hero');
-    var migas = main.querySelector('.migas-pan');
     if (hero) { hero.insertAdjacentElement('afterend', barra); }
-    else if (migas) { migas.insertAdjacentElement('afterend', barra); }
     else { main.insertAdjacentElement('afterbegin', barra); }
   }
 
@@ -486,20 +491,32 @@
     var main = document.getElementById('contenido-pagina');
     var idioma = I18n.idioma();
 
+    // BUG REAL corregido: la barra de indicadores se reubicaba DENTRO de #contenido-pagina
+    // (reubicarBarraIndicadores_ la insertaba después del hero). Como "main.innerHTML = ..."
+    // destruye TODOS los hijos actuales de main, en cuanto la barra quedaba adentro (después de
+    // visitar Inicio una vez) el siguiente cambio de página la borraba del DOM para siempre —
+    // por eso "al salir de Inicio los indicadores se van" y ya no volvían ni al regresar. Se saca
+    // la barra de #contenido-pagina ANTES de reescribir su innerHTML, en todos los casos, para que
+    // nunca sea un hijo de main en el momento del reemplazo.
+    var barraIndicadores = document.getElementById('barra-indicadores');
+    if (barraIndicadores.parentElement === main) {
+      document.body.insertBefore(barraIndicadores, main);
+    }
+
     if (ruta === 'tienda' && !window.Sitio.moduloActivo('tienda')) { ruta = 'inicio'; }
     if ((ruta === 'blog' || ruta.indexOf('blog/') === 0) && !window.Sitio.moduloActivo('blog')) { ruta = 'inicio'; }
 
     if (ruta === 'blog') {
       main.innerHTML = migasDeRuta_('blog', I18n.t('menu_blog'), idioma) + '<section class="reveal"><div class="contenedor"><div class="seccion-encabezado"><h2>' + I18n.t('menu_blog') + '</h2></div><div class="grid-blog">' + Render.renderBlog(estado.blog, idioma) + '</div></div></section>';
       Render.activarReveal(main);
-      reubicarBarraIndicadores_();
+      reubicarBarraIndicadores_(ruta);
       marcarEnlaceActivoMenu_(ruta);
       return;
     }
     if (ruta.indexOf('blog/') === 0) {
       var post = estado.blog.filter(function (p) { return p.slug === ruta.slice(5); })[0];
       main.innerHTML = migasDeRuta_(ruta, post ? Render.campo(post, 'titulo', idioma) : I18n.t('articulo_no_encontrado'), idioma) + Render.renderPostBlog(post, idioma);
-      reubicarBarraIndicadores_();
+      reubicarBarraIndicadores_(ruta);
       marcarEnlaceActivoMenu_(ruta);
       return;
     }
@@ -507,7 +524,7 @@
       main.innerHTML = migasDeRuta_('tienda', I18n.t('menu_tienda'), idioma) + renderTienda_(idioma);
       Carrito.enlazarBotonesAgregar();
       Render.activarReveal(main);
-      reubicarBarraIndicadores_();
+      reubicarBarraIndicadores_(ruta);
       marcarEnlaceActivoMenu_(ruta);
       return;
     }
@@ -524,7 +541,7 @@
     if (window.Herramientas) { Herramientas.montar(main); }
     if (window.Diagnostico) { Diagnostico.montar(main); }
     Render.activarReveal(main);
-    reubicarBarraIndicadores_();
+    reubicarBarraIndicadores_(ruta);
   }
 
   function renderTienda_(idioma) {
