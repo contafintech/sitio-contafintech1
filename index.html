@@ -9,6 +9,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/estilo.css">
+<!-- Íconos del pie de página (Font Awesome), igual que la plantilla de referencia — se carga en
+     el navegador del visitante, no afecta el resto del sitio si falla. -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 <script type="application/ld+json" id="jsonld-organizacion"></script>
 </head>
@@ -67,20 +70,36 @@
   <p class="carrito-nota-flujo" id="carrito-nota-flujo"></p>
 </aside>
 
+<!-- Pie de página fijo (mismo diseño en TODAS las páginas: vive fuera de #contenido-pagina,
+     nunca se vuelve a pintar al cambiar de ruta) — misma estructura de 3 columnas que la
+     plantilla de referencia (Ayuda / Menú principal / Contáctanos con mapa y redes), con los
+     datos siempre en vivo desde Config/Menu de este sitio, nunca hardcodeados a una marca. -->
 <footer class="pie">
   <div class="contenedor">
-    <div>
-      <strong id="pie-empresa">—</strong>
-      <p id="pie-direccion" style="color:#94a3b8"></p>
-      <p id="pie-contacto" style="color:#94a3b8; font-size:.9rem"></p>
-      <div id="pie-redes" style="display:flex; gap:12px; margin-top:10px"></div>
+    <div class="pie-columna">
+      <strong class="pie-marca" id="pie-empresa">—</strong>
+      <p id="pie-descripcion" class="pie-descripcion"></p>
+      <div id="pie-redes" class="pie-redes"></div>
     </div>
-    <div>
-      <div id="pie-medios-pago"></div>
-      <p style="font-size:.85rem"><a href="privacidad.html" id="pie-link-privacidad">Política de privacidad</a></p>
+    <div class="pie-columna" id="pie-columna-ayuda">
+      <h5 id="pie-titulo-ayuda">Ayuda</h5>
+      <ul id="pie-lista-ayuda"></ul>
+    </div>
+    <div class="pie-columna">
+      <h5 id="pie-titulo-menu">Menú principal</h5>
+      <ul id="pie-lista-menu"></ul>
+    </div>
+    <div class="pie-columna">
+      <h5 id="pie-titulo-contacto">Contáctanos</h5>
+      <div id="pie-contacto" class="pie-contacto"></div>
+      <div id="pie-mapa" class="pie-mapa"></div>
     </div>
   </div>
-  <small>© <span id="pie-anio"></span> — <span id="pie-generado">Sitio generado y administrado 100% desde Google Sheets.</span></small>
+  <div class="contenedor pie-linea-inferior">
+    <div id="pie-medios-pago"></div>
+    <p class="pie-privacidad"><a href="privacidad.html" id="pie-link-privacidad">Política de privacidad</a></p>
+    <small>© <span id="pie-anio"></span> — <span id="pie-generado">Sitio generado y administrado 100% desde Google Sheets.</span></small>
+  </div>
 </footer>
 
 <script src="js/i18n.js"></script>
@@ -115,7 +134,7 @@
     if (!btn) { return; }
     I18n.setIdioma(btn.getAttribute('data-idioma'));
   });
-  document.addEventListener('idioma:cambio', function () { aplicarTextosFijos_(); pintarMenu_(); render(); });
+  document.addEventListener('idioma:cambio', function () { aplicarTextosFijos_(); pintarMenu_(); pintarPie_(); render(); });
   aplicarTextosFijos_();
 
   await window.Sitio.iniciar();
@@ -308,9 +327,86 @@
     else { main.insertAdjacentElement('afterbegin', barra); }
   }
 
-  document.getElementById('pie-empresa').textContent = estado.config.empresa_nombre || '';
-  document.getElementById('pie-direccion').textContent = estado.config.empresa_direccion || '';
-  document.getElementById('pie-contacto').textContent = [estado.config.empresa_telefono, estado.config.empresa_correo, estado.config.horario_atencion].filter(Boolean).join(' · ');
+  // ---- Pie de página: mismo diseño de 3 columnas en TODAS las páginas (vive fuera de
+  // #contenido-pagina, nunca se vuelve a pintar al cambiar de ruta) — junta en una sola función
+  // lo que antes estaba duplicado en dos lugares (carga inicial y "casi en vivo"), para que
+  // nunca queden desincronizados entre sí. Cada dato sale de Config/Menu de ESTE sitio — nunca
+  // texto fijo de una marca en particular — para que la estructura sirva para cualquier cliente
+  // del sistema, no solo el actual. ----
+  var ICONOS_REDES_ = {
+    redes_facebook: { clase: 'fa-brands fa-facebook-f', color: '#1877F2' },
+    redes_instagram: { clase: 'fa-brands fa-instagram', color: 'radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)' },
+    redes_linkedin: { clase: 'fa-brands fa-linkedin-in', color: '#0A66C2' },
+    redes_youtube: { clase: 'fa-brands fa-youtube', color: '#FF0000' },
+    redes_tiktok: { clase: 'fa-brands fa-tiktok', color: '#000000' },
+    redes_x: { clase: 'fa-brands fa-x-twitter', color: '#000000' }
+  };
+  function pintarPie_() {
+    var c = estado.config;
+    document.getElementById('pie-empresa').textContent = c.empresa_nombre || '';
+    document.getElementById('pie-descripcion').textContent = c.eslogan || c.descripcion_corta || '';
+
+    // Redes sociales — íconos circulares con su color de marca, igual que la plantilla de
+    // referencia; solo se muestran las que tengan URL configurada (WhatsApp usa su propio
+    // número, ya que no es una "URL de red social" como las demás).
+    var redesHtml = Object.keys(ICONOS_REDES_).map(function (clave) {
+      if (!c[clave]) { return ''; }
+      var r = ICONOS_REDES_[clave];
+      var esGradiente = r.color.indexOf('gradient') === 0;
+      return '<a href="' + Render.esc(c[clave]) + '" target="_blank" rel="noopener" style="' + (esGradiente ? 'background:' + r.color : 'background-color:' + r.color) + '" aria-label="' + clave.replace('redes_', '') + '"><i class="' + r.clase + '"></i></a>';
+    }).join('') + (c.redes_whatsapp ? '<a href="https://wa.me/' + Render.esc(c.redes_whatsapp) + '" target="_blank" rel="noopener" style="background-color:#25D366" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>' : '');
+    document.getElementById('pie-redes').innerHTML = redesHtml;
+
+    // Contacto con ícono por línea (teléfono, WhatsApp, correo, dirección, horario) — cada línea
+    // se omite sola si el dato no está configurado, nunca un "·" o una línea vacía suelta.
+    var lineasContacto = [
+      c.empresa_telefono ? { icono: 'fa-solid fa-phone', html: Render.esc(c.empresa_telefono) } : null,
+      c.redes_whatsapp ? { icono: 'fa-brands fa-whatsapp', html: '<a href="https://wa.me/' + Render.esc(c.redes_whatsapp) + '" target="_blank" rel="noopener">WhatsApp: ' + Render.esc(c.redes_whatsapp) + '</a>' } : null,
+      c.empresa_correo ? { icono: 'fa-solid fa-envelope', html: '<a href="mailto:' + Render.esc(c.empresa_correo) + '">' + Render.esc(c.empresa_correo) + '</a>' } : null,
+      c.empresa_direccion ? { icono: 'fa-solid fa-location-dot', html: Render.esc(c.empresa_direccion) } : null,
+      c.horario_atencion ? { icono: 'fa-solid fa-clock', html: Render.esc(c.horario_atencion) } : null
+    ].filter(Boolean);
+    document.getElementById('pie-contacto').innerHTML = lineasContacto.map(function (l) {
+      return '<div class="pie-linea-contacto"><i class="' + l.icono + '"></i> <span>' + l.html + '</span></div>';
+    }).join('');
+
+    // Mapa embebido a partir de latitud/longitud de Config — sin necesitar clave de API de
+    // Google Maps (URL de embed público), igual que la plantilla de referencia.
+    var mapaNodo = document.getElementById('pie-mapa');
+    if (c.latitud && c.longitud) {
+      mapaNodo.innerHTML = '<iframe src="https://maps.google.com/maps?q=' + encodeURIComponent(c.latitud + ',' + c.longitud) + '&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación"></iframe>';
+    } else { mapaNodo.innerHTML = ''; }
+
+    // Columna "Ayuda": Blog (si el módulo está activo) + redes con contenido propio (YouTube) +
+    // descargas de soporte remoto — utilidad genérica para cualquier estudio contable/asesoría
+    // que use este sistema, no específica de una marca.
+    var ayuda = [];
+    if (window.Sitio.moduloActivo('blog') && estado.blog.length) { ayuda.push({ href: '#blog', texto: I18n.t('menu_blog') }); }
+    if (c.redes_youtube) { ayuda.push({ href: c.redes_youtube, texto: I18n.t('pie_canal_youtube'), externo: true }); }
+    var listaAyuda = ayuda.map(function (a) { return '<li><a href="' + Render.esc(a.href) + '"' + (a.externo ? ' target="_blank" rel="noopener"' : '') + '>' + Render.esc(a.texto) + '</a></li>'; }).join('');
+    listaAyuda += '<li><a href="https://anydesk.com/es/downloads" target="_blank" rel="noopener">AnyDesk (soporte remoto)</a></li>';
+    listaAyuda += '<li><a href="https://www.teamviewer.com/es/descargar/" target="_blank" rel="noopener">TeamViewer (soporte remoto)</a></li>';
+    document.getElementById('pie-lista-ayuda').innerHTML = listaAyuda;
+    document.getElementById('pie-columna-ayuda').classList.toggle('oculto', !listaAyuda);
+
+    // Columna "Menú principal": los mismos ítems de NIVEL 1 del menú de cabecera — se generan
+    // solos a partir de estado.menu, así el pie de página nunca puede desincronizarse de la
+    // navegación real del sitio (si se agrega o quita una página del menú, el pie la sigue).
+    var nivel1 = (estado.menu || []).filter(function (m) { return !m.padre; }).sort(function (a, b) { return Number(a.orden || 0) - Number(b.orden || 0); });
+    var idioma = I18n.idioma();
+    document.getElementById('pie-lista-menu').innerHTML = nivel1.map(function (m) {
+      var etiqueta = (idioma === 'en' && m.etiqueta_en) ? m.etiqueta_en : (idioma === 'zh' && m.etiqueta_zh) ? m.etiqueta_zh : m.etiqueta;
+      return '<li><a href="' + Render.esc(m.url || '#') + '">' + Render.esc(etiqueta) + '</a></li>';
+    }).join('');
+
+    document.getElementById('pie-titulo-ayuda').textContent = I18n.t('pie_titulo_ayuda');
+    document.getElementById('pie-titulo-menu').textContent = I18n.t('pie_titulo_menu');
+    document.getElementById('pie-titulo-contacto').textContent = I18n.t('pie_titulo_contacto');
+
+    if (c.medios_pago_texto) { document.getElementById('pie-medios-pago').innerHTML = '<p>' + Render.esc(c.medios_pago_texto) + '</p>'; }
+  }
+  pintarPie_();
+
   document.getElementById('btn-menu-movil').addEventListener('click', function () {
     document.getElementById('menu-principal').classList.toggle('abierto');
   });
@@ -320,18 +416,6 @@
   window.addEventListener('scroll', function () {
     cabecera.classList.toggle('con-sombra', window.scrollY > 8);
   }, { passive: true });
-
-  // Redes sociales (solo se muestran las que tengan URL configurada)
-  var redes = { redes_facebook: 'Facebook', redes_instagram: 'Instagram', redes_linkedin: 'LinkedIn', redes_youtube: 'YouTube', redes_tiktok: 'TikTok' };
-  document.getElementById('pie-redes').innerHTML = Object.keys(redes).map(function (clave) {
-    return estado.config[clave] ? '<a href="' + estado.config[clave] + '" target="_blank" rel="noopener">' + redes[clave] + '</a>' : '';
-  }).join('');
-  if (estado.config.redes_whatsapp) {
-    document.getElementById('pie-redes').innerHTML += '<a href="https://wa.me/' + estado.config.redes_whatsapp + '" target="_blank" rel="noopener">WhatsApp</a>';
-  }
-
-  // Medios de pago (texto simple; el detalle vive en Config > Pagos y se muestra en cotizacion.html)
-  if (estado.config.medios_pago_texto) { document.getElementById('pie-medios-pago').innerHTML = '<p>' + Render.esc(estado.config.medios_pago_texto) + '</p>'; }
 
   // ---- Migas de pan: orientación en cualquier página que no sea el inicio — clave cuando las
   // páginas están encadenadas (Servicios > Contabilidad Digital > Plan Pymes), para que el
@@ -466,10 +550,7 @@
   // Junto con la publicación automática al editar (backend, ~1 minuto), el resultado es que
   // editar Config/Paginas/Secciones/etc. se ve reflejado aquí sin recargar la página a mano.
   document.addEventListener('sitio:actualizado', function () {
-    aplicarTextosFijos_(); pintarMenu_();
-    document.getElementById('pie-empresa').textContent = estado.config.empresa_nombre || '';
-    document.getElementById('pie-direccion').textContent = estado.config.empresa_direccion || '';
-    document.getElementById('pie-contacto').textContent = [estado.config.empresa_telefono, estado.config.empresa_correo, estado.config.horario_atencion].filter(Boolean).join(' · ');
+    aplicarTextosFijos_(); pintarMenu_(); pintarPie_();
     pintarBarraIndicadores_();
     pintarBotonWhatsapp_();
     render();
