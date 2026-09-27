@@ -88,14 +88,24 @@ p { margin: 0 0 1em; color: var(--color-texto-suave); }
 .tabla-resultado-calculadora td { text-align: right; padding: 6px 0; font-weight: 600; }
 .tabla-resultado-calculadora tr:last-child td, .tabla-resultado-calculadora tr:last-child th { border-top: 1px solid var(--color-borde); padding-top: 10px; font-size: 1.05em; }
 
-/* ---- Barra de indicadores financieros (mostrar/ocultar: Config.mostrar_barra_indicadores) ---- */
+/* ---- Barra de indicadores financieros (mostrar/ocultar: Config.mostrar_barra_indicadores) ----
+ * Carrusel de UNA sola fila, estilo ticker bancario (Santander/bolsa): nunca debe partirse en
+ * varias líneas, pase lo que pase (pantalla angosta, "reducir movimiento" del sistema operativo,
+ * pestaña en segundo plano). La regla "prefers-reduced-motion" ANTES ponía "white-space: normal"
+ * acá, lo que rompía la fila en varias líneas apenas el sistema operativo del visitante tenía
+ * activado "reducir movimiento" (una preferencia de accesibilidad más común de lo que parece) —
+ * ese era el origen real de las "5 filas" reportadas, no un problema de caché ni de despliegue.
+ * Ahora, con movimiento reducido, se apaga la animación pero se mantiene una sola fila con
+ * scroll horizontal manual (el visitante puede arrastrar/deslizar) — nunca se envuelve en filas. */
 .barra-indicadores {
   overflow: hidden; white-space: nowrap; background: var(--color-secundario); border-bottom: 1px solid var(--color-borde);
+  position: relative;
 }
 .barra-indicadores .pista-indicadores {
-  display: inline-block; padding-left: 100%; animation: deslizar-indicadores 55s linear infinite;
+  display: inline-block; padding-left: 100%; animation: deslizar-indicadores 55s linear infinite; will-change: transform;
 }
-.barra-indicadores:hover .pista-indicadores { animation-play-state: paused; }
+.barra-indicadores:hover .pista-indicadores,
+.barra-indicadores.pausado .pista-indicadores { animation-play-state: paused; }
 .item-indicador {
   display: inline-block; position: relative; padding: 8px 22px; font-size: .82rem; color: #e2e8f0; font-variant-numeric: tabular-nums;
 }
@@ -107,7 +117,8 @@ p { margin: 0 0 1em; color: var(--color-texto-suave); }
 .item-indicador .baja { color: #f87171; margin-left: 6px; }
 @keyframes deslizar-indicadores { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) {
-  .barra-indicadores .pista-indicadores { animation: none; padding-left: 0; white-space: normal; }
+  .barra-indicadores { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+  .barra-indicadores .pista-indicadores { animation: none; padding-left: 0; }
 }
 .cabecera .contenedor { display: flex; align-items: center; justify-content: space-between; height: 72px; }
 .cabecera .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; color: var(--color-texto-cabecera); letter-spacing: -.01em; }
@@ -120,7 +131,30 @@ p { margin: 0 0 1em; color: var(--color-texto-suave); }
 }
 .menu-principal a:hover { color: var(--color-primario); }
 .menu-principal a:hover::after { right: 0; }
+/* Ítem activo: el visitante siempre sabe dónde está parado dentro del menú, incluso en una
+ * sub-página de servicio/plan (el ítem padre de nivel 1 también se marca, ver
+ * marcarEnlaceActivoMenu_ en index.html). */
+.menu-principal a.activo { color: var(--color-primario); font-weight: 700; }
+.menu-principal a.activo::after { right: 0; background: var(--degradado-marca); }
+.menu-principal .submenu a.activo { background: color-mix(in srgb, var(--color-primario) 10%, transparent); }
+/* El CTA "Cotizar ahora" es un botón relleno, no un link de texto — si su ruta coincide con la
+ * activa (estás en Servicios), debe seguir viéndose como botón, nunca con texto invisible del
+ * mismo color que su propio fondo. */
+.item-cta-menu a { color: #fff; }
+.item-cta-menu a::after { display: none; }
+#cta-cabecera::after { display: none; }
 .btn-menu-movil { display: none; background: none; border: none; font-size: 1.6rem; cursor: pointer; color: var(--color-texto-cabecera); }
+
+/* ---- Migas de pan: orientación en cualquier página que no sea el inicio (clave con páginas
+ * encadenadas Servicios > Contabilidad Digital > Plan Pymes). Franja delgada, siempre arriba del
+ * todo del contenido (antes del hero si la página tiene uno). ---- */
+.migas-pan { padding: 14px 0; font-size: .84rem; }
+.migas-pan .contenedor { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.migas-pan a { color: var(--color-texto-suave); text-decoration: none; }
+.migas-pan a:hover { color: var(--color-primario); text-decoration: underline; }
+.migas-pan span[aria-current] { color: var(--color-texto); font-weight: 600; }
+.migas-pan .migas-separador { color: var(--color-borde); }
+@media (max-width: 600px) { .migas-pan { font-size: .78rem; } .migas-pan .contenedor { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; } }
 
 /* ---- Mega-menú anidado (Menu.padre>Menu, cualquier profundidad — ver js/render.js → renderMenu) ----
  * Escritorio: el submenú se abre al pasar el mouse por el <li>, o si quedó "abierta" por un toque
@@ -152,10 +186,13 @@ p { margin: 0 0 1em; color: var(--color-texto-suave); }
   .menu-principal li { display: block; }
   .menu-principal .submenu {
     position: static; box-shadow: none; border: none; border-left: 2px solid var(--color-borde);
-    border-radius: 0; margin: 4px 0 4px 14px; padding: 0; max-height: 0; overflow: hidden;
-    opacity: 1; visibility: visible; transform: none; transition: max-height .3s ease;
+    border-radius: 0; margin: 0 0 0 14px; padding: 0; max-height: 0; overflow: hidden;
+    opacity: 1; visibility: visible; transform: none; transition: max-height .3s ease, margin .3s ease;
   }
-  .menu-principal li.tiene-submenu.abierta > .submenu { max-height: 600px; }
+  /* Cerrado, el submenú no debe dejar NINGÚN hueco (ni siquiera su propio margen) — el espacio
+   * en blanco entre "Servicios" y el siguiente ítem del menú venía de acá: el margen quedaba
+   * aplicado aunque max-height fuera 0. Solo aparece margen cuando está realmente abierto. */
+  .menu-principal li.tiene-submenu.abierta > .submenu { max-height: 600px; margin: 4px 0 4px 14px; }
   .menu-principal .submenu-nivel2 { left: 0; }
 }
 
@@ -168,17 +205,34 @@ p { margin: 0 0 1em; color: var(--color-texto-suave); }
 .selector-idioma button:hover { color: var(--color-primario); }
 .selector-idioma button.activo { background: var(--color-primario); color: #fff; }
 
+/* CTA fijo de la cabecera: visible siempre en escritorio (cabecera "sticky"); en móvil se
+ * oculta acá y reaparece como primer ítem del menú desplegable (.item-cta-menu más abajo),
+ * para no competir por espacio con el logo/idioma/hamburguesa en una pantalla angosta. */
+.btn-cta-cabecera { padding: 10px 22px; font-size: .88rem; white-space: nowrap; }
+/* ".menu-principal li" (más abajo, sin media query) ya fija "display:flex" a TODOS los <li> del
+ * menú con especificidad clase+tipo — para ganarle en escritorio hace falta la misma composición
+ * ".menu-principal li.item-cta-menu", no solo ".item-cta-menu" a secas. */
+.menu-principal li.item-cta-menu { display: none; }
+
 @media (max-width: 860px) {
+  /* Selector por id (más específico que ".btn") a propósito: la regla general ".btn {
+   * display: inline-flex }" vive más abajo en este archivo, fuera de cualquier media query, así
+   * que con la misma especificidad de clase ganaba ELLA por venir después en el orden de cascada
+   * — el CTA se seguía mostrando en móvil y desbordaba la fila del logo/idioma/hamburguesa. */
+  #cta-cabecera { display: none; }
   .btn-menu-movil { display: block; }
   .menu-principal {
     display: none; position: absolute; top: 72px; left: 0; right: 0; background: #fff;
     flex-direction: column; padding: 16px 20px; border-bottom: 1px solid var(--color-borde); gap: 14px;
+    max-height: calc(100vh - 72px); overflow-y: auto;
   }
   /* El desplegable móvil siempre tiene fondo claro (arriba), así que su texto es siempre
    * oscuro — independiente de --color-texto-cabecera, que sigue el fondo (variable) de la
    * cabecera cuando el menú está cerrado. */
   .menu-principal a { color: var(--color-secundario); }
   .menu-principal.abierto { display: flex; }
+  .menu-principal li.item-cta-menu { display: block; order: -1; margin-bottom: 4px; }
+  .item-cta-menu .btn { color: #fff; }
 }
 
 /* ---- Botones ---- */
@@ -379,6 +433,42 @@ form.formulario { display: grid; gap: 16px; max-width: 620px; margin: 0 auto; }
 .paso-proceso p { color: var(--color-texto-suave); font-size: .9rem; }
 @media (max-width: 860px) { .grid-pasos-proceso { grid-template-columns: 1fr 1fr; row-gap: 30px; } .grid-pasos-proceso::before { display: none; } }
 
+/* ---- Planes reales del catálogo (Sección tipo 'planes_servicio') — tarjetas lado a lado,
+ * estilo Google Workspace: precio + checklist + un solo botón, el plan recomendado elevado
+ * y con cinta. El precio/nombre/características vienen SIEMPRE del catálogo real (Planes/
+ * Caracteristicas), nunca de texto escrito en la Sección — ver planesServicio_ en render.js. */
+.selector-intencion-planes {
+  display: inline-flex; gap: 4px; padding: 4px; margin: 0 auto 32px; background: color-mix(in srgb, var(--color-primario) 6%, var(--color-fondo));
+  border: 1px solid var(--color-borde); border-radius: 999px;
+}
+.selector-intencion-opcion {
+  border: none; background: transparent; padding: 9px 20px; border-radius: 999px; font-size: .88rem; font-weight: 600;
+  color: var(--color-texto-suave); cursor: pointer; transition: background var(--transicion), color var(--transicion);
+}
+.selector-intencion-opcion.activa { background: var(--color-fondo); color: var(--color-primario); box-shadow: var(--sombra); }
+.grid-planes-servicio { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; align-items: stretch; }
+.tarjeta-plan {
+  position: relative; display: flex; flex-direction: column; background: var(--color-fondo); border: 1px solid var(--color-borde);
+  border-radius: var(--radio); padding: 32px 28px; transition: box-shadow var(--transicion), transform var(--transicion), border-color var(--transicion);
+}
+.tarjeta-plan:hover { box-shadow: var(--sombra-fuerte); transform: translateY(-4px); }
+.tarjeta-plan.destacado { border: 2px solid var(--color-primario); box-shadow: var(--sombra-fuerte); transform: scale(1.03); z-index: 1; }
+.tarjeta-plan-badge {
+  position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--degradado-marca); color: #fff;
+  font-size: .72rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; padding: 6px 16px; border-radius: 999px; box-shadow: 0 6px 14px -4px color-mix(in srgb, var(--color-primario) 60%, transparent);
+}
+.tarjeta-plan h3 { font-size: 1.15rem; margin-bottom: 4px; }
+.tarjeta-plan-precio { font-family: var(--fuente-titulos); font-size: 2rem; font-weight: 800; color: var(--color-secundario); letter-spacing: -.02em; margin: 6px 0 18px; }
+.tarjeta-plan-precio small { font-size: .95rem; font-weight: 400; color: var(--color-texto-suave); }
+.tarjeta-plan-caracteristicas { list-style: none; padding: 0; margin: 0 0 22px; flex-grow: 1; }
+.tarjeta-plan-caracteristicas li { padding: 7px 0; color: var(--color-texto-suave); font-size: .94rem; padding-left: 26px; position: relative; }
+.tarjeta-plan-caracteristicas li::before { content: '✓'; position: absolute; left: 0; color: var(--color-primario); font-weight: 700; }
+.tarjeta-plan [data-agregar-plan] { width: 100%; }
+.tarjeta-plan [data-agregar-plan]:disabled { opacity: .75; cursor: default; }
+.tarjeta-plan-detalle { display: block; text-align: center; margin-top: 12px; font-size: .85rem; color: var(--color-texto-suave); }
+.tarjeta-plan-detalle:hover { color: var(--color-primario); }
+@media (max-width: 720px) { .tarjeta-plan.destacado { transform: none; } .selector-intencion-planes { display: flex; width: 100%; } .selector-intencion-opcion { flex: 1; } }
+
 /* ---- Página "Planes": categorías en acordeón (Sección tipo 'categoria_planes') ----
  * Clic en el botón-encabezado agrega/quita ".abierta" en la <section> (ver index.html,
  * delegado en #contenido-pagina) — el cuerpo se anima con max-height, sin medir nada en JS. */
@@ -430,7 +520,11 @@ form.formulario { display: grid; gap: 16px; max-width: 620px; margin: 0 auto; }
   transition: transform .25s ease;
 }
 .panel-carrito.abierto { transform: translateX(0); }
-.fila-carrito { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--color-borde); }
+.fila-carrito { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--color-borde); gap: 10px; }
+.fila-carrito-nombre { display: flex; flex-direction: column; gap: 2px; }
+.fila-carrito-precio { font-size: .85rem; font-weight: 600; color: var(--color-primario); }
+.carrito-total-estimado { font-weight: 700; font-size: 1.05rem; color: var(--color-secundario); margin: 14px 0 4px; min-height: 1.3em; }
+.carrito-nota-flujo { font-size: .8rem; color: var(--color-texto-suave); margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--color-borde); }
 
 /* ---- Pie de página ---- */
 .pie { background: var(--color-secundario); color: #cbd5e1; padding: 48px 0 24px; margin-top: 60px; }
