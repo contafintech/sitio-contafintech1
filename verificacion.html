@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verificación de documento</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+<header class="cabecera"><div class="contenedor"><a class="logo" href="index.html" id="logo-empresa">—</a>
+  <div class="selector-idioma" id="selector-idioma" role="group" aria-label="Idioma / Language / 语言">
+    <button type="button" data-idioma="es">ES</button><button type="button" data-idioma="en">EN</button><button type="button" data-idioma="zh">中文</button>
+  </div>
+</div></header>
+<main>
+  <section>
+    <div class="contenedor" style="max-width:640px">
+      <div class="seccion-encabezado"><h2 id="titulo-verificacion"></h2>
+        <p id="intro-verificacion"></p>
+      </div>
+      <div id="resultado" class="cargando"></div>
+    </div>
+  </section>
+</main>
+<footer class="pie"><div class="contenedor"><small id="pie-empresa"></small></div></footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/config.js"></script>
+<script>
+(async function () {
+  function pintarTextosFijos_() {
+    document.getElementById('titulo-verificacion').textContent = I18n.t('verificacion_titulo');
+    document.getElementById('intro-verificacion').textContent = I18n.t('verificacion_intro');
+    document.getElementById('resultado').textContent = I18n.t('verificando_documento');
+    document.querySelectorAll('#selector-idioma button').forEach(function (b) { b.classList.toggle('activo', b.getAttribute('data-idioma') === I18n.idioma()); });
+  }
+  document.getElementById('selector-idioma').addEventListener('click', function (ev) {
+    var btn = ev.target.closest('[data-idioma]'); if (!btn) { return; }
+    I18n.setIdioma(btn.getAttribute('data-idioma')); pintarTextosFijos_(); verificar_();
+  });
+  pintarTextosFijos_();
+
+  await window.Sitio.iniciar();
+  document.getElementById('logo-empresa').textContent = window.Sitio.estado.config.empresa_nombre || '';
+  document.getElementById('pie-empresa').textContent = '© ' + new Date().getFullYear() + ' ' + (window.Sitio.estado.config.empresa_nombre || '');
+
+  var params = new URLSearchParams(location.search);
+  var hash = params.get('hash');
+  var resultado = document.getElementById('resultado');
+  if (!hash) { resultado.innerHTML = '<p class="mensaje-estado error">' + I18n.t('falta_codigo_documento') + '</p>'; return; }
+
+  async function verificar_() {
+    try {
+      var datos = await window.Sitio.llamarApi('firma.verificar', { hash: hash });
+      if (datos.valido) {
+        resultado.innerHTML =
+          '<p class="mensaje-estado ok">' + I18n.t('documento_valido_sin_alterar') + '</p>' +
+          '<p><strong>' + I18n.t('tipo_documento') + ':</strong> ' + datos.tipo_documento + '<br>' +
+          '<strong>' + I18n.t('numero_documento') + ':</strong> ' + datos.id_documento + '<br>' +
+          '<strong>' + I18n.t('fecha_documento') + ':</strong> ' + new Date(datos.fecha).toLocaleDateString('es-CL') + '</p>' +
+          '<p style="color:var(--color-texto-suave); font-size:.85rem">' + I18n.t('nota_firma') + '</p>';
+      } else {
+        resultado.innerHTML = '<p class="mensaje-estado error">' + I18n.t('documento_invalido_revocado') + '</p>';
+      }
+    } catch (e) {
+      resultado.innerHTML = '<p class="mensaje-estado error">' + I18n.t('no_se_pudo_verificar', { error: e.message }) + '</p>';
+    }
+  }
+  await verificar_();
+})();
+</script>
+</body>
+</html>
