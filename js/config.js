@@ -147,12 +147,26 @@ window.Sitio = (function () {
   // Todas las escrituras (formulario, cotización, reserva) van con text/plain
   // para que el navegador NO dispare un preflight OPTIONS, que Apps Script no
   // sabe responder con las cabeceras CORS correctas.
+  //
+  // BUG REAL corregido: esto hacía `await resp.json()` directo, sin mirar antes qué devolvió el
+  // servidor. Cuando el despliegue de la Web App NO está configurado con "Quién tiene acceso:
+  // Cualquier usuario" (ej. quedó en "Cualquier usuario con cuenta de Google" o "Solo yo"), Google
+  // intercepta la petición y devuelve SU PROPIA página HTML de acceso/login en vez de ejecutar
+  // doPost() — el navegador recibe "<!DOCTYPE html>..." con status 200, y `.json()` explota con
+  // "Unexpected token '<'", un error que no dice nada sobre la causa real. Como CADA acción
+  // comercial (contacto, cotización, reserva, diagnóstico) pasa por esta misma función, un
+  // despliegue mal configurado rompe TODOS los botones esenciales a la vez con el mismo síntoma.
+  // Ahora se lee el texto crudo primero y, si no es JSON, se avisa exactamente cuál es el problema.
   async function llamarApi(accion, datos) {
     var resp = await fetch(urlApi(), {
       method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify({ accion: accion, datos: datos || {} })
     });
-    var json = await resp.json();
+    var texto = await resp.text();
+    var json;
+    try { json = JSON.parse(texto); } catch (e) {
+      throw new Error('El servidor no respondió JSON (posible causa: el despliegue de la Web App no está configurado con "Quién tiene acceso: Cualquier usuario" — revisa Implementar > Gestionar implementaciones en el editor de Apps Script). Respuesta recibida: ' + texto.slice(0, 200));
+    }
     if (!json.ok) { throw new Error(json.error || 'Error desconocido del servidor.'); }
     return json.datos;
   }
