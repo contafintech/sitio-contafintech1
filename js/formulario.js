@@ -1,33 +1,73 @@
-LyogPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQogKiBmb3JtdWxhcmlvLmpzIOKAlCBGb3JtdWxhcmlvIGRlIGNvbnRhY3RvIGludGVybmFjaW9uYWwvbmFjaW9uYWwgYmls
-aW5nw7xlLCBjb24KICogYW50aXNwYW0gbnVtw6lyaWNvIGRlIGRvcyBkw61naXRvcyAocmV0byBmaXJtYWRvIHBvciBlbCBzZXJ2aWRvcikuIEVsIHNlcnZpZG9yCiAqICgwN19BbnRpc3BhbS5ncykgZXMgbGEgw7puaWNhIGF1dG9yaWRhZDogZXN0byBzb2xvIGFy
-bWEgbGEgaW50ZXJmYXouCiAqID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09ICovCgp3aW5kb3cuRm9ybXVsYXJpbyA9IChmdW5jdGlvbiAoKSB7CiAgdmFyIFRFWFRPUyA9IHsK
-ICAgIGVzOiB7IHRpdHVsbzogJ0NvbnZlcnNlbW9zJywgbm9tYnJlOiAnTm9tYnJlJywgZW1haWw6ICdDb3JyZW8nLCB0ZWxlZm9ubzogJ1RlbMOpZm9ubyAob3BjaW9uYWwpJywgbWVuc2FqZTogJ01lbnNhamUnLCBlbnZpYXI6ICdFbnZpYXIgbWVuc2FqZScsIGVu
-dmlhbmRvOiAnRW52aWFuZG/igKYnLCBvazogJ8KhR3JhY2lhcyEgVGUgcmVzcG9uZGVyZW1vcyBhIGxhIGJyZXZlZGFkLicsIHJldG86ICfCv0N1w6FudG8gZXMnLCBlc3BlcmFWZXJpZmljYWNpb246ICdFc3BlcmEgdW4gc2VndW5kbywgYcO6biBlc3RhbW9zIHBy
-ZXBhcmFuZG8gZWwgZm9ybXVsYXJpby4nLCBlcnJvclZlcmlmaWNhY2lvbjogJ05vIHNlIHB1ZG8gY2FyZ2FyIGxhIHZlcmlmaWNhY2nDs247IGludMOpbnRhbG8gZGUgbnVldm8gZW4gdW5vcyBzZWd1bmRvcy4nIH0sCiAgICBlbjogeyB0aXR1bG86ICJMZXQncyB0
-YWxrIiwgbm9tYnJlOiAnTmFtZScsIGVtYWlsOiAnRW1haWwnLCB0ZWxlZm9ubzogJ1Bob25lIChvcHRpb25hbCknLCBtZW5zYWplOiAnTWVzc2FnZScsIGVudmlhcjogJ1NlbmQgbWVzc2FnZScsIGVudmlhbmRvOiAnU2VuZGluZ+KApicsIG9rOiAnVGhhbmtzISBX
-ZSB3aWxsIGdldCBiYWNrIHRvIHlvdSBzb29uLicsIHJldG86ICdXaGF0IGlzJywgZXNwZXJhVmVyaWZpY2FjaW9uOiAnUGxlYXNlIHdhaXQgYSBtb21lbnQsIHRoZSBmb3JtIGlzIHN0aWxsIGxvYWRpbmcuJywgZXJyb3JWZXJpZmljYWNpb246ICdUaGUgdmVyaWZp
-Y2F0aW9uIGNvdWxkIG5vdCBiZSBsb2FkZWQ7IHRyeSBhZ2FpbiBpbiBhIGZldyBzZWNvbmRzLicgfSwKICAgIHpoOiB7IHRpdHVsbzogJ+iBlOezu+aIkeS7rCcsIG5vbWJyZTogJ+Wnk+WQjScsIGVtYWlsOiAn6YKu566xJywgdGVsZWZvbm86ICfnlLXor53vvIjl
-j6/pgInvvIknLCBtZW5zYWplOiAn55WZ6KiAJywgZW52aWFyOiAn5Y+R6YCB5raI5oGvJywgZW52aWFuZG86ICfmraPlnKjlj5HpgIHigKYnLCBvazogJ+iwouiwou+8geaIkeS7rOS8muWwveW/q+WbnuWkjeaCqOOAgicsIHJldG86ICfnrYnkuo7lpJrlsJHvvJon
-LCBlc3BlcmFWZXJpZmljYWNpb246ICfor7fnqI3lgJnvvIzooajljZXku43lnKjliqDovb3kuK3jgIInLCBlcnJvclZlcmlmaWNhY2lvbjogJ+aXoOazleWKoOi9vemqjOivge+8jOivt+WHoOenkuWQjumHjeivleOAgicgfQogIH07CgogIGFzeW5jIGZ1bmN0aW9u
-IG9idGVuZXJSZXRvXygpIHsKICAgIC8vIFByZWZlcmltb3MgcGVkaXIgZWwgcmV0byBhIGxhIHByb3BpYSBBUEkgKG1pc21hIHF1ZSByZWNpYmUgZWwgZW52w61vKTsKICAgIC8vIHNpIGxhIFdlYiBBcHAgZGUgQXBwcyBTY3JpcHQgbm8gZXN0w6EgZGlzcG9uaWJs
-ZSwgc2VndWltb3MgaWd1YWw6IGVsCiAgICAvLyBzZXJ2aWRvciB2YWxpZGFyw6EgZWwgcmV0byBhbCByZWNpYmlyIGVsIGZvcm11bGFyaW8uCiAgICB0cnkgewogICAgICB2YXIgcmVzcCA9IGF3YWl0IGZldGNoKHdpbmRvdy5TaXRpby51cmxBcGkoKSArICc/YWNj
-aW9uPWFudGlzcGFtLmVtaXRpcicpOwogICAgICB2YXIganNvbiA9IGF3YWl0IHJlc3AuanNvbigpOwogICAgICByZXR1cm4ganNvbi5kYXRvczsKICAgIH0gY2F0Y2ggKGUpIHsgcmV0dXJuIG51bGw7IH0KICB9CgogIGZ1bmN0aW9uIG1vbnRhcihjb250ZW5lZG9y
-LCBpZGlvbWEpIHsKICAgIGlkaW9tYSA9IGlkaW9tYSB8fCAod2luZG93LkkxOG4gPyBJMThuLmlkaW9tYSgpIDogKG5hdmlnYXRvci5sYW5ndWFnZSB8fCAnZXMnKS5zbGljZSgwLCAyKSk7CiAgICB2YXIgdCA9IFRFWFRPU1tpZGlvbWFdIHx8IFRFWFRPUy5lczsK
-ICAgIHZhciBlbnZvbHRvcmlvID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnc2VjdGlvbicpOwogICAgZW52b2x0b3Jpby5pbm5lckhUTUwgPQogICAgICAnPGRpdiBjbGFzcz0iY29udGVuZWRvciI+PGRpdiBjbGFzcz0ic2VjY2lvbi1lbmNhYmV6YWRvIj48aDI+
-JyArIHQudGl0dWxvICsgJzwvaDI+PC9kaXY+JyArCiAgICAgICc8Zm9ybSBjbGFzcz0iZm9ybXVsYXJpbyIgaWQ9ImZvcm0tY29udGFjdG8iPicgKwogICAgICAnPGlucHV0IHR5cGU9InRleHQiIG5hbWU9ImVtcHJlc2Ffd2ViIiBjbGFzcz0iaHAiIHRhYmluZGV4
-PSItMSIgYXV0b2NvbXBsZXRlPSJvZmYiPicgKwogICAgICAnPGRpdiBjbGFzcz0iY2FtcG8iPjxsYWJlbD4nICsgdC5ub21icmUgKyAnPC9sYWJlbD48aW5wdXQgcmVxdWlyZWQgbmFtZT0ibm9tYnJlIiB0eXBlPSJ0ZXh0Ij48L2Rpdj4nICsKICAgICAgJzxkaXYg
-Y2xhc3M9ImNhbXBvIj48bGFiZWw+JyArIHQuZW1haWwgKyAnPC9sYWJlbD48aW5wdXQgcmVxdWlyZWQgbmFtZT0iZW1haWwiIHR5cGU9ImVtYWlsIj48L2Rpdj4nICsKICAgICAgJzxkaXYgY2xhc3M9ImNhbXBvIj48bGFiZWw+JyArIHQudGVsZWZvbm8gKyAnPC9s
-YWJlbD48aW5wdXQgbmFtZT0idGVsZWZvbm8iIHR5cGU9InRlbCI+PC9kaXY+JyArCiAgICAgICc8ZGl2IGNsYXNzPSJjYW1wbyI+PGxhYmVsPicgKyB0Lm1lbnNhamUgKyAnPC9sYWJlbD48dGV4dGFyZWEgcmVxdWlyZWQgbmFtZT0ibWVuc2FqZSIgcm93cz0iNCI+
-PC90ZXh0YXJlYT48L2Rpdj4nICsKICAgICAgJzxkaXYgY2xhc3M9InJldG8tYW50aXNwYW0iIGlkPSJyZXRvLWFudGlzcGFtIj7igKY8L2Rpdj4nICsKICAgICAgJzxkaXYgY2xhc3M9ImNhbXBvIj48aW5wdXQgcmVxdWlyZWQgbmFtZT0icmVzcHVlc3RhIiB0eXBl
-PSJudW1iZXIiIHBsYWNlaG9sZGVyPSIwIj48L2Rpdj4nICsKICAgICAgJzxidXR0b24gY2xhc3M9ImJ0biBidG4tcHJpbWFyaW8iIHR5cGU9InN1Ym1pdCI+JyArIHQuZW52aWFyICsgJzwvYnV0dG9uPicgKwogICAgICAnPGRpdiBpZD0iZXN0YWRvLWZvcm11bGFy
-aW8iPjwvZGl2PicgKwogICAgICAnPC9mb3JtPjwvZGl2Pic7CiAgICBjb250ZW5lZG9yLmlubmVySFRNTCA9ICcnOwogICAgY29udGVuZWRvci5hcHBlbmRDaGlsZChlbnZvbHRvcmlvKTsKCiAgICB2YXIgZm9ybSA9IGVudm9sdG9yaW8ucXVlcnlTZWxlY3Rvcign
-I2Zvcm0tY29udGFjdG8nKTsKICAgIHZhciByZXRvID0gbnVsbDsKICAgIG9idGVuZXJSZXRvXygpLnRoZW4oZnVuY3Rpb24gKHIpIHsKICAgICAgcmV0byA9IHI7CiAgICAgIGVudm9sdG9yaW8ucXVlcnlTZWxlY3RvcignI3JldG8tYW50aXNwYW0nKS50ZXh0Q29u
-dGVudCA9IHJldG8gPyAodC5yZXRvICsgJyAnICsgcmV0by5hICsgJyArICcgKyByZXRvLmIgKyAnPycpIDogdC5lcnJvclZlcmlmaWNhY2lvbjsKICAgIH0pOwoKICAgIGZvcm0uYWRkRXZlbnRMaXN0ZW5lcignc3VibWl0JywgYXN5bmMgZnVuY3Rpb24gKGV2KSB7
-CiAgICAgIGV2LnByZXZlbnREZWZhdWx0KCk7CiAgICAgIHZhciBlc3RhZG9EaXYgPSBlbnZvbHRvcmlvLnF1ZXJ5U2VsZWN0b3IoJyNlc3RhZG8tZm9ybXVsYXJpbycpOwogICAgICBpZiAoIXJldG8pIHsgZXN0YWRvRGl2LmlubmVySFRNTCA9ICc8cCBjbGFzcz0i
-bWVuc2FqZS1lc3RhZG8gZXJyb3IiPicgKyB0LmVzcGVyYVZlcmlmaWNhY2lvbiArICc8L3A+JzsgcmV0dXJuOyB9CiAgICAgIHZhciBmZCA9IG5ldyBGb3JtRGF0YShmb3JtKTsKICAgICAgZXN0YWRvRGl2LmlubmVySFRNTCA9ICc8cCBjbGFzcz0ibWVuc2FqZS1l
-c3RhZG8iPicgKyB0LmVudmlhbmRvICsgJzwvcD4nOwogICAgICB0cnkgewogICAgICAgIGF3YWl0IHdpbmRvdy5TaXRpby5sbGFtYXJBcGkoJ2NvbnRhY3RvLmVudmlhcicsIHsKICAgICAgICAgIG5vbWJyZTogZmQuZ2V0KCdub21icmUnKSwgZW1haWw6IGZkLmdl
-dCgnZW1haWwnKSwgdGVsZWZvbm86IGZkLmdldCgndGVsZWZvbm8nKSwgbWVuc2FqZTogZmQuZ2V0KCdtZW5zYWplJyksCiAgICAgICAgICBpZGlvbWE6IGlkaW9tYSwgaG9uZXlwb3Q6IGZkLmdldCgnZW1wcmVzYV93ZWInKSwgdG9rZW46IHJldG8udG9rZW4sIHJl
-c3B1ZXN0YTogTnVtYmVyKGZkLmdldCgncmVzcHVlc3RhJykpCiAgICAgICAgfSk7CiAgICAgICAgZXN0YWRvRGl2LmlubmVySFRNTCA9ICc8cCBjbGFzcz0ibWVuc2FqZS1lc3RhZG8gb2siPicgKyB0Lm9rICsgJzwvcD4nOwogICAgICAgIGZvcm0ucmVzZXQoKTsK
-ICAgICAgICBvYnRlbmVyUmV0b18oKS50aGVuKGZ1bmN0aW9uIChyKSB7IHJldG8gPSByOyBlbnZvbHRvcmlvLnF1ZXJ5U2VsZWN0b3IoJyNyZXRvLWFudGlzcGFtJykudGV4dENvbnRlbnQgPSByZXRvID8gKHQucmV0byArICcgJyArIHJldG8uYSArICcgKyAnICsg
-cmV0by5iICsgJz8nKSA6ICcnOyB9KTsKICAgICAgfSBjYXRjaCAoZSkgewogICAgICAgIGVzdGFkb0Rpdi5pbm5lckhUTUwgPSAnPHAgY2xhc3M9Im1lbnNhamUtZXN0YWRvIGVycm9yIj4nICsgZS5tZXNzYWdlICsgJzwvcD4nOwogICAgICB9CiAgICB9KTsKICB9
-CgogIHJldHVybiB7IG1vbnRhcjogbW9udGFyIH07Cn0pKCk7Cg==
+/* ============================================================================
+ * formulario.js — Formulario de contacto internacional/nacional bilingüe, con
+ * antispam numérico de dos dígitos (reto firmado por el servidor). El servidor
+ * (07_Antispam.gs) es la única autoridad: esto solo arma la interfaz.
+ * ========================================================================== */
+
+window.Formulario = (function () {
+  var TEXTOS = {
+    es: { titulo: 'Conversemos', nombre: 'Nombre', email: 'Correo', telefono: 'Teléfono (opcional)', mensaje: 'Mensaje', enviar: 'Enviar mensaje', enviando: 'Enviando…', ok: '¡Gracias! Te responderemos a la brevedad.', reto: '¿Cuánto es', esperaVerificacion: 'Espera un segundo, aún estamos preparando el formulario.', errorVerificacion: 'No se pudo cargar la verificación; inténtalo de nuevo en unos segundos.' },
+    en: { titulo: "Let's talk", nombre: 'Name', email: 'Email', telefono: 'Phone (optional)', mensaje: 'Message', enviar: 'Send message', enviando: 'Sending…', ok: 'Thanks! We will get back to you soon.', reto: 'What is', esperaVerificacion: 'Please wait a moment, the form is still loading.', errorVerificacion: 'The verification could not be loaded; try again in a few seconds.' },
+    zh: { titulo: '联系我们', nombre: '姓名', email: '邮箱', telefono: '电话（可选）', mensaje: '留言', enviar: '发送消息', enviando: '正在发送…', ok: '谢谢！我们会尽快回复您。', reto: '等于多少：', esperaVerificacion: '请稍候，表单仍在加载中。', errorVerificacion: '无法加载验证，请几秒后重试。' }
+  };
+
+  async function obtenerReto_() {
+    // Preferimos pedir el reto a la propia API (misma que recibe el envío);
+    // si la Web App de Apps Script no está disponible, seguimos igual: el
+    // servidor validará el reto al recibir el formulario.
+    try {
+      var resp = await fetch(window.Sitio.urlApi() + '?accion=antispam.emitir');
+      var json = await resp.json();
+      return json.datos;
+    } catch (e) { return null; }
+  }
+
+  function montar(contenedor, idioma) {
+    idioma = idioma || (window.I18n ? I18n.idioma() : (navigator.language || 'es').slice(0, 2));
+    var t = TEXTOS[idioma] || TEXTOS.es;
+    var envoltorio = document.createElement('section');
+    envoltorio.innerHTML =
+      '<div class="contenedor"><div class="seccion-encabezado"><h2>' + t.titulo + '</h2></div>' +
+      '<form class="formulario" id="form-contacto">' +
+      '<input type="text" name="empresa_web" class="hp" tabindex="-1" autocomplete="off">' +
+      '<div class="campo"><label>' + t.nombre + '</label><input required name="nombre" type="text"></div>' +
+      '<div class="campo"><label>' + t.email + '</label><input required name="email" type="email"></div>' +
+      '<div class="campo"><label>' + t.telefono + '</label><input name="telefono" type="tel"></div>' +
+      '<div class="campo"><label>' + t.mensaje + '</label><textarea required name="mensaje" rows="4"></textarea></div>' +
+      '<div class="reto-antispam" id="reto-antispam">…</div>' +
+      '<div class="campo"><input required name="respuesta" type="number" placeholder="0"></div>' +
+      '<button class="btn btn-primario" type="submit">' + t.enviar + '</button>' +
+      '<div id="estado-formulario"></div>' +
+      '</form></div>';
+    contenedor.innerHTML = '';
+    contenedor.appendChild(envoltorio);
+
+    var form = envoltorio.querySelector('#form-contacto');
+    var reto = null;
+    obtenerReto_().then(function (r) {
+      reto = r;
+      envoltorio.querySelector('#reto-antispam').textContent = reto ? (t.reto + ' ' + reto.a + ' + ' + reto.b + '?') : t.errorVerificacion;
+    });
+
+    form.addEventListener('submit', async function (ev) {
+      ev.preventDefault();
+      var estadoDiv = envoltorio.querySelector('#estado-formulario');
+      if (!reto) { estadoDiv.innerHTML = '<p class="mensaje-estado error">' + t.esperaVerificacion + '</p>'; return; }
+      var fd = new FormData(form);
+      estadoDiv.innerHTML = '<p class="mensaje-estado">' + t.enviando + '</p>';
+      try {
+        await window.Sitio.llamarApi('contacto.enviar', {
+          nombre: fd.get('nombre'), email: fd.get('email'), telefono: fd.get('telefono'), mensaje: fd.get('mensaje'),
+          idioma: idioma, honeypot: fd.get('empresa_web'), token: reto.token, respuesta: Number(fd.get('respuesta'))
+        });
+        estadoDiv.innerHTML = '<p class="mensaje-estado ok">' + t.ok + '</p>';
+        form.reset();
+        obtenerReto_().then(function (r) { reto = r; envoltorio.querySelector('#reto-antispam').textContent = reto ? (t.reto + ' ' + reto.a + ' + ' + reto.b + '?') : ''; });
+      } catch (e) {
+        estadoDiv.innerHTML = '<p class="mensaje-estado error">' + e.message + '</p>';
+      }
+    });
+  }
+
+  return { montar: montar };
+})();
