@@ -101,10 +101,19 @@ p { margin: 0 0 1em; color: var(--color-texto-suave); }
   overflow: hidden; white-space: nowrap; background: var(--color-secundario); border-bottom: 1px solid var(--color-borde);
   position: relative;
 }
+/* Solo debe verse en Inicio/Home (pedido explícito) — index.html decide la ruta y agrega/quita
+   esta clase; separada de ".oculto" (que ya usa pintarBarraIndicadores_ para "sin datos o
+   deshabilitada desde Config") para que ninguna de las dos razones pise a la otra. */
+.barra-indicadores.oculto-ruta { display: none; }
 .barra-indicadores .pista-indicadores {
   display: inline-block; padding-left: 100%; animation: deslizar-indicadores 55s linear infinite; will-change: transform;
 }
-.barra-indicadores:hover .pista-indicadores,
+/* Antes también se pausaba con ":hover" — en escritorio, apenas el mouse pasaba por encima
+   (algo casi inevitable, la barra ocupa todo el ancho justo bajo el hero) el carrusel se
+   quedaba quieto y se veía como si "no fuera automático" comparado con el celular (que no tiene
+   hover). Se quitó esa regla: ahora se desliza sola siempre, en cualquier dispositivo, y solo se
+   pausa por los dos motivos explícitos de abajo (pestaña en segundo plano, o mientras se toca la
+   pantalla para leerla con el dedo). */
 .barra-indicadores.pausado .pista-indicadores { animation-play-state: paused; }
 .item-indicador {
   display: inline-block; position: relative; padding: 8px 22px; font-size: .82rem; color: #e2e8f0; font-variant-numeric: tabular-nums;
@@ -389,8 +398,12 @@ section { padding: 72px 0; }
 .faq summary { cursor: pointer; font-weight: 600; color: var(--color-secundario); }
 .faq p { margin-top: 10px; }
 
-table.comparativa { width: 100%; border-collapse: collapse; }
-table.comparativa th, table.comparativa td { padding: 14px 16px; border-bottom: 1px solid var(--color-borde); text-align: left; }
+/* Contenedor con su propio scroll horizontal (igual que ".barra-indicadores"/".migas-pan"):
+   en pantallas angostas, varias columnas de texto no caben — sin esto, la tabla forzaba el
+   ancho de TODA la página en vez de desplazarse solo ella (scroll horizontal indebido). */
+.tabla-comparativa-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table.comparativa { width: 100%; min-width: 560px; border-collapse: collapse; }
+table.comparativa th, table.comparativa td { padding: 14px 16px; border-bottom: 1px solid var(--color-borde); text-align: left; white-space: nowrap; }
 table.comparativa th { color: var(--color-secundario); }
 
 /* ---- Blog ---- */
