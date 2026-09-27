@@ -29,11 +29,33 @@ window.Carrito = (function () {
     if (barra) { barra.classList.toggle('oculto', n === 0); }
   }
 
-  function nombreDe_(idItem) {
+  function itemDe_(idItem) {
     var estado = window.Sitio.estado;
     var todos = [].concat(estado.catalogo.productos || [], estado.servicios.servicios || [], estado.servicios.planes || [], estado.servicios.packs || []);
-    var f = todos.filter(function (x) { return (x.id_producto || x.id_servicio || x.id_plan || x.id_pack) === idItem; })[0];
+    // Un Plan trae TANTO id_plan (su propia PK) COMO id_servicio (el servicio al que pertenece,
+    // solo una referencia). Por eso id_plan/id_pack se comprueban antes que id_servicio acá — si
+    // no, un id_plan como "PLN-000004" nunca calzaba porque el OR se quedaba en el id_servicio
+    // de ESE plan (verdadero pero irrelevante) antes de llegar a compararlo con su propio id_plan.
+    return todos.filter(function (x) { return (x.id_producto || x.id_plan || x.id_pack || x.id_servicio) === idItem; })[0] || null;
+  }
+
+  function nombreDe_(idItem) {
+    var f = itemDe_(idItem);
     return f ? Render.campo(f, 'nombre', window.I18n ? I18n.idioma() : 'es') : idItem;
+  }
+
+  // Precio de REFERENCIA (el mismo dato ya publicado que ven las tarjetas de plan/producto) —
+  // nunca el precio final: ese solo lo calcula el servidor al emitir la cotización (UF del día,
+  // descuentos). Cada tipo de ítem guarda su precio en un campo distinto: producto → precio_base,
+  // pack → precio_pack, servicio/plan → precio. Si el ítem no tiene precio publicado (p. ej. un
+  // servicio "a medida" que siempre se cotiza a mano), se omite en vez de mostrar "$0".
+  function precioDe_(idItem) {
+    var f = itemDe_(idItem);
+    if (!f) { return null; }
+    var monto = f.id_producto ? f.precio_base : (f.id_pack ? f.precio_pack : f.precio);
+    monto = Number(monto);
+    if (!monto) { return null; }
+    return { monto: monto, unidad: f.unidad_precio || 'CLP' };
   }
 
   function render_() {
@@ -41,11 +63,35 @@ window.Carrito = (function () {
     if (!cont) { return; }
     var items = leer();
     cont.innerHTML = items.map(function (i) {
-      return '<div class="fila-carrito"><span>' + Render.esc(nombreDe_(i.id_item)) + ' x' + i.cantidad + '</span>' +
+      var precio = precioDe_(i.id_item);
+      var precioTxt = precio ? '<span class="fila-carrito-precio">' + Render.esc(Render.formatoPrecio(precio.monto, precio.unidad)) + '</span>' : '';
+      return '<div class="fila-carrito"><span class="fila-carrito-nombre">' + Render.esc(nombreDe_(i.id_item)) + ' x' + i.cantidad + precioTxt + '</span>' +
         '<button class="btn btn-secundario" data-quitar="' + Render.esc(i.id_item) + '" style="padding:6px 12px">' + I18n.t('quitar') + '</button></div>';
     }).join('') || '<p>' + I18n.t('carrito_vacio') + '</p>';
     cont.querySelectorAll('[data-quitar]').forEach(function (b) { b.addEventListener('click', function () { quitar(b.getAttribute('data-quitar')); }); });
+    mostrarEstimadoTotal_(items);
     mostrarEstimadoEnvio_(items);
+  }
+
+  // Antes esto era un "Total: $0" fijo en el HTML que NUNCA se actualizaba (ver index.html) —
+  // el visitante agregaba un plan de $85.000 al carrito y el panel seguía mostrando $0 justo en
+  // el momento de decidir si cotizar, lo peor posible para la conversión. Ahora se suma el precio
+  // de referencia de cada línea, agrupado por moneda (nunca se mezclan CLP y UF en una sola suma),
+  // y se deja clarísimo que es un estimado — el monto y la UF del día definitivos van en el PDF.
+  function mostrarEstimadoTotal_(items) {
+    var nodo = document.getElementById('total-carrito-estimado');
+    if (!nodo) { return; }
+    if (!items.length) { nodo.textContent = ''; return; }
+    var porMoneda = {};
+    var faltaAlguno = false;
+    items.forEach(function (i) {
+      var precio = precioDe_(i.id_item);
+      if (!precio) { faltaAlguno = true; return; }
+      porMoneda[precio.unidad] = (porMoneda[precio.unidad] || 0) + precio.monto * i.cantidad;
+    });
+    var partes = Object.keys(porMoneda).map(function (unidad) { return Render.formatoPrecio(porMoneda[unidad], unidad); });
+    if (!partes.length) { nodo.textContent = I18n.t('estimado_a_cotizar'); return; }
+    nodo.textContent = I18n.t('estimado_carrito', { monto: partes.join(' + ') }) + (faltaAlguno ? ' ' + I18n.t('estimado_incluye_a_medida') : '');
   }
 
   // Estimado informativo (el monto real y definitivo siempre lo calcula el servidor
@@ -103,5 +149,5 @@ window.Carrito = (function () {
     });
   }
 
-  return { iniciar: iniciar, agregar: agregar, enlazarBotonesAgregar: enlazarBotonesAgregar };
+  return { iniciar: iniciar, agregar: agregar, enlazarBotonesAgregar: enlazarBotonesAgregar, render: render_ };
 })();
