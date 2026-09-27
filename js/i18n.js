@@ -30,6 +30,27 @@ window.I18n = (function () {
     envio_estimado: { es: '🚚 Envío estimado desde ${monto}', en: '🚚 Estimated shipping from ${monto}', zh: '🚚 预计运费低至 ${monto}' },
     envio_gratis_sobre: { es: ' (gratis sobre ${monto})', en: ' (free over ${monto})', zh: '（满 ${monto} 免运费）' },
     todavia_sin_productos: { es: 'Todavía no hay productos publicados.', en: 'No products published yet.', zh: '暂无已发布的产品。' },
+    // ---- Tarjetas de plan (planesServicio_ en render.js) ----
+    plan_por_mes: { es: '/mes', en: '/mo', zh: '/月' },
+    plan_por_anio: { es: '/año', en: '/yr', zh: '/年' },
+    plan_mas_elegido: { es: 'Más elegido', en: 'Most popular', zh: '最受欢迎' },
+    cotizar_plan: { es: 'Cotizar', en: 'Get a quote', zh: '获取报价' },
+    contratar_plan: { es: 'Contratar', en: 'Get started', zh: '立即办理' },
+    suscribir_plan: { es: 'Suscribir', en: 'Subscribe', zh: '订阅' },
+    ver_detalle_plan: { es: 'Ver detalle completo', en: 'See full details', zh: '查看完整详情' },
+    elige_que_quieres_hacer: { es: '¿Qué quieres hacer?', en: 'What do you want to do?', zh: '您想做什么？' },
+    solo_cotizar: { es: 'Solo cotizar', en: 'Just get a quote', zh: '仅获取报价' },
+    quiero_contratar: { es: 'Quiero contratar', en: 'I want to sign up', zh: '我想办理' },
+    plan_agregado: { es: '✓ Agregado — abriendo tu carrito…', en: '✓ Added — opening your cart…', zh: '✓ 已添加——正在打开购物车…' },
+    // ---- Estimado del carrito (antes decía "Total: $0" fijo, sin actualizarse nunca) ----
+    estimado_carrito: { es: 'Estimado: {monto}', en: 'Estimated: {monto}', zh: '预计：{monto}' },
+    estimado_a_cotizar: { es: 'Precio a cotizar directamente.', en: 'Price to be quoted directly.', zh: '价格待直接报价。' },
+    estimado_incluye_a_medida: { es: '+ ítem(s) a medida (se cotizan directamente).', en: '+ custom item(s) (quoted directly).', zh: '+ 定制项目（直接报价）。' },
+    carrito_explicacion_flujo: { es: 'Al aceptar tu cotización, tu contrato se genera automáticamente con estos mismos datos — sin volver a escribir nada.', en: 'Once you accept your quote, your contract is generated automatically with this same data — no re-entering anything.', zh: '接受报价后，系统会自动用相同的数据生成您的合同——无需重新填写任何信息。' },
+    // ---- Migas de pan (orientación en páginas de servicios/planes) ----
+    inicio_miga: { es: 'Inicio', en: 'Home', zh: '首页' },
+    // ---- CTA de la cabecera ----
+    cotizar_ahora_cabecera: { es: 'Cotizar ahora', en: 'Get a quote', zh: '立即报价' },
     contenido_actualizado: { es: '✓ Contenido actualizado', en: '✓ Content updated', zh: '✓ 内容已更新' },
     pagina_no_encontrada: { es: 'Página no encontrada.', en: 'Page not found.', zh: '页面未找到。' },
     volvemos_pronto_titulo: { es: 'Volvemos pronto', en: 'Back soon', zh: '即将回归' },
