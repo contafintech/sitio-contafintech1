@@ -19,6 +19,12 @@
     <a class="logo" href="#inicio" id="logo-empresa"><img id="logo-img" src="" alt="" class="oculto"><span id="logo-texto">Cargando…</span></a>
     <ul class="menu-principal" id="menu-principal"></ul>
     <div style="display:flex; align-items:center; gap:14px;">
+      <!-- CTA fijo en la cabecera (siempre a la vista, la cabecera es "sticky"): el objetivo
+           de todo el sitio es concretar la venta, así que la acción principal no debe depender
+           de que el visitante encuentre un botón dentro del contenido de cada página. Oculto en
+           móvil (ver CSS ≤860px) — ahí el mismo CTA vive como primer ítem del menú desplegable,
+           para no apretar la fila logo/idioma/hamburguesa en pantallas angostas. -->
+      <a href="#servicios" class="btn btn-primario btn-cta-cabecera" id="cta-cabecera">Cotizar ahora</a>
       <div class="selector-idioma" id="selector-idioma" role="group" aria-label="Idioma / Language / 语言">
         <button type="button" data-idioma="es">ES</button>
         <button type="button" data-idioma="en">EN</button>
@@ -49,7 +55,7 @@
 <aside class="panel-carrito" id="panel-carrito">
   <h2>Tu carrito</h2>
   <div id="lineas-carrito"></div>
-  <p><strong>Total: $<span id="total-carrito">0</span></strong></p>
+  <p id="total-carrito-estimado" class="carrito-total-estimado"></p>
   <div class="campo">
     <label for="rut-cotizacion">Tu RUT (para la cotización)</label>
     <input type="text" id="rut-cotizacion" placeholder="12345678-9">
@@ -58,6 +64,7 @@
   <button class="btn btn-primario btn-bloque" id="btn-cotizar">Solicitar cotización</button>
   <button class="btn btn-secundario btn-bloque" id="btn-cerrar-carrito" style="margin-top:10px">Cerrar</button>
   <p id="mensaje-carrito"></p>
+  <p class="carrito-nota-flujo" id="carrito-nota-flujo"></p>
 </aside>
 
 <footer class="pie">
@@ -91,9 +98,12 @@
   function aplicarTextosFijos_() {
     document.getElementById('btn-menu-movil').setAttribute('aria-label', I18n.t('abrir_menu'));
     document.querySelector('#panel-carrito h2').textContent = I18n.t('tu_carrito');
-    document.querySelector('#panel-carrito p strong').innerHTML = I18n.t('total') + ': $<span id="total-carrito">' + (document.getElementById('total-carrito') ? document.getElementById('total-carrito').textContent : '0') + '</span>';
     document.getElementById('btn-cotizar').textContent = I18n.t('solicitar_cotizacion');
     document.getElementById('btn-cerrar-carrito').textContent = I18n.t('cerrar');
+    // Explica, ANTES de que el visitante haga clic, qué pasa después de pedir la cotización —
+    // reduce la duda típica de "¿y ahora qué?" justo en el paso más cercano a la venta.
+    document.getElementById('carrito-nota-flujo').textContent = I18n.t('carrito_explicacion_flujo');
+    if (window.Carrito) { Carrito.render(); }
     document.getElementById('pie-link-privacidad').textContent = I18n.t('politica_privacidad');
     document.getElementById('pie-generado').textContent = I18n.t('pie_generado');
     document.querySelectorAll('#selector-idioma button').forEach(function (b) {
@@ -124,10 +134,14 @@
   if (estado.config.logo_url) { logoImg.src = estado.config.logo_url; logoImg.classList.remove('oculto'); logoTxt.classList.add('oculto'); }
   else { logoTxt.textContent = estado.config.empresa_nombre || 'Mi empresa'; }
   function pintarMenu_() {
-    var menuHtml = Render.renderMenu(estado.menu, I18n.idioma());
+    // Mismo CTA que la cabecera de escritorio, como primer ítem del menú desplegable — en
+    // móvil es lo primero que se ve al abrir el menú, no algo que haya que ir a buscar.
+    var ctaMovil = '<li class="item-cta-menu"><a href="#servicios" class="btn btn-primario btn-bloque">' + I18n.t('cotizar_ahora_cabecera') + '</a></li>';
+    var menuHtml = ctaMovil + Render.renderMenu(estado.menu, I18n.idioma());
     if (window.Sitio.moduloActivo('tienda')) { menuHtml += '<li><a href="#tienda">' + I18n.t('menu_tienda') + '</a></li>'; }
     if (window.Sitio.moduloActivo('blog')) { menuHtml += '<li><a href="#blog">' + I18n.t('menu_blog') + '</a></li>'; }
     document.getElementById('menu-principal').innerHTML = menuHtml;
+    document.getElementById('cta-cabecera').textContent = I18n.t('cotizar_ahora_cabecera');
   }
   pintarMenu_();
 
@@ -137,16 +151,34 @@
   // vuelva a generar el HTML del menú (cambio de idioma, actualización "casi en vivo").
   document.getElementById('menu-principal').addEventListener('click', function (ev) {
     var boton = ev.target.closest('.abrir-submenu');
-    if (!boton) { return; }
-    ev.preventDefault();
-    var li = boton.closest('li');
-    var abierto = li.classList.toggle('abierta');
-    boton.setAttribute('aria-expanded', abierto ? 'true' : 'false');
-    // Solo un submenú de nivel 1 abierto a la vez en móvil, para que el menú no crezca sin control.
-    li.parentElement.querySelectorAll(':scope > li.abierta').forEach(function (otro) {
-      if (otro !== li) { otro.classList.remove('abierta'); otro.querySelector(':scope > .abrir-submenu').setAttribute('aria-expanded', 'false'); }
-    });
+    if (boton) {
+      ev.preventDefault();
+      var li = boton.closest('li');
+      var abierto = li.classList.toggle('abierta');
+      boton.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+      // Solo un submenú de nivel 1 abierto a la vez en móvil, para que el menú no crezca sin control.
+      li.parentElement.querySelectorAll(':scope > li.abierta').forEach(function (otro) {
+        if (otro !== li) { otro.classList.remove('abierta'); otro.querySelector(':scope > .abrir-submenu').setAttribute('aria-expanded', 'false'); }
+      });
+      return;
+    }
+    // Tocar cualquier enlace real del menú (nivel 1 o dentro de un submenú) navega a otra
+    // página: el menú móvil y cualquier submenú desplegado deben cerrarse solos, igual que en
+    // cualquier app moderna — antes se quedaban abiertos tapando el contenido de la página nueva.
+    if (ev.target.closest('a')) { cerrarMenuMovil_(); }
   });
+
+  function cerrarMenuMovil_() {
+    document.getElementById('menu-principal').classList.remove('abierto');
+    document.querySelectorAll('#menu-principal li.abierta').forEach(function (li) {
+      li.classList.remove('abierta');
+      var boton = li.querySelector(':scope > .abrir-submenu');
+      if (boton) { boton.setAttribute('aria-expanded', 'false'); }
+    });
+  }
+  // Respaldo: cualquier cambio de página (atrás/adelante del navegador, o cualquier otra ruta
+  // de navegación que no pase por un clic directo en el menú) también cierra el menú móvil.
+  window.addEventListener('hashchange', cerrarMenuMovil_);
 
   // ---- Barra de indicadores financieros (mostrar/ocultar desde Config, como toda sección nueva) ----
   // Duplica los mismos ítems dos veces seguidas en el DOM para que la animación CSS (translateX de
@@ -183,6 +215,20 @@
   }
   pintarBarraIndicadores_();
 
+  // ---- Comportamiento moderno del carrusel: pausar cuando la pestaña no está a la vista
+  // (ahorra batería/CPU en segundo plano, buena práctica de cualquier app web actual) y al
+  // tocar en pantallas táctiles (":hover" no existe en touch, así que sin esto no había forma
+  // de "detener para leer" en el celular). Se conecta una sola vez — sigue funcionando aunque
+  // pintarBarraIndicadores_() vuelva a generar el contenido interno en cada actualización.
+  (function configurarBarraIndicadoresDinamica_() {
+    var barra = document.getElementById('barra-indicadores');
+    document.addEventListener('visibilitychange', function () {
+      barra.classList.toggle('pausado', document.hidden);
+    });
+    barra.addEventListener('touchstart', function () { barra.classList.add('pausado'); }, { passive: true });
+    barra.addEventListener('touchend', function () { barra.classList.remove('pausado'); }, { passive: true });
+  })();
+
   // ---- Botón flotante de WhatsApp (site-wide, mensaje prellenado) ----
   // Se apoya en el mismo Config.redes_whatsapp que ya usa el pie de página — si no está
   // configurado, el botón simplemente no aparece (no hace falta una bandera aparte).
@@ -207,6 +253,46 @@
     boton.setAttribute('aria-expanded', abierta ? 'true' : 'false');
   });
 
+  // ---- Tarjetas de plan reales (Sección tipo 'planes_servicio', ver planesServicio_ en render.js) ----
+  // 1) Selector "¿Qué quieres hacer?" — filtro de interfaz: cambia en vivo la etiqueta/acción de
+  //    cada botón de plan DENTRO de la misma grilla (nunca afecta otras secciones de la página),
+  //    para que el usuario vea de inmediato "Cotizar" vs "Contratar/Suscribir" sin recargar nada.
+  document.getElementById('contenido-pagina').addEventListener('click', function (ev) {
+    var opcion = ev.target.closest('.selector-intencion-opcion');
+    if (!opcion) { return; }
+    var grupo = opcion.closest('.selector-intencion-planes');
+    grupo.querySelectorAll('.selector-intencion-opcion').forEach(function (b) { b.classList.toggle('activa', b === opcion); });
+    var intencion = opcion.getAttribute('data-intencion-plan');
+    var grilla = grupo.nextElementSibling; // .grid-planes-servicio, pintado justo después del selector
+    if (!grilla) { return; }
+    grilla.querySelectorAll('[data-agregar-plan]').forEach(function (btn) {
+      btn.setAttribute('data-accion-plan', intencion);
+      var periodicidad = btn.getAttribute('data-periodicidad-plan');
+      var esRecurrente = periodicidad === 'mensual' || periodicidad === 'anual';
+      btn.textContent = intencion === 'contratar'
+        ? (esRecurrente ? I18n.t('suscribir_plan') : I18n.t('contratar_plan'))
+        : I18n.t('cotizar_plan');
+    });
+  });
+  // 2) Clic en el botón de un plan: agrega el id_plan REAL al carrito (mismo Carrito.agregar()
+  //    que usa la tienda) y abre el panel al instante — cotizar/contratar/suscribir es siempre,
+  //    técnicamente, el mismo camino: cotización con los datos reales del plan → el cliente la
+  //    acepta → se genera el contrato automáticamente (ver 13_Cotizaciones.gs: responder()).
+  //    La etiqueta del botón (Cotizar/Contratar/Suscribir) es la única diferencia hoy; distinguir
+  //    el intento real del cliente en el CRM (Leads/Cotizaciones) es una mejora para una fase
+  //    siguiente, no algo que ya esté separado en el backend.
+  document.getElementById('contenido-pagina').addEventListener('click', function (ev) {
+    var boton = ev.target.closest('[data-agregar-plan]');
+    if (!boton) { return; }
+    var idPlan = boton.getAttribute('data-agregar-plan');
+    Carrito.agregar(idPlan, 1);
+    var textoOriginal = boton.textContent;
+    boton.disabled = true;
+    boton.textContent = I18n.t('plan_agregado');
+    document.getElementById('barra-carrito').click(); // mismo camino que "Agregar al carrito": pinta el panel y lo abre
+    setTimeout(function () { boton.disabled = false; boton.textContent = textoOriginal; }, 1400);
+  });
+
   // Reubica la barra de indicadores DENTRO del contenido recién pintado: debajo del banner
   // (".seccion-hero") si la página tiene uno — antes del primer título de la siguiente
   // sección, como pidió el negocio — o al comienzo del contenido si la página no tiene hero.
@@ -216,7 +302,9 @@
     var barra = document.getElementById('barra-indicadores');
     var main = document.getElementById('contenido-pagina');
     var hero = main.querySelector('.seccion-hero');
+    var migas = main.querySelector('.migas-pan');
     if (hero) { hero.insertAdjacentElement('afterend', barra); }
+    else if (migas) { migas.insertAdjacentElement('afterend', barra); }
     else { main.insertAdjacentElement('afterbegin', barra); }
   }
 
@@ -245,6 +333,69 @@
   // Medios de pago (texto simple; el detalle vive en Config > Pagos y se muestra en cotizacion.html)
   if (estado.config.medios_pago_texto) { document.getElementById('pie-medios-pago').innerHTML = '<p>' + Render.esc(estado.config.medios_pago_texto) + '</p>'; }
 
+  // ---- Migas de pan: orientación en cualquier página que no sea el inicio — clave cuando las
+  // páginas están encadenadas (Servicios > Contabilidad Digital > Plan Pymes), para que el
+  // visitante nunca pierda de dónde vino ni cómo volver un nivel atrás sin usar "Atrás" del
+  // navegador. Cada tramo intermedio intenta resolver su propia Página (mismo slug acumulado)
+  // para mostrar su título real; si no existe como página propia, se usa el segmento del slug
+  // legible ("mi-segmento" → "mi segmento") en vez de dejarlo vacío.
+  function paginaPorSlugExacta_(slug) {
+    return estado.paginas.filter(function (p) { return p.slug === slug; })[0] || null;
+  }
+  function construirMigas_(tramos) {
+    // tramos: [{ href: '#inicio', texto: '...' }, ..., { texto: 'Actual' }] (el último sin href)
+    if (!tramos || tramos.length < 2) { return ''; }
+    var html = tramos.map(function (t, idx) {
+      var esUltimo = idx === tramos.length - 1;
+      return esUltimo
+        ? '<span aria-current="page">' + Render.esc(t.texto) + '</span>'
+        : '<a href="' + Render.esc(t.href) + '">' + Render.esc(t.texto) + '</a>';
+    }).join('<span class="migas-separador" aria-hidden="true">›</span>');
+    return '<nav class="migas-pan" aria-label="Ruta de navegación"><div class="contenedor">' + html + '</div></nav>';
+  }
+  function migasDeRuta_(ruta, tituloActual, idioma) {
+    var tramos = [{ href: '#inicio', texto: I18n.t('inicio_miga') }];
+    var partes = ruta.split('/');
+    var acumulado = '';
+    for (var i = 0; i < partes.length - 1; i++) {
+      acumulado = acumulado ? acumulado + '/' + partes[i] : partes[i];
+      var pag = paginaPorSlugExacta_(acumulado);
+      tramos.push({ href: '#' + acumulado, texto: pag ? Render.campo(pag, 'titulo', idioma) : partes[i].replace(/-/g, ' ') });
+    }
+    tramos.push({ texto: tituloActual });
+    return construirMigas_(tramos);
+  }
+
+  // ---- Resalta en el menú la página donde está parado el visitante (antes ningún ítem del
+  // menú indicaba nunca dónde estabas — común en cualquier sitio orientado a conversión). Si la
+  // ruta actual es una sub-página (ej. "servicios/contabilidad-digital"), también resalta el
+  // ítem de nivel 1 del que cuelga ("Servicios"), para que el mega-menú se sienta coherente. ----
+  function marcarEnlaceActivoMenu_(ruta) {
+    // El CTA "Cotizar ahora" (.item-cta-menu) queda afuera de todo este cálculo: comparte
+    // href="#servicios" con el ítem real del menú, pero es una llamada a la acción, no un
+    // indicador de "estás aquí" — nunca debe llevar el estilo ni el aria-current de "activo".
+    var huboCoincidenciaExacta = false;
+    document.querySelectorAll('#menu-principal li:not(.item-cta-menu) > a').forEach(function (a) {
+      var esActivo = a.getAttribute('href') === '#' + ruta;
+      a.classList.toggle('activo', esActivo);
+      if (esActivo) { a.setAttribute('aria-current', 'page'); huboCoincidenciaExacta = true; } else { a.removeAttribute('aria-current'); }
+    });
+    // El ítem de nivel 1 ("Servicios") también se marca visualmente como activo cuando la ruta
+    // actual es una de sus sub-páginas (ej. "servicios/contabilidad-digital") — así el mega-menú
+    // se ve coherente con dónde está el visitante. "aria-current" en cambio solo va en la
+    // coincidencia exacta (o en el padre si no hay ninguna) para no anunciar dos "página actual"
+    // a la vez a un lector de pantalla.
+    // :not(.item-cta-menu) es necesario porque el CTA "Cotizar ahora" también apunta a
+    // "#servicios" — sin excluirlo, este selector lo encontraba a ÉL primero (mismo href) en
+    // vez del ítem real "Servicios" del menú, y el de verdad se quedaba sin marcar.
+    var raiz = ruta.split('/')[0];
+    var padre = document.querySelector('#menu-principal > li:not(.item-cta-menu) > a[href="#' + raiz + '"]');
+    if (padre && !padre.classList.contains('activo')) {
+      padre.classList.add('activo');
+      if (!huboCoincidenciaExacta) { padre.setAttribute('aria-current', 'page'); }
+    }
+  }
+
   // ---- Router simple por hash: #slug | #blog | #blog/slug | #tienda ----
   function render() {
     var ruta = (location.hash || '#inicio').replace('#', '');
@@ -255,22 +406,25 @@
     if ((ruta === 'blog' || ruta.indexOf('blog/') === 0) && !window.Sitio.moduloActivo('blog')) { ruta = 'inicio'; }
 
     if (ruta === 'blog') {
-      main.innerHTML = '<section class="reveal"><div class="contenedor"><div class="seccion-encabezado"><h2>' + I18n.t('menu_blog') + '</h2></div><div class="grid-blog">' + Render.renderBlog(estado.blog, idioma) + '</div></div></section>';
+      main.innerHTML = migasDeRuta_('blog', I18n.t('menu_blog'), idioma) + '<section class="reveal"><div class="contenedor"><div class="seccion-encabezado"><h2>' + I18n.t('menu_blog') + '</h2></div><div class="grid-blog">' + Render.renderBlog(estado.blog, idioma) + '</div></div></section>';
       Render.activarReveal(main);
       reubicarBarraIndicadores_();
+      marcarEnlaceActivoMenu_(ruta);
       return;
     }
     if (ruta.indexOf('blog/') === 0) {
       var post = estado.blog.filter(function (p) { return p.slug === ruta.slice(5); })[0];
-      main.innerHTML = Render.renderPostBlog(post, idioma);
+      main.innerHTML = migasDeRuta_(ruta, post ? Render.campo(post, 'titulo', idioma) : I18n.t('articulo_no_encontrado'), idioma) + Render.renderPostBlog(post, idioma);
       reubicarBarraIndicadores_();
+      marcarEnlaceActivoMenu_(ruta);
       return;
     }
     if (ruta === 'tienda') {
-      main.innerHTML = renderTienda_(idioma);
+      main.innerHTML = migasDeRuta_('tienda', I18n.t('menu_tienda'), idioma) + renderTienda_(idioma);
       Carrito.enlazarBotonesAgregar();
       Render.activarReveal(main);
       reubicarBarraIndicadores_();
+      marcarEnlaceActivoMenu_(ruta);
       return;
     }
 
@@ -279,7 +433,9 @@
     // completo como un solo string, así que se compara tal cual, sin partirlo por "/".
     var pagina = window.Sitio.paginaPorSlug(ruta);
     document.title = (pagina ? Render.campo(pagina, 'titulo', idioma) + ' — ' : '') + (estado.config.empresa_nombre || '');
-    main.innerHTML = Render.renderPagina(pagina, estado.config, idioma);
+    var tituloPagina = pagina ? Render.campo(pagina, 'titulo', idioma) : I18n.t('pagina_no_encontrada');
+    main.innerHTML = (ruta === 'inicio' ? '' : migasDeRuta_(ruta, tituloPagina, idioma)) + Render.renderPagina(pagina, estado.config, idioma);
+    marcarEnlaceActivoMenu_(ruta);
     if (ruta === 'contacto' || (pagina && pagina.slug === 'contacto')) { Formulario.montar(document.getElementById('contenido-pagina')); }
     if (window.Herramientas) { Herramientas.montar(main); }
     if (window.Diagnostico) { Diagnostico.montar(main); }
