@@ -158,13 +158,23 @@ p { margin: 0 0 1em; color: var(--color-texto-suave); }
 
 /* ---- Mega-menú anidado (Menu.padre>Menu, cualquier profundidad — ver js/render.js → renderMenu) ----
  * Escritorio: el submenú se abre al pasar el mouse por el <li>, o si quedó "abierta" por un toque
- * (móvil/touch, ver el botón ▾ más abajo) — ambos casos usan la misma regla de visibilidad. */
-.menu-principal li { position: relative; display: flex; align-items: center; }
+ * (móvil/touch, ver el botón ▾ más abajo) — ambos casos usan la misma regla de visibilidad.
+ * Cada <li> puede traer hasta 3 hijos directos: el link, su botón ▾ (si tiene hijos) y su propio
+ * <ul class="submenu"> (si tiene hijos) — los tres viven en el MISMO <li> (ver nivel_() en
+ * render.js), a cualquier profundidad (ej. "Contabilidad Digital" trae su link + su ▾ + su propio
+ * submenú con los 3 planes, todo dentro del <li> que a su vez es un ítem DEL submenú de
+ * "Servicios"). "flex-wrap: wrap" + el submenú forzado a "flex-basis: 100%" es lo que logra que
+ * el link y su flecha compartan la primera línea y el submenú caiga siempre a una línea propia,
+ * a cualquier nivel de anidamiento — antes el link era "display:block" (ocupaba TODO el ancho) y
+ * su flecha quedaba empujada, sola, a la línea de abajo: eso es lo que se veía roto/desordenado. */
+.menu-principal li { position: relative; display: flex; flex-wrap: wrap; align-items: center; }
+.menu-principal li > a { flex: 1 1 auto; min-width: 0; }
 .menu-principal .abrir-submenu {
   background: none; border: none; margin-left: 4px; padding: 2px 4px; cursor: pointer; font-size: .7rem;
-  color: inherit; opacity: .75; transition: transform var(--transicion);
+  color: inherit; opacity: .75; transition: transform var(--transicion); flex-shrink: 0;
 }
 .menu-principal li.abierta > .abrir-submenu { transform: rotate(180deg); }
+.menu-principal li > .submenu { flex-basis: 100%; }
 .menu-principal .submenu {
   position: absolute; top: calc(100% + 14px); left: 0; min-width: 240px; list-style: none;
   background: var(--color-fondo); border: 1px solid var(--color-borde); border-radius: 12px;
@@ -173,7 +183,6 @@ p { margin: 0 0 1em; color: var(--color-texto-suave); }
 }
 .menu-principal li.tiene-submenu:hover > .submenu,
 .menu-principal li.tiene-submenu.abierta > .submenu { opacity: 1; visibility: visible; transform: translateY(0); }
-.menu-principal .submenu li { display: block; }
 .menu-principal .submenu a {
   display: block; padding: 10px 14px; border-radius: 8px; color: var(--color-texto); font-weight: 500; white-space: nowrap;
 }
@@ -183,7 +192,6 @@ p { margin: 0 0 1em; color: var(--color-texto-suave); }
  * costado, como cualquier flyout de dos niveles — nunca tapa a su propio padre. */
 .menu-principal .submenu .submenu-nivel2 { top: -10px; left: calc(100% + 8px); }
 @media (max-width: 860px) {
-  .menu-principal li { display: block; }
   .menu-principal .submenu {
     position: static; box-shadow: none; border: none; border-left: 2px solid var(--color-borde);
     border-radius: 0; margin: 0 0 0 14px; padding: 0; max-height: 0; overflow: hidden;
@@ -207,8 +215,18 @@ p { margin: 0 0 1em; color: var(--color-texto-suave); }
 
 /* CTA fijo de la cabecera: visible siempre en escritorio (cabecera "sticky"); en móvil se
  * oculta acá y reaparece como primer ítem del menú desplegable (.item-cta-menu más abajo),
- * para no competir por espacio con el logo/idioma/hamburguesa en una pantalla angosta. */
-.btn-cta-cabecera { padding: 10px 22px; font-size: .88rem; white-space: nowrap; }
+ * para no competir por espacio con el logo/idioma/hamburguesa en una pantalla angosta.
+ * A propósito discreto (contorno, no relleno sólido; texto pequeño) — la primera versión usaba
+ * el botón "btn-primario" grande de degradado y quedó demasiado dominante en la cabecera.
+ * Selector por id a propósito: ".btn { padding: 14px 28px }" vive más abajo en este archivo sin
+ * media query, y con la misma especificidad de clase le gana a ".btn-cta-cabecera" por venir
+ * después en la cascada (mismo problema que ya pasó con "display:none" en móvil, ver más abajo). */
+#cta-cabecera {
+  padding: 7px 16px; font-size: .8rem; white-space: nowrap; background: none;
+  border: 1.5px solid var(--color-primario); color: var(--color-primario); box-shadow: none;
+}
+#cta-cabecera:hover { background: var(--color-primario); color: #fff; }
+#cta-cabecera::before { display: none; }
 /* ".menu-principal li" (más abajo, sin media query) ya fija "display:flex" a TODOS los <li> del
  * menú con especificidad clase+tipo — para ganarle en escritorio hace falta la misma composición
  * ".menu-principal li.item-cta-menu", no solo ".item-cta-menu" a secas. */
@@ -526,11 +544,37 @@ form.formulario { display: grid; gap: 16px; max-width: 620px; margin: 0 auto; }
 .carrito-total-estimado { font-weight: 700; font-size: 1.05rem; color: var(--color-secundario); margin: 14px 0 4px; min-height: 1.3em; }
 .carrito-nota-flujo { font-size: .8rem; color: var(--color-texto-suave); margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--color-borde); }
 
-/* ---- Pie de página ---- */
-.pie { background: var(--color-secundario); color: #cbd5e1; padding: 48px 0 24px; margin-top: 60px; }
-.pie a { color: #e2e8f0; }
-.pie .contenedor { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; }
-.pie small { display: block; margin-top: 30px; opacity: .6; text-align: center; }
+/* ---- Pie de página: 4 columnas (marca+redes / Ayuda / Menú / Contacto+mapa), mismo diseño en
+ * TODAS las páginas — replica la estructura de la plantilla de referencia (encabezados en el
+ * color de acento del tenant, líneas de contacto con ícono, redes en círculos de su color de
+ * marca, mapa embebido), pero con datos 100% en vivo desde Config/Menu — nunca texto fijo de una
+ * marca en particular, para que sirva igual para cualquier cliente del sistema. ---- */
+.pie { background: var(--color-secundario); color: #cbd5e1; padding: 56px 0 0; margin-top: 60px; }
+.pie a { color: #cbd3e1; text-decoration: none; }
+.pie a:hover { color: var(--color-acento); text-decoration: underline; }
+.pie .contenedor { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 36px; padding-bottom: 40px; }
+.pie-columna h5 { color: var(--color-acento); font-size: 1rem; margin-bottom: 16px; }
+.pie-marca { display: block; color: #fff; font-size: 1.1rem; margin-bottom: 10px; }
+.pie-descripcion { color: #9aa4b8; font-size: .88rem; margin-bottom: 4px; }
+.pie-columna ul { list-style: none; margin: 0; padding: 0; }
+.pie-columna li { margin-bottom: 9px; font-size: .92rem; }
+.pie-redes { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.pie-redes a {
+  width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: .95rem; transition: transform var(--transicion), filter var(--transicion); text-decoration: none;
+}
+.pie-redes a:hover { transform: translateY(-3px) scale(1.06); filter: brightness(1.12); color: #fff; text-decoration: none; }
+.pie-linea-contacto { display: flex; align-items: flex-start; gap: 9px; margin-bottom: 12px; font-size: .9rem; }
+.pie-linea-contacto i { color: var(--color-acento); margin-top: 3px; flex-shrink: 0; width: 16px; text-align: center; }
+.pie-mapa { border-radius: 10px; overflow: hidden; margin-top: 6px; border: 1px solid rgba(255,255,255,.12); }
+.pie-mapa iframe { width: 100%; height: 160px; border: 0; display: block; }
+.pie-linea-inferior {
+  border-top: 1px solid rgba(255,255,255,.1); padding: 20px 0 24px; display: flex; flex-wrap: wrap;
+  align-items: center; justify-content: center; gap: 14px; text-align: center; font-size: .85rem; color: #8b93a7;
+}
+.pie-linea-inferior a { color: #8b93a7; }
+.pie-linea-inferior small { opacity: .8; }
+@media (max-width: 720px) { .pie .contenedor { grid-template-columns: 1fr; gap: 30px; } }
 
 /* ---- Estado de carga ---- */
 .cargando { text-align: center; padding: 80px 20px; color: var(--color-texto-suave); }
