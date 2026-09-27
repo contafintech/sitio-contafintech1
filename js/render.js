@@ -275,6 +275,31 @@ window.Render = (function () {
     return seccionConEncabezado_(s, avisoNoDisponible + '<div class="grid-calculadoras">' + items + '</div>', idioma);
   }
 
+  // Elemento tipo='estadistica': titulo = etiqueta ("Años de experiencia"); datos = { numero,
+  // sufijo }. Franja de confianza reutilizable en cualquier página (hero, landing de servicio...).
+  function franjaConfianza_(s, i, cfg, idioma) {
+    var items = porTipo_(s, 'estadistica').map(function (e) {
+      var d = datosIdioma_(e, idioma);
+      return (
+        '<div class="estadistica-item"><div class="estadistica-numero">' + esc(d.numero) + esc(d.sufijo || '') + '</div>' +
+        '<div class="estadistica-etiqueta">' + esc(campo_(e, 'titulo', idioma)) + '</div></div>'
+      );
+    }).join('');
+    return '<section class="franja-confianza reveal"><div class="contenedor"><div class="grid-estadisticas">' + items + '</div></div></section>';
+  }
+
+  // Elemento tipo='paso': titulo/texto = título/descripción del paso; el número (1, 2, 3...) es
+  // simplemente su posición (orden) — agregar/quitar pasos en el Sheet no requiere renumerar nada.
+  function pasosProceso_(s, i, cfg, idioma) {
+    var pasos = porTipo_(s, 'paso').map(function (p, idx) {
+      return (
+        '<div class="paso-proceso"><div class="paso-numero">' + (idx + 1) + '</div>' +
+        '<h4>' + esc(campo_(p, 'titulo', idioma)) + '</h4><p>' + esc(campo_(p, 'texto', idioma)) + '</p></div>'
+      );
+    }).join('');
+    return seccionConEncabezado_(s, '<div class="grid-pasos-proceso">' + pasos + '</div>', idioma);
+  }
+
   // Elemento tipo='diagnostico' (uno solo, o ninguno): el formulario real (con carga de archivo
   // y antispam) lo arma js/diagnostico.js dentro de este contenedor — acá solo se deja el marco
   // con encabezado editable, igual que el resto de las secciones.
@@ -285,7 +310,7 @@ window.Render = (function () {
   var RENDERIZADORES_ = {
     hero: hero_, texto_imagen: textoImagen_, tarjetas: tarjetas_, categoria_planes: categoriaPlanes_, testimonios: testimonios_,
     llamado_accion: llamadoAccion_, preguntas_frecuentes: preguntasFrecuentes_, tabla_comparativa: tablaComparativa_,
-    calculadoras: calculadoras_, diagnostico: diagnostico_
+    calculadoras: calculadoras_, diagnostico: diagnostico_, franja_confianza: franjaConfianza_, pasos_proceso: pasosProceso_
   };
 
   // cfg = estado.config (data/config.json) — permite que un tipo de sección (hoy solo el
