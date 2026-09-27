@@ -895,6 +895,90 @@
     ]
   },
   {
+    "id_pagina": "PAG-PLANES",
+    "slug": "planes",
+    "titulo": "Planes",
+    "titulo_en": "Plans",
+    "titulo_zh": "套餐",
+    "secciones": [
+      {
+        "id_seccion": "SEC-000086",
+        "tipo": "planes_servicio",
+        "titulo": "Planes de Contabilidad Digital",
+        "texto": "Compara y elige — precio y características siempre actualizados desde el catálogo real.",
+        "titulo_en": "",
+        "texto_en": "",
+        "titulo_zh": "",
+        "texto_zh": "",
+        "elementos": [
+          {
+            "id_elemento": "ELE-000215",
+            "tipo": "plan_ref",
+            "titulo": "",
+            "texto": "",
+            "enlace": "#servicios/contabilidad-digital/planes-emprendedores",
+            "titulo_en": "",
+            "texto_en": "",
+            "titulo_zh": "",
+            "texto_zh": "",
+            "orden": 1,
+            "datos": {
+              "id_plan": "PLN-000003",
+              "accion": "cotizar"
+            },
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          },
+          {
+            "id_elemento": "ELE-000216",
+            "tipo": "plan_ref",
+            "titulo": "",
+            "texto": "",
+            "enlace": "#servicios/contabilidad-digital/planes-pymes",
+            "titulo_en": "",
+            "texto_en": "",
+            "titulo_zh": "",
+            "texto_zh": "",
+            "orden": 2,
+            "datos": {
+              "id_plan": "PLN-000004",
+              "accion": "cotizar"
+            },
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          },
+          {
+            "id_elemento": "ELE-000217",
+            "tipo": "plan_ref",
+            "titulo": "",
+            "texto": "",
+            "enlace": "#servicios/contabilidad-digital/planes-empresas",
+            "titulo_en": "",
+            "texto_en": "",
+            "titulo_zh": "",
+            "texto_zh": "",
+            "orden": 3,
+            "datos": {
+              "id_plan": "PLN-000005",
+              "accion": "cotizar"
+            },
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id_pagina": "PAG-CONTACTO",
     "slug": "contacto",
     "titulo": "Contacto",
@@ -2166,9 +2250,9 @@
       },
       {
         "id_seccion": "SEC-000034",
-        "tipo": "tarjetas",
+        "tipo": "planes_servicio",
         "titulo": "Elige tu plan",
-        "texto": "Cada plan incluye lo anterior, más lo indicado.",
+        "texto": "Cada plan incluye lo anterior, más lo indicado. Precio y datos siempre actualizados desde el catálogo — lo que cotizas es exactamente lo que se contrata.",
         "titulo_en": "",
         "texto_en": "",
         "titulo_zh": "",
@@ -2176,9 +2260,9 @@
         "elementos": [
           {
             "id_elemento": "ELE-000084",
-            "tipo": "tarjeta",
-            "titulo": "Plan Emprendedores",
-            "texto": "Para emprendimientos recién iniciados.",
+            "tipo": "plan_ref",
+            "titulo": "",
+            "texto": "",
             "enlace": "#servicios/contabilidad-digital/planes-emprendedores",
             "titulo_en": "",
             "texto_en": "",
@@ -2186,14 +2270,8 @@
             "texto_zh": "",
             "orden": 1,
             "datos": {
-              "precio": "$45.000",
-              "unidad": "/mes",
-              "boton_texto": "Ver plan",
-              "caracteristicas": [
-                "Declaraciones mensuales",
-                "Un régimen tributario",
-                "Soporte por correo"
-              ]
+              "id_plan": "PLN-000003",
+              "accion": "cotizar"
             },
             "datos_en": {},
             "datos_zh": {},
@@ -2203,9 +2281,9 @@
           },
           {
             "id_elemento": "ELE-000085",
-            "tipo": "tarjeta",
-            "titulo": "Plan Pymes",
-            "texto": "El más elegido por PYME en crecimiento.",
+            "tipo": "plan_ref",
+            "titulo": "",
+            "texto": "",
             "enlace": "#servicios/contabilidad-digital/planes-pymes",
             "titulo_en": "",
             "texto_en": "",
@@ -2213,15 +2291,8 @@
             "texto_zh": "",
             "orden": 2,
             "datos": {
-              "precio": "$85.000",
-              "unidad": "/mes",
-              "boton_texto": "Ver plan",
-              "caracteristicas": [
-                "Todo lo del Plan Emprendedores",
-                "Facturación electrónica incluida",
-                "Reunión mensual de resultados",
-                "Soporte prioritario"
-              ]
+              "id_plan": "PLN-000004",
+              "accion": "cotizar"
             },
             "datos_en": {},
             "datos_zh": {},
@@ -2231,9 +2302,9 @@
           },
           {
             "id_elemento": "ELE-000086",
-            "tipo": "tarjeta",
-            "titulo": "Plan Empresa",
-            "texto": "Para empresas con varios socios o giros.",
+            "tipo": "plan_ref",
+            "titulo": "",
+            "texto": "",
             "enlace": "#servicios/contabilidad-digital/planes-empresas",
             "titulo_en": "",
             "texto_en": "",
@@ -2241,15 +2312,8 @@
             "texto_zh": "",
             "orden": 3,
             "datos": {
-              "precio": "$150.000",
-              "unidad": "/mes",
-              "boton_texto": "Ver plan",
-              "caracteristicas": [
-                "Todo lo del Plan Pymes",
-                "Planificación tributaria anual",
-                "Encargado dedicado",
-                "Cierre contable prioritario"
-              ]
+              "id_plan": "PLN-000005",
+              "accion": "cotizar"
             },
             "datos_en": {},
             "datos_zh": {},
@@ -4577,7 +4641,7 @@
       },
       {
         "id_seccion": "SEC-000073",
-        "tipo": "tarjetas",
+        "tipo": "planes_servicio",
         "titulo": "Qué incluye",
         "texto": "",
         "titulo_en": "",
@@ -4587,24 +4651,18 @@
         "elementos": [
           {
             "id_elemento": "ELE-000184",
-            "tipo": "tarjeta",
-            "titulo": "Plan Emprendedores",
-            "texto": "Para emprendimientos recién iniciados.",
-            "enlace": "#contacto",
+            "tipo": "plan_ref",
+            "titulo": "",
+            "texto": "",
+            "enlace": "",
             "titulo_en": "",
             "texto_en": "",
             "titulo_zh": "",
             "texto_zh": "",
             "orden": 1,
             "datos": {
-              "precio": "$45.000",
-              "unidad": "/mes",
-              "boton_texto": "Cotizar",
-              "caracteristicas": [
-                "Declaraciones mensuales",
-                "Un régimen tributario",
-                "Soporte por correo"
-              ]
+              "id_plan": "PLN-000003",
+              "accion": "cotizar"
             },
             "datos_en": {},
             "datos_zh": {},
@@ -4751,7 +4809,7 @@
       },
       {
         "id_seccion": "SEC-000077",
-        "tipo": "tarjetas",
+        "tipo": "planes_servicio",
         "titulo": "Qué incluye",
         "texto": "",
         "titulo_en": "",
@@ -4761,25 +4819,18 @@
         "elementos": [
           {
             "id_elemento": "ELE-000190",
-            "tipo": "tarjeta",
-            "titulo": "Plan Pymes",
-            "texto": "El más elegido por PYME en crecimiento.",
-            "enlace": "#contacto",
+            "tipo": "plan_ref",
+            "titulo": "",
+            "texto": "",
+            "enlace": "",
             "titulo_en": "",
             "texto_en": "",
             "titulo_zh": "",
             "texto_zh": "",
             "orden": 1,
             "datos": {
-              "precio": "$85.000",
-              "unidad": "/mes",
-              "boton_texto": "Cotizar",
-              "caracteristicas": [
-                "Todo lo del Plan Emprendedores",
-                "Facturación electrónica incluida",
-                "Reunión mensual de resultados",
-                "Soporte prioritario"
-              ]
+              "id_plan": "PLN-000004",
+              "accion": "cotizar"
             },
             "datos_en": {},
             "datos_zh": {},
@@ -4926,7 +4977,7 @@
       },
       {
         "id_seccion": "SEC-000081",
-        "tipo": "tarjetas",
+        "tipo": "planes_servicio",
         "titulo": "Qué incluye",
         "texto": "",
         "titulo_en": "",
@@ -4936,25 +4987,18 @@
         "elementos": [
           {
             "id_elemento": "ELE-000196",
-            "tipo": "tarjeta",
-            "titulo": "Plan Empresa",
-            "texto": "Para empresas con varios socios o giros.",
-            "enlace": "#contacto",
+            "tipo": "plan_ref",
+            "titulo": "",
+            "texto": "",
+            "enlace": "",
             "titulo_en": "",
             "texto_en": "",
             "titulo_zh": "",
             "texto_zh": "",
             "orden": 1,
             "datos": {
-              "precio": "$150.000",
-              "unidad": "/mes",
-              "boton_texto": "Cotizar",
-              "caracteristicas": [
-                "Todo lo del Plan Pymes",
-                "Planificación tributaria anual",
-                "Encargado dedicado",
-                "Cierre contable prioritario"
-              ]
+              "id_plan": "PLN-000005",
+              "accion": "cotizar"
             },
             "datos_en": {},
             "datos_zh": {},
