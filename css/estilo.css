@@ -353,6 +353,32 @@ form.formulario { display: grid; gap: 16px; max-width: 620px; margin: 0 auto; }
 }
 .aviso-actualizado.visible { transform: translate(-50%, 0); opacity: 1; }
 
+/* ---- Franja de confianza (Sección tipo 'franja_confianza') — reutilizable en cualquier
+ * página (hero de inicio, landing de un servicio puntual...). ---- */
+.franja-confianza { background: var(--color-secundario); padding: 32px 0; }
+.grid-estadisticas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
+.estadistica-numero { font-family: var(--fuente-titulos); font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800; color: var(--color-acento); }
+.estadistica-etiqueta { color: #cbd5e1; font-size: .85rem; margin-top: 4px; }
+@media (max-width: 720px) { .grid-estadisticas { grid-template-columns: repeat(2, 1fr); row-gap: 26px; } }
+
+/* ---- Pasos del proceso (Sección tipo 'pasos_proceso') — línea punteada conectando cada
+ * número; puramente CSS, sin animación por JS (funciona igual con "reduced motion"). ---- */
+.grid-pasos-proceso { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; position: relative; }
+.grid-pasos-proceso::before {
+  content: ''; position: absolute; top: 26px; left: 12%; right: 12%; height: 2px;
+  background: repeating-linear-gradient(90deg, var(--color-primario) 0 8px, transparent 8px 16px); z-index: 0;
+}
+.paso-proceso { position: relative; text-align: center; z-index: 1; }
+.paso-numero {
+  width: 52px; height: 52px; margin: 0 auto 16px; border-radius: 50%; background: var(--color-fondo);
+  border: 3px solid var(--color-primario); color: var(--color-primario); font-family: var(--fuente-titulos); font-weight: 800;
+  font-size: 1.15rem; display: flex; align-items: center; justify-content: center; transition: transform var(--transicion), background var(--transicion), color var(--transicion);
+}
+.paso-proceso:hover .paso-numero { background: var(--color-primario); color: #fff; transform: scale(1.1); }
+.paso-proceso h4 { font-size: 1rem; margin-bottom: 6px; }
+.paso-proceso p { color: var(--color-texto-suave); font-size: .9rem; }
+@media (max-width: 860px) { .grid-pasos-proceso { grid-template-columns: 1fr 1fr; row-gap: 30px; } .grid-pasos-proceso::before { display: none; } }
+
 /* ---- Página "Planes": categorías en acordeón (Sección tipo 'categoria_planes') ----
  * Clic en el botón-encabezado agrega/quita ".abierta" en la <section> (ver index.html,
  * delegado en #contenido-pagina) — el cuerpo se anima con max-height, sin medir nada en JS. */
