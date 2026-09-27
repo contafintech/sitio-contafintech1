@@ -1,65 +1,100 @@
-LyogPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQogKiBpMThuLmpzIOKAlCBEaWNjaW9uYXJpbyBkZSB0ZXh0b3MgZGUgSU5URVJGQVogZmlqb3MgKGJvdG9uZXMsIG1lbnNh
-amVzIGRlCiAqIGVzdGFkbywgYXJpYS1sYWJlbHMuLi4pLiBFc3RvIGVzIGRpc3RpbnRvIGRlbCBjb250ZW5pZG8gZGUgbmVnb2NpbyAoQ29uZmlnLAogKiBQYWdpbmFzL1NlY2Npb25lcy9FbGVtZW50b3MsIFByb2R1Y3RvcywgQmxvZyksIHF1ZSBzZSB0cmFkdWNl
-IGRpcmVjdG8gZW4gZWwKICogU2hlZXQgY29uIGNvbHVtbmFzIF9lbi9femggKHZlciByZW5kZXIuanM6IGNhbXBvXygpL2RhdG9zSWRpb21hXygpKS4KICogQWPDoSB2YW4gbG9zIHRleHRvcyBxdWUgZXN0w6FuIGVzY3JpdG9zIGVuIGVsIGPDs2RpZ28sIG5vIGVu
-IHVuYSBob2phIOKAlCBlbAogKiBhZG1pbmlzdHJhZG9yIG5vIGxvcyBlZGl0YSwgYXPDrSBxdWUgdml2ZW4gZW4gZXN0ZSBhcmNoaXZvIGVzdMOhdGljby4KICogPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
-PT09PT09PT09PT09PT09PT0gKi8KCndpbmRvdy5JMThuID0gKGZ1bmN0aW9uICgpIHsKICB2YXIgQ0xBVkUgPSAnaWRpb21hX3YxJzsKICB2YXIgRElTUE9OSUJMRVMgPSBbJ2VzJywgJ2VuJywgJ3poJ107CgogIHZhciBESUNDSU9OQVJJTyA9IHsKICAgIGNhcmdh
-bmRvOiB7IGVzOiAnQ2FyZ2FuZG/igKYnLCBlbjogJ0xvYWRpbmfigKYnLCB6aDogJ+ato+WcqOWKoOi9veKApicgfSwKICAgIGFicmlyX21lbnU6IHsgZXM6ICdBYnJpciBtZW7DuicsIGVuOiAnT3BlbiBtZW51Jywgemg6ICfmiZPlvIDoj5zljZUnIH0sCiAgICB0
-dV9jYXJyaXRvOiB7IGVzOiAnVHUgY2Fycml0bycsIGVuOiAnWW91ciBjYXJ0Jywgemg6ICfmgqjnmoTotK3nianovaYnIH0sCiAgICB0b3RhbDogeyBlczogJ1RvdGFsJywgZW46ICdUb3RhbCcsIHpoOiAn5oC76K6hJyB9LAogICAgc29saWNpdGFyX2NvdGl6YWNp
-b246IHsgZXM6ICdTb2xpY2l0YXIgY290aXphY2nDs24nLCBlbjogJ1JlcXVlc3QgYSBxdW90ZScsIHpoOiAn55Sz6K+35oql5Lu3JyB9LAogICAgY2VycmFyOiB7IGVzOiAnQ2VycmFyJywgZW46ICdDbG9zZScsIHpoOiAn5YWz6ZetJyB9LAogICAgYWdyZWdhcl9h
-bF9jYXJyaXRvOiB7IGVzOiAnQWdyZWdhciBhbCBjYXJyaXRvJywgZW46ICdBZGQgdG8gY2FydCcsIHpoOiAn5Yqg5YWl6LSt54mp6L2mJyB9LAogICAgcXVpdGFyOiB7IGVzOiAnUXVpdGFyJywgZW46ICdSZW1vdmUnLCB6aDogJ+enu+mZpCcgfSwKICAgIGNhcnJp
-dG9fdmFjaW86IHsgZXM6ICdUdSBjYXJyaXRvIGVzdMOhIHZhY8Otby4nLCBlbjogJ1lvdXIgY2FydCBpcyBlbXB0eS4nLCB6aDogJ+aCqOeahOi0reeJqei9puaYr+epuueahOOAgicgfSwKICAgIGluZ3Jlc2FfcnV0OiB7IGVzOiAnSW5ncmVzYSB0dSBSVVQgcGFy
-YSBnZW5lcmFyIGxhIGNvdGl6YWNpw7NuLicsIGVuOiAnRW50ZXIgeW91ciB0YXggSUQgdG8gZ2VuZXJhdGUgdGhlIHF1b3RlLicsIHpoOiAn6K+36L6T5YWl5oKo55qE56iO5Y+35Lul55Sf5oiQ5oql5Lu344CCJyB9LAogICAgZ2VuZXJhbmRvX2NvdGl6YWNpb246
-IHsgZXM6ICdHZW5lcmFuZG8gY290aXphY2nDs27igKYnLCBlbjogJ0dlbmVyYXRpbmcgcXVvdGXigKYnLCB6aDogJ+ato+WcqOeUn+aIkOaKpeS7t+KApicgfSwKICAgIGNvdGl6YWNpb25fZW52aWFkYTogeyBlczogJ8KhTGlzdG8hIENvdGl6YWNpw7NuIHtpZH0g
-ZW52aWFkYSBhIHR1IGNvcnJlby4nLCBlbjogJ0RvbmUhIFF1b3RlIHtpZH0gd2FzIHNlbnQgdG8geW91ciBlbWFpbC4nLCB6aDogJ+WujOaIkO+8geaKpeS7t+WNlSB7aWR9IOW3suWPkemAgeiHs+aCqOeahOmCrueuseOAgicgfSwKICAgIHZlcl9wZGY6IHsgZXM6
-ICdWZXIgUERGJywgZW46ICdWaWV3IFBERicsIHpoOiAn5p+l55yLUERGJyB9LAogICAgZXJyb3JfY290aXphY2lvbjogeyBlczogJ05vIHNlIHB1ZG8gZ2VuZXJhciBsYSBjb3RpemFjacOzbjoge2Vycm9yfSAowr90dSBSVVQgeWEgZXN0w6EgcmVnaXN0cmFkbyBj
-b21vIGNsaWVudGU/KScsIGVuOiAnVGhlIHF1b3RlIGNvdWxkIG5vdCBiZSBnZW5lcmF0ZWQ6IHtlcnJvcn0gKGlzIHlvdXIgdGF4IElEIGFscmVhZHkgcmVnaXN0ZXJlZCBhcyBhIGNsaWVudD8pJywgemg6ICfml6Dms5XnlJ/miJDmiqXku7fvvJp7ZXJyb3J977yI
-5oKo55qE56iO5Y+35piv5ZCm5bey5rOo5YaM5Li65a6i5oi377yf77yJJyB9LAogICAgZW52aW9fZ3JhdGlzOiB7IGVzOiAn8J+amiBFbnbDrW8gZ3JhdGlzJywgZW46ICfwn5qaIEZyZWUgc2hpcHBpbmcnLCB6aDogJ/Cfmpog5YWN6L+Q6LS5JyB9LAogICAgZW52
-aW9fZXN0aW1hZG86IHsgZXM6ICfwn5qaIEVudsOtbyBlc3RpbWFkbyBkZXNkZSAke21vbnRvfScsIGVuOiAn8J+amiBFc3RpbWF0ZWQgc2hpcHBpbmcgZnJvbSAke21vbnRvfScsIHpoOiAn8J+amiDpooTorqHov5DotLnkvY7oh7MgJHttb250b30nIH0sCiAgICBl
-bnZpb19ncmF0aXNfc29icmU6IHsgZXM6ICcgKGdyYXRpcyBzb2JyZSAke21vbnRvfSknLCBlbjogJyAoZnJlZSBvdmVyICR7bW9udG99KScsIHpoOiAn77yI5ruhICR7bW9udG99IOWFjei/kOi0ue+8iScgfSwKICAgIHRvZGF2aWFfc2luX3Byb2R1Y3RvczogeyBl
-czogJ1RvZGF2w61hIG5vIGhheSBwcm9kdWN0b3MgcHVibGljYWRvcy4nLCBlbjogJ05vIHByb2R1Y3RzIHB1Ymxpc2hlZCB5ZXQuJywgemg6ICfmmoLml6Dlt7Llj5HluIPnmoTkuqflk4HjgIInIH0sCiAgICBjb250ZW5pZG9fYWN0dWFsaXphZG86IHsgZXM6ICfi
-nJMgQ29udGVuaWRvIGFjdHVhbGl6YWRvJywgZW46ICfinJMgQ29udGVudCB1cGRhdGVkJywgemg6ICfinJMg5YaF5a655bey5pu05pawJyB9LAogICAgcGFnaW5hX25vX2VuY29udHJhZGE6IHsgZXM6ICdQw6FnaW5hIG5vIGVuY29udHJhZGEuJywgZW46ICdQYWdl
-IG5vdCBmb3VuZC4nLCB6aDogJ+mhtemdouacquaJvuWIsOOAgicgfSwKICAgIHZvbHZlbW9zX3Byb250b190aXR1bG86IHsgZXM6ICdWb2x2ZW1vcyBwcm9udG8nLCBlbjogJ0JhY2sgc29vbicsIHpoOiAn5Y2z5bCG5Zue5b2SJyB9LAogICAgdm9sdmVtb3NfcHJv
-bnRvX3RleHRvOiB7IGVzOiAnRXN0YW1vcyBhY3R1YWxpemFuZG8gZWwgc2l0aW8uIEdyYWNpYXMgcG9yIHR1IHBhY2llbmNpYS4nLCBlbjogJ1dlIGFyZSB1cGRhdGluZyB0aGUgc2l0ZS4gVGhhbmtzIGZvciB5b3VyIHBhdGllbmNlLicsIHpoOiAn572R56uZ5q2j
-5Zyo5pu05paw5Lit77yM5oSf6LCi5oKo55qE6ICQ5b+D562J5b6F44CCJyB9LAogICAgcG9saXRpY2FfcHJpdmFjaWRhZDogeyBlczogJ1BvbMOtdGljYSBkZSBwcml2YWNpZGFkJywgZW46ICdQcml2YWN5IHBvbGljeScsIHpoOiAn6ZqQ56eB5pS/562WJyB9LAog
-ICAgcGllX2dlbmVyYWRvOiB7IGVzOiAnU2l0aW8gZ2VuZXJhZG8geSBhZG1pbmlzdHJhZG8gMTAwJSBkZXNkZSBHb29nbGUgU2hlZXRzLicsIGVuOiAnU2l0ZSBnZW5lcmF0ZWQgYW5kIG1hbmFnZWQgMTAwJSBmcm9tIEdvb2dsZSBTaGVldHMuJywgemg6ICfnvZHn
-q5kxMDAl6YCa6L+HIEdvb2dsZSBTaGVldHMg55Sf5oiQ5LiO566h55CG44CCJyB9LAogICAgbWVudV90aWVuZGE6IHsgZXM6ICdUaWVuZGEnLCBlbjogJ1Nob3AnLCB6aDogJ+WVhuW6lycgfSwKICAgIG1lbnVfYmxvZzogeyBlczogJ0Jsb2cnLCBlbjogJ0Jsb2cn
-LCB6aDogJ+WNmuWuoicgfSwKICAgIGFydGljdWxvX25vX2VuY29udHJhZG86IHsgZXM6ICdBcnTDrWN1bG8gbm8gZW5jb250cmFkby4nLCBlbjogJ0FydGljbGUgbm90IGZvdW5kLicsIHpoOiAn5pyq5om+5Yiw6K+l5paH56ug44CCJyB9LAogICAgLy8gLS0tLSBj
-b3RpemFjaW9uLmh0bWwgLS0tLQogICAgZmFsdGFfaWRfY290aXphY2lvbjogeyBlczogJ0ZhbHRhIGVsIG7Dum1lcm8gZGUgY290aXphY2nDs24gZW4gZWwgZW5sYWNlLicsIGVuOiAnVGhlIHF1b3RlIG51bWJlciBpcyBtaXNzaW5nIGZyb20gdGhlIGxpbmsuJywg
-emg6ICfpk77mjqXkuK3nvLrlsJHmiqXku7fljZXnvJblj7fjgIInIH0sCiAgICBjYXJnYW5kb19jb3RpemFjaW9uOiB7IGVzOiAnQ2FyZ2FuZG8gdHUgY290aXphY2nDs27igKYnLCBlbjogJ0xvYWRpbmcgeW91ciBxdW90ZeKApicsIHpoOiAn5q2j5Zyo5Yqg6L29
-5oKo55qE5oql5Lu35Y2V4oCmJyB9LAogICAgY290aXphY2lvbl90aXR1bG86IHsgZXM6ICdDb3RpemFjacOzbiB7aWR9JywgZW46ICdRdW90ZSB7aWR9Jywgemg6ICfmiqXku7fljZUge2lkfScgfSwKICAgIGNvdGl6YWNpb25fcGFyYTogeyBlczogJ1BhcmE6IHtu
-b21icmV9IOKAlCBFc3RhZG86IHtlc3RhZG99JywgZW46ICdGb3I6IHtub21icmV9IOKAlCBTdGF0dXM6IHtlc3RhZG99Jywgemg6ICflrqLmiLfvvJp7bm9tYnJlfSDigJQg54q25oCB77yae2VzdGFkb30nIH0sCiAgICBjb2xfaXRlbTogeyBlczogJ8ONdGVtJywg
-ZW46ICdJdGVtJywgemg6ICfpobnnm64nIH0sCiAgICBjb2xfY2FudGlkYWQ6IHsgZXM6ICdDYW50LicsIGVuOiAnUXR5LicsIHpoOiAn5pWw6YePJyB9LAogICAgY29sX3ByZWNpbzogeyBlczogJ1ByZWNpbycsIGVuOiAnUHJpY2UnLCB6aDogJ+S7t+agvCcgfSwK
-ICAgIHN1YnRvdGFsOiB7IGVzOiAnU3VidG90YWwnLCBlbjogJ1N1YnRvdGFsJywgemg6ICflsI/orqEnIH0sCiAgICBkZXNjdWVudG86IHsgZXM6ICdEZXNjdWVudG8nLCBlbjogJ0Rpc2NvdW50Jywgemg6ICfmipjmiaMnIH0sCiAgICBpdmE6IHsgZXM6ICdJVkEn
-LCBlbjogJ1RheCcsIHpoOiAn56iO6aKdJyB9LAogICAgdG90YWxfcGFnYXI6IHsgZXM6ICdUb3RhbCcsIGVuOiAnVG90YWwnLCB6aDogJ+aAu+iuoScgfSwKICAgIHZlcl9wZGZfY290aXphY2lvbjogeyBlczogJ1ZlciBQREYgZGUgbGEgY290aXphY2nDs24nLCBl
-bjogJ1ZpZXcgcXVvdGUgUERGJywgemg6ICfmn6XnnIvmiqXku7fljZVQREYnIH0sCiAgICBhY2VwdGFyX2NvdGl6YWNpb246IHsgZXM6ICdBY2VwdGFyIGNvdGl6YWNpw7NuJywgZW46ICdBY2NlcHQgcXVvdGUnLCB6aDogJ+aOpeWPl+aKpeS7tycgfSwKICAgIHJl
-Y2hhemFyX2NvdGl6YWNpb246IHsgZXM6ICdSZWNoYXphcicsIGVuOiAnRGVjbGluZScsIHpoOiAn5ouS57udJyB9LAogICAgZW52aWFuZG9fcmVzcHVlc3RhOiB7IGVzOiAnRW52aWFuZG8gdHUgcmVzcHVlc3Rh4oCmJywgZW46ICdTZW5kaW5nIHlvdXIgcmVzcG9u
-c2XigKYnLCB6aDogJ+ato+WcqOaPkOS6pOaCqOeahOWbnuWkjeKApicgfSwKICAgIGNvbnRyYXRvX2dlbmVyYW5kbzogeyBlczogJ8KhR3JhY2lhcyEgVHUgY29udHJhdG8gc2UgZXN0w6EgZ2VuZXJhbmRvIHkgbGxlZ2Fyw6EgYSB0dSBjb3JyZW8uJywgZW46ICdU
-aGFuayB5b3UhIFlvdXIgY29udHJhY3QgaXMgYmVpbmcgZ2VuZXJhdGVkIGFuZCB3aWxsIGFycml2ZSBpbiB5b3VyIGVtYWlsLicsIHpoOiAn6LCi6LCi77yB5oKo55qE5ZCI5ZCM5q2j5Zyo55Sf5oiQ77yM56iN5ZCO5bCG5Y+R6YCB6Iez5oKo55qE6YKu566x44CC
-JyB9LAogICAgY290aXphY2lvbl9yZWNoYXphZGE6IHsgZXM6ICdDb3RpemFjacOzbiByZWNoYXphZGEuIFNpIGNhbWJpYXMgZGUgb3BpbmnDs24sIGNvbnTDoWN0YW5vcy4nLCBlbjogJ1F1b3RlIGRlY2xpbmVkLiBJZiB5b3UgY2hhbmdlIHlvdXIgbWluZCwgY29u
-dGFjdCB1cy4nLCB6aDogJ+aKpeS7t+W3suaLkue7neOAguWmguaUueWPmOS4u+aEj++8jOivt+maj+aXtuiBlOezu+aIkeS7rOOAgicgfSwKICAgIG5vX3NlX3B1ZG9fY2FyZ2FyX2NvdGl6YWNpb246IHsgZXM6ICdObyBzZSBwdWRvIGNhcmdhciBsYSBjb3RpemFj
-acOzbjoge2Vycm9yfScsIGVuOiAnVGhlIHF1b3RlIGNvdWxkIG5vdCBiZSBsb2FkZWQ6IHtlcnJvcn0nLCB6aDogJ+aXoOazleWKoOi9veaKpeS7t+WNle+8mntlcnJvcn0nIH0sCiAgICBjb21vX3BhZ2FyOiB7IGVzOiAnQ8OzbW8gcGFnYXInLCBlbjogJ0hvdyB0
-byBwYXknLCB6aDogJ+S7mOasvuaWueW8jycgfSwKICAgIC8vIC0tLS0gdmVyaWZpY2FjaW9uLmh0bWwgLS0tLQogICAgZmFsdGFfY29kaWdvX2RvY3VtZW50bzogeyBlczogJ0ZhbHRhIGVsIGPDs2RpZ28gZGVsIGRvY3VtZW50byBlbiBlbCBlbmxhY2UuJywgZW46
-ICdUaGUgZG9jdW1lbnQgY29kZSBpcyBtaXNzaW5nIGZyb20gdGhlIGxpbmsuJywgemg6ICfpk77mjqXkuK3nvLrlsJHmlofku7bpqozor4HnoIHjgIInIH0sCiAgICBkb2N1bWVudG9faW52YWxpZG86IHsgZXM6ICdFc3RlIGRvY3VtZW50byBubyBlcyB2w6FsaWRv
-IG8gZnVlIHJldm9jYWRvLicsIGVuOiAnVGhpcyBkb2N1bWVudCBpcyBub3QgdmFsaWQgb3IgaGFzIGJlZW4gcmV2b2tlZC4nLCB6aDogJ+ivpeaWh+S7tuaXoOaViOaIluW3suiiq+aSpOmUgOOAgicgfSwKICAgIG5vX3NlX3B1ZG9fdmVyaWZpY2FyOiB7IGVzOiAn
-Tm8gc2UgcHVkbyB2ZXJpZmljYXIgZWwgZG9jdW1lbnRvOiB7ZXJyb3J9JywgZW46ICdUaGUgZG9jdW1lbnQgY291bGQgbm90IGJlIHZlcmlmaWVkOiB7ZXJyb3J9Jywgemg6ICfml6Dms5Xpqozor4Hor6Xmlofku7bvvJp7ZXJyb3J9JyB9LAogICAgdmVyaWZpY2Fu
-ZG9fZG9jdW1lbnRvOiB7IGVzOiAnVmVyaWZpY2FuZG8gZG9jdW1lbnRv4oCmJywgZW46ICdWZXJpZnlpbmcgZG9jdW1lbnTigKYnLCB6aDogJ+ato+WcqOmqjOivgeaWh+S7tuKApicgfSwKICAgIGRvY3VtZW50b192YWxpZG86IHsgZXM6ICdEb2N1bWVudG8gdsOh
-bGlkbycsIGVuOiAnVmFsaWQgZG9jdW1lbnQnLCB6aDogJ+aWh+S7tuacieaViCcgfSwKICAgIHZlcmlmaWNhY2lvbl90aXR1bG86IHsgZXM6ICdWZXJpZmljYWNpw7NuIGRlIGRvY3VtZW50bycsIGVuOiAnRG9jdW1lbnQgdmVyaWZpY2F0aW9uJywgemg6ICfmlofk
-u7bpqozor4EnIH0sCiAgICB2ZXJpZmljYWNpb25faW50cm86IHsgZXM6ICdUb2RvIGRvY3VtZW50byAoY290aXphY2nDs24gbyBjb250cmF0bykgcXVlIGVtaXRpbW9zIGxsZXZhIHVuIGPDs2RpZ28gUVIgY29uIHVuIGhhc2ggw7puaWNvLiBFc3RhIHDDoWdpbmEg
-Y29uZmlybWEgc2kgZWwgZG9jdW1lbnRvIHF1ZSB0aWVuZXMgZW4gdHVzIG1hbm9zIGVzIGVsIG1pc21vIHF1ZSBlbWl0aW1vcywgc2luIGFsdGVyYWNpb25lcy4nLCBlbjogJ0V2ZXJ5IGRvY3VtZW50IChxdW90ZSBvciBjb250cmFjdCkgd2UgaXNzdWUgY2Fycmll
-cyBhIFFSIGNvZGUgd2l0aCBhIHVuaXF1ZSBoYXNoLiBUaGlzIHBhZ2UgY29uZmlybXMgd2hldGhlciB0aGUgZG9jdW1lbnQgeW91IGhhdmUgaXMgdGhlIHNhbWUgb25lIHdlIGlzc3VlZCwgdW5hbHRlcmVkLicsIHpoOiAn5oiR5Lus5Ye65YW355qE5q+P5Lu95paH
-5Lu277yI5oql5Lu35Y2V5oiW5ZCI5ZCM77yJ6YO95bim5pyJ5ZCr5ZSv5LiA5ZOI5biM5YC855qE5LqM57u056CB44CC5q2k6aG16Z2i55So5LqO56Gu6K6k5oKo5omL5Lit55qE5paH5Lu25LiO5oiR5Lus5Ye65YW355qE5Y6f5Lu25piv5ZCm5LiA6Ie044CB5pyq
-6KKr56+h5pS544CCJyB9LAogICAgZG9jdW1lbnRvX3ZhbGlkb19zaW5fYWx0ZXJhcjogeyBlczogJ+KclCBEb2N1bWVudG8gdsOhbGlkbyB5IHNpbiBhbHRlcmFjaW9uZXMuJywgZW46ICfinJQgVmFsaWQgZG9jdW1lbnQsIHVuYWx0ZXJlZC4nLCB6aDogJ+KclCDm
-lofku7bmnInmlYjvvIzmnKrooqvnr6HmlLnjgIInIH0sCiAgICB0aXBvX2RvY3VtZW50bzogeyBlczogJ1RpcG8nLCBlbjogJ1R5cGUnLCB6aDogJ+exu+WeiycgfSwKICAgIG51bWVyb19kb2N1bWVudG86IHsgZXM6ICdOw7ptZXJvJywgZW46ICdOdW1iZXInLCB6
-aDogJ+e8luWPtycgfSwKICAgIGZlY2hhX2RvY3VtZW50bzogeyBlczogJ0ZlY2hhJywgZW46ICdEYXRlJywgemg6ICfml6XmnJ8nIH0sCiAgICBub3RhX2Zpcm1hOiB7IGVzOiAnRXN0YSBlcyB1bmEgdmVyaWZpY2FjacOzbiBwcm9waWEgZGVsIHNpc3RlbWEgKGhh
-c2ggKyBRUiksIG5vIHVuYSBGaXJtYSBFbGVjdHLDs25pY2EgQXZhbnphZGEgc2Vnw7puIGxhIExleSAxOS43OTkuJywgZW46ICdUaGlzIGlzIGFuIGluLWhvdXNlIHZlcmlmaWNhdGlvbiAoaGFzaCArIFFSKSwgbm90IGFuIEFkdmFuY2VkIEVsZWN0cm9uaWMgU2ln
-bmF0dXJlIHVuZGVyIENoaWxlYW4gTGF3IDE5Ljc5OS4nLCB6aDogJ+atpOS4uuezu+e7n+WGhemDqOmqjOivge+8iOWTiOW4jCvkuoznu7TnoIHvvInvvIzlubbpnZ7kvp3mja7mmbrliKnnrKwxOS43OTnlj7fms5XlvovnmoTpq5jnuqfnlLXlrZDnrb7lkI3jgIIn
-IH0sCiAgICBkb2N1bWVudG9faW52YWxpZG9fcmV2b2NhZG86IHsgZXM6ICfinJggRXN0ZSBkb2N1bWVudG8gbm8gZXMgdsOhbGlkbyBvIGZ1ZSByZXZvY2Fkby4gU2kgdGllbmVzIGR1ZGFzLCBjb250w6FjdGFub3MgZGlyZWN0YW1lbnRlLicsIGVuOiAn4pyYIFRo
-aXMgZG9jdW1lbnQgaXMgbm90IHZhbGlkIG9yIGhhcyBiZWVuIHJldm9rZWQuIElmIGluIGRvdWJ0LCBjb250YWN0IHVzIGRpcmVjdGx5LicsIHpoOiAn4pyYIOivpeaWh+S7tuaXoOaViOaIluW3suiiq+aSpOmUgOOAguWmguacieeWkemXru+8jOivt+ebtOaOpeiB
-lOezu+aIkeS7rOOAgicgfQogIH07CgogIGZ1bmN0aW9uIG9idGVuZXIoKSB7CiAgICB0cnkgeyB2YXIgdiA9IGxvY2FsU3RvcmFnZS5nZXRJdGVtKENMQVZFKTsgaWYgKERJU1BPTklCTEVTLmluZGV4T2YodikgIT09IC0xKSB7IHJldHVybiB2OyB9IH0gY2F0Y2gg
-KGUpIHsgLyogc2luIHN0b3JhZ2U6IHNlIHVzYSBlbCBpZGlvbWEgcG9yIGRlZmVjdG8gKi8gfQogICAgcmV0dXJuICdlcyc7CiAgfQoKICBmdW5jdGlvbiBlc3RhYmxlY2VyKGNvZGlnbykgewogICAgaWYgKERJU1BPTklCTEVTLmluZGV4T2YoY29kaWdvKSA9PT0g
-LTEpIHsgcmV0dXJuOyB9CiAgICB0cnkgeyBsb2NhbFN0b3JhZ2Uuc2V0SXRlbShDTEFWRSwgY29kaWdvKTsgfSBjYXRjaCAoZSkgeyAvKiBubyBwZXJzaXN0ZSwgcGVybyBzaWd1ZSBmdW5jaW9uYW5kbyBlbiBlc3RhIGNhcmdhICovIH0KICAgIGRvY3VtZW50LmRv
-Y3VtZW50RWxlbWVudC5zZXRBdHRyaWJ1dGUoJ2xhbmcnLCBjb2RpZ28pOwogICAgZG9jdW1lbnQuZGlzcGF0Y2hFdmVudChuZXcgQ3VzdG9tRXZlbnQoJ2lkaW9tYTpjYW1iaW8nLCB7IGRldGFpbDogeyBpZGlvbWE6IGNvZGlnbyB9IH0pKTsKICB9CgogIC8vIHQo
-J2NsYXZlJywge21hcmNhZG9yOiB2YWxvcn0pIOKAlCByZWVtcGxhemEge21hcmNhZG9yfSBlbiBlbCB0ZXh0byBkZWwgaWRpb21hIGFjdHVhbC4KICBmdW5jdGlvbiB0KGNsYXZlLCB2YWxvcmVzKSB7CiAgICB2YXIgZW50cmFkYSA9IERJQ0NJT05BUklPW2NsYXZl
-XTsKICAgIGlmICghZW50cmFkYSkgeyBjb25zb2xlLndhcm4oJ2kxOG46IGZhbHRhIGxhIGNsYXZlJywgY2xhdmUpOyByZXR1cm4gY2xhdmU7IH0KICAgIHZhciB0ZXh0byA9IGVudHJhZGFbb2J0ZW5lcigpXSB8fCBlbnRyYWRhLmVzIHx8IGNsYXZlOwogICAgaWYg
-KHZhbG9yZXMpIHsgT2JqZWN0LmtleXModmFsb3JlcykuZm9yRWFjaChmdW5jdGlvbiAoaykgeyB0ZXh0byA9IHRleHRvLnJlcGxhY2UoJ3snICsgayArICd9JywgdmFsb3Jlc1trXSk7IH0pOyB9CiAgICByZXR1cm4gdGV4dG87CiAgfQoKICByZXR1cm4geyB0OiB0
-LCBpZGlvbWE6IG9idGVuZXIsIHNldElkaW9tYTogZXN0YWJsZWNlciwgZGlzcG9uaWJsZXM6IERJU1BPTklCTEVTIH07Cn0pKCk7Cg==
+/* ============================================================================
+ * i18n.js — Diccionario de textos de INTERFAZ fijos (botones, mensajes de
+ * estado, aria-labels...). Esto es distinto del contenido de negocio (Config,
+ * Paginas/Secciones/Elementos, Productos, Blog), que se traduce directo en el
+ * Sheet con columnas _en/_zh (ver render.js: campo_()/datosIdioma_()).
+ * Acá van los textos que están escritos en el código, no en una hoja — el
+ * administrador no los edita, así que viven en este archivo estático.
+ * ========================================================================== */
+
+window.I18n = (function () {
+  var CLAVE = 'idioma_v1';
+  var DISPONIBLES = ['es', 'en', 'zh'];
+
+  var DICCIONARIO = {
+    cargando: { es: 'Cargando…', en: 'Loading…', zh: '正在加载…' },
+    abrir_menu: { es: 'Abrir menú', en: 'Open menu', zh: '打开菜单' },
+    tu_carrito: { es: 'Tu carrito', en: 'Your cart', zh: '您的购物车' },
+    total: { es: 'Total', en: 'Total', zh: '总计' },
+    solicitar_cotizacion: { es: 'Solicitar cotización', en: 'Request a quote', zh: '申请报价' },
+    cerrar: { es: 'Cerrar', en: 'Close', zh: '关闭' },
+    agregar_al_carrito: { es: 'Agregar al carrito', en: 'Add to cart', zh: '加入购物车' },
+    quitar: { es: 'Quitar', en: 'Remove', zh: '移除' },
+    carrito_vacio: { es: 'Tu carrito está vacío.', en: 'Your cart is empty.', zh: '您的购物车是空的。' },
+    ingresa_rut: { es: 'Ingresa tu RUT para generar la cotización.', en: 'Enter your tax ID to generate the quote.', zh: '请输入您的税号以生成报价。' },
+    generando_cotizacion: { es: 'Generando cotización…', en: 'Generating quote…', zh: '正在生成报价…' },
+    cotizacion_enviada: { es: '¡Listo! Cotización {id} enviada a tu correo.', en: 'Done! Quote {id} was sent to your email.', zh: '完成！报价单 {id} 已发送至您的邮箱。' },
+    ver_pdf: { es: 'Ver PDF', en: 'View PDF', zh: '查看PDF' },
+    error_cotizacion: { es: 'No se pudo generar la cotización: {error} (¿tu RUT ya está registrado como cliente?)', en: 'The quote could not be generated: {error} (is your tax ID already registered as a client?)', zh: '无法生成报价：{error}（您的税号是否已注册为客户？）' },
+    envio_gratis: { es: '🚚 Envío gratis', en: '🚚 Free shipping', zh: '🚚 免运费' },
+    envio_estimado: { es: '🚚 Envío estimado desde ${monto}', en: '🚚 Estimated shipping from ${monto}', zh: '🚚 预计运费低至 ${monto}' },
+    envio_gratis_sobre: { es: ' (gratis sobre ${monto})', en: ' (free over ${monto})', zh: '（满 ${monto} 免运费）' },
+    todavia_sin_productos: { es: 'Todavía no hay productos publicados.', en: 'No products published yet.', zh: '暂无已发布的产品。' },
+    contenido_actualizado: { es: '✓ Contenido actualizado', en: '✓ Content updated', zh: '✓ 内容已更新' },
+    pagina_no_encontrada: { es: 'Página no encontrada.', en: 'Page not found.', zh: '页面未找到。' },
+    volvemos_pronto_titulo: { es: 'Volvemos pronto', en: 'Back soon', zh: '即将回归' },
+    volvemos_pronto_texto: { es: 'Estamos actualizando el sitio. Gracias por tu paciencia.', en: 'We are updating the site. Thanks for your patience.', zh: '网站正在更新中，感谢您的耐心等待。' },
+    politica_privacidad: { es: 'Política de privacidad', en: 'Privacy policy', zh: '隐私政策' },
+    pie_generado: { es: 'Sitio generado y administrado 100% desde Google Sheets.', en: 'Site generated and managed 100% from Google Sheets.', zh: '网站100%通过 Google Sheets 生成与管理。' },
+    menu_tienda: { es: 'Tienda', en: 'Shop', zh: '商店' },
+    menu_blog: { es: 'Blog', en: 'Blog', zh: '博客' },
+    articulo_no_encontrado: { es: 'Artículo no encontrado.', en: 'Article not found.', zh: '未找到该文章。' },
+    // ---- cotizacion.html ----
+    falta_id_cotizacion: { es: 'Falta el número de cotización en el enlace.', en: 'The quote number is missing from the link.', zh: '链接中缺少报价单编号。' },
+    cargando_cotizacion: { es: 'Cargando tu cotización…', en: 'Loading your quote…', zh: '正在加载您的报价单…' },
+    cotizacion_titulo: { es: 'Cotización {id}', en: 'Quote {id}', zh: '报价单 {id}' },
+    cotizacion_para: { es: 'Para: {nombre} — Estado: {estado}', en: 'For: {nombre} — Status: {estado}', zh: '客户：{nombre} — 状态：{estado}' },
+    col_item: { es: 'Ítem', en: 'Item', zh: '项目' },
+    col_cantidad: { es: 'Cant.', en: 'Qty.', zh: '数量' },
+    col_precio: { es: 'Precio', en: 'Price', zh: '价格' },
+    subtotal: { es: 'Subtotal', en: 'Subtotal', zh: '小计' },
+    descuento: { es: 'Descuento', en: 'Discount', zh: '折扣' },
+    iva: { es: 'IVA', en: 'Tax', zh: '税额' },
+    total_pagar: { es: 'Total', en: 'Total', zh: '总计' },
+    ver_pdf_cotizacion: { es: 'Ver PDF de la cotización', en: 'View quote PDF', zh: '查看报价单PDF' },
+    aceptar_cotizacion: { es: 'Aceptar cotización', en: 'Accept quote', zh: '接受报价' },
+    rechazar_cotizacion: { es: 'Rechazar', en: 'Decline', zh: '拒绝' },
+    enviando_respuesta: { es: 'Enviando tu respuesta…', en: 'Sending your response…', zh: '正在提交您的回复…' },
+    contrato_generando: { es: '¡Gracias! Tu contrato se está generando y llegará a tu correo.', en: 'Thank you! Your contract is being generated and will arrive in your email.', zh: '谢谢！您的合同正在生成，稍后将发送至您的邮箱。' },
+    cotizacion_rechazada: { es: 'Cotización rechazada. Si cambias de opinión, contáctanos.', en: 'Quote declined. If you change your mind, contact us.', zh: '报价已拒绝。如改变主意，请随时联系我们。' },
+    no_se_pudo_cargar_cotizacion: { es: 'No se pudo cargar la cotización: {error}', en: 'The quote could not be loaded: {error}', zh: '无法加载报价单：{error}' },
+    como_pagar: { es: 'Cómo pagar', en: 'How to pay', zh: '付款方式' },
+    // ---- verificacion.html ----
+    falta_codigo_documento: { es: 'Falta el código del documento en el enlace.', en: 'The document code is missing from the link.', zh: '链接中缺少文件验证码。' },
+    documento_invalido: { es: 'Este documento no es válido o fue revocado.', en: 'This document is not valid or has been revoked.', zh: '该文件无效或已被撤销。' },
+    no_se_pudo_verificar: { es: 'No se pudo verificar el documento: {error}', en: 'The document could not be verified: {error}', zh: '无法验证该文件：{error}' },
+    verificando_documento: { es: 'Verificando documento…', en: 'Verifying document…', zh: '正在验证文件…' },
+    documento_valido: { es: 'Documento válido', en: 'Valid document', zh: '文件有效' },
+    verificacion_titulo: { es: 'Verificación de documento', en: 'Document verification', zh: '文件验证' },
+    verificacion_intro: { es: 'Todo documento (cotización o contrato) que emitimos lleva un código QR con un hash único. Esta página confirma si el documento que tienes en tus manos es el mismo que emitimos, sin alteraciones.', en: 'Every document (quote or contract) we issue carries a QR code with a unique hash. This page confirms whether the document you have is the same one we issued, unaltered.', zh: '我们出具的每份文件（报价单或合同）都带有含唯一哈希值的二维码。此页面用于确认您手中的文件与我们出具的原件是否一致、未被篡改。' },
+    documento_valido_sin_alterar: { es: '✔ Documento válido y sin alteraciones.', en: '✔ Valid document, unaltered.', zh: '✔ 文件有效，未被篡改。' },
+    tipo_documento: { es: 'Tipo', en: 'Type', zh: '类型' },
+    numero_documento: { es: 'Número', en: 'Number', zh: '编号' },
+    fecha_documento: { es: 'Fecha', en: 'Date', zh: '日期' },
+    nota_firma: { es: 'Esta es una verificación propia del sistema (hash + QR), no una Firma Electrónica Avanzada según la Ley 19.799.', en: 'This is an in-house verification (hash + QR), not an Advanced Electronic Signature under Chilean Law 19.799.', zh: '此为系统内部验证（哈希+二维码），并非依据智利第19.799号法律的高级电子签名。' },
+    documento_invalido_revocado: { es: '✘ Este documento no es válido o fue revocado. Si tienes dudas, contáctanos directamente.', en: '✘ This document is not valid or has been revoked. If in doubt, contact us directly.', zh: '✘ 该文件无效或已被撤销。如有疑问，请直接联系我们。' }
+  };
+
+  function obtener() {
+    try { var v = localStorage.getItem(CLAVE); if (DISPONIBLES.indexOf(v) !== -1) { return v; } } catch (e) { /* sin storage: se usa el idioma por defecto */ }
+    return 'es';
+  }
+
+  function establecer(codigo) {
+    if (DISPONIBLES.indexOf(codigo) === -1) { return; }
+    try { localStorage.setItem(CLAVE, codigo); } catch (e) { /* no persiste, pero sigue funcionando en esta carga */ }
+    document.documentElement.setAttribute('lang', codigo);
+    document.dispatchEvent(new CustomEvent('idioma:cambio', { detail: { idioma: codigo } }));
+  }
+
+  // t('clave', {marcador: valor}) — reemplaza {marcador} en el texto del idioma actual.
+  function t(clave, valores) {
+    var entrada = DICCIONARIO[clave];
+    if (!entrada) { console.warn('i18n: falta la clave', clave); return clave; }
+    var texto = entrada[obtener()] || entrada.es || clave;
+    if (valores) { Object.keys(valores).forEach(function (k) { texto = texto.replace('{' + k + '}', valores[k]); }); }
+    return texto;
+  }
+
+  return { t: t, idioma: obtener, setIdioma: establecer, disponibles: DISPONIBLES };
+})();
