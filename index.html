@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cargando…</title>
+<meta name="description" content="">
+<link rel="icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css">
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+<script type="application/ld+json" id="jsonld-organizacion"></script>
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="contenedor">
+    <a class="logo" href="#inicio" id="logo-empresa"><img id="logo-img" src="" alt="" class="oculto"><span id="logo-texto">Cargando…</span></a>
+    <ul class="menu-principal" id="menu-principal"></ul>
+    <div style="display:flex; align-items:center; gap:14px;">
+      <div class="selector-idioma" id="selector-idioma" role="group" aria-label="Idioma / Language / 语言">
+        <button type="button" data-idioma="es">ES</button>
+        <button type="button" data-idioma="en">EN</button>
+        <button type="button" data-idioma="zh">中文</button>
+      </div>
+      <button class="btn-menu-movil" id="btn-menu-movil" aria-label="Abrir menú">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- Vive fuera de #contenido-pagina para no perderse cada vez que una ruta reescribe su
+     innerHTML: render() la reubica ella misma después de pintar cada página (ver
+     reubicarBarraIndicadores_ más abajo) — debajo del hero/banner si la página tiene uno,
+     o al principio del contenido si no, nunca amontonada junto a la cabecera. -->
+<div class="barra-indicadores oculto" id="barra-indicadores" aria-hidden="true"></div>
+
+<main id="contenido-pagina">
+  <div class="esqueleto-carga" aria-hidden="true">
+    <div class="esqueleto-hero"><div class="esqueleto-linea corta"></div><div class="esqueleto-linea"></div><div class="esqueleto-linea media"></div><div class="esqueleto-boton"></div></div>
+    <div class="esqueleto-tarjetas"><div class="esqueleto-tarjeta"></div><div class="esqueleto-tarjeta"></div><div class="esqueleto-tarjeta"></div></div>
+  </div>
+</main>
+
+<a class="boton-whatsapp-flotante oculto" id="boton-whatsapp" target="_blank" rel="noopener" aria-label="Hablar por WhatsApp">
+  <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.23.6 4.38 1.73 6.27L4 29l7.9-1.68a12.9 12.9 0 0 0 4.12.68h.01c6.62 0 12.02-5.4 12.02-12.02C28.05 8.4 22.65 3 16.02 3zm7.05 17.16c-.3.84-1.7 1.6-2.35 1.7-.6.1-1.36.14-2.2-.14-.5-.16-1.15-.38-1.99-.74-3.5-1.5-5.78-5.06-5.96-5.3-.17-.24-1.42-1.9-1.42-3.62 0-1.72.9-2.56 1.22-2.9.32-.34.7-.43.94-.43.24 0 .47 0 .68.01.22.01.5-.08.79.6.3.7 1 2.42 1.09 2.6.1.18.16.4.03.64-.13.24-.2.4-.4.6-.2.22-.42.5-.6.66-.2.2-.4.4-.18.78.22.4 1 1.63 2.14 2.64 1.47 1.3 2.7 1.71 3.1 1.9.4.2.63.16.86-.1.24-.26 1-1.17 1.27-1.57.27-.4.54-.33.9-.2.36.13 2.3 1.08 2.7 1.28.4.2.66.3.76.46.1.18.1 1.02-.2 1.86z"/></svg>
+</a>
+<div class="barra-carrito oculto" id="barra-carrito">🛒 <span id="contador-carrito">0</span></div>
+<aside class="panel-carrito" id="panel-carrito">
+  <h2>Tu carrito</h2>
+  <div id="lineas-carrito"></div>
+  <p><strong>Total: $<span id="total-carrito">0</span></strong></p>
+  <div class="campo">
+    <label for="rut-cotizacion">Tu RUT (para la cotización)</label>
+    <input type="text" id="rut-cotizacion" placeholder="12345678-9">
+  </div>
+  <p id="estimado-envio" style="font-size:.85rem; color:var(--color-texto-suave)"></p>
+  <button class="btn btn-primario btn-bloque" id="btn-cotizar">Solicitar cotización</button>
+  <button class="btn btn-secundario btn-bloque" id="btn-cerrar-carrito" style="margin-top:10px">Cerrar</button>
+  <p id="mensaje-carrito"></p>
+</aside>
+
+<footer class="pie">
+  <div class="contenedor">
+    <div>
+      <strong id="pie-empresa">—</strong>
+      <p id="pie-direccion" style="color:#94a3b8"></p>
+      <p id="pie-contacto" style="color:#94a3b8; font-size:.9rem"></p>
+      <div id="pie-redes" style="display:flex; gap:12px; margin-top:10px"></div>
+    </div>
+    <div>
+      <div id="pie-medios-pago"></div>
+      <p style="font-size:.85rem"><a href="privacidad.html" id="pie-link-privacidad">Política de privacidad</a></p>
+    </div>
+  </div>
+  <small>© <span id="pie-anio"></span> — <span id="pie-generado">Sitio generado y administrado 100% desde Google Sheets.</span></small>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/config.js"></script>
+<script src="js/render.js"></script>
+<script src="js/carrito.js"></script>
+<script src="js/formulario.js"></script>
+<script src="js/herramientas.js"></script>
+<script src="js/diagnostico.js"></script>
+<script>
+(async function () {
+  document.getElementById('pie-anio').textContent = new Date().getFullYear();
+
+  // ---- Textos fijos de interfaz (js/i18n.js) — se reaplican cada vez que cambia el idioma ----
+  function aplicarTextosFijos_() {
+    document.getElementById('btn-menu-movil').setAttribute('aria-label', I18n.t('abrir_menu'));
+    document.querySelector('#panel-carrito h2').textContent = I18n.t('tu_carrito');
+    document.querySelector('#panel-carrito p strong').innerHTML = I18n.t('total') + ': $<span id="total-carrito">' + (document.getElementById('total-carrito') ? document.getElementById('total-carrito').textContent : '0') + '</span>';
+    document.getElementById('btn-cotizar').textContent = I18n.t('solicitar_cotizacion');
+    document.getElementById('btn-cerrar-carrito').textContent = I18n.t('cerrar');
+    document.getElementById('pie-link-privacidad').textContent = I18n.t('politica_privacidad');
+    document.getElementById('pie-generado').textContent = I18n.t('pie_generado');
+    document.querySelectorAll('#selector-idioma button').forEach(function (b) {
+      b.classList.toggle('activo', b.getAttribute('data-idioma') === I18n.idioma());
+    });
+  }
+  document.getElementById('selector-idioma').addEventListener('click', function (ev) {
+    var btn = ev.target.closest('[data-idioma]');
+    if (!btn) { return; }
+    I18n.setIdioma(btn.getAttribute('data-idioma'));
+  });
+  document.addEventListener('idioma:cambio', function () { aplicarTextosFijos_(); pintarMenu_(); render(); });
+  aplicarTextosFijos_();
+
+  await window.Sitio.iniciar();
+  var estado = window.Sitio.estado;
+
+  // Interruptor general: si Config.sitio_activo = FALSE, no se pinta nada más.
+  if (!window.Sitio.sitioActivo()) {
+    document.getElementById('contenido-pagina').innerHTML =
+      '<div class="mensaje-mantenimiento"><div><h1>' + I18n.t('volvemos_pronto_titulo') + '</h1><p>' + I18n.t('volvemos_pronto_texto') + '</p></div></div>';
+    document.querySelector('.cabecera').style.display = 'none';
+    return;
+  }
+
+  // Cabecera / logo / menú (respeta modulo_tienda y modulo_blog para no ofrecer rutas apagadas)
+  var logoTxt = document.getElementById('logo-texto'), logoImg = document.getElementById('logo-img');
+  if (estado.config.logo_url) { logoImg.src = estado.config.logo_url; logoImg.classList.remove('oculto'); logoTxt.classList.add('oculto'); }
+  else { logoTxt.textContent = estado.config.empresa_nombre || 'Mi empresa'; }
+  function pintarMenu_() {
+    var menuHtml = Render.renderMenu(estado.menu, I18n.idioma());
+    if (window.Sitio.moduloActivo('tienda')) { menuHtml += '<li><a href="#tienda">' + I18n.t('menu_tienda') + '</a></li>'; }
+    if (window.Sitio.moduloActivo('blog')) { menuHtml += '<li><a href="#blog">' + I18n.t('menu_blog') + '</a></li>'; }
+    document.getElementById('menu-principal').innerHTML = menuHtml;
+  }
+  pintarMenu_();
+
+  // Mega-menú: el botón ▾ (independiente del enlace) abre/cierra su submenú con un toque —
+  // necesario en touch, donde no existe ":hover" — mientras que en escritorio el CSS ya lo
+  // abre solo al pasar el mouse. Delegado una sola vez: sigue funcionando aunque pintarMenu_()
+  // vuelva a generar el HTML del menú (cambio de idioma, actualización "casi en vivo").
+  document.getElementById('menu-principal').addEventListener('click', function (ev) {
+    var boton = ev.target.closest('.abrir-submenu');
+    if (!boton) { return; }
+    ev.preventDefault();
+    var li = boton.closest('li');
+    var abierto = li.classList.toggle('abierta');
+    boton.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+    // Solo un submenú de nivel 1 abierto a la vez en móvil, para que el menú no crezca sin control.
+    li.parentElement.querySelectorAll(':scope > li.abierta').forEach(function (otro) {
+      if (otro !== li) { otro.classList.remove('abierta'); otro.querySelector(':scope > .abrir-submenu').setAttribute('aria-expanded', 'false'); }
+    });
+  });
+
+  // ---- Barra de indicadores financieros (mostrar/ocultar desde Config, como toda sección nueva) ----
+  // Duplica los mismos ítems dos veces seguidas en el DOM para que la animación CSS (translateX de
+  // -50%) haga un loop perfecto sin salto visible, sin depender de medir anchos en JS.
+  function itemsBarra_() {
+    var m = estado.mercado || {};
+    var items = [];
+    (m.usa || []).forEach(function (i) { items.push(i); });
+    (m.chile || []).forEach(function (i) { items.push(i); });
+    (m.cripto || []).forEach(function (i) { items.push(i); });
+    if (m.yen) { items.push(m.yen); }
+    var uf = window.Sitio.indicador('UF'), utm = window.Sitio.indicador('UTM'), dolar = window.Sitio.indicador('DOLAR'), euro = window.Sitio.indicador('EURO');
+    if (uf) { items.push({ codigo: 'UF', nombre: 'UF', valor: uf, variacion_pct: null }); }
+    if (utm) { items.push({ codigo: 'UTM', nombre: 'UTM', valor: utm, variacion_pct: null }); }
+    if (dolar) { items.push({ codigo: 'USD', nombre: 'Dólar', valor: dolar, variacion_pct: null }); }
+    if (euro) { items.push({ codigo: 'EUR', nombre: 'Euro', valor: euro, variacion_pct: null }); }
+    return items;
+  }
+  function pintarBarraIndicadores_() {
+    var cont = document.getElementById('barra-indicadores');
+    if (estado.config.mostrar_barra_indicadores === false || estado.config.mostrar_barra_indicadores === 'FALSE') {
+      cont.classList.add('oculto'); cont.innerHTML = ''; return;
+    }
+    var items = itemsBarra_();
+    if (!items.length) { cont.classList.add('oculto'); cont.innerHTML = ''; return; }
+    var piezas = items.map(function (i) {
+      var pct = (i.variacion_pct === null || i.variacion_pct === undefined) ? '' :
+        '<span class="' + (i.variacion_pct >= 0 ? 'sube' : 'baja') + '">' + (i.variacion_pct >= 0 ? '▲' : '▼') + ' ' + Math.abs(i.variacion_pct).toFixed(2) + '%</span>';
+      var valorTxto = Number(i.valor).toLocaleString('es-CL', { maximumFractionDigits: 2 });
+      return '<span class="item-indicador"><strong>' + Render.esc(i.nombre) + '</strong> ' + valorTxto + ' ' + pct + '</span>';
+    }).join('');
+    cont.innerHTML = '<div class="pista-indicadores">' + piezas + piezas + '</div>';
+    cont.classList.remove('oculto');
+  }
+  pintarBarraIndicadores_();
+
+  // ---- Botón flotante de WhatsApp (site-wide, mensaje prellenado) ----
+  // Se apoya en el mismo Config.redes_whatsapp que ya usa el pie de página — si no está
+  // configurado, el botón simplemente no aparece (no hace falta una bandera aparte).
+  function pintarBotonWhatsapp_() {
+    var boton = document.getElementById('boton-whatsapp');
+    var numero = estado.config.redes_whatsapp;
+    if (!numero) { boton.classList.add('oculto'); return; }
+    var mensaje = encodeURIComponent('¡Hola! Me gustaría cotizar un servicio de ' + (estado.config.empresa_nombre || 'la empresa') + '.');
+    boton.href = 'https://wa.me/' + numero + '?text=' + mensaje;
+    boton.classList.remove('oculto');
+  }
+  pintarBotonWhatsapp_();
+
+  // ---- Acordeón de categorías en la página "Planes" (Sección tipo 'categoria_planes') ----
+  // Delegado en #contenido-pagina (no en cada tarjeta) para seguir funcionando aunque el
+  // contenido se vuelva a pintar en cada cambio de ruta o idioma.
+  document.getElementById('contenido-pagina').addEventListener('click', function (ev) {
+    var boton = ev.target.closest('.categoria-planes-cabecera');
+    if (!boton) { return; }
+    var seccion = boton.closest('.categoria-planes');
+    var abierta = seccion.classList.toggle('abierta');
+    boton.setAttribute('aria-expanded', abierta ? 'true' : 'false');
+  });
+
+  // Abre (si hace falta) y hace scroll hasta una categoría de "Planes" enlazada como
+  // "#planes/<categoria>" (ver Menu — cada hijo de "Planes" enlaza así). Si el ancla no
+  // corresponde a ninguna categoría (o la página no es "Planes"), no hace nada.
+  function abrirYDesplazarCategoria_(main, anclaSlug) {
+    var nodo = main.querySelector('#categoria-' + anclaSlug);
+    if (!nodo) { return; }
+    if (nodo.classList.contains('categoria-planes') && !nodo.classList.contains('abierta')) {
+      nodo.classList.add('abierta');
+      var boton = nodo.querySelector('.categoria-planes-cabecera');
+      if (boton) { boton.setAttribute('aria-expanded', 'true'); }
+    }
+    nodo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Reubica la barra de indicadores DENTRO del contenido recién pintado: debajo del banner
+  // (".seccion-hero") si la página tiene uno — antes del primer título de la siguiente
+  // sección, como pidió el negocio — o al comienzo del contenido si la página no tiene hero.
+  // Es el mismo nodo del DOM (no una copia): sobrevive a que #contenido-pagina reescriba su
+  // innerHTML en cada cambio de ruta porque se reinserta después, al final de render().
+  function reubicarBarraIndicadores_() {
+    var barra = document.getElementById('barra-indicadores');
+    var main = document.getElementById('contenido-pagina');
+    var hero = main.querySelector('.seccion-hero');
+    if (hero) { hero.insertAdjacentElement('afterend', barra); }
+    else { main.insertAdjacentElement('afterbegin', barra); }
+  }
+
+  document.getElementById('pie-empresa').textContent = estado.config.empresa_nombre || '';
+  document.getElementById('pie-direccion').textContent = estado.config.empresa_direccion || '';
+  document.getElementById('pie-contacto').textContent = [estado.config.empresa_telefono, estado.config.empresa_correo, estado.config.horario_atencion].filter(Boolean).join(' · ');
+  document.getElementById('btn-menu-movil').addEventListener('click', function () {
+    document.getElementById('menu-principal').classList.toggle('abierto');
+  });
+
+  // Sombra de la cabecera solo cuando hay contenido debajo por el que hacer scroll.
+  var cabecera = document.querySelector('.cabecera');
+  window.addEventListener('scroll', function () {
+    cabecera.classList.toggle('con-sombra', window.scrollY > 8);
+  }, { passive: true });
+
+  // Redes sociales (solo se muestran las que tengan URL configurada)
+  var redes = { redes_facebook: 'Facebook', redes_instagram: 'Instagram', redes_linkedin: 'LinkedIn', redes_youtube: 'YouTube', redes_tiktok: 'TikTok' };
+  document.getElementById('pie-redes').innerHTML = Object.keys(redes).map(function (clave) {
+    return estado.config[clave] ? '<a href="' + estado.config[clave] + '" target="_blank" rel="noopener">' + redes[clave] + '</a>' : '';
+  }).join('');
+  if (estado.config.redes_whatsapp) {
+    document.getElementById('pie-redes').innerHTML += '<a href="https://wa.me/' + estado.config.redes_whatsapp + '" target="_blank" rel="noopener">WhatsApp</a>';
+  }
+
+  // Medios de pago (texto simple; el detalle vive en Config > Pagos y se muestra en cotizacion.html)
+  if (estado.config.medios_pago_texto) { document.getElementById('pie-medios-pago').innerHTML = '<p>' + Render.esc(estado.config.medios_pago_texto) + '</p>'; }
+
+  // ---- Router simple por hash: #slug | #blog | #blog/slug | #tienda ----
+  function render() {
+    var ruta = (location.hash || '#inicio').replace('#', '');
+    var main = document.getElementById('contenido-pagina');
+    var idioma = I18n.idioma();
+
+    if (ruta === 'tienda' && !window.Sitio.moduloActivo('tienda')) { ruta = 'inicio'; }
+    if ((ruta === 'blog' || ruta.indexOf('blog/') === 0) && !window.Sitio.moduloActivo('blog')) { ruta = 'inicio'; }
+
+    if (ruta === 'blog') {
+      main.innerHTML = '<section class="reveal"><div class="contenedor"><div class="seccion-encabezado"><h2>' + I18n.t('menu_blog') + '</h2></div><div class="grid-blog">' + Render.renderBlog(estado.blog, idioma) + '</div></div></section>';
+      Render.activarReveal(main);
+      reubicarBarraIndicadores_();
+      return;
+    }
+    if (ruta.indexOf('blog/') === 0) {
+      var post = estado.blog.filter(function (p) { return p.slug === ruta.slice(5); })[0];
+      main.innerHTML = Render.renderPostBlog(post, idioma);
+      reubicarBarraIndicadores_();
+      return;
+    }
+    if (ruta === 'tienda') {
+      main.innerHTML = renderTienda_(idioma);
+      Carrito.enlazarBotonesAgregar();
+      Render.activarReveal(main);
+      reubicarBarraIndicadores_();
+      return;
+    }
+
+    // Soporta "slug/ancla" (ej. "planes/contabilidad-digital", ver Menu → hijos de "Planes")
+    // sin tocar el resto del router: se busca la página por su slug (antes de la "/") y, una
+    // vez pintada, se despliega/hace scroll hasta esa categoría — ver abrirYDesplazarCategoria_.
+    var partesRuta = ruta.split('/');
+    var slugPagina = partesRuta[0], ancla = partesRuta[1];
+    var pagina = window.Sitio.paginaPorSlug(slugPagina);
+    document.title = (pagina ? Render.campo(pagina, 'titulo', idioma) + ' — ' : '') + (estado.config.empresa_nombre || '');
+    main.innerHTML = Render.renderPagina(pagina, estado.config, idioma);
+    if (slugPagina === 'contacto' || (pagina && pagina.slug === 'contacto')) { Formulario.montar(document.getElementById('contenido-pagina')); }
+    if (window.Herramientas) { Herramientas.montar(main); }
+    if (window.Diagnostico) { Diagnostico.montar(main); }
+    Render.activarReveal(main);
+    reubicarBarraIndicadores_();
+    if (ancla) { abrirYDesplazarCategoria_(main, ancla); }
+  }
+
+  function renderTienda_(idioma) {
+    var productos = estado.catalogo.productos || [];
+    var tarjetas = productos.map(function (p) {
+      return (
+        '<div class="tarjeta tarjeta-producto">' +
+        '<h3>' + Render.esc(Render.campo(p, 'nombre', idioma)) + '</h3>' +
+        '<div class="precio">' + Render.esc(p.precio_base) + ' <small>' + Render.esc(p.unidad_precio) + '</small></div>' +
+        '<button class="btn btn-primario btn-bloque" data-agregar="' + Render.esc(p.id_producto) + '">' + I18n.t('agregar_al_carrito') + '</button>' +
+        '</div>'
+      );
+    }).join('');
+    var vacio = !productos.length ? '<p style="text-align:center; color:var(--color-texto-suave)">' + I18n.t('todavia_sin_productos') + '</p>' : '';
+    return '<section class="reveal"><div class="contenedor"><div class="seccion-encabezado"><h2>' + I18n.t('menu_tienda') + '</h2></div>' + vacio + '<div class="grid-catalogo">' + tarjetas + '</div></div></section>';
+  }
+
+  window.addEventListener('hashchange', render);
+  Carrito.iniciar();
+  render();
+
+  // ---- "Casi en vivo": si alguien edita el Sheet, esta pestaña (ya abierta) lo nota sola ----
+  // Junto con la publicación automática al editar (backend, ~1 minuto), el resultado es que
+  // editar Config/Paginas/Secciones/etc. se ve reflejado aquí sin recargar la página a mano.
+  document.addEventListener('sitio:actualizado', function () {
+    aplicarTextosFijos_(); pintarMenu_();
+    document.getElementById('pie-empresa').textContent = estado.config.empresa_nombre || '';
+    document.getElementById('pie-direccion').textContent = estado.config.empresa_direccion || '';
+    document.getElementById('pie-contacto').textContent = [estado.config.empresa_telefono, estado.config.empresa_correo, estado.config.horario_atencion].filter(Boolean).join(' · ');
+    pintarBarraIndicadores_();
+    pintarBotonWhatsapp_();
+    render();
+    mostrarAvisoActualizado_();
+  });
+  window.Sitio.activarActualizacionAutomatica(estado.config.auto_actualizar_segundos || 60);
+
+  var avisoActualizadoTimeout_ = null;
+  function mostrarAvisoActualizado_() {
+    var nodo = document.getElementById('aviso-actualizado');
+    if (!nodo) {
+      nodo = document.createElement('div');
+      nodo.id = 'aviso-actualizado';
+      nodo.className = 'aviso-actualizado';
+      document.body.appendChild(nodo);
+    }
+    nodo.textContent = I18n.t('contenido_actualizado');
+    nodo.classList.add('visible');
+    clearTimeout(avisoActualizadoTimeout_);
+    avisoActualizadoTimeout_ = setTimeout(function () { nodo.classList.remove('visible'); }, 3200);
+  }
+})();
+</script>
+</body>
+</html>
