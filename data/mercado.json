@@ -1,0 +1,104 @@
+{
+  "usa": [
+    {
+      "codigo": "^DJI",
+      "nombre": "Dow Jones",
+      "valor": 42150.3,
+      "variacion_pct": 0.42
+    },
+    {
+      "codigo": "^IXIC",
+      "nombre": "Nasdaq",
+      "valor": 18500.12,
+      "variacion_pct": -0.18
+    },
+    {
+      "codigo": "^GSPC",
+      "nombre": "S&P 500",
+      "valor": 5780.55,
+      "variacion_pct": 0.11
+    },
+    {
+      "codigo": "^RUT",
+      "nombre": "Russell 2000",
+      "valor": 2210.4,
+      "variacion_pct": 0.3
+    },
+    {
+      "codigo": "^VIX",
+      "nombre": "VIX",
+      "valor": 15.2,
+      "variacion_pct": -2.1
+    }
+  ],
+  "chile": [
+    {
+      "codigo": "^IPSA",
+      "nombre": "IPSA",
+      "valor": 6650.8,
+      "variacion_pct": 0.25
+    },
+    {
+      "codigo": "SQM-B.SN",
+      "nombre": "SQM-B",
+      "valor": 38500,
+      "variacion_pct": 1.1
+    },
+    {
+      "codigo": "CHILE.SN",
+      "nombre": "Banco de Chile",
+      "valor": 118,
+      "variacion_pct": 0.4
+    },
+    {
+      "codigo": "FALABELLA.SN",
+      "nombre": "Falabella",
+      "valor": 2650,
+      "variacion_pct": -0.6
+    },
+    {
+      "codigo": "COPEC.SN",
+      "nombre": "Copec",
+      "valor": 7200,
+      "variacion_pct": 0.15
+    }
+  ],
+  "cripto": [
+    {
+      "codigo": "bitcoin",
+      "nombre": "BTC",
+      "valor": 84830,
+      "variacion_pct": 0.6863289230719664
+    },
+    {
+      "codigo": "ethereum",
+      "nombre": "ETH",
+      "valor": 2694.63,
+      "variacion_pct": 0.1495356852966014
+    },
+    {
+      "codigo": "binancecoin",
+      "nombre": "BNB",
+      "valor": 782.98,
+      "variacion_pct": 1.3583626611241728
+    },
+    {
+      "codigo": "ripple",
+      "nombre": "XRP",
+      "valor": 1.53,
+      "variacion_pct": 0.382079909957691
+    },
+    {
+      "codigo": "solana",
+      "nombre": "SOL",
+      "valor": 122.55,
+      "variacion_pct": 1.4220105658210738
+    }
+  ],
+  "yen": {
+    "codigo": "YEN",
+    "nombre": "Yen (100 JPY)",
+    "valor": 620.5,
+    "variacion_pct": -0.05
+  }
+}
