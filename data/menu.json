@@ -9,13 +9,22 @@
     "url": "#inicio"
   },
   {
-    "id_menu": "MNU-000003",
+    "id_menu": "MNU-000009",
     "padre": "MNU-000002",
     "orden": 1,
-    "etiqueta": "Contabilidad Digital",
+    "etiqueta": "Desarrollo y Evaluación de Proyectos",
     "etiqueta_en": "",
     "etiqueta_zh": "",
-    "url": "#planes/contabilidad-digital"
+    "url": "#servicios/desarrollo-y-evaluacion-de-proyectos"
+  },
+  {
+    "id_menu": "MNU-000013",
+    "padre": "MNU-000012",
+    "orden": 1,
+    "etiqueta": "Plan Emprendedores",
+    "etiqueta_en": "",
+    "etiqueta_zh": "",
+    "url": "#servicios/contabilidad-digital/planes-emprendedores"
   },
   {
     "id_menu": "MNU-000006",
@@ -27,31 +36,58 @@
     "url": "#quienes-somos"
   },
   {
-    "id_menu": "MNU-000004",
+    "id_menu": "MNU-000010",
     "padre": "MNU-000002",
     "orden": 2,
-    "etiqueta": "Servicios Tributarios",
+    "etiqueta": "Constitución de Empresa",
     "etiqueta_en": "",
     "etiqueta_zh": "",
-    "url": "#planes/servicios-tributarios"
+    "url": "#servicios/constitucion-de-empresa"
+  },
+  {
+    "id_menu": "MNU-000014",
+    "padre": "MNU-000012",
+    "orden": 2,
+    "etiqueta": "Plan Pymes",
+    "etiqueta_en": "",
+    "etiqueta_zh": "",
+    "url": "#servicios/contabilidad-digital/planes-pymes"
   },
   {
     "id_menu": "MNU-000002",
     "padre": "",
     "orden": 3,
-    "etiqueta": "Planes",
-    "etiqueta_en": "Plans",
-    "etiqueta_zh": "套餐",
-    "url": "#planes"
+    "etiqueta": "Servicios",
+    "etiqueta_en": "Services",
+    "etiqueta_zh": "服务",
+    "url": "#servicios"
   },
   {
-    "id_menu": "MNU-000005",
+    "id_menu": "MNU-000011",
     "padre": "MNU-000002",
     "orden": 3,
-    "etiqueta": "Asesoría Financiera",
+    "etiqueta": "Inicio de Actividades SII",
     "etiqueta_en": "",
     "etiqueta_zh": "",
-    "url": "#planes/asesoria-financiera"
+    "url": "#servicios/inicio-de-actividades-sii"
+  },
+  {
+    "id_menu": "MNU-000015",
+    "padre": "MNU-000012",
+    "orden": 3,
+    "etiqueta": "Plan Empresa",
+    "etiqueta_en": "",
+    "etiqueta_zh": "",
+    "url": "#servicios/contabilidad-digital/planes-empresas"
+  },
+  {
+    "id_menu": "MNU-000012",
+    "padre": "MNU-000002",
+    "orden": 4,
+    "etiqueta": "Contabilidad Digital",
+    "etiqueta_en": "",
+    "etiqueta_zh": "",
+    "url": "#servicios/contabilidad-digital"
   },
   {
     "id_menu": "MNU-000007",
@@ -63,6 +99,15 @@
     "url": "#contacto"
   },
   {
+    "id_menu": "MNU-000016",
+    "padre": "MNU-000002",
+    "orden": 5,
+    "etiqueta": "Declaración de Renta Anual",
+    "etiqueta_en": "",
+    "etiqueta_zh": "",
+    "url": "#servicios/declaracion-de-renta-anual"
+  },
+  {
     "id_menu": "MNU-000008",
     "padre": "",
     "orden": 5,
@@ -70,5 +115,59 @@
     "etiqueta_en": "Tools",
     "etiqueta_zh": "工具",
     "url": "#herramientas"
+  },
+  {
+    "id_menu": "MNU-000017",
+    "padre": "MNU-000002",
+    "orden": 6,
+    "etiqueta": "Servicios Tributarios",
+    "etiqueta_en": "",
+    "etiqueta_zh": "",
+    "url": "#servicios/servicios-tributarios"
+  },
+  {
+    "id_menu": "MNU-000018",
+    "padre": "MNU-000002",
+    "orden": 7,
+    "etiqueta": "Servicio de Remuneraciones",
+    "etiqueta_en": "",
+    "etiqueta_zh": "",
+    "url": "#servicios/servicio-de-remuneraciones"
+  },
+  {
+    "id_menu": "MNU-000019",
+    "padre": "MNU-000002",
+    "orden": 8,
+    "etiqueta": "Asesoría Financiera y Gestión de Inversiones",
+    "etiqueta_en": "",
+    "etiqueta_zh": "",
+    "url": "#servicios/asesoria-financiera-y-gestion-de-inversiones"
+  },
+  {
+    "id_menu": "MNU-000020",
+    "padre": "MNU-000002",
+    "orden": 9,
+    "etiqueta": "Auditoría",
+    "etiqueta_en": "",
+    "etiqueta_zh": "",
+    "url": "#servicios/auditoria"
+  },
+  {
+    "id_menu": "MNU-000021",
+    "padre": "MNU-000002",
+    "orden": 10,
+    "etiqueta": "Implementación de ERP",
+    "etiqueta_en": "",
+    "etiqueta_zh": "",
+    "url": "#servicios/implementacion-de-erp"
+  },
+  {
+    "id_menu": "MNU-000022",
+    "padre": "MNU-000002",
+    "orden": 11,
+    "etiqueta": "Certificación y Soporte DTEs",
+    "etiqueta_en": "",
+    "etiqueta_zh": "",
+    "url": "#servicios/certificacion-y-soporte-dtes"
   }
 ]
