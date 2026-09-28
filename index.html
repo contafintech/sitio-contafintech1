@@ -27,7 +27,7 @@
            de que el visitante encuentre un botón dentro del contenido de cada página. Oculto en
            móvil (ver CSS ≤860px) — ahí el mismo CTA vive como primer ítem del menú desplegable,
            para no apretar la fila logo/idioma/hamburguesa en pantallas angostas. -->
-      <a href="#servicios" class="btn btn-primario btn-cta-cabecera" id="cta-cabecera">Cotizar ahora</a>
+      <a href="#acceso-clientes" class="btn btn-primario btn-cta-cabecera" id="cta-cabecera">Acceso de clientes</a>
       <div class="selector-idioma" id="selector-idioma" role="group" aria-label="Idioma / Language / 语言">
         <button type="button" data-idioma="es">ES</button>
         <button type="button" data-idioma="en">EN</button>
@@ -171,13 +171,15 @@
   function pintarMenu_() {
     // Mismo CTA que la cabecera de escritorio, como primer ítem del menú desplegable — en
     // móvil es lo primero que se ve al abrir el menú, no algo que haya que ir a buscar.
-    var ctaMovil = '<li class="item-cta-menu"><a href="#servicios" class="btn btn-primario btn-bloque">' + I18n.t('cotizar_ahora_cabecera') + '</a></li>';
-    var menuHtml = ctaMovil + Render.renderMenu(estado.menu, I18n.idioma());
-    if (window.Sitio.moduloActivo('tienda')) { menuHtml += '<li><a href="#tienda">' + I18n.t('menu_tienda') + '</a></li>'; }
-    menuHtml += '<li><a href="#agendar">' + I18n.t('menu_agendar') + '</a></li>';
-    if (window.Sitio.moduloActivo('blog')) { menuHtml += '<li><a href="#blog">' + I18n.t('menu_blog') + '</a></li>'; }
-    document.getElementById('menu-principal').innerHTML = menuHtml;
-    document.getElementById('cta-cabecera').textContent = I18n.t('cotizar_ahora_cabecera');
+    // "Cotizar ahora" ya no vive acá ni en la cabecera: es el último ítem del submenú
+    // "Servicios" (hoja Menu) — pedido explícito, para no duplicar un acceso a Servicios que
+    // ya está en el menú. Este botón fijo pasó a ser "Acceso de clientes".
+    // TODO lo demás (Inicio, Servicios, Tienda, Agendar hora, Blog, y cualquier página nueva)
+    // sale 100% de la hoja "Menu" (data/menu.json) — nada de esto está hardcodeado acá: orden,
+    // textos y visibilidad (incluido si Tienda/Blog están activos) se controlan desde el Sheet.
+    var ctaMovil = '<li class="item-cta-menu"><a href="#acceso-clientes" class="btn btn-primario btn-bloque">' + I18n.t('acceso_clientes_cabecera') + '</a></li>';
+    document.getElementById('menu-principal').innerHTML = ctaMovil + Render.renderMenu(estado.menu, I18n.idioma());
+    document.getElementById('cta-cabecera').textContent = I18n.t('acceso_clientes_cabecera');
   }
   pintarMenu_();
 
