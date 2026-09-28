@@ -102,7 +102,37 @@ window.I18n = (function () {
     numero_documento: { es: 'Número', en: 'Number', zh: '编号' },
     fecha_documento: { es: 'Fecha', en: 'Date', zh: '日期' },
     nota_firma: { es: 'Esta es una verificación propia del sistema (hash + QR), no una Firma Electrónica Avanzada según la Ley 19.799.', en: 'This is an in-house verification (hash + QR), not an Advanced Electronic Signature under Chilean Law 19.799.', zh: '此为系统内部验证（哈希+二维码），并非依据智利第19.799号法律的高级电子签名。' },
-    documento_invalido_revocado: { es: '✘ Este documento no es válido o fue revocado. Si tienes dudas, contáctanos directamente.', en: '✘ This document is not valid or has been revoked. If in doubt, contact us directly.', zh: '✘ 该文件无效或已被撤销。如有疑问，请直接联系我们。' }
+    documento_invalido_revocado: { es: '✘ Este documento no es válido o fue revocado. Si tienes dudas, contáctanos directamente.', en: '✘ This document is not valid or has been revoked. If in doubt, contact us directly.', zh: '✘ 该文件无效或已被撤销。如有疑问，请直接联系我们。' },
+    // ---- Tienda: buscador, filtro de categoría y orden (renderTienda_ en index.html) ----
+    tienda_buscar_placeholder: { es: 'Buscar productos…', en: 'Search products…', zh: '搜索产品…' },
+    tienda_categoria_todas: { es: 'Todas las categorías', en: 'All categories', zh: '所有分类' },
+    tienda_ordenar: { es: 'Ordenar', en: 'Sort', zh: '排序' },
+    tienda_orden_relevancia: { es: 'Relevancia', en: 'Relevance', zh: '相关性' },
+    tienda_orden_precio_asc: { es: 'Precio: menor a mayor', en: 'Price: low to high', zh: '价格：从低到高' },
+    tienda_orden_precio_desc: { es: 'Precio: mayor a menor', en: 'Price: high to low', zh: '价格：从高到低' },
+    tienda_orden_nombre: { es: 'Nombre (A-Z)', en: 'Name (A-Z)', zh: '名称（A-Z）' },
+    tienda_sin_resultados: { es: 'Ningún producto coincide con tu búsqueda.', en: 'No products match your search.', zh: '没有符合搜索条件的产品。' },
+    // ---- Confianza cerca del botón de cotizar (reduce el abandono del carrito) ----
+    carrito_confianza_msg: { es: '🔒 Sin compromiso — respuesta dentro de 1 día hábil.', en: '🔒 No commitment — we reply within 1 business day.', zh: '🔒 无需承诺——1个工作日内回复。' },
+    // ---- Seguimiento de pedido (seguimiento.js) ----
+    menu_seguimiento: { es: 'Seguimiento de pedido', en: 'Track my order', zh: '订单跟踪' },
+    seguimiento_titulo: { es: 'Seguimiento de pedido', en: 'Track my order', zh: '订单跟踪' },
+    seguimiento_intro: { es: 'Ingresa el número de tu cotización o pedido y el correo o RUT con el que compraste.', en: 'Enter your quote or order number and the email or tax ID you purchased with.', zh: '请输入您的报价单或订单编号，以及购买时使用的邮箱或税号。' },
+    seguimiento_campo_id: { es: 'Número de cotización o pedido', en: 'Quote or order number', zh: '报价单或订单编号' },
+    seguimiento_id_placeholder: { es: 'Ej: COT-000123 o PRV-000045', en: 'E.g. COT-000123 or PRV-000045', zh: '例如：COT-000123 或 PRV-000045' },
+    seguimiento_campo_verificador: { es: 'Tu correo o RUT', en: 'Your email or tax ID', zh: '您的邮箱或税号' },
+    seguimiento_verificador_placeholder: { es: 'correo@ejemplo.com o 12345678-9', en: 'email@example.com or tax ID', zh: 'email@example.com 或税号' },
+    seguimiento_boton: { es: 'Consultar', en: 'Track', zh: '查询' },
+    seguimiento_buscando: { es: 'Buscando tu pedido…', en: 'Looking up your order…', zh: '正在查询您的订单…' },
+    seguimiento_error: { es: 'No se pudo consultar: {error}', en: 'Could not look this up: {error}', zh: '查询失败：{error}' },
+    seguimiento_numero: { es: 'Número', en: 'Number', zh: '编号' },
+    seguimiento_estado_cotizacion: { es: 'Estado de la cotización', en: 'Quote status', zh: '报价单状态' },
+    seguimiento_estado_pedido: { es: 'Estado del pedido', en: 'Order status', zh: '订单状态' },
+    seguimiento_estado_despacho: { es: 'Estado del despacho', en: 'Shipment status', zh: '发货状态' },
+    seguimiento_sin_despachar: { es: 'preparando', en: 'preparing', zh: '准备中' },
+    seguimiento_courier: { es: 'Empresa de despacho', en: 'Courier', zh: '快递公司' },
+    seguimiento_ver_tracking: { es: 'Ver seguimiento del courier', en: 'Track with courier', zh: '查看快递跟踪' },
+    seguimiento_sin_despacho: { es: 'Este pedido no incluye productos físicos para despachar.', en: 'This order has no physical products to ship.', zh: '此订单不含需要配送的实体商品。' }
   };
 
   function obtener() {
