@@ -54,7 +54,12 @@ window.I18n = (function () {
     // ---- Migas de pan (orientación en páginas de servicios/planes) ----
     inicio_miga: { es: 'Inicio', en: 'Home', zh: '首页' },
     // ---- CTA de la cabecera ----
+    // "Cotizar ahora" pasó a ser el último ítem del menú "Servicios" (hoja Menu) — este botón de
+    // la cabecera (siempre visible, cabecera "sticky") ahora es "Acceso de clientes" en vez de
+    // duplicar un acceso a Servicios que ya está un clic más allá en el menú. Lleva a la página
+    // "Acceso Clientes" (ya existente, "próximamente" hasta que se construya el login real).
     cotizar_ahora_cabecera: { es: 'Cotizar ahora', en: 'Get a quote', zh: '立即报价' },
+    acceso_clientes_cabecera: { es: 'Acceso de clientes', en: 'Client access', zh: '客户登录' },
     contenido_actualizado: { es: '✓ Contenido actualizado', en: '✓ Content updated', zh: '✓ 内容已更新' },
     pagina_no_encontrada: { es: 'Página no encontrada.', en: 'Page not found.', zh: '页面未找到。' },
     volvemos_pronto_titulo: { es: 'Volvemos pronto', en: 'Back soon', zh: '即将回归' },
@@ -140,16 +145,18 @@ window.I18n = (function () {
     agenda_paso_de: { es: 'Paso {actual} de {total}', en: 'Step {actual} of {total}', zh: '第 {actual} 步，共 {total} 步' },
     agenda_paso1_titulo: { es: '¿Qué necesitas agendar?', en: 'What do you need to book?', zh: '您需要预约什么？' },
     agenda_paso2_titulo: { es: '¿En qué oficina?', en: 'Which office?', zh: '哪个办公室？' },
-    agenda_paso3_titulo: { es: '¿Qué día te acomoda?', en: 'What day works for you?', zh: '您方便哪一天？' },
-    agenda_paso4_titulo: { es: 'Elige una hora disponible', en: 'Choose an available time', zh: '选择可用时间' },
-    agenda_paso5_titulo: { es: 'Tus datos de contacto', en: 'Your contact details', zh: '您的联系方式' },
-    agenda_paso6_titulo: { es: 'Confirma tu hora', en: 'Confirm your appointment', zh: '确认预约' },
+    agenda_paso3_titulo: { es: 'Elige el día y la hora', en: 'Choose the day and time', zh: '选择日期和时间' },
+    agenda_paso4_titulo: { es: 'Tus datos de contacto', en: 'Your contact details', zh: '您的联系方式' },
+    agenda_paso5_titulo: { es: 'Confirma tu hora', en: 'Confirm your appointment', zh: '确认预约' },
     agenda_sin_servicios: { es: 'No hay servicios disponibles para agendar en este momento.', en: 'No services are available to book right now.', zh: '目前没有可预约的服务。' },
     agenda_duracion: { es: '{min} minutos', en: '{min} minutes', zh: '{min} 分钟' },
-    agenda_elegir_fecha: { es: 'Elige una fecha', en: 'Choose a date', zh: '选择日期' },
-    agenda_buscar_horas: { es: 'Ver horas disponibles', en: 'See available times', zh: '查看可用时间' },
+    agenda_mes_anterior: { es: 'Mes anterior', en: 'Previous month', zh: '上个月' },
+    agenda_mes_siguiente: { es: 'Mes siguiente', en: 'Next month', zh: '下个月' },
+    agenda_manana: { es: 'Mañana', en: 'Morning', zh: '上午' },
+    agenda_tarde: { es: 'Tarde', en: 'Afternoon', zh: '下午' },
+    agenda_sin_horario: { es: 'Este servicio no tiene horario de atención configurado todavía. Contáctanos directamente para coordinar.', en: 'This service has no availability configured yet. Please contact us directly to coordinate.', zh: '该服务暂未设置可预约时间，请直接联系我们。' },
     agenda_buscando_horas: { es: 'Buscando horas disponibles…', en: 'Looking for available times…', zh: '正在查找可用时间…' },
-    agenda_sin_horas: { es: 'No hay horas disponibles ese día. Prueba con otra fecha.', en: 'No times available that day. Try another date.', zh: '当天没有可用时间，请尝试其他日期。' },
+    agenda_sin_horas: { es: 'No hay horas disponibles ese día. Prueba con otro día en el calendario.', en: 'No times available that day. Try another day on the calendar.', zh: '当天没有可用时间，请在日历中尝试其他日期。' },
     agenda_campo_nombre: { es: 'Tu nombre completo', en: 'Your full name', zh: '您的全名' },
     agenda_campo_email: { es: 'Tu correo electrónico', en: 'Your email', zh: '您的电子邮箱' },
     agenda_campo_telefono: { es: 'Tu teléfono', en: 'Your phone', zh: '您的电话' },
