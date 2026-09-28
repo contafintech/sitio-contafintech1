@@ -1,0 +1,799 @@
+[
+  {
+    "id_pagina": "PAG-INICIO",
+    "slug": "inicio",
+    "titulo": "Inicio",
+    "titulo_en": "Home",
+    "titulo_zh": "首页",
+    "secciones": [
+      {
+        "id_seccion": "SEC-000001",
+        "tipo": "hero",
+        "titulo": "Tu tributación, sin sorpresas",
+        "texto": "Diagnóstico, régimen y cumplimiento, en un solo lugar — sin planillas sueltas ni sorpresas del SII.",
+        "titulo_en": "Your taxes, no surprises",
+        "texto_en": "Diagnosis, tax regime and compliance, all in one place — no more loose spreadsheets or surprises from the tax authority.",
+        "titulo_zh": "税务无忧，一目了然",
+        "texto_zh": "诊断、税制选择与合规，一站搞定——不再需要零散表格，也不会有意外的税务问题。",
+        "elementos": [
+          {
+            "id_elemento": "ELE-000001",
+            "tipo": "medio",
+            "titulo": "",
+            "texto": "",
+            "enlace": "",
+            "titulo_en": "",
+            "texto_en": "",
+            "titulo_zh": "",
+            "texto_zh": "",
+            "orden": 1,
+            "datos": {},
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "https://picsum.photos/seed/econta-hero/900/700",
+            "medio_tipo": "imagen",
+            "medio_alt": "Equipo trabajando en oficina moderna"
+          },
+          {
+            "id_elemento": "ELE-000002",
+            "tipo": "boton",
+            "titulo": "Agenda una reunión",
+            "texto": "",
+            "enlace": "#contacto",
+            "titulo_en": "Book a meeting",
+            "texto_en": "",
+            "titulo_zh": "预约会议",
+            "texto_zh": "",
+            "orden": 1,
+            "datos": {},
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          },
+          {
+            "id_elemento": "ELE-000003",
+            "tipo": "boton",
+            "titulo": "Ver servicios",
+            "texto": "",
+            "enlace": "#servicios",
+            "titulo_en": "See services",
+            "texto_en": "",
+            "titulo_zh": "查看服务",
+            "texto_zh": "",
+            "orden": 2,
+            "datos": {},
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          }
+        ]
+      },
+      {
+        "id_seccion": "SEC-000002",
+        "tipo": "tarjetas",
+        "titulo": "¿Por qué nosotros?",
+        "texto": "",
+        "titulo_en": "Why us?",
+        "texto_en": "",
+        "titulo_zh": "为什么选择我们？",
+        "texto_zh": "",
+        "elementos": [
+          {
+            "id_elemento": "ELE-000004",
+            "tipo": "tarjeta",
+            "titulo": "Rápido",
+            "texto": "Respuestas en menos de 24 horas hábiles, siempre con la misma persona a cargo.",
+            "enlace": "",
+            "titulo_en": "Fast",
+            "texto_en": "Responses in under 24 business hours, always with the same person in charge.",
+            "titulo_zh": "响应迅速",
+            "texto_zh": "24个工作小时内响应，始终由同一位专属负责人跟进。",
+            "orden": 1,
+            "datos": {
+              "icono": "⚡"
+            },
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          },
+          {
+            "id_elemento": "ELE-000005",
+            "tipo": "tarjeta",
+            "titulo": "Seguro",
+            "texto": "Cumplimiento al día con el SII: declaraciones y plazos, sin sorpresas ni multas.",
+            "enlace": "",
+            "titulo_en": "Reliable",
+            "texto_en": "Up-to-date compliance with the tax authority: filings and deadlines, no surprises or fines.",
+            "titulo_zh": "安全可靠",
+            "texto_zh": "与税务局保持合规：按时申报，不留死角，杜绝罚款与意外。",
+            "orden": 2,
+            "datos": {
+              "icono": "🛡️"
+            },
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          },
+          {
+            "id_elemento": "ELE-000006",
+            "tipo": "tarjeta",
+            "titulo": "Claro",
+            "texto": "Reportes simples que cualquiera en tu equipo puede leer, sin lenguaje técnico de más.",
+            "enlace": "",
+            "titulo_en": "Clear",
+            "texto_en": "Simple reports anyone on your team can read, without unnecessary technical jargon.",
+            "titulo_zh": "清晰易懂",
+            "texto_zh": "简明的报告，团队里任何人都能看懂，没有多余的专业术语。",
+            "orden": 3,
+            "datos": {
+              "icono": "📊"
+            },
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          }
+        ]
+      },
+      {
+        "id_seccion": "SEC-000003",
+        "tipo": "texto_imagen",
+        "titulo": "Cómo trabajamos",
+        "texto": "Partimos con un diagnóstico de tu situación tributaria actual, te proponemos el régimen que más te conviene, y quedamos a cargo de que todo se declare a tiempo — tú te enfocas en tu negocio.",
+        "titulo_en": "How we work",
+        "texto_en": "We start with a diagnosis of your current tax situation, recommend the regime that suits you best, and take care of filing everything on time — you focus on your business.",
+        "titulo_zh": "我们的工作方式",
+        "texto_zh": "我们首先诊断您当前的税务状况，为您推荐最合适的税制，并负责按时完成所有申报——您只需专注于自己的业务。",
+        "elementos": [
+          {
+            "id_elemento": "ELE-000007",
+            "tipo": "medio",
+            "titulo": "",
+            "texto": "",
+            "enlace": "",
+            "titulo_en": "",
+            "texto_en": "",
+            "titulo_zh": "",
+            "texto_zh": "",
+            "orden": 1,
+            "datos": {},
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "https://picsum.photos/seed/econta-proceso/900/700",
+            "medio_tipo": "imagen",
+            "medio_alt": "Reunión de trabajo revisando documentos"
+          }
+        ]
+      },
+      {
+        "id_seccion": "SEC-000004",
+        "tipo": "testimonios",
+        "titulo": "Lo que dicen nuestros clientes",
+        "texto": "",
+        "titulo_en": "What our clients say",
+        "texto_en": "",
+        "titulo_zh": "客户评价",
+        "texto_zh": "",
+        "elementos": [
+          {
+            "id_elemento": "ELE-000008",
+            "tipo": "testimonio",
+            "titulo": "Comercial Los Aromos",
+            "texto": "Nos ordenaron la contabilidad en tres semanas. Antes vivíamos atrasados con el SII.",
+            "enlace": "",
+            "titulo_en": "Comercial Los Aromos",
+            "texto_en": "They got our accounting in order within three weeks. Before that, we were always behind with the tax authority.",
+            "titulo_zh": "Comercial Los Aromos",
+            "texto_zh": "他们在三周内理顺了我们的账务。此前我们的税务申报一直滞后。",
+            "orden": 1,
+            "datos": {
+              "cargo": "Gerente general",
+              "estrellas": 5
+            },
+            "datos_en": {
+              "cargo": "General manager",
+              "estrellas": 5
+            },
+            "datos_zh": {
+              "cargo": "总经理",
+              "estrellas": 5
+            },
+            "medio_url": "https://i.pravatar.cc/150?img=12",
+            "medio_tipo": "imagen",
+            "medio_alt": "Foto de perfil"
+          },
+          {
+            "id_elemento": "ELE-000009",
+            "tipo": "testimonio",
+            "titulo": "Panadería El Trigal",
+            "texto": "Nos cambiaron al régimen correcto y bajamos harto la carga tributaria del primer año.",
+            "enlace": "",
+            "titulo_en": "Panadería El Trigal",
+            "texto_en": "They switched us to the right tax regime and we significantly lowered our tax burden in the first year.",
+            "titulo_zh": "Panadería El Trigal",
+            "texto_zh": "他们帮我们改用了正确的税制，第一年就大幅降低了税负。",
+            "orden": 2,
+            "datos": {
+              "cargo": "Dueña",
+              "estrellas": 5
+            },
+            "datos_en": {
+              "cargo": "Owner",
+              "estrellas": 5
+            },
+            "datos_zh": {
+              "cargo": "店主",
+              "estrellas": 5
+            },
+            "medio_url": "https://i.pravatar.cc/150?img=47",
+            "medio_tipo": "imagen",
+            "medio_alt": "Foto de perfil"
+          }
+        ]
+      },
+      {
+        "id_seccion": "SEC-000005",
+        "tipo": "preguntas_frecuentes",
+        "titulo": "Preguntas frecuentes",
+        "texto": "",
+        "titulo_en": "Frequently asked questions",
+        "texto_en": "",
+        "titulo_zh": "常见问题",
+        "texto_zh": "",
+        "elementos": [
+          {
+            "id_elemento": "ELE-000010",
+            "tipo": "pregunta",
+            "titulo": "¿Qué régimen tributario me conviene?",
+            "texto": "Depende de tus ingresos, tipo de socios y giro. En la primera reunión hacemos un diagnóstico gratuito y te lo decimos con números concretos.",
+            "enlace": "",
+            "titulo_en": "Which tax regime is right for me?",
+            "texto_en": "It depends on your income, type of partners and business activity. In our first meeting we do a free diagnosis and give you concrete numbers.",
+            "titulo_zh": "我应该选择哪种税制？",
+            "texto_zh": "这取决于您的收入、合伙人类型和经营范围。首次会面时我们会免费诊断，并给出具体数据。",
+            "orden": 1,
+            "datos": {},
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          },
+          {
+            "id_elemento": "ELE-000011",
+            "tipo": "pregunta",
+            "titulo": "¿Trabajan con empresas fuera de Santiago?",
+            "texto": "Sí, todo nuestro servicio es remoto — reuniones por videollamada y documentos firmados digitalmente.",
+            "enlace": "",
+            "titulo_en": "Do you work with companies outside Santiago?",
+            "texto_en": "Yes, our whole service is remote — video-call meetings and digitally signed documents.",
+            "titulo_zh": "你们为圣地亚哥以外的公司提供服务吗？",
+            "texto_zh": "当然，我们的服务全程远程进行——视频会议加电子签名文件。",
+            "orden": 2,
+            "datos": {},
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          },
+          {
+            "id_elemento": "ELE-000012",
+            "tipo": "pregunta",
+            "titulo": "¿Cuánto tiempo toma el cambio de régimen?",
+            "texto": "El trámite ante el SII es rápido; lo que más toma es dejar ordenada la contabilidad previa, normalmente 2 a 3 semanas.",
+            "enlace": "",
+            "titulo_en": "How long does changing tax regime take?",
+            "texto_en": "The paperwork with the tax authority is quick; what takes longer is sorting out prior accounting, usually 2 to 3 weeks.",
+            "titulo_zh": "更换税制需要多长时间？",
+            "texto_zh": "向税务局办理手续很快；耗时较长的是整理此前的账务，通常需要2到3周。",
+            "orden": 3,
+            "datos": {},
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          },
+          {
+            "id_elemento": "ELE-000013",
+            "tipo": "pregunta",
+            "titulo": "¿Emiten factura electrónica por mí?",
+            "texto": "Sí, coordinamos la emisión de tus documentos tributarios como parte del servicio mensual.",
+            "enlace": "",
+            "titulo_en": "Do you issue electronic invoices for me?",
+            "texto_en": "Yes, we coordinate the issuance of your tax documents as part of the monthly service.",
+            "titulo_zh": "你们会为我开具电子发票吗？",
+            "texto_zh": "是的，开具税务单据是我们月度服务的一部分，由我们统一协调完成。",
+            "orden": 4,
+            "datos": {},
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          }
+        ]
+      },
+      {
+        "id_seccion": "SEC-000006",
+        "tipo": "llamado_accion",
+        "titulo": "Hablemos de tu negocio",
+        "texto": "Agenda una reunión sin costo y te decimos en qué régimen deberías estar.",
+        "titulo_en": "Let's talk about your business",
+        "texto_en": "Book a free meeting and we will tell you which tax regime you should be in.",
+        "titulo_zh": "聊聊您的业务",
+        "texto_zh": "预约一次免费会议，我们将为您分析最合适的税制方案。",
+        "elementos": [
+          {
+            "id_elemento": "ELE-000014",
+            "tipo": "boton",
+            "titulo": "Conversemos ahora",
+            "texto": "",
+            "enlace": "#contacto",
+            "titulo_en": "Let's talk now",
+            "texto_en": "",
+            "titulo_zh": "立即联系我们",
+            "texto_zh": "",
+            "orden": 1,
+            "datos": {},
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id_pagina": "PAG-NOSOTROS",
+    "slug": "quienes-somos",
+    "titulo": "Quiénes somos",
+    "titulo_en": "About us",
+    "titulo_zh": "关于我们",
+    "secciones": [
+      {
+        "id_seccion": "SEC-000007",
+        "tipo": "texto_imagen",
+        "titulo": "Quiénes somos",
+        "texto": "Somos un equipo de contadores y asesores tributarios enfocados en PYME chilena. Nada de respuestas genéricas: cada cliente tiene un encargado que conoce su negocio.",
+        "titulo_en": "About us",
+        "texto_en": "We are a team of accountants and tax advisors focused on Chilean SMEs. No generic answers: every client has a dedicated advisor who knows their business.",
+        "titulo_zh": "关于我们",
+        "texto_zh": "我们是一支专注于智利中小企业的会计与税务顾问团队。绝不提供千篇一律的答案：每位客户都有专属顾问，深入了解其业务。",
+        "elementos": [
+          {
+            "id_elemento": "ELE-000015",
+            "tipo": "medio",
+            "titulo": "",
+            "texto": "",
+            "enlace": "",
+            "titulo_en": "",
+            "texto_en": "",
+            "titulo_zh": "",
+            "texto_zh": "",
+            "orden": 1,
+            "datos": {},
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "https://picsum.photos/seed/econta-equipo/900/700",
+            "medio_tipo": "imagen",
+            "medio_alt": "Equipo de la empresa"
+          }
+        ]
+      },
+      {
+        "id_seccion": "SEC-000008",
+        "tipo": "tarjetas",
+        "titulo": "Nuestros valores",
+        "texto": "",
+        "titulo_en": "Our values",
+        "texto_en": "",
+        "titulo_zh": "我们的价值观",
+        "texto_zh": "",
+        "elementos": [
+          {
+            "id_elemento": "ELE-000016",
+            "tipo": "tarjeta",
+            "titulo": "Transparencia",
+            "texto": "Sin letra chica: sabes exactamente qué estamos haciendo y por qué.",
+            "enlace": "",
+            "titulo_en": "Transparency",
+            "texto_en": "No fine print: you know exactly what we are doing and why.",
+            "titulo_zh": "透明公开",
+            "texto_zh": "没有隐藏条款：您清楚地知道我们在做什么、为什么这样做。",
+            "orden": 1,
+            "datos": {
+              "icono": "🔎"
+            },
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          },
+          {
+            "id_elemento": "ELE-000017",
+            "tipo": "tarjeta",
+            "titulo": "Cercanía",
+            "texto": "Hablas con la misma persona siempre, no con una mesa de ayuda distinta cada vez.",
+            "enlace": "",
+            "titulo_en": "Closeness",
+            "texto_en": "You always talk to the same person, not a different help desk every time.",
+            "titulo_zh": "贴心服务",
+            "texto_zh": "您始终对接同一位专属顾问，而不是每次都换一个客服。",
+            "orden": 2,
+            "datos": {
+              "icono": "🤝"
+            },
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          },
+          {
+            "id_elemento": "ELE-000018",
+            "tipo": "tarjeta",
+            "titulo": "Rigor técnico",
+            "texto": "Cada recomendación se apoya en la normativa vigente, no en supuestos.",
+            "enlace": "",
+            "titulo_en": "Technical rigor",
+            "texto_en": "Every recommendation is backed by current regulations, not assumptions.",
+            "titulo_zh": "专业严谨",
+            "texto_zh": "每一条建议都基于现行法规，而非主观假设。",
+            "orden": 3,
+            "datos": {
+              "icono": "📐"
+            },
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id_pagina": "PAG-SERVICIOS",
+    "slug": "servicios",
+    "titulo": "Servicios",
+    "titulo_en": "Services",
+    "titulo_zh": "服务",
+    "secciones": [
+      {
+        "id_seccion": "SEC-000009",
+        "tipo": "tarjetas",
+        "titulo": "Nuestros servicios",
+        "texto": "Precios de ejemplo — reemplázalos por los tuyos en esta misma hoja.",
+        "titulo_en": "Our services",
+        "texto_en": "Example prices — replace them with your own in this same sheet.",
+        "titulo_zh": "我们的服务",
+        "texto_zh": "示例价格——请在此表格中替换为您的实际价格。",
+        "elementos": [
+          {
+            "id_elemento": "ELE-000019",
+            "tipo": "tarjeta",
+            "titulo": "Básico",
+            "texto": "Para emprendimientos recién iniciados.",
+            "enlace": "#contacto",
+            "titulo_en": "Basic",
+            "texto_en": "For businesses just getting started.",
+            "titulo_zh": "基础版",
+            "texto_zh": "适合初创企业。",
+            "orden": 1,
+            "datos": {
+              "icono": "🌱",
+              "precio": "$45.000",
+              "unidad": "/mes",
+              "caracteristicas": [
+                "Declaraciones mensuales",
+                "Un régimen tributario",
+                "Soporte por correo"
+              ],
+              "boton_texto": "Cotizar"
+            },
+            "datos_en": {
+              "unidad": "/month",
+              "caracteristicas": [
+                "Monthly filings",
+                "One tax regime",
+                "Email support"
+              ],
+              "boton_texto": "Get a quote"
+            },
+            "datos_zh": {
+              "unidad": "/月",
+              "caracteristicas": [
+                "按月申报",
+                "单一税制",
+                "邮件支持"
+              ],
+              "boton_texto": "获取报价"
+            },
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          },
+          {
+            "id_elemento": "ELE-000020",
+            "tipo": "tarjeta",
+            "titulo": "Pro",
+            "texto": "El más elegido por PYME en crecimiento.",
+            "enlace": "#contacto",
+            "titulo_en": "Pro",
+            "texto_en": "The most popular choice for growing SMEs.",
+            "titulo_zh": "专业版",
+            "texto_zh": "成长型中小企业的首选。",
+            "orden": 2,
+            "datos": {
+              "icono": "🚀",
+              "precio": "$85.000",
+              "unidad": "/mes",
+              "destacada": true,
+              "caracteristicas": [
+                "Todo lo del plan Básico",
+                "Facturación electrónica incluida",
+                "Reunión mensual de resultados",
+                "Soporte prioritario"
+              ],
+              "boton_texto": "Cotizar"
+            },
+            "datos_en": {
+              "unidad": "/month",
+              "destacada": true,
+              "caracteristicas": [
+                "Everything in Basic",
+                "Electronic invoicing included",
+                "Monthly results meeting",
+                "Priority support"
+              ],
+              "boton_texto": "Get a quote"
+            },
+            "datos_zh": {
+              "unidad": "/月",
+              "destacada": true,
+              "caracteristicas": [
+                "基础版全部权益",
+                "含电子发票开具",
+                "每月业绩沟通会议",
+                "优先支持"
+              ],
+              "boton_texto": "获取报价"
+            },
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          },
+          {
+            "id_elemento": "ELE-000021",
+            "tipo": "tarjeta",
+            "titulo": "Premium",
+            "texto": "Para empresas con varios socios o giros.",
+            "enlace": "#contacto",
+            "titulo_en": "Premium",
+            "texto_en": "For companies with multiple partners or business activities.",
+            "titulo_zh": "高级版",
+            "texto_zh": "适合多合伙人或多业务范围的企业。",
+            "orden": 3,
+            "datos": {
+              "icono": "🏆",
+              "precio": "$150.000",
+              "unidad": "/mes",
+              "caracteristicas": [
+                "Todo lo del plan Pro",
+                "Planificación tributaria anual",
+                "Encargado dedicado",
+                "Cierre contable prioritario"
+              ],
+              "boton_texto": "Cotizar"
+            },
+            "datos_en": {
+              "unidad": "/month",
+              "caracteristicas": [
+                "Everything in Pro",
+                "Annual tax planning",
+                "Dedicated advisor",
+                "Priority accounting close"
+              ],
+              "boton_texto": "Get a quote"
+            },
+            "datos_zh": {
+              "unidad": "/月",
+              "caracteristicas": [
+                "专业版全部权益",
+                "年度税务规划",
+                "专属顾问",
+                "优先账务结算"
+              ],
+              "boton_texto": "获取报价"
+            },
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          }
+        ]
+      },
+      {
+        "id_seccion": "SEC-000010",
+        "tipo": "tabla_comparativa",
+        "titulo": "Compara los planes",
+        "texto": "",
+        "titulo_en": "Compare plans",
+        "texto_en": "",
+        "titulo_zh": "套餐对比",
+        "texto_zh": "",
+        "elementos": [
+          {
+            "id_elemento": "ELE-000022",
+            "tipo": "tabla",
+            "titulo": "",
+            "texto": "",
+            "enlace": "",
+            "titulo_en": "",
+            "texto_en": "",
+            "titulo_zh": "",
+            "texto_zh": "",
+            "orden": 1,
+            "datos": {
+              "columnas": [
+                "",
+                "Básico",
+                "Pro",
+                "Premium"
+              ],
+              "filas": [
+                [
+                  "Declaraciones mensuales",
+                  "Sí",
+                  "Sí",
+                  "Sí"
+                ],
+                [
+                  "Facturación electrónica",
+                  "—",
+                  "Sí",
+                  "Sí"
+                ],
+                [
+                  "Reunión mensual de resultados",
+                  "—",
+                  "Sí",
+                  "Sí"
+                ],
+                [
+                  "Planificación tributaria anual",
+                  "—",
+                  "—",
+                  "Sí"
+                ],
+                [
+                  "Encargado dedicado",
+                  "—",
+                  "—",
+                  "Sí"
+                ]
+              ]
+            },
+            "datos_en": {
+              "columnas": [
+                "",
+                "Basic",
+                "Pro",
+                "Premium"
+              ],
+              "filas": [
+                [
+                  "Monthly filings",
+                  "Yes",
+                  "Yes",
+                  "Yes"
+                ],
+                [
+                  "Electronic invoicing",
+                  "—",
+                  "Yes",
+                  "Yes"
+                ],
+                [
+                  "Monthly results meeting",
+                  "—",
+                  "Yes",
+                  "Yes"
+                ],
+                [
+                  "Annual tax planning",
+                  "—",
+                  "—",
+                  "Yes"
+                ],
+                [
+                  "Dedicated advisor",
+                  "—",
+                  "—",
+                  "Yes"
+                ]
+              ]
+            },
+            "datos_zh": {
+              "columnas": [
+                "",
+                "基础版",
+                "专业版",
+                "高级版"
+              ],
+              "filas": [
+                [
+                  "按月申报",
+                  "是",
+                  "是",
+                  "是"
+                ],
+                [
+                  "电子发票",
+                  "—",
+                  "是",
+                  "是"
+                ],
+                [
+                  "每月业绩沟通会议",
+                  "—",
+                  "是",
+                  "是"
+                ],
+                [
+                  "年度税务规划",
+                  "—",
+                  "—",
+                  "是"
+                ],
+                [
+                  "专属顾问",
+                  "—",
+                  "—",
+                  "是"
+                ]
+              ]
+            },
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id_pagina": "PAG-CONTACTO",
+    "slug": "contacto",
+    "titulo": "Contacto",
+    "titulo_en": "Contact",
+    "titulo_zh": "联系我们",
+    "secciones": [
+      {
+        "id_seccion": "SEC-000011",
+        "tipo": "llamado_accion",
+        "titulo": "¿Hablamos?",
+        "texto": "Completa el formulario y te respondemos dentro de un día hábil.",
+        "titulo_en": "Let's talk",
+        "texto_en": "Fill out the form and we will reply within one business day.",
+        "titulo_zh": "联系我们",
+        "texto_zh": "填写表单，我们将在一个工作日内回复您。",
+        "elementos": []
+      }
+    ]
+  }
+]
