@@ -583,6 +583,40 @@ form.formulario { display: grid; gap: 16px; max-width: 620px; margin: 0 auto; }
 .seguimiento-cargando { text-align: center; color: var(--color-texto-suave); }
 .seguimiento-error { color: #b91c1c; background: #fef2f2; border: 1px solid #fecaca; padding: 12px 16px; border-radius: var(--radio); }
 .seguimiento-sin-despacho { color: var(--color-texto-suave); font-style: italic; }
+
+/* ---- Agendamiento: pensado para cualquier edad — botones grandes, un paso a la vez,
+ * texto de buen tamaño, siempre se puede volver atrás sin perder lo ya elegido. ---- */
+.agenda-contenedor { max-width: 640px; }
+.agenda-paso-indicador { font-size: .95rem; font-weight: 600; color: var(--color-secundario); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 6px; }
+.agenda-paso-titulo { font-size: 1.5rem; margin: 0 0 24px; }
+.agenda-opciones-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-bottom: 20px; }
+.agenda-opcion-grande {
+  display: flex; flex-direction: column; gap: 6px; text-align: left; padding: 22px; min-height: 88px;
+  border: 2px solid var(--color-borde); border-radius: var(--radio); background: #fff; cursor: pointer;
+  font: inherit; transition: border-color .15s ease, box-shadow .15s ease;
+}
+.agenda-opcion-grande:hover, .agenda-opcion-grande:focus-visible { border-color: var(--color-primario); box-shadow: 0 0 0 3px rgba(0,0,0,.05); }
+.agenda-opcion-titulo { font-size: 1.15rem; font-weight: 700; }
+.agenda-opcion-detalle { font-size: 1rem; color: var(--color-texto-suave); }
+.agenda-campo-grande input, .agenda-campo-grande label { font-size: 1.1rem; }
+.agenda-campo-grande input { padding: 14px 16px; }
+.agenda-btn-grande { font-size: 1.15rem; padding: 16px 20px; margin-bottom: 14px; }
+.agenda-btn-atras { display: block; width: 100%; margin-top: 6px; font-size: 1.05rem; padding: 12px; }
+.agenda-horas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 12px; margin-bottom: 20px; }
+.agenda-hora-boton {
+  padding: 16px 10px; font-size: 1.1rem; font-weight: 600; border: 2px solid var(--color-borde); border-radius: var(--radio);
+  background: #fff; cursor: pointer; transition: border-color .15s ease, background .15s ease;
+}
+.agenda-hora-boton:hover, .agenda-hora-boton:focus-visible { border-color: var(--color-primario); background: var(--color-fondo-suave, #f4f4f6); }
+.agenda-form-datos { display: flex; flex-direction: column; gap: 16px; margin-bottom: 6px; }
+.agenda-resumen { background: #fff; border: 1px solid var(--color-borde); border-radius: var(--radio); padding: 22px; margin-bottom: 20px; font-size: 1.05rem; }
+.agenda-resumen p { margin: 0 0 10px; }
+.agenda-resumen-abono { font-weight: 600; color: var(--color-secundario); }
+.agenda-cargando, .agenda-vacio { text-align: center; color: var(--color-texto-suave); font-size: 1.05rem; padding: 20px 0; }
+.agenda-exito { font-size: 1.1rem; font-weight: 600; color: #15803d; background: #f0fdf4; border: 1px solid #bbf7d0; padding: 16px; border-radius: var(--radio); margin-bottom: 14px; }
+@media (max-width: 480px) {
+  .agenda-opciones-grid, .agenda-horas-grid { grid-template-columns: 1fr; }
+}
 .barra-carrito {
   position: fixed; right: 20px; bottom: 20px; background: var(--color-secundario);
   color: #fff; padding: 14px 22px; border-radius: 999px; box-shadow: var(--sombra); cursor: pointer; z-index: 60;
