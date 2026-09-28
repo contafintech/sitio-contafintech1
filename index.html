@@ -75,6 +75,7 @@
     <input type="text" id="rut-cotizacion" placeholder="12345678-9" autocomplete="off">
   </div>
   <p id="estimado-envio" style="font-size:.85rem; color:var(--color-texto-suave)"></p>
+  <p class="carrito-confianza" id="carrito-confianza">🔒 Sin compromiso — respuesta dentro de 1 día hábil.</p>
   <button class="btn btn-primario btn-bloque" id="btn-cotizar">Solicitar cotización</button>
   <button class="btn btn-secundario btn-bloque" id="btn-cerrar-carrito" style="margin-top:10px">Cerrar</button>
   <p id="mensaje-carrito"></p>
@@ -121,6 +122,7 @@
 <script src="js/formulario.js"></script>
 <script src="js/herramientas.js"></script>
 <script src="js/diagnostico.js"></script>
+<script src="js/seguimiento.js"></script>
 <script>
 (async function () {
   document.getElementById('pie-anio').textContent = new Date().getFullYear();
@@ -134,6 +136,7 @@
     // Explica, ANTES de que el visitante haga clic, qué pasa después de pedir la cotización —
     // reduce la duda típica de "¿y ahora qué?" justo en el paso más cercano a la venta.
     document.getElementById('carrito-nota-flujo').textContent = I18n.t('carrito_explicacion_flujo');
+    document.getElementById('carrito-confianza').textContent = I18n.t('carrito_confianza_msg');
     if (window.Carrito) { Carrito.render(); }
     document.getElementById('pie-link-privacidad').textContent = I18n.t('politica_privacidad');
     document.getElementById('pie-generado').textContent = I18n.t('pie_generado');
@@ -399,6 +402,7 @@
     // descargas de soporte remoto — utilidad genérica para cualquier estudio contable/asesoría
     // que use este sistema, no específica de una marca.
     var ayuda = [];
+    ayuda.push({ href: '#seguimiento', texto: I18n.t('menu_seguimiento') });
     if (window.Sitio.moduloActivo('blog') && estado.blog.length) { ayuda.push({ href: '#blog', texto: I18n.t('menu_blog') }); }
     if (c.redes_youtube) { ayuda.push({ href: c.redes_youtube, texto: I18n.t('pie_canal_youtube'), externo: true }); }
     var listaAyuda = ayuda.map(function (a) { return '<li><a href="' + Render.esc(a.href) + '"' + (a.externo ? ' target="_blank" rel="noopener"' : '') + '>' + Render.esc(a.texto) + '</a></li>'; }).join('');
@@ -535,7 +539,15 @@
     }
     if (ruta === 'tienda') {
       main.innerHTML = migasDeRuta_('tienda', I18n.t('menu_tienda'), idioma) + renderTienda_(idioma);
-      Carrito.enlazarBotonesAgregar();
+      pintarGrillaTienda_(idioma);
+      Render.activarReveal(main);
+      reubicarBarraIndicadores_(ruta);
+      marcarEnlaceActivoMenu_(ruta);
+      return;
+    }
+    if (ruta === 'seguimiento') {
+      main.innerHTML = migasDeRuta_('seguimiento', I18n.t('menu_seguimiento'), idioma) + renderSeguimiento_(idioma);
+      if (window.Seguimiento) { Seguimiento.montar(document.getElementById('contenido-pagina')); }
       Render.activarReveal(main);
       reubicarBarraIndicadores_(ruta);
       marcarEnlaceActivoMenu_(ruta);
@@ -559,20 +571,94 @@
     reubicarBarraIndicadores_(ruta);
   }
 
-  function renderTienda_(idioma) {
-    var productos = estado.catalogo.productos || [];
-    var tarjetas = productos.map(function (p) {
-      return (
-        '<div class="tarjeta tarjeta-producto">' +
-        '<h3>' + Render.esc(Render.campo(p, 'nombre', idioma)) + '</h3>' +
-        '<div class="precio">' + Render.esc(p.precio_base) + ' <small>' + Render.esc(p.unidad_precio) + '</small></div>' +
-        '<button class="btn btn-primario btn-bloque" data-agregar="' + Render.esc(p.id_producto) + '">' + I18n.t('agregar_al_carrito') + '</button>' +
-        '</div>'
-      );
-    }).join('');
-    var vacio = !productos.length ? '<p style="text-align:center; color:var(--color-texto-suave)">' + I18n.t('todavia_sin_productos') + '</p>' : '';
-    return '<section class="reveal"><div class="contenedor"><div class="seccion-encabezado"><h2>' + I18n.t('menu_tienda') + '</h2></div>' + vacio + '<div class="grid-catalogo">' + tarjetas + '</div></div></section>';
+  // Tienda: antes era una grilla sin buscador, sin filtro de categoría, sin orden y sin foto —
+  // el catálogo completo (categorías, imagen del producto) ya viajaba en data/catalogo.json sin
+  // usarse. Todo el filtrado/orden ocurre en el navegador (los datos ya están cargados), así que
+  // no agrega ninguna llamada nueva a la API; re-pinta solo la grilla al escribir/filtrar/ordenar.
+  function tarjetaProducto_(p, idioma) {
+    var imagen = p.medio_url
+      ? '<img src="' + Render.esc(p.medio_url) + '" alt="' + Render.esc(Render.campo(p, 'nombre', idioma)) + '" loading="lazy">'
+      : '<div class="tarjeta-producto-sin-foto" aria-hidden="true">🧾</div>';
+    return (
+      '<div class="tarjeta tarjeta-producto">' + imagen +
+      '<h3>' + Render.esc(Render.campo(p, 'nombre', idioma)) + '</h3>' +
+      '<div class="precio">' + Render.esc(p.precio_base) + ' <small>' + Render.esc(p.unidad_precio) + '</small></div>' +
+      '<button class="btn btn-primario btn-bloque" data-agregar="' + Render.esc(p.id_producto) + '">' + I18n.t('agregar_al_carrito') + '</button>' +
+      '</div>'
+    );
   }
+
+  function productosFiltrados_(termino, idCategoria, orden, idioma) {
+    var productos = (estado.catalogo.productos || []).slice();
+    if (termino) {
+      var t = termino.toLowerCase();
+      productos = productos.filter(function (p) { return Render.campo(p, 'nombre', idioma).toLowerCase().indexOf(t) !== -1; });
+    }
+    if (idCategoria) { productos = productos.filter(function (p) { return p.id_categoria === idCategoria; }); }
+    if (orden === 'precio_asc') { productos.sort(function (a, b) { return Number(a.precio_base) - Number(b.precio_base); }); }
+    else if (orden === 'precio_desc') { productos.sort(function (a, b) { return Number(b.precio_base) - Number(a.precio_base); }); }
+    else if (orden === 'nombre') { productos.sort(function (a, b) { return Render.campo(a, 'nombre', idioma).localeCompare(Render.campo(b, 'nombre', idioma)); }); }
+    return productos;
+  }
+
+  function pintarGrillaTienda_(idioma) {
+    var contenedor = document.getElementById('grilla-tienda');
+    if (!contenedor) { return; }
+    var termino = (document.getElementById('tienda-buscar') || {}).value || '';
+    var idCategoria = (document.getElementById('tienda-categoria') || {}).value || '';
+    var orden = (document.getElementById('tienda-orden') || {}).value || '';
+    var productos = productosFiltrados_(termino, idCategoria, orden, idioma);
+    var tarjetas = productos.map(function (p) { return tarjetaProducto_(p, idioma); }).join('');
+    var totalPublicados = (estado.catalogo.productos || []).length;
+    var vacio = !productos.length
+      ? '<p style="text-align:center; color:var(--color-texto-suave)">' + (totalPublicados ? I18n.t('tienda_sin_resultados') : I18n.t('todavia_sin_productos')) + '</p>'
+      : '';
+    contenedor.innerHTML = vacio + '<div class="grid-catalogo">' + tarjetas + '</div>';
+    Carrito.enlazarBotonesAgregar();
+  }
+
+  function renderTienda_(idioma) {
+    var categorias = estado.catalogo.categorias || [];
+    var opcionesCategoria = categorias.map(function (c) {
+      return '<option value="' + Render.esc(c.id_categoria) + '">' + Render.esc(Render.campo(c, 'nombre', idioma)) + '</option>';
+    }).join('');
+    return (
+      '<section class="reveal"><div class="contenedor">' +
+      '<div class="seccion-encabezado"><h2>' + I18n.t('menu_tienda') + '</h2></div>' +
+      '<div class="tienda-herramientas">' +
+      '<input type="search" id="tienda-buscar" placeholder="' + Render.esc(I18n.t('tienda_buscar_placeholder')) + '" aria-label="' + Render.esc(I18n.t('tienda_buscar_placeholder')) + '">' +
+      (categorias.length ? '<select id="tienda-categoria" aria-label="' + Render.esc(I18n.t('tienda_categoria_todas')) + '"><option value="">' + Render.esc(I18n.t('tienda_categoria_todas')) + '</option>' + opcionesCategoria + '</select>' : '') +
+      '<select id="tienda-orden" aria-label="' + Render.esc(I18n.t('tienda_ordenar')) + '">' +
+      '<option value="">' + Render.esc(I18n.t('tienda_orden_relevancia')) + '</option>' +
+      '<option value="precio_asc">' + Render.esc(I18n.t('tienda_orden_precio_asc')) + '</option>' +
+      '<option value="precio_desc">' + Render.esc(I18n.t('tienda_orden_precio_desc')) + '</option>' +
+      '<option value="nombre">' + Render.esc(I18n.t('tienda_orden_nombre')) + '</option>' +
+      '</select></div>' +
+      '<div id="grilla-tienda"></div>' +
+      '</div></section>'
+    );
+  }
+
+  // Seguimiento de pedido: el HTML solo pone el marco (igual que Diagnostico/Herramientas);
+  // js/seguimiento.js arma el formulario y llama a la acción "seguimiento.obtener" de la API.
+  function renderSeguimiento_(idioma) {
+    return (
+      '<section class="reveal"><div class="contenedor angosto">' +
+      '<div class="seccion-encabezado"><h2>' + I18n.t('seguimiento_titulo') + '</h2><p>' + I18n.t('seguimiento_intro') + '</p></div>' +
+      '<div id="seguimiento-pedido"></div>' +
+      '</div></section>'
+    );
+  }
+
+  // Delegado en #contenido-pagina (no en #grilla-tienda: ese nodo se reemplaza en cada filtro,
+  // así que un listener puesto directo en él se perdería con el primer input) — funciona sin
+  // importar cuántas veces se repinte la grilla.
+  document.getElementById('contenido-pagina').addEventListener('input', function (ev) {
+    if (ev.target.id === 'tienda-buscar') { pintarGrillaTienda_(I18n.idioma()); }
+  });
+  document.getElementById('contenido-pagina').addEventListener('change', function (ev) {
+    if (ev.target.id === 'tienda-categoria' || ev.target.id === 'tienda-orden') { pintarGrillaTienda_(I18n.idioma()); }
+  });
 
   window.addEventListener('hashchange', render);
   Carrito.iniciar();
