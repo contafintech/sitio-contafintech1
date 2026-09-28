@@ -123,6 +123,7 @@
 <script src="js/herramientas.js"></script>
 <script src="js/diagnostico.js"></script>
 <script src="js/seguimiento.js"></script>
+<script src="js/agendamiento.js"></script>
 <script>
 (async function () {
   document.getElementById('pie-anio').textContent = new Date().getFullYear();
@@ -173,6 +174,7 @@
     var ctaMovil = '<li class="item-cta-menu"><a href="#servicios" class="btn btn-primario btn-bloque">' + I18n.t('cotizar_ahora_cabecera') + '</a></li>';
     var menuHtml = ctaMovil + Render.renderMenu(estado.menu, I18n.idioma());
     if (window.Sitio.moduloActivo('tienda')) { menuHtml += '<li><a href="#tienda">' + I18n.t('menu_tienda') + '</a></li>'; }
+    menuHtml += '<li><a href="#agendar">' + I18n.t('menu_agendar') + '</a></li>';
     if (window.Sitio.moduloActivo('blog')) { menuHtml += '<li><a href="#blog">' + I18n.t('menu_blog') + '</a></li>'; }
     document.getElementById('menu-principal').innerHTML = menuHtml;
     document.getElementById('cta-cabecera').textContent = I18n.t('cotizar_ahora_cabecera');
@@ -402,6 +404,7 @@
     // descargas de soporte remoto — utilidad genérica para cualquier estudio contable/asesoría
     // que use este sistema, no específica de una marca.
     var ayuda = [];
+    ayuda.push({ href: '#agendar', texto: I18n.t('menu_agendar') });
     ayuda.push({ href: '#seguimiento', texto: I18n.t('menu_seguimiento') });
     if (window.Sitio.moduloActivo('blog') && estado.blog.length) { ayuda.push({ href: '#blog', texto: I18n.t('menu_blog') }); }
     if (c.redes_youtube) { ayuda.push({ href: c.redes_youtube, texto: I18n.t('pie_canal_youtube'), externo: true }); }
@@ -553,6 +556,14 @@
       marcarEnlaceActivoMenu_(ruta);
       return;
     }
+    if (ruta === 'agendar') {
+      main.innerHTML = migasDeRuta_('agendar', I18n.t('menu_agendar'), idioma) + renderAgendamiento_(idioma);
+      if (window.Agendamiento) { Agendamiento.montar(document.getElementById('contenido-pagina')); }
+      Render.activarReveal(main);
+      reubicarBarraIndicadores_(ruta);
+      marcarEnlaceActivoMenu_(ruta);
+      return;
+    }
 
     // Las páginas de servicio usan un slug de varias partes (ej. "servicios/contabilidad-digital"
     // o "servicios/contabilidad-digital/planes-emprendedores") — Paginas.slug guarda el path
@@ -646,6 +657,18 @@
       '<section class="reveal"><div class="contenedor angosto">' +
       '<div class="seccion-encabezado"><h2>' + I18n.t('seguimiento_titulo') + '</h2><p>' + I18n.t('seguimiento_intro') + '</p></div>' +
       '<div id="seguimiento-pedido"></div>' +
+      '</div></section>'
+    );
+  }
+
+  // Agendamiento: página propia (antes no existía ninguna interfaz para las acciones
+  // reserva.disponibilidad/reserva.crear, aunque el backend ya las tenía) — el marco queda acá,
+  // js/agendamiento.js arma el asistente paso a paso dentro de #agendamiento-widget.
+  function renderAgendamiento_(idioma) {
+    return (
+      '<section class="reveal"><div class="contenedor angosto agenda-contenedor">' +
+      '<div class="seccion-encabezado"><h2>' + I18n.t('agenda_titulo') + '</h2><p>' + I18n.t('agenda_intro') + '</p></div>' +
+      '<div id="agendamiento-widget" class="agenda-widget"></div>' +
       '</div></section>'
     );
   }
