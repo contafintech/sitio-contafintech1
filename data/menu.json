@@ -27,15 +27,6 @@
     "url": "#servicios/contabilidad-digital/planes-emprendedores"
   },
   {
-    "id_menu": "MNU-000006",
-    "padre": "",
-    "orden": 2,
-    "etiqueta": "Quiénes somos",
-    "etiqueta_en": "About us",
-    "etiqueta_zh": "关于我们",
-    "url": "#quienes-somos"
-  },
-  {
     "id_menu": "MNU-000010",
     "padre": "MNU-000002",
     "orden": 2,
@@ -144,6 +135,15 @@
     "url": "#servicios/servicio-de-remuneraciones"
   },
   {
+    "id_menu": "MNU-000024",
+    "padre": "",
+    "orden": 7,
+    "etiqueta": "Tienda",
+    "etiqueta_en": "Shop",
+    "etiqueta_zh": "商店",
+    "url": "#tienda"
+  },
+  {
     "id_menu": "MNU-000019",
     "padre": "MNU-000002",
     "orden": 8,
@@ -153,6 +153,15 @@
     "url": "#servicios/asesoria-financiera-y-gestion-de-inversiones"
   },
   {
+    "id_menu": "MNU-000025",
+    "padre": "",
+    "orden": 8,
+    "etiqueta": "Agendar hora",
+    "etiqueta_en": "Book an appointment",
+    "etiqueta_zh": "预约",
+    "url": "#agendar"
+  },
+  {
     "id_menu": "MNU-000020",
     "padre": "MNU-000002",
     "orden": 9,
@@ -160,6 +169,15 @@
     "etiqueta_en": "",
     "etiqueta_zh": "",
     "url": "#servicios/auditoria"
+  },
+  {
+    "id_menu": "MNU-000026",
+    "padre": "",
+    "orden": 9,
+    "etiqueta": "Blog",
+    "etiqueta_en": "Blog",
+    "etiqueta_zh": "博客",
+    "url": "#blog"
   },
   {
     "id_menu": "MNU-000021",
@@ -178,5 +196,14 @@
     "etiqueta_en": "",
     "etiqueta_zh": "",
     "url": "#servicios/certificacion-y-soporte-dtes"
+  },
+  {
+    "id_menu": "MNU-000027",
+    "padre": "MNU-000002",
+    "orden": 12,
+    "etiqueta": "Cotizar ahora",
+    "etiqueta_en": "Get a quote",
+    "etiqueta_zh": "立即报价",
+    "url": "#servicios"
   }
 ]
