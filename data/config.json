@@ -68,7 +68,7 @@
   "modulo_tienda": "TRUE",
   "modulo_servicios": "TRUE",
   "modulo_blog": "TRUE",
-  "auto_actualizar_segundos": 60,
+  "auto_actualizar_segundos": "3600",
   "mostrar_barra_indicadores": "TRUE",
   "privacidad_encargado_nombre": "Andes Consultores SpA",
   "privacidad_encargado_email": "privacidad@andesconsultores.cl",
