@@ -5,9 +5,6 @@
     "titulo": "Inicio",
     "titulo_en": "Home",
     "titulo_zh": "首页",
-    "meta_descripcion": "Asesoría contable y tributaria integral para personas y empresas: diagnóstico, cotización y contratación 100% en línea.",
-    "meta_descripcion_en": "",
-    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000001",
@@ -166,102 +163,6 @@
         ]
       },
       {
-        "id_seccion": "SEC-000085",
-        "tipo": "franja_confianza",
-        "titulo": "",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000211",
-            "tipo": "estadistica",
-            "titulo": "Años de experiencia",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "numero": "5",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000212",
-            "tipo": "estadistica",
-            "titulo": "Empresas atendidas",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "numero": "500",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000213",
-            "tipo": "estadistica",
-            "titulo": "Tiempo de respuesta",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "numero": "24",
-              "sufijo": " hrs"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000214",
-            "tipo": "estadistica",
-            "titulo": "Trámite digital y remoto",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 4,
-            "datos": {
-              "numero": "100",
-              "sufijo": "%"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
         "id_seccion": "SEC-000002",
         "tipo": "tarjetas",
         "titulo": "¿Por qué nosotros?",
@@ -325,90 +226,6 @@
             "datos": {
               "icono": "📊"
             },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000162",
-        "tipo": "pasos_proceso",
-        "titulo": "¿Cómo funciona trabajar con nosotros?",
-        "texto": "Un proceso simple y transparente, de principio a fin — sin sorpresas.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000349",
-            "tipo": "paso",
-            "titulo": "Cuéntanos tu caso",
-            "texto": "Completas un formulario breve o agregas un servicio al carrito — sin llamadas ni trámites previos.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000350",
-            "tipo": "paso",
-            "titulo": "Cotización clara al instante",
-            "texto": "Recibes el detalle y el precio final por correo, con PDF firmado y verificable, sin letra chica.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000351",
-            "tipo": "paso",
-            "titulo": "Firma 100% digital",
-            "texto": "Aceptas la cotización en línea y tu contrato se genera automáticamente con los mismos datos.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000352",
-            "tipo": "paso",
-            "titulo": "Te acompañamos siempre",
-            "texto": "Desde el primer día tienes un contacto directo para dudas, cambios o nuevos requerimientos.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 4,
-            "datos": {},
             "datos_en": {},
             "datos_zh": {},
             "medio_url": "",
@@ -626,6 +443,102 @@
             "medio_alt": ""
           }
         ]
+      },
+      {
+        "id_seccion": "SEC-000085",
+        "tipo": "franja_confianza",
+        "titulo": "",
+        "texto": "",
+        "titulo_en": "",
+        "texto_en": "",
+        "titulo_zh": "",
+        "texto_zh": "",
+        "elementos": [
+          {
+            "id_elemento": "ELE-000211",
+            "tipo": "estadistica",
+            "titulo": "Años de experiencia",
+            "texto": "",
+            "enlace": "",
+            "titulo_en": "",
+            "texto_en": "",
+            "titulo_zh": "",
+            "texto_zh": "",
+            "orden": 1,
+            "datos": {
+              "numero": "5",
+              "sufijo": "+"
+            },
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          },
+          {
+            "id_elemento": "ELE-000212",
+            "tipo": "estadistica",
+            "titulo": "Empresas atendidas",
+            "texto": "",
+            "enlace": "",
+            "titulo_en": "",
+            "texto_en": "",
+            "titulo_zh": "",
+            "texto_zh": "",
+            "orden": 2,
+            "datos": {
+              "numero": "500",
+              "sufijo": "+"
+            },
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          },
+          {
+            "id_elemento": "ELE-000213",
+            "tipo": "estadistica",
+            "titulo": "Tiempo de respuesta",
+            "texto": "",
+            "enlace": "",
+            "titulo_en": "",
+            "texto_en": "",
+            "titulo_zh": "",
+            "texto_zh": "",
+            "orden": 3,
+            "datos": {
+              "numero": "24",
+              "sufijo": " hrs"
+            },
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          },
+          {
+            "id_elemento": "ELE-000214",
+            "tipo": "estadistica",
+            "titulo": "Trámite digital y remoto",
+            "texto": "",
+            "enlace": "",
+            "titulo_en": "",
+            "texto_en": "",
+            "titulo_zh": "",
+            "texto_zh": "",
+            "orden": 4,
+            "datos": {
+              "numero": "100",
+              "sufijo": "%"
+            },
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          }
+        ]
       }
     ]
   },
@@ -635,9 +548,6 @@
     "titulo": "Quiénes somos",
     "titulo_en": "About us",
     "titulo_zh": "关于我们",
-    "meta_descripcion": "Conoce al equipo y la trayectoria detrás de nuestra asesoría contable y tributaria.",
-    "meta_descripcion_en": "",
-    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000007",
@@ -749,9 +659,6 @@
     "titulo": "Servicios",
     "titulo_en": "Services",
     "titulo_zh": "服务",
-    "meta_descripcion": "Todos nuestros servicios contables y tributarios en un solo lugar, con cotización inmediata.",
-    "meta_descripcion_en": "",
-    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000084",
@@ -988,101 +895,11 @@
     ]
   },
   {
-    "id_pagina": "PAG-PLANES",
-    "slug": "planes",
-    "titulo": "Planes",
-    "titulo_en": "Plans",
-    "titulo_zh": "套餐",
-    "meta_descripcion": "Compara todos nuestros planes mensuales y elige el que mejor se ajusta a tu negocio.",
-    "meta_descripcion_en": "",
-    "meta_descripcion_zh": "",
-    "secciones": [
-      {
-        "id_seccion": "SEC-000086",
-        "tipo": "planes_servicio",
-        "titulo": "Planes de Contabilidad Digital",
-        "texto": "Compara y elige — precio y características siempre actualizados desde el catálogo real.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000215",
-            "tipo": "plan_ref",
-            "titulo": "",
-            "texto": "",
-            "enlace": "#servicios/contabilidad-digital/planes-emprendedores",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "id_plan": "PLN-000003",
-              "accion": "cotizar"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000216",
-            "tipo": "plan_ref",
-            "titulo": "",
-            "texto": "",
-            "enlace": "#servicios/contabilidad-digital/planes-pymes",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "id_plan": "PLN-000004",
-              "accion": "cotizar"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000217",
-            "tipo": "plan_ref",
-            "titulo": "",
-            "texto": "",
-            "enlace": "#servicios/contabilidad-digital/planes-empresas",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "id_plan": "PLN-000005",
-              "accion": "cotizar"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id_pagina": "PAG-CONTACTO",
     "slug": "contacto",
     "titulo": "Contacto",
     "titulo_en": "Contact",
     "titulo_zh": "联系我们",
-    "meta_descripcion": "Escríbenos y te responderemos a la brevedad para conversar sobre tu caso.",
-    "meta_descripcion_en": "",
-    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000011",
@@ -1103,9 +920,6 @@
     "titulo": "Herramientas",
     "titulo_en": "Tools",
     "titulo_zh": "工具",
-    "meta_descripcion": "Calculadoras y herramientas tributarias gratuitas para tomar mejores decisiones.",
-    "meta_descripcion_en": "",
-    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000012",
@@ -1218,9 +1032,6 @@
     "titulo": "Desarrollo y Evaluación de Proyectos",
     "titulo_en": "",
     "titulo_zh": "",
-    "meta_descripcion": "Evaluamos la viabilidad económica y financiera de tu proyecto antes de invertir.",
-    "meta_descripcion_en": "",
-    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000016",
@@ -1262,102 +1073,6 @@
             "texto_zh": "",
             "orden": 2,
             "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000087",
-        "tipo": "franja_confianza",
-        "titulo": "",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000218",
-            "tipo": "estadistica",
-            "titulo": "Años de experiencia",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "numero": "5",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000219",
-            "tipo": "estadistica",
-            "titulo": "Empresas atendidas",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "numero": "500",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000220",
-            "tipo": "estadistica",
-            "titulo": "Tiempo de respuesta",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "numero": "24",
-              "sufijo": " hrs"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000221",
-            "tipo": "estadistica",
-            "titulo": "Trámite digital y remoto",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 4,
-            "datos": {
-              "numero": "100",
-              "sufijo": "%"
-            },
             "datos_en": {},
             "datos_zh": {},
             "medio_url": "",
@@ -1523,255 +1238,6 @@
         ]
       },
       {
-        "id_seccion": "SEC-000088",
-        "tipo": "texto_imagen",
-        "titulo": "Nuestra manera de trabajar contigo",
-        "texto": "Antes de mover un solo papel, entendemos tu situación completa: qué necesitas, qué plazos tienes y qué documentación ya existe. Desde ahí armamos un plan concreto, con responsables y fechas claras — nunca partimos a ciegas.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000222",
-            "tipo": "medio",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://picsum.photos/seed/econta-metodologia/900/700",
-            "medio_tipo": "imagen",
-            "medio_alt": "Reunión de trabajo planificando un proyecto"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000089",
-        "tipo": "texto_imagen",
-        "titulo": "100% remoto, sin filas ni papeleo",
-        "texto": "Todo el proceso se coordina por videollamada, correo y WhatsApp. No necesitas visitar oficinas ni enviar documentos físicos — atendemos clientes en cualquier comuna o región de Chile, de la misma forma.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000223",
-            "tipo": "medio",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://picsum.photos/seed/econta-remoto/900/700",
-            "medio_tipo": "imagen",
-            "medio_alt": "Videollamada de trabajo remoto"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000090",
-        "tipo": "tabla_comparativa",
-        "titulo": "Planes de este servicio",
-        "texto": "Valores y plazos referenciales — te confirmamos el valor exacto según tu caso al cotizar.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000224",
-            "tipo": "tabla",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "columnas": [
-                "Característica",
-                "Plan Inicial",
-                "Plan Intermedio",
-                "Plan Avanzado"
-              ],
-              "filas": [
-                [
-                  "Tiempo de respuesta",
-                  "48 horas hábiles",
-                  "24 horas hábiles",
-                  "24 horas hábiles (prioritario)"
-                ],
-                [
-                  "Reuniones de seguimiento",
-                  "Por correo",
-                  "Mensual",
-                  "Quincenal"
-                ],
-                [
-                  "Soporte post-servicio",
-                  "15 días",
-                  "30 días",
-                  "60 días"
-                ],
-                [
-                  "Ideal para",
-                  "Recién iniciados",
-                  "En crecimiento",
-                  "Alta complejidad"
-                ]
-              ]
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000091",
-        "tipo": "testimonios",
-        "titulo": "Lo que dicen nuestros clientes",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000225",
-            "tipo": "testimonio",
-            "titulo": "Cliente de Contabilidad Andes",
-            "texto": "Cumplieron los plazos que nos prometieron y nos avisaron de cada paso, sin que tuviéramos que preguntar.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "cargo": "Cliente",
-              "estrellas": 5
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://i.pravatar.cc/150?img=12",
-            "medio_tipo": "imagen",
-            "medio_alt": "Foto de perfil"
-          },
-          {
-            "id_elemento": "ELE-000226",
-            "tipo": "testimonio",
-            "titulo": "Empresa cliente",
-            "texto": "El proceso fue mucho menos complicado de lo que pensábamos — todo se resolvió sin salir de la oficina.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "cargo": "Cliente",
-              "estrellas": 5
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://i.pravatar.cc/150?img=47",
-            "medio_tipo": "imagen",
-            "medio_alt": "Foto de perfil"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000092",
-        "tipo": "tarjetas",
-        "titulo": "Otros servicios relacionados",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000227",
-            "tipo": "tarjeta",
-            "titulo": "Constitución de Empresa",
-            "texto": "Formalizamos tu empresa de principio a fin — estructura legal, escritura, Registro de Empresas y Sociedad, y RUT — sin que tengas que entender la letra chica.",
-            "enlace": "#servicios/constitucion-de-empresa",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000228",
-            "tipo": "tarjeta",
-            "titulo": "Inicio de Actividades SII",
-            "texto": "Iniciamos tu actividad ante el SII con el giro y régimen tributario correctos desde el primer día, para evitar reclasificaciones o multas más adelante.",
-            "enlace": "#servicios/inicio-de-actividades-sii",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000229",
-            "tipo": "tarjeta",
-            "titulo": "Contabilidad Digital",
-            "texto": "Tu contabilidad al día, cada mes, con el régimen tributario que corresponde al tamaño real de tu negocio — no una plantilla genérica.",
-            "enlace": "#servicios/contabilidad-digital",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
         "id_seccion": "SEC-000019",
         "tipo": "preguntas_frecuentes",
         "titulo": "Preguntas frecuentes",
@@ -1875,9 +1341,6 @@
     "titulo": "Constitución de Empresa",
     "titulo_en": "",
     "titulo_zh": "",
-    "meta_descripcion": "Constituye tu empresa de forma 100% online, rápida y sin errores.",
-    "meta_descripcion_en": "",
-    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000021",
@@ -1919,102 +1382,6 @@
             "texto_zh": "",
             "orden": 2,
             "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000093",
-        "tipo": "franja_confianza",
-        "titulo": "",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000230",
-            "tipo": "estadistica",
-            "titulo": "Años de experiencia",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "numero": "5",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000231",
-            "tipo": "estadistica",
-            "titulo": "Empresas atendidas",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "numero": "500",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000232",
-            "tipo": "estadistica",
-            "titulo": "Tiempo de respuesta",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "numero": "24",
-              "sufijo": " hrs"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000233",
-            "tipo": "estadistica",
-            "titulo": "Trámite digital y remoto",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 4,
-            "datos": {
-              "numero": "100",
-              "sufijo": "%"
-            },
             "datos_en": {},
             "datos_zh": {},
             "medio_url": "",
@@ -2180,255 +1547,6 @@
         ]
       },
       {
-        "id_seccion": "SEC-000094",
-        "tipo": "texto_imagen",
-        "titulo": "Nuestra manera de trabajar contigo",
-        "texto": "Antes de mover un solo papel, entendemos tu situación completa: qué necesitas, qué plazos tienes y qué documentación ya existe. Desde ahí armamos un plan concreto, con responsables y fechas claras — nunca partimos a ciegas.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000234",
-            "tipo": "medio",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://picsum.photos/seed/econta-metodologia/900/700",
-            "medio_tipo": "imagen",
-            "medio_alt": "Reunión de trabajo planificando un proyecto"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000095",
-        "tipo": "texto_imagen",
-        "titulo": "100% remoto, sin filas ni papeleo",
-        "texto": "Todo el proceso se coordina por videollamada, correo y WhatsApp. No necesitas visitar oficinas ni enviar documentos físicos — atendemos clientes en cualquier comuna o región de Chile, de la misma forma.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000235",
-            "tipo": "medio",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://picsum.photos/seed/econta-remoto/900/700",
-            "medio_tipo": "imagen",
-            "medio_alt": "Videollamada de trabajo remoto"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000096",
-        "tipo": "tabla_comparativa",
-        "titulo": "Planes de este servicio",
-        "texto": "Valores y plazos referenciales — te confirmamos el valor exacto según tu caso al cotizar.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000236",
-            "tipo": "tabla",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "columnas": [
-                "Característica",
-                "Plan Inicial",
-                "Plan Intermedio",
-                "Plan Avanzado"
-              ],
-              "filas": [
-                [
-                  "Tiempo de respuesta",
-                  "48 horas hábiles",
-                  "24 horas hábiles",
-                  "24 horas hábiles (prioritario)"
-                ],
-                [
-                  "Reuniones de seguimiento",
-                  "Por correo",
-                  "Mensual",
-                  "Quincenal"
-                ],
-                [
-                  "Soporte post-servicio",
-                  "15 días",
-                  "30 días",
-                  "60 días"
-                ],
-                [
-                  "Ideal para",
-                  "Recién iniciados",
-                  "En crecimiento",
-                  "Alta complejidad"
-                ]
-              ]
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000097",
-        "tipo": "testimonios",
-        "titulo": "Lo que dicen nuestros clientes",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000237",
-            "tipo": "testimonio",
-            "titulo": "Cliente de Contabilidad Andes",
-            "texto": "Cumplieron los plazos que nos prometieron y nos avisaron de cada paso, sin que tuviéramos que preguntar.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "cargo": "Cliente",
-              "estrellas": 5
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://i.pravatar.cc/150?img=12",
-            "medio_tipo": "imagen",
-            "medio_alt": "Foto de perfil"
-          },
-          {
-            "id_elemento": "ELE-000238",
-            "tipo": "testimonio",
-            "titulo": "Empresa cliente",
-            "texto": "El proceso fue mucho menos complicado de lo que pensábamos — todo se resolvió sin salir de la oficina.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "cargo": "Cliente",
-              "estrellas": 5
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://i.pravatar.cc/150?img=47",
-            "medio_tipo": "imagen",
-            "medio_alt": "Foto de perfil"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000098",
-        "tipo": "tarjetas",
-        "titulo": "Otros servicios relacionados",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000239",
-            "tipo": "tarjeta",
-            "titulo": "Inicio de Actividades SII",
-            "texto": "Iniciamos tu actividad ante el SII con el giro y régimen tributario correctos desde el primer día, para evitar reclasificaciones o multas más adelante.",
-            "enlace": "#servicios/inicio-de-actividades-sii",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000240",
-            "tipo": "tarjeta",
-            "titulo": "Contabilidad Digital",
-            "texto": "Tu contabilidad al día, cada mes, con el régimen tributario que corresponde al tamaño real de tu negocio — no una plantilla genérica.",
-            "enlace": "#servicios/contabilidad-digital",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000241",
-            "tipo": "tarjeta",
-            "titulo": "Declaración de Renta Anual",
-            "texto": "Preparamos y presentamos tu Declaración de Renta (F22) optimizando cada crédito y franquicia a la que tienes derecho, sin dejar plata sobre la mesa.",
-            "enlace": "#servicios/declaracion-de-renta-anual",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
         "id_seccion": "SEC-000024",
         "tipo": "preguntas_frecuentes",
         "titulo": "Preguntas frecuentes",
@@ -2532,9 +1650,6 @@
     "titulo": "Inicio de Actividades SII",
     "titulo_en": "",
     "titulo_zh": "",
-    "meta_descripcion": "Te acompañamos en todo el trámite de inicio de actividades ante el SII.",
-    "meta_descripcion_en": "",
-    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000026",
@@ -2576,102 +1691,6 @@
             "texto_zh": "",
             "orden": 2,
             "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000099",
-        "tipo": "franja_confianza",
-        "titulo": "",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000242",
-            "tipo": "estadistica",
-            "titulo": "Años de experiencia",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "numero": "5",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000243",
-            "tipo": "estadistica",
-            "titulo": "Empresas atendidas",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "numero": "500",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000244",
-            "tipo": "estadistica",
-            "titulo": "Tiempo de respuesta",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "numero": "24",
-              "sufijo": " hrs"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000245",
-            "tipo": "estadistica",
-            "titulo": "Trámite digital y remoto",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 4,
-            "datos": {
-              "numero": "100",
-              "sufijo": "%"
-            },
             "datos_en": {},
             "datos_zh": {},
             "medio_url": "",
@@ -2837,255 +1856,6 @@
         ]
       },
       {
-        "id_seccion": "SEC-000100",
-        "tipo": "texto_imagen",
-        "titulo": "Nuestra manera de trabajar contigo",
-        "texto": "Antes de mover un solo papel, entendemos tu situación completa: qué necesitas, qué plazos tienes y qué documentación ya existe. Desde ahí armamos un plan concreto, con responsables y fechas claras — nunca partimos a ciegas.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000246",
-            "tipo": "medio",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://picsum.photos/seed/econta-metodologia/900/700",
-            "medio_tipo": "imagen",
-            "medio_alt": "Reunión de trabajo planificando un proyecto"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000101",
-        "tipo": "texto_imagen",
-        "titulo": "100% remoto, sin filas ni papeleo",
-        "texto": "Todo el proceso se coordina por videollamada, correo y WhatsApp. No necesitas visitar oficinas ni enviar documentos físicos — atendemos clientes en cualquier comuna o región de Chile, de la misma forma.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000247",
-            "tipo": "medio",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://picsum.photos/seed/econta-remoto/900/700",
-            "medio_tipo": "imagen",
-            "medio_alt": "Videollamada de trabajo remoto"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000102",
-        "tipo": "tabla_comparativa",
-        "titulo": "Planes de este servicio",
-        "texto": "Valores y plazos referenciales — te confirmamos el valor exacto según tu caso al cotizar.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000248",
-            "tipo": "tabla",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "columnas": [
-                "Característica",
-                "Plan Inicial",
-                "Plan Intermedio",
-                "Plan Avanzado"
-              ],
-              "filas": [
-                [
-                  "Tiempo de respuesta",
-                  "48 horas hábiles",
-                  "24 horas hábiles",
-                  "24 horas hábiles (prioritario)"
-                ],
-                [
-                  "Reuniones de seguimiento",
-                  "Por correo",
-                  "Mensual",
-                  "Quincenal"
-                ],
-                [
-                  "Soporte post-servicio",
-                  "15 días",
-                  "30 días",
-                  "60 días"
-                ],
-                [
-                  "Ideal para",
-                  "Recién iniciados",
-                  "En crecimiento",
-                  "Alta complejidad"
-                ]
-              ]
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000103",
-        "tipo": "testimonios",
-        "titulo": "Lo que dicen nuestros clientes",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000249",
-            "tipo": "testimonio",
-            "titulo": "Cliente de Contabilidad Andes",
-            "texto": "Cumplieron los plazos que nos prometieron y nos avisaron de cada paso, sin que tuviéramos que preguntar.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "cargo": "Cliente",
-              "estrellas": 5
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://i.pravatar.cc/150?img=12",
-            "medio_tipo": "imagen",
-            "medio_alt": "Foto de perfil"
-          },
-          {
-            "id_elemento": "ELE-000250",
-            "tipo": "testimonio",
-            "titulo": "Empresa cliente",
-            "texto": "El proceso fue mucho menos complicado de lo que pensábamos — todo se resolvió sin salir de la oficina.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "cargo": "Cliente",
-              "estrellas": 5
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://i.pravatar.cc/150?img=47",
-            "medio_tipo": "imagen",
-            "medio_alt": "Foto de perfil"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000104",
-        "tipo": "tarjetas",
-        "titulo": "Otros servicios relacionados",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000251",
-            "tipo": "tarjeta",
-            "titulo": "Contabilidad Digital",
-            "texto": "Tu contabilidad al día, cada mes, con el régimen tributario que corresponde al tamaño real de tu negocio — no una plantilla genérica.",
-            "enlace": "#servicios/contabilidad-digital",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000252",
-            "tipo": "tarjeta",
-            "titulo": "Declaración de Renta Anual",
-            "texto": "Preparamos y presentamos tu Declaración de Renta (F22) optimizando cada crédito y franquicia a la que tienes derecho, sin dejar plata sobre la mesa.",
-            "enlace": "#servicios/declaracion-de-renta-anual",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000253",
-            "tipo": "tarjeta",
-            "titulo": "Servicios Tributarios",
-            "texto": "Diagnóstico, declaraciones mensuales y planificación tributaria para que el SII nunca te tome por sorpresa.",
-            "enlace": "#servicios/servicios-tributarios",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
         "id_seccion": "SEC-000029",
         "tipo": "preguntas_frecuentes",
         "titulo": "Preguntas frecuentes",
@@ -3189,9 +1959,6 @@
     "titulo": "Contabilidad Digital",
     "titulo_en": "",
     "titulo_zh": "",
-    "meta_descripcion": "Contabilidad mensual 100% digital, con planes para emprendedores, pymes y empresas.",
-    "meta_descripcion_en": "",
-    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000031",
@@ -3233,102 +2000,6 @@
             "texto_zh": "",
             "orden": 2,
             "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000105",
-        "tipo": "franja_confianza",
-        "titulo": "",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000254",
-            "tipo": "estadistica",
-            "titulo": "Años de experiencia",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "numero": "5",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000255",
-            "tipo": "estadistica",
-            "titulo": "Empresas atendidas",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "numero": "500",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000256",
-            "tipo": "estadistica",
-            "titulo": "Tiempo de respuesta",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "numero": "24",
-              "sufijo": " hrs"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000257",
-            "tipo": "estadistica",
-            "titulo": "Trámite digital y remoto",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 4,
-            "datos": {
-              "numero": "100",
-              "sufijo": "%"
-            },
             "datos_en": {},
             "datos_zh": {},
             "medio_url": "",
@@ -3494,70 +2165,10 @@
         ]
       },
       {
-        "id_seccion": "SEC-000106",
-        "tipo": "texto_imagen",
-        "titulo": "Nuestra manera de trabajar contigo",
-        "texto": "Antes de mover un solo papel, entendemos tu situación completa: qué necesitas, qué plazos tienes y qué documentación ya existe. Desde ahí armamos un plan concreto, con responsables y fechas claras — nunca partimos a ciegas.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000258",
-            "tipo": "medio",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://picsum.photos/seed/econta-metodologia/900/700",
-            "medio_tipo": "imagen",
-            "medio_alt": "Reunión de trabajo planificando un proyecto"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000107",
-        "tipo": "texto_imagen",
-        "titulo": "100% remoto, sin filas ni papeleo",
-        "texto": "Todo el proceso se coordina por videollamada, correo y WhatsApp. No necesitas visitar oficinas ni enviar documentos físicos — atendemos clientes en cualquier comuna o región de Chile, de la misma forma.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000259",
-            "tipo": "medio",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://picsum.photos/seed/econta-remoto/900/700",
-            "medio_tipo": "imagen",
-            "medio_alt": "Videollamada de trabajo remoto"
-          }
-        ]
-      },
-      {
         "id_seccion": "SEC-000034",
-        "tipo": "planes_servicio",
+        "tipo": "tarjetas",
         "titulo": "Elige tu plan",
-        "texto": "Cada plan incluye lo anterior, más lo indicado. Precio y datos siempre actualizados desde el catálogo — lo que cotizas es exactamente lo que se contrata.",
+        "texto": "Cada plan incluye lo anterior, más lo indicado.",
         "titulo_en": "",
         "texto_en": "",
         "titulo_zh": "",
@@ -3565,9 +2176,9 @@
         "elementos": [
           {
             "id_elemento": "ELE-000084",
-            "tipo": "plan_ref",
-            "titulo": "",
-            "texto": "",
+            "tipo": "tarjeta",
+            "titulo": "Plan Emprendedores",
+            "texto": "Para emprendimientos recién iniciados.",
             "enlace": "#servicios/contabilidad-digital/planes-emprendedores",
             "titulo_en": "",
             "texto_en": "",
@@ -3575,8 +2186,14 @@
             "texto_zh": "",
             "orden": 1,
             "datos": {
-              "id_plan": "PLN-000003",
-              "accion": "cotizar"
+              "precio": "$45.000",
+              "unidad": "/mes",
+              "boton_texto": "Ver plan",
+              "caracteristicas": [
+                "Declaraciones mensuales",
+                "Un régimen tributario",
+                "Soporte por correo"
+              ]
             },
             "datos_en": {},
             "datos_zh": {},
@@ -3586,9 +2203,9 @@
           },
           {
             "id_elemento": "ELE-000085",
-            "tipo": "plan_ref",
-            "titulo": "",
-            "texto": "",
+            "tipo": "tarjeta",
+            "titulo": "Plan Pymes",
+            "texto": "El más elegido por PYME en crecimiento.",
             "enlace": "#servicios/contabilidad-digital/planes-pymes",
             "titulo_en": "",
             "texto_en": "",
@@ -3596,8 +2213,15 @@
             "texto_zh": "",
             "orden": 2,
             "datos": {
-              "id_plan": "PLN-000004",
-              "accion": "cotizar"
+              "precio": "$85.000",
+              "unidad": "/mes",
+              "boton_texto": "Ver plan",
+              "caracteristicas": [
+                "Todo lo del Plan Emprendedores",
+                "Facturación electrónica incluida",
+                "Reunión mensual de resultados",
+                "Soporte prioritario"
+              ]
             },
             "datos_en": {},
             "datos_zh": {},
@@ -3607,9 +2231,9 @@
           },
           {
             "id_elemento": "ELE-000086",
-            "tipo": "plan_ref",
-            "titulo": "",
-            "texto": "",
+            "tipo": "tarjeta",
+            "titulo": "Plan Empresa",
+            "texto": "Para empresas con varios socios o giros.",
             "enlace": "#servicios/contabilidad-digital/planes-empresas",
             "titulo_en": "",
             "texto_en": "",
@@ -3617,134 +2241,15 @@
             "texto_zh": "",
             "orden": 3,
             "datos": {
-              "id_plan": "PLN-000005",
-              "accion": "cotizar"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000108",
-        "tipo": "testimonios",
-        "titulo": "Lo que dicen nuestros clientes",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000260",
-            "tipo": "testimonio",
-            "titulo": "Cliente de Contabilidad Andes",
-            "texto": "Cumplieron los plazos que nos prometieron y nos avisaron de cada paso, sin que tuviéramos que preguntar.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "cargo": "Cliente",
-              "estrellas": 5
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://i.pravatar.cc/150?img=12",
-            "medio_tipo": "imagen",
-            "medio_alt": "Foto de perfil"
-          },
-          {
-            "id_elemento": "ELE-000261",
-            "tipo": "testimonio",
-            "titulo": "Empresa cliente",
-            "texto": "El proceso fue mucho menos complicado de lo que pensábamos — todo se resolvió sin salir de la oficina.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "cargo": "Cliente",
-              "estrellas": 5
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://i.pravatar.cc/150?img=47",
-            "medio_tipo": "imagen",
-            "medio_alt": "Foto de perfil"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000109",
-        "tipo": "tarjetas",
-        "titulo": "Otros servicios relacionados",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000262",
-            "tipo": "tarjeta",
-            "titulo": "Declaración de Renta Anual",
-            "texto": "Preparamos y presentamos tu Declaración de Renta (F22) optimizando cada crédito y franquicia a la que tienes derecho, sin dejar plata sobre la mesa.",
-            "enlace": "#servicios/declaracion-de-renta-anual",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000263",
-            "tipo": "tarjeta",
-            "titulo": "Servicios Tributarios",
-            "texto": "Diagnóstico, declaraciones mensuales y planificación tributaria para que el SII nunca te tome por sorpresa.",
-            "enlace": "#servicios/servicios-tributarios",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000264",
-            "tipo": "tarjeta",
-            "titulo": "Servicio de Remuneraciones",
-            "texto": "Liquidaciones de sueldo, cotizaciones previsionales y finiquitos calculados correctamente, mes a mes, para que tu equipo confíe en su pago.",
-            "enlace": "#servicios/servicio-de-remuneraciones",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "boton_texto": "Ver servicio"
+              "precio": "$150.000",
+              "unidad": "/mes",
+              "boton_texto": "Ver plan",
+              "caracteristicas": [
+                "Todo lo del Plan Pymes",
+                "Planificación tributaria anual",
+                "Encargado dedicado",
+                "Cierre contable prioritario"
+              ]
             },
             "datos_en": {},
             "datos_zh": {},
@@ -3858,9 +2363,6 @@
     "titulo": "Declaración de Renta Anual",
     "titulo_en": "",
     "titulo_zh": "",
-    "meta_descripcion": "Preparamos y presentamos tu declaración de renta, maximizando tus beneficios tributarios.",
-    "meta_descripcion_en": "",
-    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000037",
@@ -3902,102 +2404,6 @@
             "texto_zh": "",
             "orden": 2,
             "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000110",
-        "tipo": "franja_confianza",
-        "titulo": "",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000265",
-            "tipo": "estadistica",
-            "titulo": "Años de experiencia",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "numero": "5",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000266",
-            "tipo": "estadistica",
-            "titulo": "Empresas atendidas",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "numero": "500",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000267",
-            "tipo": "estadistica",
-            "titulo": "Tiempo de respuesta",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "numero": "24",
-              "sufijo": " hrs"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000268",
-            "tipo": "estadistica",
-            "titulo": "Trámite digital y remoto",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 4,
-            "datos": {
-              "numero": "100",
-              "sufijo": "%"
-            },
             "datos_en": {},
             "datos_zh": {},
             "medio_url": "",
@@ -4163,255 +2569,6 @@
         ]
       },
       {
-        "id_seccion": "SEC-000111",
-        "tipo": "texto_imagen",
-        "titulo": "Nuestra manera de trabajar contigo",
-        "texto": "Antes de mover un solo papel, entendemos tu situación completa: qué necesitas, qué plazos tienes y qué documentación ya existe. Desde ahí armamos un plan concreto, con responsables y fechas claras — nunca partimos a ciegas.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000269",
-            "tipo": "medio",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://picsum.photos/seed/econta-metodologia/900/700",
-            "medio_tipo": "imagen",
-            "medio_alt": "Reunión de trabajo planificando un proyecto"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000112",
-        "tipo": "texto_imagen",
-        "titulo": "100% remoto, sin filas ni papeleo",
-        "texto": "Todo el proceso se coordina por videollamada, correo y WhatsApp. No necesitas visitar oficinas ni enviar documentos físicos — atendemos clientes en cualquier comuna o región de Chile, de la misma forma.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000270",
-            "tipo": "medio",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://picsum.photos/seed/econta-remoto/900/700",
-            "medio_tipo": "imagen",
-            "medio_alt": "Videollamada de trabajo remoto"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000113",
-        "tipo": "tabla_comparativa",
-        "titulo": "Planes de este servicio",
-        "texto": "Valores y plazos referenciales — te confirmamos el valor exacto según tu caso al cotizar.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000271",
-            "tipo": "tabla",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "columnas": [
-                "Característica",
-                "Plan Inicial",
-                "Plan Intermedio",
-                "Plan Avanzado"
-              ],
-              "filas": [
-                [
-                  "Tiempo de respuesta",
-                  "48 horas hábiles",
-                  "24 horas hábiles",
-                  "24 horas hábiles (prioritario)"
-                ],
-                [
-                  "Reuniones de seguimiento",
-                  "Por correo",
-                  "Mensual",
-                  "Quincenal"
-                ],
-                [
-                  "Soporte post-servicio",
-                  "15 días",
-                  "30 días",
-                  "60 días"
-                ],
-                [
-                  "Ideal para",
-                  "Recién iniciados",
-                  "En crecimiento",
-                  "Alta complejidad"
-                ]
-              ]
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000114",
-        "tipo": "testimonios",
-        "titulo": "Lo que dicen nuestros clientes",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000272",
-            "tipo": "testimonio",
-            "titulo": "Cliente de Contabilidad Andes",
-            "texto": "Cumplieron los plazos que nos prometieron y nos avisaron de cada paso, sin que tuviéramos que preguntar.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "cargo": "Cliente",
-              "estrellas": 5
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://i.pravatar.cc/150?img=12",
-            "medio_tipo": "imagen",
-            "medio_alt": "Foto de perfil"
-          },
-          {
-            "id_elemento": "ELE-000273",
-            "tipo": "testimonio",
-            "titulo": "Empresa cliente",
-            "texto": "El proceso fue mucho menos complicado de lo que pensábamos — todo se resolvió sin salir de la oficina.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "cargo": "Cliente",
-              "estrellas": 5
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://i.pravatar.cc/150?img=47",
-            "medio_tipo": "imagen",
-            "medio_alt": "Foto de perfil"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000115",
-        "tipo": "tarjetas",
-        "titulo": "Otros servicios relacionados",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000274",
-            "tipo": "tarjeta",
-            "titulo": "Servicios Tributarios",
-            "texto": "Diagnóstico, declaraciones mensuales y planificación tributaria para que el SII nunca te tome por sorpresa.",
-            "enlace": "#servicios/servicios-tributarios",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000275",
-            "tipo": "tarjeta",
-            "titulo": "Servicio de Remuneraciones",
-            "texto": "Liquidaciones de sueldo, cotizaciones previsionales y finiquitos calculados correctamente, mes a mes, para que tu equipo confíe en su pago.",
-            "enlace": "#servicios/servicio-de-remuneraciones",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000276",
-            "tipo": "tarjeta",
-            "titulo": "Asesoría Financiera y Gestión de Inversiones",
-            "texto": "Información financiera clara — flujo de caja, estados de resultado y proyecciones — para que tomes decisiones de negocio con datos, no con intuición.",
-            "enlace": "#servicios/asesoria-financiera-y-gestion-de-inversiones",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
         "id_seccion": "SEC-000040",
         "tipo": "preguntas_frecuentes",
         "titulo": "Preguntas frecuentes",
@@ -4515,9 +2672,6 @@
     "titulo": "Servicios Tributarios",
     "titulo_en": "",
     "titulo_zh": "",
-    "meta_descripcion": "Asesoría tributaria integral para optimizar la carga impositiva de tu negocio.",
-    "meta_descripcion_en": "",
-    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000042",
@@ -4559,102 +2713,6 @@
             "texto_zh": "",
             "orden": 2,
             "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000116",
-        "tipo": "franja_confianza",
-        "titulo": "",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000277",
-            "tipo": "estadistica",
-            "titulo": "Años de experiencia",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "numero": "5",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000278",
-            "tipo": "estadistica",
-            "titulo": "Empresas atendidas",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "numero": "500",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000279",
-            "tipo": "estadistica",
-            "titulo": "Tiempo de respuesta",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "numero": "24",
-              "sufijo": " hrs"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000280",
-            "tipo": "estadistica",
-            "titulo": "Trámite digital y remoto",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 4,
-            "datos": {
-              "numero": "100",
-              "sufijo": "%"
-            },
             "datos_en": {},
             "datos_zh": {},
             "medio_url": "",
@@ -4820,255 +2878,6 @@
         ]
       },
       {
-        "id_seccion": "SEC-000117",
-        "tipo": "texto_imagen",
-        "titulo": "Nuestra manera de trabajar contigo",
-        "texto": "Antes de mover un solo papel, entendemos tu situación completa: qué necesitas, qué plazos tienes y qué documentación ya existe. Desde ahí armamos un plan concreto, con responsables y fechas claras — nunca partimos a ciegas.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000281",
-            "tipo": "medio",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://picsum.photos/seed/econta-metodologia/900/700",
-            "medio_tipo": "imagen",
-            "medio_alt": "Reunión de trabajo planificando un proyecto"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000118",
-        "tipo": "texto_imagen",
-        "titulo": "100% remoto, sin filas ni papeleo",
-        "texto": "Todo el proceso se coordina por videollamada, correo y WhatsApp. No necesitas visitar oficinas ni enviar documentos físicos — atendemos clientes en cualquier comuna o región de Chile, de la misma forma.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000282",
-            "tipo": "medio",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://picsum.photos/seed/econta-remoto/900/700",
-            "medio_tipo": "imagen",
-            "medio_alt": "Videollamada de trabajo remoto"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000119",
-        "tipo": "tabla_comparativa",
-        "titulo": "Planes de este servicio",
-        "texto": "Valores y plazos referenciales — te confirmamos el valor exacto según tu caso al cotizar.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000283",
-            "tipo": "tabla",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "columnas": [
-                "Característica",
-                "Plan Inicial",
-                "Plan Intermedio",
-                "Plan Avanzado"
-              ],
-              "filas": [
-                [
-                  "Tiempo de respuesta",
-                  "48 horas hábiles",
-                  "24 horas hábiles",
-                  "24 horas hábiles (prioritario)"
-                ],
-                [
-                  "Reuniones de seguimiento",
-                  "Por correo",
-                  "Mensual",
-                  "Quincenal"
-                ],
-                [
-                  "Soporte post-servicio",
-                  "15 días",
-                  "30 días",
-                  "60 días"
-                ],
-                [
-                  "Ideal para",
-                  "Recién iniciados",
-                  "En crecimiento",
-                  "Alta complejidad"
-                ]
-              ]
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000120",
-        "tipo": "testimonios",
-        "titulo": "Lo que dicen nuestros clientes",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000284",
-            "tipo": "testimonio",
-            "titulo": "Cliente de Contabilidad Andes",
-            "texto": "Cumplieron los plazos que nos prometieron y nos avisaron de cada paso, sin que tuviéramos que preguntar.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "cargo": "Cliente",
-              "estrellas": 5
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://i.pravatar.cc/150?img=12",
-            "medio_tipo": "imagen",
-            "medio_alt": "Foto de perfil"
-          },
-          {
-            "id_elemento": "ELE-000285",
-            "tipo": "testimonio",
-            "titulo": "Empresa cliente",
-            "texto": "El proceso fue mucho menos complicado de lo que pensábamos — todo se resolvió sin salir de la oficina.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "cargo": "Cliente",
-              "estrellas": 5
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://i.pravatar.cc/150?img=47",
-            "medio_tipo": "imagen",
-            "medio_alt": "Foto de perfil"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000121",
-        "tipo": "tarjetas",
-        "titulo": "Otros servicios relacionados",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000286",
-            "tipo": "tarjeta",
-            "titulo": "Servicio de Remuneraciones",
-            "texto": "Liquidaciones de sueldo, cotizaciones previsionales y finiquitos calculados correctamente, mes a mes, para que tu equipo confíe en su pago.",
-            "enlace": "#servicios/servicio-de-remuneraciones",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000287",
-            "tipo": "tarjeta",
-            "titulo": "Asesoría Financiera y Gestión de Inversiones",
-            "texto": "Información financiera clara — flujo de caja, estados de resultado y proyecciones — para que tomes decisiones de negocio con datos, no con intuición.",
-            "enlace": "#servicios/asesoria-financiera-y-gestion-de-inversiones",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000288",
-            "tipo": "tarjeta",
-            "titulo": "Auditoría",
-            "texto": "Revisión independiente de tus estados financieros y procesos internos, con un informe que puedes mostrar a socios, bancos o inversionistas.",
-            "enlace": "#servicios/auditoria",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
         "id_seccion": "SEC-000045",
         "tipo": "preguntas_frecuentes",
         "titulo": "Preguntas frecuentes",
@@ -5172,9 +2981,6 @@
     "titulo": "Servicio de Remuneraciones",
     "titulo_en": "",
     "titulo_zh": "",
-    "meta_descripcion": "Gestionamos las remuneraciones y obligaciones laborales de tu equipo, sin errores.",
-    "meta_descripcion_en": "",
-    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000047",
@@ -5216,102 +3022,6 @@
             "texto_zh": "",
             "orden": 2,
             "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000122",
-        "tipo": "franja_confianza",
-        "titulo": "",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000289",
-            "tipo": "estadistica",
-            "titulo": "Años de experiencia",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "numero": "5",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000290",
-            "tipo": "estadistica",
-            "titulo": "Empresas atendidas",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "numero": "500",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000291",
-            "tipo": "estadistica",
-            "titulo": "Tiempo de respuesta",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "numero": "24",
-              "sufijo": " hrs"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000292",
-            "tipo": "estadistica",
-            "titulo": "Trámite digital y remoto",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 4,
-            "datos": {
-              "numero": "100",
-              "sufijo": "%"
-            },
             "datos_en": {},
             "datos_zh": {},
             "medio_url": "",
@@ -5477,255 +3187,6 @@
         ]
       },
       {
-        "id_seccion": "SEC-000123",
-        "tipo": "texto_imagen",
-        "titulo": "Nuestra manera de trabajar contigo",
-        "texto": "Antes de mover un solo papel, entendemos tu situación completa: qué necesitas, qué plazos tienes y qué documentación ya existe. Desde ahí armamos un plan concreto, con responsables y fechas claras — nunca partimos a ciegas.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000293",
-            "tipo": "medio",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://picsum.photos/seed/econta-metodologia/900/700",
-            "medio_tipo": "imagen",
-            "medio_alt": "Reunión de trabajo planificando un proyecto"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000124",
-        "tipo": "texto_imagen",
-        "titulo": "100% remoto, sin filas ni papeleo",
-        "texto": "Todo el proceso se coordina por videollamada, correo y WhatsApp. No necesitas visitar oficinas ni enviar documentos físicos — atendemos clientes en cualquier comuna o región de Chile, de la misma forma.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000294",
-            "tipo": "medio",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://picsum.photos/seed/econta-remoto/900/700",
-            "medio_tipo": "imagen",
-            "medio_alt": "Videollamada de trabajo remoto"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000125",
-        "tipo": "tabla_comparativa",
-        "titulo": "Planes de este servicio",
-        "texto": "Valores y plazos referenciales — te confirmamos el valor exacto según tu caso al cotizar.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000295",
-            "tipo": "tabla",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "columnas": [
-                "Característica",
-                "Plan Inicial",
-                "Plan Intermedio",
-                "Plan Avanzado"
-              ],
-              "filas": [
-                [
-                  "Tiempo de respuesta",
-                  "48 horas hábiles",
-                  "24 horas hábiles",
-                  "24 horas hábiles (prioritario)"
-                ],
-                [
-                  "Reuniones de seguimiento",
-                  "Por correo",
-                  "Mensual",
-                  "Quincenal"
-                ],
-                [
-                  "Soporte post-servicio",
-                  "15 días",
-                  "30 días",
-                  "60 días"
-                ],
-                [
-                  "Ideal para",
-                  "Recién iniciados",
-                  "En crecimiento",
-                  "Alta complejidad"
-                ]
-              ]
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000126",
-        "tipo": "testimonios",
-        "titulo": "Lo que dicen nuestros clientes",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000296",
-            "tipo": "testimonio",
-            "titulo": "Cliente de Contabilidad Andes",
-            "texto": "Cumplieron los plazos que nos prometieron y nos avisaron de cada paso, sin que tuviéramos que preguntar.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "cargo": "Cliente",
-              "estrellas": 5
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://i.pravatar.cc/150?img=12",
-            "medio_tipo": "imagen",
-            "medio_alt": "Foto de perfil"
-          },
-          {
-            "id_elemento": "ELE-000297",
-            "tipo": "testimonio",
-            "titulo": "Empresa cliente",
-            "texto": "El proceso fue mucho menos complicado de lo que pensábamos — todo se resolvió sin salir de la oficina.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "cargo": "Cliente",
-              "estrellas": 5
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://i.pravatar.cc/150?img=47",
-            "medio_tipo": "imagen",
-            "medio_alt": "Foto de perfil"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000127",
-        "tipo": "tarjetas",
-        "titulo": "Otros servicios relacionados",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000298",
-            "tipo": "tarjeta",
-            "titulo": "Asesoría Financiera y Gestión de Inversiones",
-            "texto": "Información financiera clara — flujo de caja, estados de resultado y proyecciones — para que tomes decisiones de negocio con datos, no con intuición.",
-            "enlace": "#servicios/asesoria-financiera-y-gestion-de-inversiones",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000299",
-            "tipo": "tarjeta",
-            "titulo": "Auditoría",
-            "texto": "Revisión independiente de tus estados financieros y procesos internos, con un informe que puedes mostrar a socios, bancos o inversionistas.",
-            "enlace": "#servicios/auditoria",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000300",
-            "tipo": "tarjeta",
-            "titulo": "Implementación de ERP",
-            "texto": "Te acompañamos en la elección e implementación de un sistema ERP, conectando contabilidad, inventario y ventas en un solo lugar.",
-            "enlace": "#servicios/implementacion-de-erp",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
         "id_seccion": "SEC-000050",
         "tipo": "preguntas_frecuentes",
         "titulo": "Preguntas frecuentes",
@@ -5829,9 +3290,6 @@
     "titulo": "Asesoría Financiera y Gestión de Inversiones",
     "titulo_en": "",
     "titulo_zh": "",
-    "meta_descripcion": "Planificamos y gestionamos tus inversiones con una mirada financiera y tributaria.",
-    "meta_descripcion_en": "",
-    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000052",
@@ -5873,102 +3331,6 @@
             "texto_zh": "",
             "orden": 2,
             "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000128",
-        "tipo": "franja_confianza",
-        "titulo": "",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000301",
-            "tipo": "estadistica",
-            "titulo": "Años de experiencia",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "numero": "5",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000302",
-            "tipo": "estadistica",
-            "titulo": "Empresas atendidas",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "numero": "500",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000303",
-            "tipo": "estadistica",
-            "titulo": "Tiempo de respuesta",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "numero": "24",
-              "sufijo": " hrs"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000304",
-            "tipo": "estadistica",
-            "titulo": "Trámite digital y remoto",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 4,
-            "datos": {
-              "numero": "100",
-              "sufijo": "%"
-            },
             "datos_en": {},
             "datos_zh": {},
             "medio_url": "",
@@ -6134,255 +3496,6 @@
         ]
       },
       {
-        "id_seccion": "SEC-000129",
-        "tipo": "texto_imagen",
-        "titulo": "Nuestra manera de trabajar contigo",
-        "texto": "Antes de mover un solo papel, entendemos tu situación completa: qué necesitas, qué plazos tienes y qué documentación ya existe. Desde ahí armamos un plan concreto, con responsables y fechas claras — nunca partimos a ciegas.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000305",
-            "tipo": "medio",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://picsum.photos/seed/econta-metodologia/900/700",
-            "medio_tipo": "imagen",
-            "medio_alt": "Reunión de trabajo planificando un proyecto"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000130",
-        "tipo": "texto_imagen",
-        "titulo": "100% remoto, sin filas ni papeleo",
-        "texto": "Todo el proceso se coordina por videollamada, correo y WhatsApp. No necesitas visitar oficinas ni enviar documentos físicos — atendemos clientes en cualquier comuna o región de Chile, de la misma forma.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000306",
-            "tipo": "medio",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://picsum.photos/seed/econta-remoto/900/700",
-            "medio_tipo": "imagen",
-            "medio_alt": "Videollamada de trabajo remoto"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000131",
-        "tipo": "tabla_comparativa",
-        "titulo": "Planes de este servicio",
-        "texto": "Valores y plazos referenciales — te confirmamos el valor exacto según tu caso al cotizar.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000307",
-            "tipo": "tabla",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "columnas": [
-                "Característica",
-                "Plan Inicial",
-                "Plan Intermedio",
-                "Plan Avanzado"
-              ],
-              "filas": [
-                [
-                  "Tiempo de respuesta",
-                  "48 horas hábiles",
-                  "24 horas hábiles",
-                  "24 horas hábiles (prioritario)"
-                ],
-                [
-                  "Reuniones de seguimiento",
-                  "Por correo",
-                  "Mensual",
-                  "Quincenal"
-                ],
-                [
-                  "Soporte post-servicio",
-                  "15 días",
-                  "30 días",
-                  "60 días"
-                ],
-                [
-                  "Ideal para",
-                  "Recién iniciados",
-                  "En crecimiento",
-                  "Alta complejidad"
-                ]
-              ]
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000132",
-        "tipo": "testimonios",
-        "titulo": "Lo que dicen nuestros clientes",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000308",
-            "tipo": "testimonio",
-            "titulo": "Cliente de Contabilidad Andes",
-            "texto": "Cumplieron los plazos que nos prometieron y nos avisaron de cada paso, sin que tuviéramos que preguntar.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "cargo": "Cliente",
-              "estrellas": 5
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://i.pravatar.cc/150?img=12",
-            "medio_tipo": "imagen",
-            "medio_alt": "Foto de perfil"
-          },
-          {
-            "id_elemento": "ELE-000309",
-            "tipo": "testimonio",
-            "titulo": "Empresa cliente",
-            "texto": "El proceso fue mucho menos complicado de lo que pensábamos — todo se resolvió sin salir de la oficina.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "cargo": "Cliente",
-              "estrellas": 5
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://i.pravatar.cc/150?img=47",
-            "medio_tipo": "imagen",
-            "medio_alt": "Foto de perfil"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000133",
-        "tipo": "tarjetas",
-        "titulo": "Otros servicios relacionados",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000310",
-            "tipo": "tarjeta",
-            "titulo": "Auditoría",
-            "texto": "Revisión independiente de tus estados financieros y procesos internos, con un informe que puedes mostrar a socios, bancos o inversionistas.",
-            "enlace": "#servicios/auditoria",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000311",
-            "tipo": "tarjeta",
-            "titulo": "Implementación de ERP",
-            "texto": "Te acompañamos en la elección e implementación de un sistema ERP, conectando contabilidad, inventario y ventas en un solo lugar.",
-            "enlace": "#servicios/implementacion-de-erp",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000312",
-            "tipo": "tarjeta",
-            "titulo": "Certificación y Soporte DTEs",
-            "texto": "Te dejamos certificado ante el SII para emitir documentos tributarios electrónicos, y resolvemos los problemas técnicos cuando algo falla.",
-            "enlace": "#servicios/certificacion-y-soporte-dtes",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
         "id_seccion": "SEC-000055",
         "tipo": "preguntas_frecuentes",
         "titulo": "Preguntas frecuentes",
@@ -6486,9 +3599,6 @@
     "titulo": "Auditoría",
     "titulo_en": "",
     "titulo_zh": "",
-    "meta_descripcion": "Auditorías contables y financieras independientes para tu tranquilidad y la de tus socios.",
-    "meta_descripcion_en": "",
-    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000057",
@@ -6530,102 +3640,6 @@
             "texto_zh": "",
             "orden": 2,
             "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000134",
-        "tipo": "franja_confianza",
-        "titulo": "",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000313",
-            "tipo": "estadistica",
-            "titulo": "Años de experiencia",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "numero": "5",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000314",
-            "tipo": "estadistica",
-            "titulo": "Empresas atendidas",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "numero": "500",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000315",
-            "tipo": "estadistica",
-            "titulo": "Tiempo de respuesta",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "numero": "24",
-              "sufijo": " hrs"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000316",
-            "tipo": "estadistica",
-            "titulo": "Trámite digital y remoto",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 4,
-            "datos": {
-              "numero": "100",
-              "sufijo": "%"
-            },
             "datos_en": {},
             "datos_zh": {},
             "medio_url": "",
@@ -6791,255 +3805,6 @@
         ]
       },
       {
-        "id_seccion": "SEC-000135",
-        "tipo": "texto_imagen",
-        "titulo": "Nuestra manera de trabajar contigo",
-        "texto": "Antes de mover un solo papel, entendemos tu situación completa: qué necesitas, qué plazos tienes y qué documentación ya existe. Desde ahí armamos un plan concreto, con responsables y fechas claras — nunca partimos a ciegas.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000317",
-            "tipo": "medio",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://picsum.photos/seed/econta-metodologia/900/700",
-            "medio_tipo": "imagen",
-            "medio_alt": "Reunión de trabajo planificando un proyecto"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000136",
-        "tipo": "texto_imagen",
-        "titulo": "100% remoto, sin filas ni papeleo",
-        "texto": "Todo el proceso se coordina por videollamada, correo y WhatsApp. No necesitas visitar oficinas ni enviar documentos físicos — atendemos clientes en cualquier comuna o región de Chile, de la misma forma.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000318",
-            "tipo": "medio",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://picsum.photos/seed/econta-remoto/900/700",
-            "medio_tipo": "imagen",
-            "medio_alt": "Videollamada de trabajo remoto"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000137",
-        "tipo": "tabla_comparativa",
-        "titulo": "Planes de este servicio",
-        "texto": "Valores y plazos referenciales — te confirmamos el valor exacto según tu caso al cotizar.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000319",
-            "tipo": "tabla",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "columnas": [
-                "Característica",
-                "Plan Inicial",
-                "Plan Intermedio",
-                "Plan Avanzado"
-              ],
-              "filas": [
-                [
-                  "Tiempo de respuesta",
-                  "48 horas hábiles",
-                  "24 horas hábiles",
-                  "24 horas hábiles (prioritario)"
-                ],
-                [
-                  "Reuniones de seguimiento",
-                  "Por correo",
-                  "Mensual",
-                  "Quincenal"
-                ],
-                [
-                  "Soporte post-servicio",
-                  "15 días",
-                  "30 días",
-                  "60 días"
-                ],
-                [
-                  "Ideal para",
-                  "Recién iniciados",
-                  "En crecimiento",
-                  "Alta complejidad"
-                ]
-              ]
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000138",
-        "tipo": "testimonios",
-        "titulo": "Lo que dicen nuestros clientes",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000320",
-            "tipo": "testimonio",
-            "titulo": "Cliente de Contabilidad Andes",
-            "texto": "Cumplieron los plazos que nos prometieron y nos avisaron de cada paso, sin que tuviéramos que preguntar.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "cargo": "Cliente",
-              "estrellas": 5
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://i.pravatar.cc/150?img=12",
-            "medio_tipo": "imagen",
-            "medio_alt": "Foto de perfil"
-          },
-          {
-            "id_elemento": "ELE-000321",
-            "tipo": "testimonio",
-            "titulo": "Empresa cliente",
-            "texto": "El proceso fue mucho menos complicado de lo que pensábamos — todo se resolvió sin salir de la oficina.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "cargo": "Cliente",
-              "estrellas": 5
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://i.pravatar.cc/150?img=47",
-            "medio_tipo": "imagen",
-            "medio_alt": "Foto de perfil"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000139",
-        "tipo": "tarjetas",
-        "titulo": "Otros servicios relacionados",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000322",
-            "tipo": "tarjeta",
-            "titulo": "Implementación de ERP",
-            "texto": "Te acompañamos en la elección e implementación de un sistema ERP, conectando contabilidad, inventario y ventas en un solo lugar.",
-            "enlace": "#servicios/implementacion-de-erp",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000323",
-            "tipo": "tarjeta",
-            "titulo": "Certificación y Soporte DTEs",
-            "texto": "Te dejamos certificado ante el SII para emitir documentos tributarios electrónicos, y resolvemos los problemas técnicos cuando algo falla.",
-            "enlace": "#servicios/certificacion-y-soporte-dtes",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000324",
-            "tipo": "tarjeta",
-            "titulo": "Desarrollo y Evaluación de Proyectos",
-            "texto": "Evaluamos la viabilidad económica y financiera de tu proyecto antes de invertir, con flujos de caja y supuestos que resisten una revisión seria.",
-            "enlace": "#servicios/desarrollo-y-evaluacion-de-proyectos",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
         "id_seccion": "SEC-000060",
         "tipo": "preguntas_frecuentes",
         "titulo": "Preguntas frecuentes",
@@ -7143,9 +3908,6 @@
     "titulo": "Implementación de ERP",
     "titulo_en": "",
     "titulo_zh": "",
-    "meta_descripcion": "Implementamos y configuramos tu sistema ERP, integrado con tu contabilidad.",
-    "meta_descripcion_en": "",
-    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000062",
@@ -7187,102 +3949,6 @@
             "texto_zh": "",
             "orden": 2,
             "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000140",
-        "tipo": "franja_confianza",
-        "titulo": "",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000325",
-            "tipo": "estadistica",
-            "titulo": "Años de experiencia",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "numero": "5",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000326",
-            "tipo": "estadistica",
-            "titulo": "Empresas atendidas",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "numero": "500",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000327",
-            "tipo": "estadistica",
-            "titulo": "Tiempo de respuesta",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "numero": "24",
-              "sufijo": " hrs"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000328",
-            "tipo": "estadistica",
-            "titulo": "Trámite digital y remoto",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 4,
-            "datos": {
-              "numero": "100",
-              "sufijo": "%"
-            },
             "datos_en": {},
             "datos_zh": {},
             "medio_url": "",
@@ -7448,255 +4114,6 @@
         ]
       },
       {
-        "id_seccion": "SEC-000141",
-        "tipo": "texto_imagen",
-        "titulo": "Nuestra manera de trabajar contigo",
-        "texto": "Antes de mover un solo papel, entendemos tu situación completa: qué necesitas, qué plazos tienes y qué documentación ya existe. Desde ahí armamos un plan concreto, con responsables y fechas claras — nunca partimos a ciegas.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000329",
-            "tipo": "medio",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://picsum.photos/seed/econta-metodologia/900/700",
-            "medio_tipo": "imagen",
-            "medio_alt": "Reunión de trabajo planificando un proyecto"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000142",
-        "tipo": "texto_imagen",
-        "titulo": "100% remoto, sin filas ni papeleo",
-        "texto": "Todo el proceso se coordina por videollamada, correo y WhatsApp. No necesitas visitar oficinas ni enviar documentos físicos — atendemos clientes en cualquier comuna o región de Chile, de la misma forma.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000330",
-            "tipo": "medio",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://picsum.photos/seed/econta-remoto/900/700",
-            "medio_tipo": "imagen",
-            "medio_alt": "Videollamada de trabajo remoto"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000143",
-        "tipo": "tabla_comparativa",
-        "titulo": "Planes de este servicio",
-        "texto": "Valores y plazos referenciales — te confirmamos el valor exacto según tu caso al cotizar.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000331",
-            "tipo": "tabla",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "columnas": [
-                "Característica",
-                "Plan Inicial",
-                "Plan Intermedio",
-                "Plan Avanzado"
-              ],
-              "filas": [
-                [
-                  "Tiempo de respuesta",
-                  "48 horas hábiles",
-                  "24 horas hábiles",
-                  "24 horas hábiles (prioritario)"
-                ],
-                [
-                  "Reuniones de seguimiento",
-                  "Por correo",
-                  "Mensual",
-                  "Quincenal"
-                ],
-                [
-                  "Soporte post-servicio",
-                  "15 días",
-                  "30 días",
-                  "60 días"
-                ],
-                [
-                  "Ideal para",
-                  "Recién iniciados",
-                  "En crecimiento",
-                  "Alta complejidad"
-                ]
-              ]
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000144",
-        "tipo": "testimonios",
-        "titulo": "Lo que dicen nuestros clientes",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000332",
-            "tipo": "testimonio",
-            "titulo": "Cliente de Contabilidad Andes",
-            "texto": "Cumplieron los plazos que nos prometieron y nos avisaron de cada paso, sin que tuviéramos que preguntar.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "cargo": "Cliente",
-              "estrellas": 5
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://i.pravatar.cc/150?img=12",
-            "medio_tipo": "imagen",
-            "medio_alt": "Foto de perfil"
-          },
-          {
-            "id_elemento": "ELE-000333",
-            "tipo": "testimonio",
-            "titulo": "Empresa cliente",
-            "texto": "El proceso fue mucho menos complicado de lo que pensábamos — todo se resolvió sin salir de la oficina.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "cargo": "Cliente",
-              "estrellas": 5
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://i.pravatar.cc/150?img=47",
-            "medio_tipo": "imagen",
-            "medio_alt": "Foto de perfil"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000145",
-        "tipo": "tarjetas",
-        "titulo": "Otros servicios relacionados",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000334",
-            "tipo": "tarjeta",
-            "titulo": "Certificación y Soporte DTEs",
-            "texto": "Te dejamos certificado ante el SII para emitir documentos tributarios electrónicos, y resolvemos los problemas técnicos cuando algo falla.",
-            "enlace": "#servicios/certificacion-y-soporte-dtes",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000335",
-            "tipo": "tarjeta",
-            "titulo": "Desarrollo y Evaluación de Proyectos",
-            "texto": "Evaluamos la viabilidad económica y financiera de tu proyecto antes de invertir, con flujos de caja y supuestos que resisten una revisión seria.",
-            "enlace": "#servicios/desarrollo-y-evaluacion-de-proyectos",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000336",
-            "tipo": "tarjeta",
-            "titulo": "Constitución de Empresa",
-            "texto": "Formalizamos tu empresa de principio a fin — estructura legal, escritura, Registro de Empresas y Sociedad, y RUT — sin que tengas que entender la letra chica.",
-            "enlace": "#servicios/constitucion-de-empresa",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
         "id_seccion": "SEC-000065",
         "tipo": "preguntas_frecuentes",
         "titulo": "Preguntas frecuentes",
@@ -7800,9 +4217,6 @@
     "titulo": "Certificación y Soporte DTEs",
     "titulo_en": "",
     "titulo_zh": "",
-    "meta_descripcion": "Certificamos tu empresa ante el SII para emitir documentos tributarios electrónicos.",
-    "meta_descripcion_en": "",
-    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000067",
@@ -7844,102 +4258,6 @@
             "texto_zh": "",
             "orden": 2,
             "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000146",
-        "tipo": "franja_confianza",
-        "titulo": "",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000337",
-            "tipo": "estadistica",
-            "titulo": "Años de experiencia",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "numero": "5",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000338",
-            "tipo": "estadistica",
-            "titulo": "Empresas atendidas",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "numero": "500",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000339",
-            "tipo": "estadistica",
-            "titulo": "Tiempo de respuesta",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "numero": "24",
-              "sufijo": " hrs"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000340",
-            "tipo": "estadistica",
-            "titulo": "Trámite digital y remoto",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 4,
-            "datos": {
-              "numero": "100",
-              "sufijo": "%"
-            },
             "datos_en": {},
             "datos_zh": {},
             "medio_url": "",
@@ -8105,255 +4423,6 @@
         ]
       },
       {
-        "id_seccion": "SEC-000147",
-        "tipo": "texto_imagen",
-        "titulo": "Nuestra manera de trabajar contigo",
-        "texto": "Antes de mover un solo papel, entendemos tu situación completa: qué necesitas, qué plazos tienes y qué documentación ya existe. Desde ahí armamos un plan concreto, con responsables y fechas claras — nunca partimos a ciegas.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000341",
-            "tipo": "medio",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://picsum.photos/seed/econta-metodologia/900/700",
-            "medio_tipo": "imagen",
-            "medio_alt": "Reunión de trabajo planificando un proyecto"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000148",
-        "tipo": "texto_imagen",
-        "titulo": "100% remoto, sin filas ni papeleo",
-        "texto": "Todo el proceso se coordina por videollamada, correo y WhatsApp. No necesitas visitar oficinas ni enviar documentos físicos — atendemos clientes en cualquier comuna o región de Chile, de la misma forma.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000342",
-            "tipo": "medio",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {},
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://picsum.photos/seed/econta-remoto/900/700",
-            "medio_tipo": "imagen",
-            "medio_alt": "Videollamada de trabajo remoto"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000149",
-        "tipo": "tabla_comparativa",
-        "titulo": "Planes de este servicio",
-        "texto": "Valores y plazos referenciales — te confirmamos el valor exacto según tu caso al cotizar.",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000343",
-            "tipo": "tabla",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "columnas": [
-                "Característica",
-                "Plan Inicial",
-                "Plan Intermedio",
-                "Plan Avanzado"
-              ],
-              "filas": [
-                [
-                  "Tiempo de respuesta",
-                  "48 horas hábiles",
-                  "24 horas hábiles",
-                  "24 horas hábiles (prioritario)"
-                ],
-                [
-                  "Reuniones de seguimiento",
-                  "Por correo",
-                  "Mensual",
-                  "Quincenal"
-                ],
-                [
-                  "Soporte post-servicio",
-                  "15 días",
-                  "30 días",
-                  "60 días"
-                ],
-                [
-                  "Ideal para",
-                  "Recién iniciados",
-                  "En crecimiento",
-                  "Alta complejidad"
-                ]
-              ]
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000150",
-        "tipo": "testimonios",
-        "titulo": "Lo que dicen nuestros clientes",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000344",
-            "tipo": "testimonio",
-            "titulo": "Cliente de Contabilidad Andes",
-            "texto": "Cumplieron los plazos que nos prometieron y nos avisaron de cada paso, sin que tuviéramos que preguntar.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "cargo": "Cliente",
-              "estrellas": 5
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://i.pravatar.cc/150?img=12",
-            "medio_tipo": "imagen",
-            "medio_alt": "Foto de perfil"
-          },
-          {
-            "id_elemento": "ELE-000345",
-            "tipo": "testimonio",
-            "titulo": "Empresa cliente",
-            "texto": "El proceso fue mucho menos complicado de lo que pensábamos — todo se resolvió sin salir de la oficina.",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "cargo": "Cliente",
-              "estrellas": 5
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "https://i.pravatar.cc/150?img=47",
-            "medio_tipo": "imagen",
-            "medio_alt": "Foto de perfil"
-          }
-        ]
-      },
-      {
-        "id_seccion": "SEC-000151",
-        "tipo": "tarjetas",
-        "titulo": "Otros servicios relacionados",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000346",
-            "tipo": "tarjeta",
-            "titulo": "Desarrollo y Evaluación de Proyectos",
-            "texto": "Evaluamos la viabilidad económica y financiera de tu proyecto antes de invertir, con flujos de caja y supuestos que resisten una revisión seria.",
-            "enlace": "#servicios/desarrollo-y-evaluacion-de-proyectos",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000347",
-            "tipo": "tarjeta",
-            "titulo": "Constitución de Empresa",
-            "texto": "Formalizamos tu empresa de principio a fin — estructura legal, escritura, Registro de Empresas y Sociedad, y RUT — sin que tengas que entender la letra chica.",
-            "enlace": "#servicios/constitucion-de-empresa",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000348",
-            "tipo": "tarjeta",
-            "titulo": "Inicio de Actividades SII",
-            "texto": "Iniciamos tu actividad ante el SII con el giro y régimen tributario correctos desde el primer día, para evitar reclasificaciones o multas más adelante.",
-            "enlace": "#servicios/inicio-de-actividades-sii",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "boton_texto": "Ver servicio"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
-      },
-      {
         "id_seccion": "SEC-000070",
         "tipo": "preguntas_frecuentes",
         "titulo": "Preguntas frecuentes",
@@ -8457,9 +4526,6 @@
     "titulo": "Plan Emprendedores",
     "titulo_en": "",
     "titulo_zh": "",
-    "meta_descripcion": "El plan de Contabilidad Digital pensado para quienes recién comienzan.",
-    "meta_descripcion_en": "",
-    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000072",
@@ -8511,7 +4577,7 @@
       },
       {
         "id_seccion": "SEC-000073",
-        "tipo": "planes_servicio",
+        "tipo": "tarjetas",
         "titulo": "Qué incluye",
         "texto": "",
         "titulo_en": "",
@@ -8521,18 +4587,24 @@
         "elementos": [
           {
             "id_elemento": "ELE-000184",
-            "tipo": "plan_ref",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
+            "tipo": "tarjeta",
+            "titulo": "Plan Emprendedores",
+            "texto": "Para emprendimientos recién iniciados.",
+            "enlace": "#contacto",
             "titulo_en": "",
             "texto_en": "",
             "titulo_zh": "",
             "texto_zh": "",
             "orden": 1,
             "datos": {
-              "id_plan": "PLN-000003",
-              "accion": "cotizar"
+              "precio": "$45.000",
+              "unidad": "/mes",
+              "boton_texto": "Cotizar",
+              "caracteristicas": [
+                "Declaraciones mensuales",
+                "Un régimen tributario",
+                "Soporte por correo"
+              ]
             },
             "datos_en": {},
             "datos_zh": {},
@@ -8628,9 +4700,6 @@
     "titulo": "Plan Pymes",
     "titulo_en": "",
     "titulo_zh": "",
-    "meta_descripcion": "El plan de Contabilidad Digital pensado para pymes en crecimiento.",
-    "meta_descripcion_en": "",
-    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000076",
@@ -8682,7 +4751,7 @@
       },
       {
         "id_seccion": "SEC-000077",
-        "tipo": "planes_servicio",
+        "tipo": "tarjetas",
         "titulo": "Qué incluye",
         "texto": "",
         "titulo_en": "",
@@ -8692,18 +4761,25 @@
         "elementos": [
           {
             "id_elemento": "ELE-000190",
-            "tipo": "plan_ref",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
+            "tipo": "tarjeta",
+            "titulo": "Plan Pymes",
+            "texto": "El más elegido por PYME en crecimiento.",
+            "enlace": "#contacto",
             "titulo_en": "",
             "texto_en": "",
             "titulo_zh": "",
             "texto_zh": "",
             "orden": 1,
             "datos": {
-              "id_plan": "PLN-000004",
-              "accion": "cotizar"
+              "precio": "$85.000",
+              "unidad": "/mes",
+              "boton_texto": "Cotizar",
+              "caracteristicas": [
+                "Todo lo del Plan Emprendedores",
+                "Facturación electrónica incluida",
+                "Reunión mensual de resultados",
+                "Soporte prioritario"
+              ]
             },
             "datos_en": {},
             "datos_zh": {},
@@ -8799,9 +4875,6 @@
     "titulo": "Plan Empresa",
     "titulo_en": "",
     "titulo_zh": "",
-    "meta_descripcion": "El plan de Contabilidad Digital pensado para empresas consolidadas.",
-    "meta_descripcion_en": "",
-    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000080",
@@ -8853,7 +4926,7 @@
       },
       {
         "id_seccion": "SEC-000081",
-        "tipo": "planes_servicio",
+        "tipo": "tarjetas",
         "titulo": "Qué incluye",
         "texto": "",
         "titulo_en": "",
@@ -8863,18 +4936,25 @@
         "elementos": [
           {
             "id_elemento": "ELE-000196",
-            "tipo": "plan_ref",
-            "titulo": "",
-            "texto": "",
-            "enlace": "",
+            "tipo": "tarjeta",
+            "titulo": "Plan Empresa",
+            "texto": "Para empresas con varios socios o giros.",
+            "enlace": "#contacto",
             "titulo_en": "",
             "texto_en": "",
             "titulo_zh": "",
             "texto_zh": "",
             "orden": 1,
             "datos": {
-              "id_plan": "PLN-000005",
-              "accion": "cotizar"
+              "precio": "$150.000",
+              "unidad": "/mes",
+              "boton_texto": "Cotizar",
+              "caracteristicas": [
+                "Todo lo del Plan Pymes",
+                "Planificación tributaria anual",
+                "Encargado dedicado",
+                "Cierre contable prioritario"
+              ]
             },
             "datos_en": {},
             "datos_zh": {},
@@ -8963,16 +5043,5 @@
         ]
       }
     ]
-  },
-  {
-    "id_pagina": "PAG-ACCESO-CLIENTES",
-    "slug": "acceso-clientes",
-    "titulo": "Acceso Clientes",
-    "titulo_en": "Client Access",
-    "titulo_zh": "客户登录",
-    "meta_descripcion": "Próximamente: portal de acceso para clientes.",
-    "meta_descripcion_en": "",
-    "meta_descripcion_zh": "",
-    "secciones": []
   }
 ]
