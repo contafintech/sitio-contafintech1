@@ -5,6 +5,9 @@
     "titulo": "Inicio",
     "titulo_en": "Home",
     "titulo_zh": "首页",
+    "meta_descripcion": "Asesoría contable y tributaria integral para personas y empresas: diagnóstico, cotización y contratación 100% en línea.",
+    "meta_descripcion_en": "",
+    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000001",
@@ -163,6 +166,102 @@
         ]
       },
       {
+        "id_seccion": "SEC-000085",
+        "tipo": "franja_confianza",
+        "titulo": "",
+        "texto": "",
+        "titulo_en": "",
+        "texto_en": "",
+        "titulo_zh": "",
+        "texto_zh": "",
+        "elementos": [
+          {
+            "id_elemento": "ELE-000211",
+            "tipo": "estadistica",
+            "titulo": "Años de experiencia",
+            "texto": "",
+            "enlace": "",
+            "titulo_en": "",
+            "texto_en": "",
+            "titulo_zh": "",
+            "texto_zh": "",
+            "orden": 1,
+            "datos": {
+              "numero": "5",
+              "sufijo": "+"
+            },
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          },
+          {
+            "id_elemento": "ELE-000212",
+            "tipo": "estadistica",
+            "titulo": "Empresas atendidas",
+            "texto": "",
+            "enlace": "",
+            "titulo_en": "",
+            "texto_en": "",
+            "titulo_zh": "",
+            "texto_zh": "",
+            "orden": 2,
+            "datos": {
+              "numero": "500",
+              "sufijo": "+"
+            },
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          },
+          {
+            "id_elemento": "ELE-000213",
+            "tipo": "estadistica",
+            "titulo": "Tiempo de respuesta",
+            "texto": "",
+            "enlace": "",
+            "titulo_en": "",
+            "texto_en": "",
+            "titulo_zh": "",
+            "texto_zh": "",
+            "orden": 3,
+            "datos": {
+              "numero": "24",
+              "sufijo": " hrs"
+            },
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          },
+          {
+            "id_elemento": "ELE-000214",
+            "tipo": "estadistica",
+            "titulo": "Trámite digital y remoto",
+            "texto": "",
+            "enlace": "",
+            "titulo_en": "",
+            "texto_en": "",
+            "titulo_zh": "",
+            "texto_zh": "",
+            "orden": 4,
+            "datos": {
+              "numero": "100",
+              "sufijo": "%"
+            },
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          }
+        ]
+      },
+      {
         "id_seccion": "SEC-000002",
         "tipo": "tarjetas",
         "titulo": "¿Por qué nosotros?",
@@ -226,6 +325,90 @@
             "datos": {
               "icono": "📊"
             },
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          }
+        ]
+      },
+      {
+        "id_seccion": "SEC-000162",
+        "tipo": "pasos_proceso",
+        "titulo": "¿Cómo funciona trabajar con nosotros?",
+        "texto": "Un proceso simple y transparente, de principio a fin — sin sorpresas.",
+        "titulo_en": "",
+        "texto_en": "",
+        "titulo_zh": "",
+        "texto_zh": "",
+        "elementos": [
+          {
+            "id_elemento": "ELE-000349",
+            "tipo": "paso",
+            "titulo": "Cuéntanos tu caso",
+            "texto": "Completas un formulario breve o agregas un servicio al carrito — sin llamadas ni trámites previos.",
+            "enlace": "",
+            "titulo_en": "",
+            "texto_en": "",
+            "titulo_zh": "",
+            "texto_zh": "",
+            "orden": 1,
+            "datos": {},
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          },
+          {
+            "id_elemento": "ELE-000350",
+            "tipo": "paso",
+            "titulo": "Cotización clara al instante",
+            "texto": "Recibes el detalle y el precio final por correo, con PDF firmado y verificable, sin letra chica.",
+            "enlace": "",
+            "titulo_en": "",
+            "texto_en": "",
+            "titulo_zh": "",
+            "texto_zh": "",
+            "orden": 2,
+            "datos": {},
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          },
+          {
+            "id_elemento": "ELE-000351",
+            "tipo": "paso",
+            "titulo": "Firma 100% digital",
+            "texto": "Aceptas la cotización en línea y tu contrato se genera automáticamente con los mismos datos.",
+            "enlace": "",
+            "titulo_en": "",
+            "texto_en": "",
+            "titulo_zh": "",
+            "texto_zh": "",
+            "orden": 3,
+            "datos": {},
+            "datos_en": {},
+            "datos_zh": {},
+            "medio_url": "",
+            "medio_tipo": "",
+            "medio_alt": ""
+          },
+          {
+            "id_elemento": "ELE-000352",
+            "tipo": "paso",
+            "titulo": "Te acompañamos siempre",
+            "texto": "Desde el primer día tienes un contacto directo para dudas, cambios o nuevos requerimientos.",
+            "enlace": "",
+            "titulo_en": "",
+            "texto_en": "",
+            "titulo_zh": "",
+            "texto_zh": "",
+            "orden": 4,
+            "datos": {},
             "datos_en": {},
             "datos_zh": {},
             "medio_url": "",
@@ -443,102 +626,6 @@
             "medio_alt": ""
           }
         ]
-      },
-      {
-        "id_seccion": "SEC-000085",
-        "tipo": "franja_confianza",
-        "titulo": "",
-        "texto": "",
-        "titulo_en": "",
-        "texto_en": "",
-        "titulo_zh": "",
-        "texto_zh": "",
-        "elementos": [
-          {
-            "id_elemento": "ELE-000211",
-            "tipo": "estadistica",
-            "titulo": "Años de experiencia",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 1,
-            "datos": {
-              "numero": "5",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000212",
-            "tipo": "estadistica",
-            "titulo": "Empresas atendidas",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 2,
-            "datos": {
-              "numero": "500",
-              "sufijo": "+"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000213",
-            "tipo": "estadistica",
-            "titulo": "Tiempo de respuesta",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 3,
-            "datos": {
-              "numero": "24",
-              "sufijo": " hrs"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          },
-          {
-            "id_elemento": "ELE-000214",
-            "tipo": "estadistica",
-            "titulo": "Trámite digital y remoto",
-            "texto": "",
-            "enlace": "",
-            "titulo_en": "",
-            "texto_en": "",
-            "titulo_zh": "",
-            "texto_zh": "",
-            "orden": 4,
-            "datos": {
-              "numero": "100",
-              "sufijo": "%"
-            },
-            "datos_en": {},
-            "datos_zh": {},
-            "medio_url": "",
-            "medio_tipo": "",
-            "medio_alt": ""
-          }
-        ]
       }
     ]
   },
@@ -548,6 +635,9 @@
     "titulo": "Quiénes somos",
     "titulo_en": "About us",
     "titulo_zh": "关于我们",
+    "meta_descripcion": "Conoce al equipo y la trayectoria detrás de nuestra asesoría contable y tributaria.",
+    "meta_descripcion_en": "",
+    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000007",
@@ -659,6 +749,9 @@
     "titulo": "Servicios",
     "titulo_en": "Services",
     "titulo_zh": "服务",
+    "meta_descripcion": "Todos nuestros servicios contables y tributarios en un solo lugar, con cotización inmediata.",
+    "meta_descripcion_en": "",
+    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000084",
@@ -900,6 +993,9 @@
     "titulo": "Planes",
     "titulo_en": "Plans",
     "titulo_zh": "套餐",
+    "meta_descripcion": "Compara todos nuestros planes mensuales y elige el que mejor se ajusta a tu negocio.",
+    "meta_descripcion_en": "",
+    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000086",
@@ -984,6 +1080,9 @@
     "titulo": "Contacto",
     "titulo_en": "Contact",
     "titulo_zh": "联系我们",
+    "meta_descripcion": "Escríbenos y te responderemos a la brevedad para conversar sobre tu caso.",
+    "meta_descripcion_en": "",
+    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000011",
@@ -1004,6 +1103,9 @@
     "titulo": "Herramientas",
     "titulo_en": "Tools",
     "titulo_zh": "工具",
+    "meta_descripcion": "Calculadoras y herramientas tributarias gratuitas para tomar mejores decisiones.",
+    "meta_descripcion_en": "",
+    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000012",
@@ -1116,6 +1218,9 @@
     "titulo": "Desarrollo y Evaluación de Proyectos",
     "titulo_en": "",
     "titulo_zh": "",
+    "meta_descripcion": "Evaluamos la viabilidad económica y financiera de tu proyecto antes de invertir.",
+    "meta_descripcion_en": "",
+    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000016",
@@ -1770,6 +1875,9 @@
     "titulo": "Constitución de Empresa",
     "titulo_en": "",
     "titulo_zh": "",
+    "meta_descripcion": "Constituye tu empresa de forma 100% online, rápida y sin errores.",
+    "meta_descripcion_en": "",
+    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000021",
@@ -2424,6 +2532,9 @@
     "titulo": "Inicio de Actividades SII",
     "titulo_en": "",
     "titulo_zh": "",
+    "meta_descripcion": "Te acompañamos en todo el trámite de inicio de actividades ante el SII.",
+    "meta_descripcion_en": "",
+    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000026",
@@ -3078,6 +3189,9 @@
     "titulo": "Contabilidad Digital",
     "titulo_en": "",
     "titulo_zh": "",
+    "meta_descripcion": "Contabilidad mensual 100% digital, con planes para emprendedores, pymes y empresas.",
+    "meta_descripcion_en": "",
+    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000031",
@@ -3744,6 +3858,9 @@
     "titulo": "Declaración de Renta Anual",
     "titulo_en": "",
     "titulo_zh": "",
+    "meta_descripcion": "Preparamos y presentamos tu declaración de renta, maximizando tus beneficios tributarios.",
+    "meta_descripcion_en": "",
+    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000037",
@@ -4398,6 +4515,9 @@
     "titulo": "Servicios Tributarios",
     "titulo_en": "",
     "titulo_zh": "",
+    "meta_descripcion": "Asesoría tributaria integral para optimizar la carga impositiva de tu negocio.",
+    "meta_descripcion_en": "",
+    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000042",
@@ -5052,6 +5172,9 @@
     "titulo": "Servicio de Remuneraciones",
     "titulo_en": "",
     "titulo_zh": "",
+    "meta_descripcion": "Gestionamos las remuneraciones y obligaciones laborales de tu equipo, sin errores.",
+    "meta_descripcion_en": "",
+    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000047",
@@ -5706,6 +5829,9 @@
     "titulo": "Asesoría Financiera y Gestión de Inversiones",
     "titulo_en": "",
     "titulo_zh": "",
+    "meta_descripcion": "Planificamos y gestionamos tus inversiones con una mirada financiera y tributaria.",
+    "meta_descripcion_en": "",
+    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000052",
@@ -6360,6 +6486,9 @@
     "titulo": "Auditoría",
     "titulo_en": "",
     "titulo_zh": "",
+    "meta_descripcion": "Auditorías contables y financieras independientes para tu tranquilidad y la de tus socios.",
+    "meta_descripcion_en": "",
+    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000057",
@@ -7014,6 +7143,9 @@
     "titulo": "Implementación de ERP",
     "titulo_en": "",
     "titulo_zh": "",
+    "meta_descripcion": "Implementamos y configuramos tu sistema ERP, integrado con tu contabilidad.",
+    "meta_descripcion_en": "",
+    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000062",
@@ -7668,6 +7800,9 @@
     "titulo": "Certificación y Soporte DTEs",
     "titulo_en": "",
     "titulo_zh": "",
+    "meta_descripcion": "Certificamos tu empresa ante el SII para emitir documentos tributarios electrónicos.",
+    "meta_descripcion_en": "",
+    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000067",
@@ -8322,6 +8457,9 @@
     "titulo": "Plan Emprendedores",
     "titulo_en": "",
     "titulo_zh": "",
+    "meta_descripcion": "El plan de Contabilidad Digital pensado para quienes recién comienzan.",
+    "meta_descripcion_en": "",
+    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000072",
@@ -8490,6 +8628,9 @@
     "titulo": "Plan Pymes",
     "titulo_en": "",
     "titulo_zh": "",
+    "meta_descripcion": "El plan de Contabilidad Digital pensado para pymes en crecimiento.",
+    "meta_descripcion_en": "",
+    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000076",
@@ -8658,6 +8799,9 @@
     "titulo": "Plan Empresa",
     "titulo_en": "",
     "titulo_zh": "",
+    "meta_descripcion": "El plan de Contabilidad Digital pensado para empresas consolidadas.",
+    "meta_descripcion_en": "",
+    "meta_descripcion_zh": "",
     "secciones": [
       {
         "id_seccion": "SEC-000080",
@@ -8826,6 +8970,9 @@
     "titulo": "Acceso Clientes",
     "titulo_en": "Client Access",
     "titulo_zh": "客户登录",
+    "meta_descripcion": "Próximamente: portal de acceso para clientes.",
+    "meta_descripcion_en": "",
+    "meta_descripcion_zh": "",
     "secciones": []
   }
 ]
