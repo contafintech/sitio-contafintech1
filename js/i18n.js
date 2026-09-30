@@ -173,7 +173,10 @@ window.I18n = (function () {
     agenda_exito_confirmada: { es: '✓ ¡Listo! Tu hora quedó confirmada. Te enviamos los detalles a tu correo.', en: "✓ Done! Your appointment is confirmed. We've sent the details to your email.", zh: '✓ 完成！您的预约已确认，详情已发送至您的邮箱。' },
     agenda_exito_pendiente: { es: '✓ Tu hora quedó reservada. Te enviamos por correo cómo pagar el abono de {monto} para confirmarla.', en: "✓ Your appointment is reserved. We've emailed you how to pay the {monto} deposit to confirm it.", zh: '✓ 您的预约已保留。我们已通过邮件告知如何支付 {monto} 定金以确认预约。' },
     agenda_error: { es: 'No se pudo agendar: {error}', en: 'Could not book: {error}', zh: '预约失败：{error}' },
-    agenda_agendar_otra: { es: 'Agendar otra hora', en: 'Book another appointment', zh: '预约其他时间' }
+    agenda_agendar_otra: { es: 'Agendar otra hora', en: 'Book another appointment', zh: '预约其他时间' },
+    agenda_error_paso: { es: 'Ocurrió un problema al mostrar este paso. Puedes volver a intentarlo o partir de nuevo.', en: 'Something went wrong showing this step. You can try again or start over.', zh: '显示此步骤时出现问题。您可以重试或重新开始。' },
+    agenda_reintentar: { es: 'Volver a intentar', en: 'Try again', zh: '重试' },
+    agenda_empezar_de_nuevo: { es: 'Empezar de nuevo', en: 'Start over', zh: '重新开始' }
   };
 
   function obtener() {
