@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tu cotización</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+<header class="cabecera"><div class="contenedor"><a class="logo" href="index.html" id="logo-empresa">—</a>
+  <div class="selector-idioma" id="selector-idioma" role="group" aria-label="Idioma / Language / 语言">
+    <button type="button" data-idioma="es">ES</button><button type="button" data-idioma="en">EN</button><button type="button" data-idioma="zh">中文</button>
+  </div>
+</div></header>
+<main>
+  <section>
+    <div class="contenedor" style="max-width:720px">
+      <div id="cotizacion" class="cargando"></div>
+    </div>
+  </section>
+</main>
+<footer class="pie"><div class="contenedor"><small id="pie-empresa"></small></div></footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/config.js"></script>
+<script>
+(async function () {
+  document.getElementById('cotizacion').textContent = I18n.t('cargando_cotizacion');
+  document.getElementById('selector-idioma').addEventListener('click', function (ev) {
+    var btn = ev.target.closest('[data-idioma]'); if (!btn) { return; }
+    I18n.setIdioma(btn.getAttribute('data-idioma')); pintarSelector_(); cargar().catch(manejarError_);
+  });
+  function pintarSelector_() {
+    document.querySelectorAll('#selector-idioma button').forEach(function (b) { b.classList.toggle('activo', b.getAttribute('data-idioma') === I18n.idioma()); });
+  }
+  pintarSelector_();
+
+  await window.Sitio.iniciar();
+  document.getElementById('logo-empresa').textContent = window.Sitio.estado.config.empresa_nombre || '';
+  document.getElementById('pie-empresa').textContent = '© ' + new Date().getFullYear() + ' ' + (window.Sitio.estado.config.empresa_nombre || '');
+
+  function esc(s) { var d = document.createElement('div'); d.textContent = s === undefined || s === null ? '' : String(s); return d.innerHTML; }
+  var fmt = function (n) { return '$' + Math.round(Number(n)).toLocaleString('es-CL'); };
+
+  var id = new URLSearchParams(location.search).get('id');
+  var cont = document.getElementById('cotizacion');
+  if (!id) { cont.innerHTML = '<p class="mensaje-estado error">' + I18n.t('falta_id_cotizacion') + '</p>'; return; }
+
+  async function cargar() {
+    var c = await window.Sitio.llamarApi('cotizacion.obtener', { id_cotizacion: id });
+    var filas = c.items.map(function (l) {
+      return '<tr><td>' + esc(l.nombre_item) + (l.plan_item ? ' — ' + esc(l.plan_item) : '') + '</td><td>' + l.cantidad + '</td><td>' + fmt(l.precio_unitario) + '</td></tr>';
+    }).join('');
+    var puedeResponder = c.estado === 'enviada';
+    cont.innerHTML =
+      '<div class="seccion-encabezado"><h2>' + esc(I18n.t('cotizacion_titulo', { id: c.id_cotizacion })) + '</h2>' +
+      '<p>' + esc(I18n.t('cotizacion_para', { nombre: c.cliente_nombre, estado: c.estado })) + '</p></div>' +
+      '<table class="comparativa"><thead><tr><th>' + I18n.t('col_item') + '</th><th>' + I18n.t('col_cantidad') + '</th><th>' + I18n.t('col_precio') + '</th></tr></thead><tbody>' + filas + '</tbody></table>' +
+      '<p style="text-align:right; margin-top:16px">' + I18n.t('subtotal') + ': ' + fmt(c.subtotal) + '<br>' + I18n.t('descuento') + ': ' + fmt(c.descuento) +
+      '<br>' + I18n.t('iva') + ': ' + fmt(c.impuesto) + '<br><strong style="font-size:1.3rem">' + I18n.t('total_pagar') + ': ' + fmt(c.total) + '</strong></p>' +
+      '<p><a href="' + c.url_pdf + '" target="_blank">' + I18n.t('ver_pdf_cotizacion') + '</a></p>' +
+      (puedeResponder
+        ? '<div class="acciones" style="display:flex; gap:14px; margin-top:20px">' +
+          '<button class="btn btn-primario" id="btn-aceptar">' + I18n.t('aceptar_cotizacion') + '</button>' +
+          '<button class="btn btn-secundario" id="btn-rechazar">' + I18n.t('rechazar_cotizacion') + '</button></div>'
+        : '') +
+      '<p id="mensaje-respuesta"></p>';
+
+    if (puedeResponder) {
+      document.getElementById('btn-aceptar').addEventListener('click', function () { responder_(true); });
+      document.getElementById('btn-rechazar').addEventListener('click', function () { responder_(false); });
+    }
+  }
+
+  async function responder_(aceptar) {
+    var msj = document.getElementById('mensaje-respuesta');
+    msj.textContent = I18n.t('enviando_respuesta');
+    try {
+      await window.Sitio.llamarApi('cotizacion.responder', { id_cotizacion: id, aceptar: aceptar });
+      if (aceptar) {
+        msj.innerHTML = '<span class="mensaje-estado ok">' + I18n.t('contrato_generando') + '</span>' + await formasDePago_();
+      } else {
+        msj.innerHTML = '<span class="mensaje-estado">' + I18n.t('cotizacion_rechazada') + '</span>';
+      }
+      cargar();
+    } catch (e) { msj.innerHTML = '<span class="mensaje-estado error">' + e.message + '</span>'; }
+  }
+
+  async function formasDePago_() {
+    try {
+      var m = await window.Sitio.llamarApi('pagos.datos', {});
+      var t = m.detalle.transferencia;
+      var bloques = [];
+      if (t && t.numero) {
+        bloques.push('<strong>Transferencia:</strong> ' + esc(t.banco) + ', ' + esc(t.tipo_cuenta) + ' ' + esc(t.numero) + ', RUT ' + esc(t.rut) + ' (' + esc(t.titular) + '). Envía tu comprobante a ' + esc(t.email) + '.');
+      }
+      if (m.detalle.paypal) { bloques.push('<strong>PayPal:</strong> <a href="https://' + esc(m.detalle.paypal.replace(/^https?:\/\//, '')) + '" target="_blank">' + esc(m.detalle.paypal) + '</a>'); }
+      if (m.detalle.mercado_pago) { bloques.push('<strong>Mercado Pago:</strong> te enviaremos el link de pago por correo.'); }
+      if (m.detalle.whatsapp) { bloques.push('<strong>WhatsApp:</strong> <a href="https://wa.me/' + esc(m.detalle.whatsapp) + '" target="_blank">coordinar pago</a>'); }
+      return bloques.length ? '<div class="campo" style="margin-top:16px"><label>' + I18n.t('como_pagar') + '</label><p>' + bloques.join('<br>') + '</p></div>' : '';
+    } catch (e) { return ''; }
+  }
+
+  function manejarError_(e) { cont.innerHTML = '<p class="mensaje-estado error">' + I18n.t('no_se_pudo_cargar_cotizacion', { error: e.message }) + '</p>'; }
+  try { await cargar(); } catch (e) { manejarError_(e); }
+})();
+</script>
+</body>
+</html>
