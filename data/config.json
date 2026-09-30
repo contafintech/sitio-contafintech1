@@ -5,11 +5,11 @@
   "empresa_giro": "Asesorías de gestión empresarial",
   "eslogan": "Tu tributación, sin sorpresas",
   "fundacion_anio": 2018,
-  "logo_url": "",
+  "logo_url": "https://i.imgur.com/Kkdetbf.png",
   "favicon_url": "",
   "hero_imagen_url": "https://picsum.photos/seed/econta-hero/900/700",
-  "hero_video_url": "",
-  "hero_gif_url": "",
+  "hero_video_url": "https://youtu.be/Yy7PGRqbwtI?si=Vf7Znvto3Sb2aRED",
+  "hero_gif_url": "https://youtu.be/fmurE5Roneg",
   "color_primario": "#1F4E79",
   "color_secundario": "#0f172a",
   "color_acento": "#f59e0b",
@@ -58,7 +58,7 @@
   "envio_prov2_url_seguimiento": "https://www.correos.cl/seguimiento/{ID}",
   "agenda_deposito_activo": "FALSE",
   "agenda_deposito_pct": 0.2,
-  "sitio_url": "https://www.andesconsultores.cl",
+  "sitio_url": "https://sitio-contafintech1.contafintech.workers.dev/",
   "seo_descripcion": "Asesoría tributaria y contable para PYME en Chile: diagnóstico, régimen y cumplimiento en un solo lugar.",
   "seo_keywords": "asesoría tributaria pyme, contabilidad chile, régimen 14d8",
   "sitio_activo": "TRUE",
@@ -75,5 +75,6 @@
   "privacidad_aviso_corto": "Tus datos se usan solo para responder tu consulta y gestionar tu contrato (Ley 21.719).",
   "privacidad_usa_ia_frontend": "TRUE",
   "privacidad_usa_ia_backend": "TRUE",
-  "privacidad_terceros": "Google (Google Sheets/Drive, hosting de datos); Cloudflare (hosting del sitio); GitHub (control de versiones del sitio); pasarela de pago (Mercado Pago/PayPal/transferencia); WhatsApp Business (mensajería); analítica de uso del sitio (si está activada en Config > Analítica)"
+  "privacidad_terceros": "Google (Google Sheets/Drive, hosting de datos); Cloudflare (hosting del sitio); GitHub (control de versiones del sitio); pasarela de pago (Mercado Pago/PayPal/transferencia); WhatsApp Business (mensajería); analítica de uso del sitio (si está activada en Config > Analítica)",
+  "agenda_franja_min": 30
 }
