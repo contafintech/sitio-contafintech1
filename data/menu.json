@@ -153,15 +153,6 @@
     "url": "#servicios/asesoria-financiera-y-gestion-de-inversiones"
   },
   {
-    "id_menu": "MNU-000025",
-    "padre": "",
-    "orden": 8,
-    "etiqueta": "Agendar hora",
-    "etiqueta_en": "Book an appointment",
-    "etiqueta_zh": "预约",
-    "url": "#agendar"
-  },
-  {
     "id_menu": "MNU-000020",
     "padre": "MNU-000002",
     "orden": 9,
