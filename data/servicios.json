@@ -12,11 +12,14 @@
       "unidad_precio": "UF",
       "modalidad": "online",
       "requiere_agenda": true,
-      "creado_en": "2026-09-29T20:26:29.060Z",
+      "id_medio": "MED-000015",
+      "creado_en": "2026-09-30T18:34:47.177Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-29T20:26:29.060Z",
+      "actualizado_en": "2026-09-30T18:34:47.177Z",
       "actualizado_por": "instalador",
-      "activo": true
+      "activo": true,
+      "medio_url": "https://picsum.photos/seed/econta-contadigital/900/700",
+      "medio_alt": "Panel de contabilidad digital en una laptop"
     },
     {
       "id_servicio": "SER-000002",
@@ -30,11 +33,14 @@
       "unidad_precio": "UF",
       "modalidad": "presencial",
       "requiere_agenda": true,
-      "creado_en": "2026-09-29T20:26:29.060Z",
+      "id_medio": "MED-000014",
+      "creado_en": "2026-09-30T18:34:47.177Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-29T20:26:29.060Z",
+      "actualizado_en": "2026-09-30T18:34:47.177Z",
       "actualizado_por": "instalador",
-      "activo": true
+      "activo": true,
+      "medio_url": "https://picsum.photos/seed/econta-14d8/900/700",
+      "medio_alt": "Asesoría sobre cambio de régimen tributario"
     },
     {
       "id_servicio": "SER-000003",
@@ -48,11 +54,14 @@
       "unidad_precio": "CLP",
       "modalidad": "online",
       "requiere_agenda": false,
-      "creado_en": "2026-09-29T20:26:29.060Z",
+      "id_medio": "MED-000015",
+      "creado_en": "2026-09-30T18:34:47.177Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-29T20:26:29.060Z",
+      "actualizado_en": "2026-09-30T18:34:47.177Z",
       "actualizado_por": "instalador",
-      "activo": true
+      "activo": true,
+      "medio_url": "https://picsum.photos/seed/econta-contadigital/900/700",
+      "medio_alt": "Panel de contabilidad digital en una laptop"
     },
     {
       "id_servicio": "SER-000004",
@@ -66,11 +75,14 @@
       "unidad_precio": "UF",
       "modalidad": "online",
       "requiere_agenda": true,
-      "creado_en": "2026-09-29T20:26:29.060Z",
+      "id_medio": "MED-000011",
+      "creado_en": "2026-09-30T18:34:47.177Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-29T20:26:29.060Z",
+      "actualizado_en": "2026-09-30T18:34:47.177Z",
       "actualizado_por": "instalador",
-      "activo": true
+      "activo": true,
+      "medio_url": "https://picsum.photos/seed/econta-constitucion/900/700",
+      "medio_alt": "Firma de documentos de constitución de empresa"
     },
     {
       "id_servicio": "SER-000005",
@@ -84,11 +96,14 @@
       "unidad_precio": "UF",
       "modalidad": "online",
       "requiere_agenda": true,
-      "creado_en": "2026-09-29T20:26:29.060Z",
+      "id_medio": "MED-000012",
+      "creado_en": "2026-09-30T18:34:47.177Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-29T20:26:29.060Z",
+      "actualizado_en": "2026-09-30T18:34:47.177Z",
       "actualizado_por": "instalador",
-      "activo": true
+      "activo": true,
+      "medio_url": "https://picsum.photos/seed/econta-renta/900/700",
+      "medio_alt": "Persona revisando su declaración de renta"
     },
     {
       "id_servicio": "SER-000006",
@@ -102,11 +117,14 @@
       "unidad_precio": "UF",
       "modalidad": "presencial",
       "requiere_agenda": true,
-      "creado_en": "2026-09-29T20:26:29.060Z",
+      "id_medio": "MED-000013",
+      "creado_en": "2026-09-30T18:34:47.177Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-29T20:26:29.060Z",
+      "actualizado_en": "2026-09-30T18:34:47.177Z",
       "actualizado_por": "instalador",
-      "activo": true
+      "activo": true,
+      "medio_url": "https://picsum.photos/seed/econta-auditoria/900/700",
+      "medio_alt": "Auditor revisando estados financieros"
     }
   ],
   "planes": [
@@ -119,9 +137,9 @@
       "unidad_precio": "UF",
       "orden": 1,
       "destacado": false,
-      "creado_en": "2026-09-30T00:26:35.548Z",
+      "creado_en": "2026-09-30T18:34:47.177Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-30T00:26:35.548Z",
+      "actualizado_en": "2026-09-30T18:34:47.177Z",
       "actualizado_por": "instalador",
       "activo": true
     },
@@ -134,9 +152,9 @@
       "unidad_precio": "UF",
       "orden": 2,
       "destacado": true,
-      "creado_en": "2026-09-30T00:26:35.548Z",
+      "creado_en": "2026-09-30T18:34:47.177Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-30T00:26:35.548Z",
+      "actualizado_en": "2026-09-30T18:34:47.177Z",
       "actualizado_por": "instalador",
       "activo": true
     },
@@ -149,9 +167,9 @@
       "unidad_precio": "CLP",
       "orden": 1,
       "destacado": false,
-      "creado_en": "2026-09-30T00:26:35.548Z",
+      "creado_en": "2026-09-30T18:34:47.177Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-30T00:26:35.548Z",
+      "actualizado_en": "2026-09-30T18:34:47.177Z",
       "actualizado_por": "instalador",
       "activo": true
     },
@@ -164,9 +182,9 @@
       "unidad_precio": "CLP",
       "orden": 2,
       "destacado": true,
-      "creado_en": "2026-09-30T00:26:35.548Z",
+      "creado_en": "2026-09-30T18:34:47.177Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-30T00:26:35.548Z",
+      "actualizado_en": "2026-09-30T18:34:47.177Z",
       "actualizado_por": "instalador",
       "activo": true
     },
@@ -179,9 +197,9 @@
       "unidad_precio": "CLP",
       "orden": 3,
       "destacado": false,
-      "creado_en": "2026-09-30T00:26:35.548Z",
+      "creado_en": "2026-09-30T18:34:47.177Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-30T00:26:35.548Z",
+      "actualizado_en": "2026-09-30T18:34:47.177Z",
       "actualizado_por": "instalador",
       "activo": true
     }
@@ -194,9 +212,9 @@
       "precio_pack": 6.2,
       "unidad_precio": "UF",
       "descuento_pack": 0.3,
-      "creado_en": "2026-09-29T20:26:29.060Z",
+      "creado_en": "2026-09-30T18:34:47.177Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-29T20:26:29.060Z",
+      "actualizado_en": "2026-09-30T18:34:47.177Z",
       "actualizado_por": "instalador",
       "activo": true
     },
@@ -207,9 +225,9 @@
       "precio_pack": 88000,
       "unidad_precio": "CLP",
       "descuento_pack": 0,
-      "creado_en": "2026-09-29T20:26:29.060Z",
+      "creado_en": "2026-09-30T18:34:47.177Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-29T20:26:29.060Z",
+      "actualizado_en": "2026-09-30T18:34:47.177Z",
       "actualizado_por": "instalador",
       "activo": true
     }
@@ -219,9 +237,9 @@
       "id_pack": "PCK-000001",
       "id_item": "PLN-000001",
       "cantidad": 1,
-      "creado_en": "2026-09-29T20:26:29.060Z",
+      "creado_en": "2026-09-30T18:34:47.177Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-29T20:26:29.060Z",
+      "actualizado_en": "2026-09-30T18:34:47.177Z",
       "actualizado_por": "instalador",
       "activo": true
     },
@@ -229,9 +247,9 @@
       "id_pack": "PCK-000001",
       "id_item": "PRO-000001",
       "cantidad": 1,
-      "creado_en": "2026-09-29T20:26:29.060Z",
+      "creado_en": "2026-09-30T18:34:47.177Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-29T20:26:29.060Z",
+      "actualizado_en": "2026-09-30T18:34:47.177Z",
       "actualizado_por": "instalador",
       "activo": true
     },
@@ -239,9 +257,9 @@
       "id_pack": "PCK-000002",
       "id_item": "PLN-000004",
       "cantidad": 1,
-      "creado_en": "2026-09-29T20:26:29.060Z",
+      "creado_en": "2026-09-30T18:34:47.177Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-29T20:26:29.060Z",
+      "actualizado_en": "2026-09-30T18:34:47.177Z",
       "actualizado_por": "instalador",
       "activo": true
     },
@@ -249,9 +267,9 @@
       "id_pack": "PCK-000002",
       "id_item": "PRO-000005",
       "cantidad": 1,
-      "creado_en": "2026-09-29T20:26:29.060Z",
+      "creado_en": "2026-09-30T18:34:47.177Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-29T20:26:29.060Z",
+      "actualizado_en": "2026-09-30T18:34:47.177Z",
       "actualizado_por": "instalador",
       "activo": true
     }
@@ -264,9 +282,9 @@
       "comuna": "",
       "telefono": "",
       "activo": true,
-      "creado_en": "2026-09-29T20:26:29.060Z",
+      "creado_en": "2026-09-30T18:34:47.177Z",
       "creado_por": "instalador",
-      "actualizado_en": "2026-09-29T20:26:29.060Z",
+      "actualizado_en": "2026-09-30T18:34:47.177Z",
       "actualizado_por": "instalador"
     }
   ]
