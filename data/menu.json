@@ -99,13 +99,13 @@
     "url": "#servicios/declaracion-de-renta-anual"
   },
   {
-    "id_menu": "MNU-000008",
+    "id_menu": "MNU-000026",
     "padre": "",
     "orden": 5,
-    "etiqueta": "Herramientas",
-    "etiqueta_en": "Tools",
-    "etiqueta_zh": "工具",
-    "url": "#herramientas"
+    "etiqueta": "Blog",
+    "etiqueta_en": "Blog",
+    "etiqueta_zh": "博客",
+    "url": "#blog"
   },
   {
     "id_menu": "MNU-000017",
@@ -117,13 +117,13 @@
     "url": "#servicios/servicios-tributarios"
   },
   {
-    "id_menu": "MNU-000007",
+    "id_menu": "MNU-000008",
     "padre": "",
     "orden": 6,
-    "etiqueta": "Contacto",
-    "etiqueta_en": "Contact",
-    "etiqueta_zh": "联系我们",
-    "url": "#contacto"
+    "etiqueta": "Herramientas",
+    "etiqueta_en": "Tools",
+    "etiqueta_zh": "工具",
+    "url": "#herramientas"
   },
   {
     "id_menu": "MNU-000018",
@@ -171,13 +171,13 @@
     "url": "#servicios/auditoria"
   },
   {
-    "id_menu": "MNU-000026",
+    "id_menu": "MNU-000007",
     "padre": "",
     "orden": 9,
-    "etiqueta": "Blog",
-    "etiqueta_en": "Blog",
-    "etiqueta_zh": "博客",
-    "url": "#blog"
+    "etiqueta": "Contacto",
+    "etiqueta_en": "Contact",
+    "etiqueta_zh": "联系我们",
+    "url": "#contacto"
   },
   {
     "id_menu": "MNU-000021",
