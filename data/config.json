@@ -1,6 +1,6 @@
 {
-  "empresa_nombre": "Contafintech",
-  "empresa_razon_social": "Contafintech",
+  "empresa_nombre": "Alex Osorio",
+  "empresa_razon_social": "Alex Osorio",
   "empresa_rut": "76123456-0",
   "empresa_giro": "Asesorías de gestión empresarial",
   "eslogan": "Tu tributación, sin sorpresas",
@@ -62,7 +62,7 @@
   "seo_descripcion": "Asesoría tributaria y contable para PYME en Chile: diagnóstico, régimen y cumplimiento en un solo lugar.",
   "seo_keywords": "asesoría tributaria pyme, contabilidad chile, régimen 14d8",
   "sitio_activo": "TRUE",
-  "url_api": "https://script.google.com/macros/s/AKfycbyezXdoLmtfDZURt7vkuoWGbbsR3sDY-oZB6m7WjsMfYX2CwPEAYFPG-2cQWb70jB0_4g/exec",
+  "url_api": "https://script.google.com/macros/s/AKfycbwa25W-wUbplkfjrba2MAyxSes0I6MgaFXC0HUJ268WygLBk_ptCXRBb7SuykrwbclM/exec",
   "idioma_defecto": "es-CL",
   "antispam_activo": "TRUE",
   "modulo_tienda": "TRUE",
@@ -75,5 +75,6 @@
   "privacidad_aviso_corto": "Tus datos se usan solo para responder tu consulta y gestionar tu contrato (Ley 21.719).",
   "privacidad_usa_ia_frontend": "TRUE",
   "privacidad_usa_ia_backend": "TRUE",
-  "privacidad_terceros": "Google (Google Sheets/Drive, hosting de datos); Cloudflare (hosting del sitio); GitHub (control de versiones del sitio); pasarela de pago (Mercado Pago/PayPal/transferencia); WhatsApp Business (mensajería); analítica de uso del sitio (si está activada en Config > Analítica)"
+  "privacidad_terceros": "Google (Google Sheets/Drive, hosting de datos); Cloudflare (hosting del sitio); GitHub (control de versiones del sitio); pasarela de pago (Mercado Pago/PayPal/transferencia); WhatsApp Business (mensajería); analítica de uso del sitio (si está activada en Config > Analítica)",
+  "agenda_franja_min": 30
 }
