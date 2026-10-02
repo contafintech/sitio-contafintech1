@@ -27,15 +27,6 @@
     "url": "#servicios/contabilidad-digital/planes-emprendedores"
   },
   {
-    "id_menu": "MNU-000006",
-    "padre": "",
-    "orden": 2,
-    "etiqueta": "Quiénes somos",
-    "etiqueta_en": "About us",
-    "etiqueta_zh": "关于我们",
-    "url": "#quienes-somos"
-  },
-  {
     "id_menu": "MNU-000010",
     "padre": "MNU-000002",
     "orden": 2,
