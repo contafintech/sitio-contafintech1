@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sitio-contafintech1.contafintech.workers.dev/sitemap.xml
