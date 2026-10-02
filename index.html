@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cargando…</title>
+<meta name="description" content="">
+<link rel="icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css">
+<!-- Íconos del pie de página (Font Awesome), igual que la plantilla de referencia — se carga en
+     el navegador del visitante, no afecta el resto del sitio si falla. -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+<script type="application/ld+json" id="jsonld-organizacion"></script>
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="contenedor">
+    <a class="logo" href="#inicio" id="logo-empresa"><img id="logo-img" src="" alt="" class="oculto"><span id="logo-texto">Cargando…</span></a>
+    <ul class="menu-principal" id="menu-principal"></ul>
+    <div style="display:flex; align-items:center; gap:14px;">
+      <!-- CTA fijo en la cabecera (siempre a la vista, la cabecera es "sticky"): el objetivo
+           de todo el sitio es concretar la venta, así que la acción principal no debe depender
+           de que el visitante encuentre un botón dentro del contenido de cada página. Oculto en
+           móvil (ver CSS ≤860px) — ahí el mismo CTA vive como primer ítem del menú desplegable,
+           para no apretar la fila logo/idioma/hamburguesa en pantallas angostas. -->
+      <a href="#acceso-clientes" class="btn btn-primario btn-cta-cabecera" id="cta-cabecera">Acceso de clientes</a>
+      <div class="selector-idioma" id="selector-idioma" role="group" aria-label="Idioma / Language / 语言">
+        <button type="button" data-idioma="es">ES</button>
+        <button type="button" data-idioma="en">EN</button>
+        <button type="button" data-idioma="zh">中文</button>
+      </div>
+      <button class="btn-menu-movil" id="btn-menu-movil" aria-label="Abrir menú">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- Solo debe verse en Inicio/Home. render() la saca de #contenido-pagina ANTES de reescribir su
+     innerHTML en cada cambio de ruta (para no ser destruida junto con el contenido anterior) y
+     reubicarBarraIndicadores_() la reinserta debajo del hero solo cuando la ruta es "inicio". -->
+<div class="barra-indicadores oculto" id="barra-indicadores" aria-hidden="true"></div>
+
+<main id="contenido-pagina">
+  <div class="esqueleto-carga" aria-hidden="true">
+    <div class="esqueleto-hero"><div class="esqueleto-linea corta"></div><div class="esqueleto-linea"></div><div class="esqueleto-linea media"></div><div class="esqueleto-boton"></div></div>
+    <div class="esqueleto-tarjetas"><div class="esqueleto-tarjeta"></div><div class="esqueleto-tarjeta"></div><div class="esqueleto-tarjeta"></div></div>
+  </div>
+</main>
+
+<a class="boton-whatsapp-flotante oculto" id="boton-whatsapp" target="_blank" rel="noopener" aria-label="Hablar por WhatsApp">
+  <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.23.6 4.38 1.73 6.27L4 29l7.9-1.68a12.9 12.9 0 0 0 4.12.68h.01c6.62 0 12.02-5.4 12.02-12.02C28.05 8.4 22.65 3 16.02 3zm7.05 17.16c-.3.84-1.7 1.6-2.35 1.7-.6.1-1.36.14-2.2-.14-.5-.16-1.15-.38-1.99-.74-3.5-1.5-5.78-5.06-5.96-5.3-.17-.24-1.42-1.9-1.42-3.62 0-1.72.9-2.56 1.22-2.9.32-.34.7-.43.94-.43.24 0 .47 0 .68.01.22.01.5-.08.79.6.3.7 1 2.42 1.09 2.6.1.18.16.4.03.64-.13.24-.2.4-.4.6-.2.22-.42.5-.6.66-.2.2-.4.4-.18.78.22.4 1 1.63 2.14 2.64 1.47 1.3 2.7 1.71 3.1 1.9.4.2.63.16.86-.1.24-.26 1-1.17 1.27-1.57.27-.4.54-.33.9-.2.36.13 2.3 1.08 2.7 1.28.4.2.66.3.76.46.1.18.1 1.02-.2 1.86z"/></svg>
+</a>
+<div class="barra-carrito oculto" id="barra-carrito">🛒 <span id="contador-carrito">0</span></div>
+<aside class="panel-carrito" id="panel-carrito">
+  <h2>Tu carrito</h2>
+  <div id="lineas-carrito"></div>
+  <p id="total-carrito-estimado" class="carrito-total-estimado"></p>
+  <div class="campo">
+    <label for="nombre-cotizacion">Tu nombre</label>
+    <input type="text" id="nombre-cotizacion" autocomplete="name">
+  </div>
+  <div class="campo">
+    <label for="email-cotizacion">Tu correo</label>
+    <input type="email" id="email-cotizacion" autocomplete="email">
+  </div>
+  <div class="campo">
+    <label for="telefono-cotizacion">Tu teléfono (opcional)</label>
+    <input type="tel" id="telefono-cotizacion" autocomplete="tel">
+  </div>
+  <div class="campo">
+    <label for="rut-cotizacion">Tu RUT (para la cotización)</label>
+    <input type="text" id="rut-cotizacion" placeholder="12345678-9" autocomplete="off">
+  </div>
+  <p id="estimado-envio" style="font-size:.85rem; color:var(--color-texto-suave)"></p>
+  <p class="carrito-confianza" id="carrito-confianza">🔒 Sin compromiso — respuesta dentro de 1 día hábil.</p>
+  <button class="btn btn-primario btn-bloque" id="btn-cotizar">Solicitar cotización</button>
+  <button class="btn btn-secundario btn-bloque" id="btn-cerrar-carrito" style="margin-top:10px">Cerrar</button>
+  <p id="mensaje-carrito"></p>
+  <p class="carrito-nota-flujo" id="carrito-nota-flujo"></p>
+</aside>
+
+<!-- Pie de página fijo (mismo diseño en TODAS las páginas: vive fuera de #contenido-pagina,
+     nunca se vuelve a pintar al cambiar de ruta) — misma estructura de 3 columnas que la
+     plantilla de referencia (Ayuda / Menú principal / Contáctanos con mapa y redes), con los
+     datos siempre en vivo desde Config/Menu de este sitio, nunca hardcodeados a una marca. -->
+<footer class="pie">
+  <div class="contenedor">
+    <div class="pie-columna">
+      <strong class="pie-marca" id="pie-empresa">—</strong>
+      <p id="pie-descripcion" class="pie-descripcion"></p>
+      <div id="pie-redes" class="pie-redes"></div>
+    </div>
+    <div class="pie-columna" id="pie-columna-ayuda">
+      <h5 id="pie-titulo-ayuda">Ayuda</h5>
+      <ul id="pie-lista-ayuda"></ul>
+    </div>
+    <div class="pie-columna">
+      <h5 id="pie-titulo-menu">Menú principal</h5>
+      <ul id="pie-lista-menu"></ul>
+    </div>
+    <div class="pie-columna">
+      <h5 id="pie-titulo-contacto">Contáctanos</h5>
+      <div id="pie-contacto" class="pie-contacto"></div>
+      <div id="pie-mapa" class="pie-mapa"></div>
+    </div>
+  </div>
+  <div class="contenedor pie-linea-inferior">
+    <div id="pie-medios-pago"></div>
+    <p class="pie-privacidad"><a href="privacidad.html" id="pie-link-privacidad">Política de privacidad</a></p>
+    <small>© <span id="pie-anio"></span> — <span id="pie-generado">Sitio generado y administrado 100% desde Google Sheets.</span></small>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/config.js"></script>
+<script src="js/validacion.js"></script>
+<script src="js/render.js"></script>
+<script src="js/carrito.js"></script>
+<script src="js/formulario.js"></script>
+<script src="js/herramientas.js"></script>
+<script src="js/diagnostico.js"></script>
+<script src="js/seguimiento.js"></script>
+<script src="js/agendamiento.js"></script>
+<script src="js/portal.js"></script>
+<script>
+(async function () {
+  document.getElementById('pie-anio').textContent = new Date().getFullYear();
+
+  // ---- Textos fijos de interfaz (js/i18n.js) — se reaplican cada vez que cambia el idioma ----
+  function aplicarTextosFijos_() {
+    document.getElementById('btn-menu-movil').setAttribute('aria-label', I18n.t('abrir_menu'));
+    document.querySelector('#panel-carrito h2').textContent = I18n.t('tu_carrito');
+    document.getElementById('btn-cotizar').textContent = I18n.t('solicitar_cotizacion');
+    document.getElementById('btn-cerrar-carrito').textContent = I18n.t('cerrar');
+    // Explica, ANTES de que el visitante haga clic, qué pasa después de pedir la cotización —
+    // reduce la duda típica de "¿y ahora qué?" justo en el paso más cercano a la venta.
+    document.getElementById('carrito-nota-flujo').textContent = I18n.t('carrito_explicacion_flujo');
+    document.getElementById('carrito-confianza').textContent = I18n.t('carrito_confianza_msg');
+    if (window.Carrito) { Carrito.render(); }
+    document.getElementById('pie-link-privacidad').textContent = I18n.t('politica_privacidad');
+    document.getElementById('pie-generado').textContent = I18n.t('pie_generado');
+    document.querySelectorAll('#selector-idioma button').forEach(function (b) {
+      b.classList.toggle('activo', b.getAttribute('data-idioma') === I18n.idioma());
+    });
+  }
+  document.getElementById('selector-idioma').addEventListener('click', function (ev) {
+    var btn = ev.target.closest('[data-idioma]');
+    if (!btn) { return; }
+    I18n.setIdioma(btn.getAttribute('data-idioma'));
+  });
+  document.addEventListener('idioma:cambio', function () { aplicarTextosFijos_(); pintarMenu_(); pintarPie_(); render(); });
+  aplicarTextosFijos_();
+
+  await window.Sitio.iniciar();
+  var estado = window.Sitio.estado;
+
+  // Interruptor general: si Config.sitio_activo = FALSE, no se pinta nada más.
+  if (!window.Sitio.sitioActivo()) {
+    document.getElementById('contenido-pagina').innerHTML =
+      '<div class="mensaje-mantenimiento"><div><h1>' + I18n.t('volvemos_pronto_titulo') + '</h1><p>' + I18n.t('volvemos_pronto_texto') + '</p></div></div>';
+    document.querySelector('.cabecera').style.display = 'none';
+    return;
+  }
+
+  // Cabecera / logo / menú (respeta modulo_tienda y modulo_blog para no ofrecer rutas apagadas)
+  var logoTxt = document.getElementById('logo-texto'), logoImg = document.getElementById('logo-img');
+  if (estado.config.logo_url) { logoImg.src = estado.config.logo_url; logoImg.classList.remove('oculto'); logoTxt.classList.add('oculto'); }
+  else { logoTxt.textContent = estado.config.empresa_nombre || 'Mi empresa'; }
+  function pintarMenu_() {
+    // Mismo CTA que la cabecera de escritorio, como primer ítem del menú desplegable — en
+    // móvil es lo primero que se ve al abrir el menú, no algo que haya que ir a buscar.
+    // "Cotizar ahora" ya no vive acá ni en la cabecera: es el último ítem del submenú
+    // "Servicios" (hoja Menu) — pedido explícito, para no duplicar un acceso a Servicios que
+    // ya está en el menú. Este botón fijo pasó a ser "Acceso de clientes".
+    // TODO lo demás (Inicio, Servicios, Tienda, Agendar hora, Blog, y cualquier página nueva)
+    // sale 100% de la hoja "Menu" (data/menu.json) — nada de esto está hardcodeado acá: orden,
+    // textos y visibilidad (incluido si Tienda/Blog están activos) se controlan desde el Sheet.
+    var ctaMovil = '<li class="item-cta-menu"><a href="#acceso-clientes" class="btn btn-primario btn-bloque">' + I18n.t('acceso_clientes_cabecera') + '</a></li>';
+    document.getElementById('menu-principal').innerHTML = ctaMovil + Render.renderMenu(estado.menu, I18n.idioma());
+    document.getElementById('cta-cabecera').textContent = I18n.t('acceso_clientes_cabecera');
+  }
+  pintarMenu_();
+
+  // Mega-menú: el botón ▾ (independiente del enlace) abre/cierra su submenú con un toque —
+  // necesario en touch, donde no existe ":hover" — mientras que en escritorio el CSS ya lo
+  // abre solo al pasar el mouse. Delegado una sola vez: sigue funcionando aunque pintarMenu_()
+  // vuelva a generar el HTML del menú (cambio de idioma, actualización "casi en vivo").
+  document.getElementById('menu-principal').addEventListener('click', function (ev) {
+    var boton = ev.target.closest('.abrir-submenu');
+    if (boton) {
+      ev.preventDefault();
+      var li = boton.closest('li');
+      var abierto = li.classList.toggle('abierta');
+      boton.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+      // Solo un submenú de nivel 1 abierto a la vez en móvil, para que el menú no crezca sin control.
+      li.parentElement.querySelectorAll(':scope > li.abierta').forEach(function (otro) {
+        if (otro !== li) { otro.classList.remove('abierta'); otro.querySelector(':scope > .abrir-submenu').setAttribute('aria-expanded', 'false'); }
+      });
+      return;
+    }
+    // Tocar cualquier enlace real del menú (nivel 1 o dentro de un submenú) navega a otra
+    // página: el menú móvil y cualquier submenú desplegado deben cerrarse solos, igual que en
+    // cualquier app moderna — antes se quedaban abiertos tapando el contenido de la página nueva.
+    if (ev.target.closest('a')) { cerrarMenuMovil_(); }
+  });
+
+  function cerrarMenuMovil_() {
+    document.getElementById('menu-principal').classList.remove('abierto');
+    document.querySelectorAll('#menu-principal li.abierta').forEach(function (li) {
+      li.classList.remove('abierta');
+      var boton = li.querySelector(':scope > .abrir-submenu');
+      if (boton) { boton.setAttribute('aria-expanded', 'false'); }
+    });
+  }
+  // Respaldo: cualquier cambio de página (atrás/adelante del navegador, o cualquier otra ruta
+  // de navegación que no pase por un clic directo en el menú) también cierra el menú móvil.
+  window.addEventListener('hashchange', cerrarMenuMovil_);
+
+  // ---- Barra de indicadores financieros (mostrar/ocultar desde Config, como toda sección nueva) ----
+  // Duplica los mismos ítems dos veces seguidas en el DOM para que la animación CSS (translateX de
+  // -50%) haga un loop perfecto sin salto visible, sin depender de medir anchos en JS.
+  function itemsBarra_() {
+    var m = estado.mercado || {};
+    var items = [];
+    (m.usa || []).forEach(function (i) { items.push(i); });
+    (m.chile || []).forEach(function (i) { items.push(i); });
+    (m.cripto || []).forEach(function (i) { items.push(i); });
+    if (m.yen) { items.push(m.yen); }
+    var uf = window.Sitio.indicador('UF'), utm = window.Sitio.indicador('UTM'), dolar = window.Sitio.indicador('DOLAR'), euro = window.Sitio.indicador('EURO');
+    if (uf) { items.push({ codigo: 'UF', nombre: 'UF', valor: uf, variacion_pct: null }); }
+    if (utm) { items.push({ codigo: 'UTM', nombre: 'UTM', valor: utm, variacion_pct: null }); }
+    if (dolar) { items.push({ codigo: 'USD', nombre: 'Dólar', valor: dolar, variacion_pct: null }); }
+    if (euro) { items.push({ codigo: 'EUR', nombre: 'Euro', valor: euro, variacion_pct: null }); }
+    return items;
+  }
+  function pintarBarraIndicadores_() {
+    var cont = document.getElementById('barra-indicadores');
+    if (estado.config.mostrar_barra_indicadores === false || estado.config.mostrar_barra_indicadores === 'FALSE') {
+      cont.classList.add('oculto'); cont.innerHTML = ''; return;
+    }
+    var items = itemsBarra_();
+    if (!items.length) { cont.classList.add('oculto'); cont.innerHTML = ''; return; }
+    var piezas = items.map(function (i) {
+      var pct = (i.variacion_pct === null || i.variacion_pct === undefined) ? '' :
+        '<span class="' + (i.variacion_pct >= 0 ? 'sube' : 'baja') + '">' + (i.variacion_pct >= 0 ? '▲' : '▼') + ' ' + Math.abs(i.variacion_pct).toFixed(2) + '%</span>';
+      var valorTxto = Number(i.valor).toLocaleString('es-CL', { maximumFractionDigits: 2 });
+      return '<span class="item-indicador"><strong>' + Render.esc(i.nombre) + '</strong> ' + valorTxto + ' ' + pct + '</span>';
+    }).join('');
+    cont.innerHTML = '<div class="pista-indicadores">' + piezas + piezas + '</div>';
+    cont.classList.remove('oculto');
+  }
+  pintarBarraIndicadores_();
+
+  // ---- Comportamiento moderno del carrusel: pausar cuando la pestaña no está a la vista
+  // (ahorra batería/CPU en segundo plano, buena práctica de cualquier app web actual) y al
+  // tocar en pantallas táctiles (":hover" no existe en touch, así que sin esto no había forma
+  // de "detener para leer" en el celular). Se conecta una sola vez — sigue funcionando aunque
+  // pintarBarraIndicadores_() vuelva a generar el contenido interno en cada actualización.
+  (function configurarBarraIndicadoresDinamica_() {
+    var barra = document.getElementById('barra-indicadores');
+    document.addEventListener('visibilitychange', function () {
+      barra.classList.toggle('pausado', document.hidden);
+    });
+    barra.addEventListener('touchstart', function () { barra.classList.add('pausado'); }, { passive: true });
+    barra.addEventListener('touchend', function () { barra.classList.remove('pausado'); }, { passive: true });
+  })();
+
+  // ---- Botón flotante de WhatsApp (site-wide, mensaje prellenado) ----
+  // Se apoya en el mismo Config.redes_whatsapp que ya usa el pie de página — si no está
+  // configurado, el botón simplemente no aparece (no hace falta una bandera aparte).
+  function pintarBotonWhatsapp_() {
+    var boton = document.getElementById('boton-whatsapp');
+    var numero = estado.config.redes_whatsapp;
+    if (!numero) { boton.classList.add('oculto'); return; }
+    var mensaje = encodeURIComponent('¡Hola! Me gustaría cotizar un servicio de ' + (estado.config.empresa_nombre || 'la empresa') + '.');
+    boton.href = 'https://wa.me/' + numero + '?text=' + mensaje;
+    boton.classList.remove('oculto');
+  }
+  pintarBotonWhatsapp_();
+
+  // ---- Acordeón de categorías en la página "Planes" (Sección tipo 'categoria_planes') ----
+  // Delegado en #contenido-pagina (no en cada tarjeta) para seguir funcionando aunque el
+  // contenido se vuelva a pintar en cada cambio de ruta o idioma.
+  document.getElementById('contenido-pagina').addEventListener('click', function (ev) {
+    var boton = ev.target.closest('.categoria-planes-cabecera');
+    if (!boton) { return; }
+    var seccion = boton.closest('.categoria-planes');
+    var abierta = seccion.classList.toggle('abierta');
+    boton.setAttribute('aria-expanded', abierta ? 'true' : 'false');
+  });
+
+  // ---- Tarjetas de plan reales (Sección tipo 'planes_servicio', ver planesServicio_ en render.js) ----
+  // 1) Selector "¿Qué quieres hacer?" — filtro de interfaz: cambia en vivo la etiqueta/acción de
+  //    cada botón de plan DENTRO de la misma grilla (nunca afecta otras secciones de la página),
+  //    para que el usuario vea de inmediato "Cotizar" vs "Contratar/Suscribir" sin recargar nada.
+  document.getElementById('contenido-pagina').addEventListener('click', function (ev) {
+    var opcion = ev.target.closest('.selector-intencion-opcion');
+    if (!opcion) { return; }
+    var grupo = opcion.closest('.selector-intencion-planes');
+    grupo.querySelectorAll('.selector-intencion-opcion').forEach(function (b) { b.classList.toggle('activa', b === opcion); });
+    var intencion = opcion.getAttribute('data-intencion-plan');
+    var grilla = grupo.nextElementSibling; // .grid-planes-servicio, pintado justo después del selector
+    if (!grilla) { return; }
+    grilla.querySelectorAll('[data-agregar-plan]').forEach(function (btn) {
+      btn.setAttribute('data-accion-plan', intencion);
+      var periodicidad = btn.getAttribute('data-periodicidad-plan');
+      var esRecurrente = periodicidad === 'mensual' || periodicidad === 'anual';
+      btn.textContent = intencion === 'contratar'
+        ? (esRecurrente ? I18n.t('suscribir_plan') : I18n.t('contratar_plan'))
+        : I18n.t('cotizar_plan');
+    });
+  });
+  // 2) Clic en el botón de un plan: agrega el id_plan REAL al carrito (mismo Carrito.agregar()
+  //    que usa la tienda) y abre el panel al instante — cotizar/contratar/suscribir es siempre,
+  //    técnicamente, el mismo camino: cotización con los datos reales del plan → el cliente la
+  //    acepta → se genera el contrato automáticamente (ver 13_Cotizaciones.gs: responder()).
+  //    La etiqueta del botón (Cotizar/Contratar/Suscribir) es la única diferencia hoy; distinguir
+  //    el intento real del cliente en el CRM (Leads/Cotizaciones) es una mejora para una fase
+  //    siguiente, no algo que ya esté separado en el backend.
+  document.getElementById('contenido-pagina').addEventListener('click', function (ev) {
+    var boton = ev.target.closest('[data-agregar-plan]');
+    if (!boton) { return; }
+    var idPlan = boton.getAttribute('data-agregar-plan');
+    Carrito.agregar(idPlan, 1);
+    var textoOriginal = boton.textContent;
+    boton.disabled = true;
+    boton.textContent = I18n.t('plan_agregado');
+    document.getElementById('barra-carrito').click(); // mismo camino que "Agregar al carrito": pinta el panel y lo abre
+    setTimeout(function () { boton.disabled = false; boton.textContent = textoOriginal; }, 1400);
+  });
+
+  // La barra de indicadores solo debe verse en Inicio/Home (pedido explícito) — en cualquier
+  // otra ruta se saca del flujo y se oculta con su propia clase ("oculto-ruta"), sin tocar la
+  // clase "oculto" que ya usa pintarBarraIndicadores_() para el caso "sin datos/deshabilitada
+  // desde Config", así ninguna de las dos funciones pisa la decisión de la otra. Dentro de
+  // Inicio, se reubica DENTRO del contenido recién pintado, debajo del banner (".seccion-hero")
+  // — antes del primer título de la siguiente sección, como pidió el negocio. render() ya se
+  // encarga de sacarla de #contenido-pagina ANTES de reescribir su innerHTML en cada cambio de
+  // ruta, así que reinsertarla acá nunca la destruye.
+  function reubicarBarraIndicadores_(ruta) {
+    var barra = document.getElementById('barra-indicadores');
+    var main = document.getElementById('contenido-pagina');
+    if (ruta !== 'inicio') {
+      barra.classList.add('oculto-ruta');
+      return;
+    }
+    barra.classList.remove('oculto-ruta');
+    var hero = main.querySelector('.seccion-hero');
+    if (hero) { hero.insertAdjacentElement('afterend', barra); }
+    else { main.insertAdjacentElement('afterbegin', barra); }
+  }
+
+  // ---- Pie de página: mismo diseño de 3 columnas en TODAS las páginas (vive fuera de
+  // #contenido-pagina, nunca se vuelve a pintar al cambiar de ruta) — junta en una sola función
+  // lo que antes estaba duplicado en dos lugares (carga inicial y "casi en vivo"), para que
+  // nunca queden desincronizados entre sí. Cada dato sale de Config/Menu de ESTE sitio — nunca
+  // texto fijo de una marca en particular — para que la estructura sirva para cualquier cliente
+  // del sistema, no solo el actual. ----
+  var ICONOS_REDES_ = {
+    redes_facebook: { clase: 'fa-brands fa-facebook-f', color: '#1877F2' },
+    redes_instagram: { clase: 'fa-brands fa-instagram', color: 'radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)' },
+    redes_linkedin: { clase: 'fa-brands fa-linkedin-in', color: '#0A66C2' },
+    redes_youtube: { clase: 'fa-brands fa-youtube', color: '#FF0000' },
+    redes_tiktok: { clase: 'fa-brands fa-tiktok', color: '#000000' },
+    redes_x: { clase: 'fa-brands fa-x-twitter', color: '#000000' }
+  };
+  function pintarPie_() {
+    var c = estado.config;
+    document.getElementById('pie-empresa').textContent = c.empresa_nombre || '';
+    document.getElementById('pie-descripcion').textContent = c.eslogan || c.descripcion_corta || '';
+
+    // Redes sociales — íconos circulares con su color de marca, igual que la plantilla de
+    // referencia; solo se muestran las que tengan URL configurada (WhatsApp usa su propio
+    // número, ya que no es una "URL de red social" como las demás).
+    var redesHtml = Object.keys(ICONOS_REDES_).map(function (clave) {
+      if (!c[clave]) { return ''; }
+      var r = ICONOS_REDES_[clave];
+      var esGradiente = r.color.indexOf('gradient') === 0;
+      return '<a href="' + Render.esc(c[clave]) + '" target="_blank" rel="noopener" style="' + (esGradiente ? 'background:' + r.color : 'background-color:' + r.color) + '" aria-label="' + clave.replace('redes_', '') + '"><i class="' + r.clase + '"></i></a>';
+    }).join('') + (c.redes_whatsapp ? '<a href="https://wa.me/' + Render.esc(c.redes_whatsapp) + '" target="_blank" rel="noopener" style="background-color:#25D366" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>' : '');
+    document.getElementById('pie-redes').innerHTML = redesHtml;
+
+    // Contacto con ícono por línea (teléfono, WhatsApp, correo, dirección, horario) — cada línea
+    // se omite sola si el dato no está configurado, nunca un "·" o una línea vacía suelta.
+    var lineasContacto = [
+      c.empresa_telefono ? { icono: 'fa-solid fa-phone', html: Render.esc(c.empresa_telefono) } : null,
+      c.redes_whatsapp ? { icono: 'fa-brands fa-whatsapp', html: '<a href="https://wa.me/' + Render.esc(c.redes_whatsapp) + '" target="_blank" rel="noopener">WhatsApp: ' + Render.esc(c.redes_whatsapp) + '</a>' } : null,
+      c.empresa_correo ? { icono: 'fa-solid fa-envelope', html: '<a href="mailto:' + Render.esc(c.empresa_correo) + '">' + Render.esc(c.empresa_correo) + '</a>' } : null,
+      c.empresa_direccion ? { icono: 'fa-solid fa-location-dot', html: Render.esc(c.empresa_direccion) } : null,
+      c.horario_atencion ? { icono: 'fa-solid fa-clock', html: Render.esc(c.horario_atencion) } : null
+    ].filter(Boolean);
+    document.getElementById('pie-contacto').innerHTML = lineasContacto.map(function (l) {
+      return '<div class="pie-linea-contacto"><i class="' + l.icono + '"></i> <span>' + l.html + '</span></div>';
+    }).join('');
+
+    // Mapa embebido a partir de latitud/longitud de Config — sin necesitar clave de API de
+    // Google Maps (URL de embed público), igual que la plantilla de referencia.
+    var mapaNodo = document.getElementById('pie-mapa');
+    if (c.latitud && c.longitud) {
+      mapaNodo.innerHTML = '<iframe src="https://maps.google.com/maps?q=' + encodeURIComponent(c.latitud + ',' + c.longitud) + '&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación"></iframe>';
+    } else { mapaNodo.innerHTML = ''; }
+
+    // Columna "Ayuda": Blog (si el módulo está activo) + redes con contenido propio (YouTube) +
+    // descargas de soporte remoto — utilidad genérica para cualquier estudio contable/asesoría
+    // que use este sistema, no específica de una marca.
+    var ayuda = [];
+    ayuda.push({ href: '#agendar', texto: I18n.t('menu_agendar') });
+    ayuda.push({ href: '#seguimiento', texto: I18n.t('menu_seguimiento') });
+    if (window.Sitio.moduloActivo('blog') && estado.blog.length) { ayuda.push({ href: '#blog', texto: I18n.t('menu_blog') }); }
+    if (c.redes_youtube) { ayuda.push({ href: c.redes_youtube, texto: I18n.t('pie_canal_youtube'), externo: true }); }
+    var listaAyuda = ayuda.map(function (a) { return '<li><a href="' + Render.esc(a.href) + '"' + (a.externo ? ' target="_blank" rel="noopener"' : '') + '>' + Render.esc(a.texto) + '</a></li>'; }).join('');
+    listaAyuda += '<li><a href="https://anydesk.com/es/downloads" target="_blank" rel="noopener">AnyDesk (soporte remoto)</a></li>';
+    listaAyuda += '<li><a href="https://www.teamviewer.com/es/descargar/" target="_blank" rel="noopener">TeamViewer (soporte remoto)</a></li>';
+    document.getElementById('pie-lista-ayuda').innerHTML = listaAyuda;
+    document.getElementById('pie-columna-ayuda').classList.toggle('oculto', !listaAyuda);
+
+    // Columna "Menú principal": los mismos ítems de NIVEL 1 del menú de cabecera — se generan
+    // solos a partir de estado.menu, así el pie de página nunca puede desincronizarse de la
+    // navegación real del sitio (si se agrega o quita una página del menú, el pie la sigue).
+    var nivel1 = (estado.menu || []).filter(function (m) { return !m.padre; }).sort(function (a, b) { return Number(a.orden || 0) - Number(b.orden || 0); });
+    var idioma = I18n.idioma();
+    document.getElementById('pie-lista-menu').innerHTML = nivel1.map(function (m) {
+      var etiqueta = (idioma === 'en' && m.etiqueta_en) ? m.etiqueta_en : (idioma === 'zh' && m.etiqueta_zh) ? m.etiqueta_zh : m.etiqueta;
+      return '<li><a href="' + Render.esc(m.url || '#') + '">' + Render.esc(etiqueta) + '</a></li>';
+    }).join('');
+
+    document.getElementById('pie-titulo-ayuda').textContent = I18n.t('pie_titulo_ayuda');
+    document.getElementById('pie-titulo-menu').textContent = I18n.t('pie_titulo_menu');
+    document.getElementById('pie-titulo-contacto').textContent = I18n.t('pie_titulo_contacto');
+
+    if (c.medios_pago_texto) { document.getElementById('pie-medios-pago').innerHTML = '<p>' + Render.esc(c.medios_pago_texto) + '</p>'; }
+  }
+  pintarPie_();
+
+  document.getElementById('btn-menu-movil').addEventListener('click', function () {
+    document.getElementById('menu-principal').classList.toggle('abierto');
+  });
+
+  // Sombra de la cabecera solo cuando hay contenido debajo por el que hacer scroll.
+  var cabecera = document.querySelector('.cabecera');
+  window.addEventListener('scroll', function () {
+    cabecera.classList.toggle('con-sombra', window.scrollY > 8);
+  }, { passive: true });
+
+  // ---- Migas de pan: orientación en cualquier página que no sea el inicio — clave cuando las
+  // páginas están encadenadas (Servicios > Contabilidad Digital > Plan Pymes), para que el
+  // visitante nunca pierda de dónde vino ni cómo volver un nivel atrás sin usar "Atrás" del
+  // navegador. Cada tramo intermedio intenta resolver su propia Página (mismo slug acumulado)
+  // para mostrar su título real; si no existe como página propia, se usa el segmento del slug
+  // legible ("mi-segmento" → "mi segmento") en vez de dejarlo vacío.
+  function paginaPorSlugExacta_(slug) {
+    return estado.paginas.filter(function (p) { return p.slug === slug; })[0] || null;
+  }
+  function construirMigas_(tramos) {
+    // tramos: [{ href: '#inicio', texto: '...' }, ..., { texto: 'Actual' }] (el último sin href)
+    if (!tramos || tramos.length < 2) { return ''; }
+    var html = tramos.map(function (t, idx) {
+      var esUltimo = idx === tramos.length - 1;
+      return esUltimo
+        ? '<span aria-current="page">' + Render.esc(t.texto) + '</span>'
+        : '<a href="' + Render.esc(t.href) + '">' + Render.esc(t.texto) + '</a>';
+    }).join('<span class="migas-separador" aria-hidden="true">›</span>');
+    return '<nav class="migas-pan" aria-label="Ruta de navegación"><div class="contenedor">' + html + '</div></nav>';
+  }
+  function migasDeRuta_(ruta, tituloActual, idioma) {
+    var tramos = [{ href: '#inicio', texto: I18n.t('inicio_miga') }];
+    var partes = ruta.split('/');
+    var acumulado = '';
+    for (var i = 0; i < partes.length - 1; i++) {
+      acumulado = acumulado ? acumulado + '/' + partes[i] : partes[i];
+      var pag = paginaPorSlugExacta_(acumulado);
+      tramos.push({ href: '#' + acumulado, texto: pag ? Render.campo(pag, 'titulo', idioma) : partes[i].replace(/-/g, ' ') });
+    }
+    tramos.push({ texto: tituloActual });
+    return construirMigas_(tramos);
+  }
+
+  // ---- Resalta en el menú la página donde está parado el visitante (antes ningún ítem del
+  // menú indicaba nunca dónde estabas — común en cualquier sitio orientado a conversión). Si la
+  // ruta actual es una sub-página (ej. "servicios/contabilidad-digital"), también resalta el
+  // ítem de nivel 1 del que cuelga ("Servicios"), para que el mega-menú se sienta coherente. ----
+  function marcarEnlaceActivoMenu_(ruta) {
+    // El CTA "Cotizar ahora" (.item-cta-menu) queda afuera de todo este cálculo: comparte
+    // href="#servicios" con el ítem real del menú, pero es una llamada a la acción, no un
+    // indicador de "estás aquí" — nunca debe llevar el estilo ni el aria-current de "activo".
+    var huboCoincidenciaExacta = false;
+    document.querySelectorAll('#menu-principal li:not(.item-cta-menu) > a').forEach(function (a) {
+      var esActivo = a.getAttribute('href') === '#' + ruta;
+      a.classList.toggle('activo', esActivo);
+      if (esActivo) { a.setAttribute('aria-current', 'page'); huboCoincidenciaExacta = true; } else { a.removeAttribute('aria-current'); }
+    });
+    // El ítem de nivel 1 ("Servicios") también se marca visualmente como activo cuando la ruta
+    // actual es una de sus sub-páginas (ej. "servicios/contabilidad-digital") — así el mega-menú
+    // se ve coherente con dónde está el visitante. "aria-current" en cambio solo va en la
+    // coincidencia exacta (o en el padre si no hay ninguna) para no anunciar dos "página actual"
+    // a la vez a un lector de pantalla.
+    // :not(.item-cta-menu) es necesario porque el CTA "Cotizar ahora" también apunta a
+    // "#servicios" — sin excluirlo, este selector lo encontraba a ÉL primero (mismo href) en
+    // vez del ítem real "Servicios" del menú, y el de verdad se quedaba sin marcar.
+    var raiz = ruta.split('/')[0];
+    var padre = document.querySelector('#menu-principal > li:not(.item-cta-menu) > a[href="#' + raiz + '"]');
+    if (padre && !padre.classList.contains('activo')) {
+      padre.classList.add('activo');
+      if (!huboCoincidenciaExacta) { padre.setAttribute('aria-current', 'page'); }
+    }
+  }
+
+  // ---- Router simple por hash: #slug | #blog | #blog/slug | #tienda ----
+  function render() {
+    var ruta = (location.hash || '#inicio').replace('#', '');
+    var main = document.getElementById('contenido-pagina');
+    var idioma = I18n.idioma();
+
+    // BUG REAL corregido: la barra de indicadores se reubicaba DENTRO de #contenido-pagina
+    // (reubicarBarraIndicadores_ la insertaba después del hero). Como "main.innerHTML = ..."
+    // destruye TODOS los hijos actuales de main, en cuanto la barra quedaba adentro (después de
+    // visitar Inicio una vez) el siguiente cambio de página la borraba del DOM para siempre —
+    // por eso "al salir de Inicio los indicadores se van" y ya no volvían ni al regresar. Se saca
+    // la barra de #contenido-pagina ANTES de reescribir su innerHTML, en todos los casos, para que
+    // nunca sea un hijo de main en el momento del reemplazo.
+    var barraIndicadores = document.getElementById('barra-indicadores');
+    if (barraIndicadores.parentElement === main) {
+      document.body.insertBefore(barraIndicadores, main);
+    }
+
+    if (ruta === 'tienda' && !window.Sitio.moduloActivo('tienda')) { ruta = 'inicio'; }
+    if ((ruta === 'blog' || ruta.indexOf('blog/') === 0) && !window.Sitio.moduloActivo('blog')) { ruta = 'inicio'; }
+
+    if (ruta === 'blog') {
+      main.innerHTML = migasDeRuta_('blog', I18n.t('menu_blog'), idioma) + '<section class="reveal"><div class="contenedor"><div class="seccion-encabezado"><h2>' + I18n.t('menu_blog') + '</h2></div><div class="grid-blog">' + Render.renderBlog(estado.blog, idioma) + '</div></div></section>';
+      Render.activarReveal(main);
+      reubicarBarraIndicadores_(ruta);
+      marcarEnlaceActivoMenu_(ruta);
+      return;
+    }
+    if (ruta.indexOf('blog/') === 0) {
+      var post = estado.blog.filter(function (p) { return p.slug === ruta.slice(5); })[0];
+      main.innerHTML = migasDeRuta_(ruta, post ? Render.campo(post, 'titulo', idioma) : I18n.t('articulo_no_encontrado'), idioma) + Render.renderPostBlog(post, idioma);
+      reubicarBarraIndicadores_(ruta);
+      marcarEnlaceActivoMenu_(ruta);
+      return;
+    }
+    if (ruta === 'tienda') {
+      main.innerHTML = migasDeRuta_('tienda', I18n.t('menu_tienda'), idioma) + renderTienda_(idioma);
+      pintarGrillaTienda_(idioma);
+      Render.activarReveal(main);
+      reubicarBarraIndicadores_(ruta);
+      marcarEnlaceActivoMenu_(ruta);
+      return;
+    }
+    if (ruta === 'seguimiento') {
+      main.innerHTML = migasDeRuta_('seguimiento', I18n.t('menu_seguimiento'), idioma) + renderSeguimiento_(idioma);
+      if (window.Seguimiento) { Seguimiento.montar(document.getElementById('contenido-pagina')); }
+      Render.activarReveal(main);
+      reubicarBarraIndicadores_(ruta);
+      marcarEnlaceActivoMenu_(ruta);
+      return;
+    }
+    if (ruta === 'agendar') {
+      main.innerHTML = migasDeRuta_('agendar', I18n.t('menu_agendar'), idioma) + renderAgendamiento_(idioma);
+      if (window.Agendamiento) { Agendamiento.montar(document.getElementById('contenido-pagina')); }
+      Render.activarReveal(main);
+      reubicarBarraIndicadores_(ruta);
+      marcarEnlaceActivoMenu_(ruta);
+      return;
+    }
+    if (ruta === 'acceso-clientes') {
+      main.innerHTML = migasDeRuta_('acceso-clientes', I18n.t('portal_titulo'), idioma) + renderPortal_(idioma);
+      if (window.Sitio.moduloActivo('portal') && window.Portal) { Portal.montar(document.getElementById('contenido-pagina')); }
+      Render.activarReveal(main);
+      reubicarBarraIndicadores_(ruta);
+      marcarEnlaceActivoMenu_(ruta);
+      return;
+    }
+
+    // Las páginas de servicio usan un slug de varias partes (ej. "servicios/contabilidad-digital"
+    // o "servicios/contabilidad-digital/planes-emprendedores") — Paginas.slug guarda el path
+    // completo como un solo string, así que se compara tal cual, sin partirlo por "/".
+    var pagina = window.Sitio.paginaPorSlug(ruta);
+    document.title = (pagina ? Render.campo(pagina, 'titulo', idioma) + ' — ' : '') + (estado.config.empresa_nombre || '');
+    var metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) { metaDesc.setAttribute('content', (pagina && Render.campo(pagina, 'meta_descripcion', idioma)) || estado.config.seo_descripcion || ''); }
+    var tituloPagina = pagina ? Render.campo(pagina, 'titulo', idioma) : I18n.t('pagina_no_encontrada');
+    main.innerHTML = (ruta === 'inicio' ? '' : migasDeRuta_(ruta, tituloPagina, idioma)) + Render.renderPagina(pagina, estado.config, idioma);
+    marcarEnlaceActivoMenu_(ruta);
+    if (ruta === 'contacto' || (pagina && pagina.slug === 'contacto')) { Formulario.montar(document.getElementById('contenido-pagina')); }
+    if (window.Herramientas) { Herramientas.montar(main); }
+    if (window.Diagnostico) { Diagnostico.montar(main); }
+    Render.activarReveal(main);
+    reubicarBarraIndicadores_(ruta);
+  }
+
+  // Tienda: antes era una grilla sin buscador, sin filtro de categoría, sin orden y sin foto —
+  // el catálogo completo (categorías, imagen del producto) ya viajaba en data/catalogo.json sin
+  // usarse. Todo el filtrado/orden ocurre en el navegador (los datos ya están cargados), así que
+  // no agrega ninguna llamada nueva a la API; re-pinta solo la grilla al escribir/filtrar/ordenar.
+  function tarjetaProducto_(p, idioma) {
+    var imagen = p.medio_url
+      ? '<img src="' + Render.esc(p.medio_url) + '" alt="' + Render.esc(Render.campo(p, 'nombre', idioma)) + '" loading="lazy">'
+      : '<div class="tarjeta-producto-sin-foto" aria-hidden="true">🧾</div>';
+    return (
+      '<div class="tarjeta tarjeta-producto">' + imagen +
+      '<h3>' + Render.esc(Render.campo(p, 'nombre', idioma)) + '</h3>' +
+      '<div class="precio">' + Render.esc(p.precio_base) + ' <small>' + Render.esc(p.unidad_precio) + '</small></div>' +
+      '<button class="btn btn-primario btn-bloque" data-agregar="' + Render.esc(p.id_producto) + '">' + I18n.t('agregar_al_carrito') + '</button>' +
+      '</div>'
+    );
+  }
+
+  function productosFiltrados_(termino, idCategoria, orden, idioma) {
+    var productos = (estado.catalogo.productos || []).slice();
+    if (termino) {
+      var t = termino.toLowerCase();
+      productos = productos.filter(function (p) { return Render.campo(p, 'nombre', idioma).toLowerCase().indexOf(t) !== -1; });
+    }
+    if (idCategoria) { productos = productos.filter(function (p) { return p.id_categoria === idCategoria; }); }
+    if (orden === 'precio_asc') { productos.sort(function (a, b) { return Number(a.precio_base) - Number(b.precio_base); }); }
+    else if (orden === 'precio_desc') { productos.sort(function (a, b) { return Number(b.precio_base) - Number(a.precio_base); }); }
+    else if (orden === 'nombre') { productos.sort(function (a, b) { return Render.campo(a, 'nombre', idioma).localeCompare(Render.campo(b, 'nombre', idioma)); }); }
+    return productos;
+  }
+
+  function pintarGrillaTienda_(idioma) {
+    var contenedor = document.getElementById('grilla-tienda');
+    if (!contenedor) { return; }
+    var termino = (document.getElementById('tienda-buscar') || {}).value || '';
+    var idCategoria = (document.getElementById('tienda-categoria') || {}).value || '';
+    var orden = (document.getElementById('tienda-orden') || {}).value || '';
+    var productos = productosFiltrados_(termino, idCategoria, orden, idioma);
+    var tarjetas = productos.map(function (p) { return tarjetaProducto_(p, idioma); }).join('');
+    var totalPublicados = (estado.catalogo.productos || []).length;
+    var vacio = !productos.length
+      ? '<p style="text-align:center; color:var(--color-texto-suave)">' + (totalPublicados ? I18n.t('tienda_sin_resultados') : I18n.t('todavia_sin_productos')) + '</p>'
+      : '';
+    contenedor.innerHTML = vacio + '<div class="grid-catalogo">' + tarjetas + '</div>';
+    Carrito.enlazarBotonesAgregar();
+  }
+
+  function renderTienda_(idioma) {
+    var categorias = estado.catalogo.categorias || [];
+    var opcionesCategoria = categorias.map(function (c) {
+      return '<option value="' + Render.esc(c.id_categoria) + '">' + Render.esc(Render.campo(c, 'nombre', idioma)) + '</option>';
+    }).join('');
+    return (
+      '<section class="reveal"><div class="contenedor">' +
+      '<div class="seccion-encabezado"><h2>' + I18n.t('menu_tienda') + '</h2></div>' +
+      '<div class="tienda-herramientas">' +
+      '<input type="search" id="tienda-buscar" placeholder="' + Render.esc(I18n.t('tienda_buscar_placeholder')) + '" aria-label="' + Render.esc(I18n.t('tienda_buscar_placeholder')) + '">' +
+      (categorias.length ? '<select id="tienda-categoria" aria-label="' + Render.esc(I18n.t('tienda_categoria_todas')) + '"><option value="">' + Render.esc(I18n.t('tienda_categoria_todas')) + '</option>' + opcionesCategoria + '</select>' : '') +
+      '<select id="tienda-orden" aria-label="' + Render.esc(I18n.t('tienda_ordenar')) + '">' +
+      '<option value="">' + Render.esc(I18n.t('tienda_orden_relevancia')) + '</option>' +
+      '<option value="precio_asc">' + Render.esc(I18n.t('tienda_orden_precio_asc')) + '</option>' +
+      '<option value="precio_desc">' + Render.esc(I18n.t('tienda_orden_precio_desc')) + '</option>' +
+      '<option value="nombre">' + Render.esc(I18n.t('tienda_orden_nombre')) + '</option>' +
+      '</select></div>' +
+      '<div id="grilla-tienda"></div>' +
+      '</div></section>'
+    );
+  }
+
+  // Seguimiento de pedido: el HTML solo pone el marco (igual que Diagnostico/Herramientas);
+  // js/seguimiento.js arma el formulario y llama a la acción "seguimiento.obtener" de la API.
+  function renderPortal_(idioma) {
+    if (!window.Sitio.moduloActivo('portal')) {
+      return (
+        '<section class="reveal"><div class="contenedor angosto">' +
+        '<div class="seccion-encabezado"><h2>' + I18n.t('portal_titulo') + '</h2><p>' + I18n.t('portal_no_disponible') + '</p></div>' +
+        '<a href="#contacto" class="btn btn-primario">' + I18n.t('portal_no_disponible_boton') + '</a>' +
+        '</div></section>'
+      );
+    }
+    return (
+      '<section class="reveal"><div class="contenedor angosto">' +
+      '<div class="seccion-encabezado"><h2>' + I18n.t('portal_titulo') + '</h2><p>' + I18n.t('portal_intro') + '</p></div>' +
+      '<div id="portal-widget"></div>' +
+      '</div></section>'
+    );
+  }
+
+  function renderSeguimiento_(idioma) {
+    return (
+      '<section class="reveal"><div class="contenedor angosto">' +
+      '<div class="seccion-encabezado"><h2>' + I18n.t('seguimiento_titulo') + '</h2><p>' + I18n.t('seguimiento_intro') + '</p></div>' +
+      '<div id="seguimiento-pedido"></div>' +
+      '</div></section>'
+    );
+  }
+
+  // Agendamiento: página propia (antes no existía ninguna interfaz para las acciones
+  // reserva.disponibilidad/reserva.crear, aunque el backend ya las tenía) — el marco queda acá,
+  // js/agendamiento.js arma el asistente paso a paso dentro de #agendamiento-widget.
+  function renderAgendamiento_(idioma) {
+    return (
+      '<section class="reveal"><div class="contenedor angosto agenda-contenedor">' +
+      '<div class="seccion-encabezado"><h2>' + I18n.t('agenda_titulo') + '</h2><p>' + I18n.t('agenda_intro') + '</p></div>' +
+      '<div id="agendamiento-widget" class="agenda-widget"></div>' +
+      '</div></section>'
+    );
+  }
+
+  // Delegado en #contenido-pagina (no en #grilla-tienda: ese nodo se reemplaza en cada filtro,
+  // así que un listener puesto directo en él se perdería con el primer input) — funciona sin
+  // importar cuántas veces se repinte la grilla.
+  document.getElementById('contenido-pagina').addEventListener('input', function (ev) {
+    if (ev.target.id === 'tienda-buscar') { pintarGrillaTienda_(I18n.idioma()); }
+  });
+  document.getElementById('contenido-pagina').addEventListener('change', function (ev) {
+    if (ev.target.id === 'tienda-categoria' || ev.target.id === 'tienda-orden') { pintarGrillaTienda_(I18n.idioma()); }
+  });
+
+  window.addEventListener('hashchange', render);
+  Carrito.iniciar();
+  render();
+
+  // ---- "Casi en vivo": si alguien edita el Sheet, esta pestaña (ya abierta) lo nota sola ----
+  // Junto con la publicación automática al editar (backend, ~1 minuto), el resultado es que
+  // editar Config/Paginas/Secciones/etc. se ve reflejado aquí sin recargar la página a mano.
+  document.addEventListener('sitio:actualizado', function () {
+    aplicarTextosFijos_(); pintarMenu_(); pintarPie_();
+    pintarBarraIndicadores_();
+    pintarBotonWhatsapp_();
+    render();
+    mostrarAvisoActualizado_();
+  });
+  window.Sitio.activarActualizacionAutomatica(estado.config.auto_actualizar_segundos || 60);
+
+  var avisoActualizadoTimeout_ = null;
+  function mostrarAvisoActualizado_() {
+    var nodo = document.getElementById('aviso-actualizado');
+    if (!nodo) {
+      nodo = document.createElement('div');
+      nodo.id = 'aviso-actualizado';
+      nodo.className = 'aviso-actualizado';
+      document.body.appendChild(nodo);
+    }
+    nodo.textContent = I18n.t('contenido_actualizado');
+    nodo.classList.add('visible');
+    clearTimeout(avisoActualizadoTimeout_);
+    avisoActualizadoTimeout_ = setTimeout(function () { nodo.classList.remove('visible'); }, 3200);
+  }
+})();
+</script>
+</body>
+</html>
