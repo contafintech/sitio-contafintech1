@@ -67,32 +67,32 @@
     {
       "codigo": "bitcoin",
       "nombre": "BTC",
-      "valor": 83236,
-      "variacion_pct": 0.6555954164540171
+      "valor": 83473,
+      "variacion_pct": 0.8524224500176067
     },
     {
       "codigo": "ethereum",
       "nombre": "ETH",
-      "valor": 2447.69,
-      "variacion_pct": 0.056507084058770335
+      "valor": 2517.12,
+      "variacion_pct": -0.468941541267154
     },
     {
       "codigo": "binancecoin",
       "nombre": "BNB",
-      "valor": 744.01,
-      "variacion_pct": 0.501533981575301
+      "valor": 744.87,
+      "variacion_pct": -0.2197512467386927
     },
     {
       "codigo": "ripple",
       "nombre": "XRP",
-      "valor": 1.35,
-      "variacion_pct": 1.1774975623889714
+      "valor": 1.37,
+      "variacion_pct": -0.26812353038444814
     },
     {
       "codigo": "solana",
       "nombre": "SOL",
-      "valor": 106,
-      "variacion_pct": -0.0834395482829585
+      "valor": 107.66,
+      "variacion_pct": -1.105959229387645
     }
   ],
   "yen": {
