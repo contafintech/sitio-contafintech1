@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "fecha": "2026-11-09T03:00:00.000Z",
+    "codigo": "UF",
+    "valor": 41295.46,
+    "fuente": "mindicador.cl",
+    "obtenido_en": "2026-11-09T09:53:49.196Z",
+    "creado_en": "2026-11-09T09:53:49.493Z",
+    "creado_por": "",
+    "actualizado_en": "2026-11-09T09:53:49.493Z",
+    "actualizado_por": "",
+    "activo": true
+  },
+  {
+    "fecha": "2026-11-09T03:00:00.000Z",
+    "codigo": "UTM",
+    "valor": 72440,
+    "fuente": "mindicador.cl",
+    "obtenido_en": "2026-11-09T09:53:51.478Z",
+    "creado_en": "2026-11-09T09:53:52.074Z",
+    "creado_por": "",
+    "actualizado_en": "2026-11-09T09:53:52.074Z",
+    "actualizado_por": "",
+    "activo": true
+  },
+  {
+    "fecha": "2026-11-09T03:00:00.000Z",
+    "codigo": "DOLAR",
+    "valor": 979.88,
+    "fuente": "mindicador.cl",
+    "obtenido_en": "2026-11-09T09:53:53.025Z",
+    "creado_en": "2026-11-09T09:53:53.215Z",
+    "creado_por": "",
+    "actualizado_en": "2026-11-09T09:53:53.215Z",
+    "actualizado_por": "",
+    "activo": true
+  },
+  {
+    "fecha": "2026-11-09T03:00:00.000Z",
+    "codigo": "EURO",
+    "valor": 1092.4,
+    "fuente": "mindicador.cl",
+    "obtenido_en": "2026-11-09T09:53:56.344Z",
+    "creado_en": "2026-11-09T09:53:56.600Z",
+    "creado_por": "",
+    "actualizado_en": "2026-11-09T09:53:56.600Z",
+    "actualizado_por": "",
+    "activo": true
+  },
+  {
+    "fecha": "2026-11-09T03:00:00.000Z",
+    "codigo": "IPC",
+    "valor": -0.2,
+    "fuente": "mindicador.cl",
+    "obtenido_en": "2026-11-09T09:53:59.403Z",
+    "creado_en": "2026-11-09T09:53:59.805Z",
+    "creado_por": "",
+    "actualizado_en": "2026-11-09T09:53:59.805Z",
+    "actualizado_por": "",
+    "activo": true
+  }
+]
